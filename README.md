@@ -18,3 +18,8 @@
 Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser.
 
 When finished, stop both tasks with `Ctrl + C` and have a beer.
+
+## Resources
+
+* https://laravel.com/docs/5.6/blade
+* https://laravel.com/docs/5.6/mix
