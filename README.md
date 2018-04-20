@@ -3,6 +3,7 @@
 ## Requirements
 
 * PHP
+* `resources/assets/images` folder
 
 ## Setup
 
