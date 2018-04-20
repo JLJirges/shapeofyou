@@ -16,10 +16,10 @@
     <div class="flex-center position-ref full-height">
 
         <div class="top-middle links">
-            <a href="http://localhost/shapeofyou/resources/views/superfood.blade.php">Super Food</a>
+            <a href="{{ url('superfood') }}">Super Food</a>
             <a href="http://localhost/shapeofyou/resources/views/workout.blade.php">Workout</a>
             <a href="http://localhost/shapeofyou/resources/views/community.blade.php">Community</a>
-            <a href="http://localhost/shapeofyou/resources/views/welcome.blade.php">
+            <a href="{{ url('') }}">
                 <img class="logo_header" src="{{ asset('images/headerfooter/Logo.png') }}" alt="logo">
             </a>
             <a href="http://localhost/shapeofyou/resources/views/meetups.blade.php">Meetups</a>

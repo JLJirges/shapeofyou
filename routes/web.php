@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('superfood', function () {
+    return view('superfood');
+});
