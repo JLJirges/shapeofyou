@@ -257,16 +257,16 @@
 <div class="top-middle links">
 
 
-    <a href="http://localhost/shapeofyou/resources/views/superfood.blade.php">Super Food</a>
-    <a href="http://localhost/shapeofyou/resources/views/workout.blade.php">Workout</a>
-    <a href="http://localhost/shapeofyou/resources/views/community.blade.php">Community</a>
-    <a href="http://localhost/shapeofyou/resources/views/welcome.blade.php">
-        <img class="logo_header" src="../assets/images/headerfooter/Logo.png" alt="logo">
+    <a href="{{ url('superfood') }}">Super Food</a>
+    <a href="{{ url('workout') }}">Workout</a>
+    <a href="{{ url('community') }}">Community</a>
+    <a href="{{ url('') }}">
+        <img class="logo_header" src="{{ asset('images/headerfooter/Logo.png') }}" alt="logo">
     </a>
-    <a href="http://localhost/shapeofyou/resources/views/meetups.blade.php">Meetups</a>
+    <a href="{{ url ('meetups') }}">Meetups</a>
 
-    <a href="{{ route('login') }}">Login</a>
-    <a href="href=http://localhost/shapeofyou/resources/views/register.blade.php">Start now</a>
+    <a href="{{ url('profile') }}">Login</a>
+    <a href="{{ url('register') }}">Start now</a>
 
 </div>
 

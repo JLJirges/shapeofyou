@@ -18,3 +18,27 @@ Route::get('/', function () {
 Route::get('superfood', function () {
     return view('superfood');
 });
+
+Route::get('meetups', function () {
+    return view('meetups');
+});
+
+Route::get('workout', function () {
+    return view('workout');
+});
+
+Route::get('register', function () {
+    return view('register');
+});
+
+Route::get('community', function () {
+    return view('community');
+});
+
+Route::get('profile', function () {
+    return view('profile');
+});
+
+Route::get('recipe', function () {
+    return view('recipe');
+});

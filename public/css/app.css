@@ -31,6 +31,13 @@ h3 {
   font-size: 24pt;
 }
 
+.title_bg {
+  background: url("../images/background_colour.png");
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+}
+
 .flex-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -95,6 +102,7 @@ h3 {
   color: lightgrey;
 }
 
+/* HOME */
 .goal_info {
   width: 60%;
   margin: 30px 20% 2% 20%;
@@ -194,7 +202,7 @@ h3 {
   /* ie10+ */
   background: radial-gradient(ellipse at center, #d1e802 0%, #688000 100%);
   /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D1E802', endColorstr='#688000',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0);
   /* ie6-9 */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -228,6 +236,993 @@ h3 {
           box-shadow: #fea100 0 0 10px 0;
 }
 
+/* RECIPES */
+.entrytext {
+  width: 60%;
+  margin: 2% 20% 2% 20%;
+}
+
+.recipe_section {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.diet_section {
+  width: auto;
+  height: auto;
+  padding: 50px;
+}
+
+.diet_section_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: lightgrey solid 1px;
+  height: 115px;
+  padding: 5px;
+}
+
+.diet_section_content > a {
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  border-radius: 100px;
+  background-size: cover;
+}
+
+.community_pescetarian {
+  background: url("../images/community/pescetarian.png") center;
+  margin-right: 10px;
+}
+
+.community_vegetarian {
+  background: url("../images/community/vegetarian.png") center;
+  margin-right: 10px;
+}
+
+.community_vegan {
+  background: url("../images/community/vegan.png") center;
+  margin-left: 30px;
+}
+
+.community_nospecialdiet {
+  background: url("../images/community/nospecialdiet.png") center;
+  margin-left: 30px;
+}
+
+.box_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: auto;
+  height: auto;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-bottom: solid lightgrey 1px;
+}
+
+.box_section > div {
+  width: 220px;
+  height: 205px;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: dimgrey 0 0 2px 0;
+          box-shadow: dimgrey 0 0 2px 0;
+  margin: 10px;
+}
+
+.box_link {
+  font-family: "AR DARLING", sans-serif;
+  font-size: 20pt;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  width: 98%;
+  padding-top: 50%;
+  height: 98px;
+}
+
+.box_link:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  color: black;
+  width: 98%;
+  text-shadow: none;
+  vertical-align: middle;
+}
+
+.box_appetizers {
+  background: url("../images/superfood/appetizers.png") center;
+  background-size: cover;
+}
+
+.box_breakfast {
+  background: url("../images/superfood/breakfast.png") center;
+  background-size: cover;
+}
+
+.box_lunch {
+  background: url("../images/superfood/lunch.png") center;
+  background-size: cover;
+}
+
+.box_snacks {
+  background: url("../images/superfood/snacks.png") center;
+  background-size: cover;
+}
+
+.box_dinner {
+  background: url("../images/superfood/dinner.png") center;
+  background-size: cover;
+}
+
+.box_desserts {
+  background: url("../images/superfood/desserts.png") center;
+  background-size: cover;
+}
+
+.recipe_section_choose {
+  width: 15%;
+  height: auto;
+  padding: 50px;
+  border-left: solid 1px lightgrey;
+  margin-left: 2%;
+}
+
+.recipe_section_filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 115px;
+  padding: 5px;
+}
+
+.recipe_section_ignore_filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 70px;
+  padding-top: 40px;
+  border-top: lightgrey solid 1px;
+}
+
+.recipe_button {
+  /* ff3.6+ */
+  /* safari4+,chrome */
+  /* safari5.1+,chrome10+ */
+  /* opera 11.10+ */
+  /* ie10+ */
+  background: radial-gradient(ellipse at center, #d1e802 0%, #688000 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0);
+  /* ie6-9 */
+  width: 150px;
+  padding: 8px;
+  -webkit-box-shadow: dimgrey 0 0 5px 0;
+          box-shadow: dimgrey 0 0 5px 0;
+  color: black;
+  font-weight: bold;
+}
+
+/* BLOGS */
+.superfood_blog_bg {
+  background: url("../images/superfood/superfood_bg.png") fixed;
+  background-size: cover;
+  margin: 0;
+  height: auto;
+}
+
+.superfood_box_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 70%;
+  height: auto;
+  margin: 0 15% 0 15%;
+  padding-top: 5%;
+}
+
+.superfood_box_section > div {
+  width: 220px;
+  height: 205px;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: dimgrey 0 0 2px 0;
+          box-shadow: dimgrey 0 0 2px 0;
+  margin: 10px;
+}
+
+.superfood_box_nuts {
+  background: url("../images/superfood/nuts.png") center;
+  background-size: cover;
+}
+
+.superfood_box_goodcarbsbadcarbs {
+  background: url("../images/superfood/goodcarbsbadcarbs.png") center;
+  background-size: cover;
+}
+
+.superfood_box_thepowerofchia {
+  background: url("../images/superfood/thepowerofchia.png") center;
+  background-size: cover;
+}
+
+.superfood_box_proteinpowder {
+  background: url("../images/superfood/proteinpowder.png") center;
+  background-size: cover;
+}
+
+.superfood_box_superfood {
+  background: url("../images/superfood/superfood.png") center;
+  background-size: cover;
+}
+
+.superfood_box_underthesea {
+  background: url("../images/superfood/underthesea.png") center;
+  background-size: cover;
+}
+
+.superfood_box_whatdoineed {
+  background: url("../images/superfood/whatdoineed.png") center;
+  background-size: cover;
+}
+
+.superfood_box_gowiththeseason {
+  background: url("../images/superfood/gowiththeseason.png") center;
+  background-size: cover;
+}
+
+/* WORKOUT */
+.workout_bg {
+  background: url("../images/workout/workout_bg2.png") fixed;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+}
+
+.workout_section {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.workout_section > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 50%;
+  margin: 10px 25% 1% 25%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.workout_section > div > p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14pt;
+  text-shadow: #0b2e13;
+  width: 60%;
+  padding: 0 20% 0 20%;
+}
+
+.workout_box_link {
+  font-family: "AR DARLING", sans-serif;
+  font-size: 20pt;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  width: 98%;
+  padding-top: 50%;
+  height: 98px;
+}
+
+.workout_box_link:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  color: black;
+  width: 98%;
+  text-shadow: none;
+  vertical-align: middle;
+}
+
+.workout_box_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  margin: 2% 10% 0 10%;
+}
+
+.workout_box_section > div {
+  width: 280px;
+  height: 205px;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: dimgrey 0 0 2px 0;
+          box-shadow: dimgrey 0 0 2px 0;
+  margin: 10px 0 10px 0;
+}
+
+.box_indoor {
+  background: url("../images/workout/indoor.png") center;
+  background-size: cover;
+}
+
+.box_outdoor {
+  background: url("../images/workout/outdoor.png") center;
+  background-size: cover;
+}
+
+.box_stretch {
+  background: url("../images/workout/stretch.png") center;
+  background-size: cover;
+}
+
+.box_tenminutes {
+  background: url("../images/workout/tenminutes.png") center;
+  background-size: cover;
+}
+
+.box_partnerworkout {
+  background: url("../images/workout/partnerworkout.png") center;
+  background-size: cover;
+}
+
+.box_yoga {
+  background: url("../images/workout/yoga.png") center;
+  background-size: cover;
+}
+
+.box_workoutwithequipment {
+  background: url("../images/workout/workoutwithequipment.png") center;
+  background-size: cover;
+}
+
+.box_withoutequipment {
+  background: url("../images/workout/withoutequipment.png") center;
+  background-size: cover;
+}
+
+/* WORKOUT ~~ BLOGS */
+.workout_blog_bg {
+  background: url("../images/workout/workout_bg.png") fixed;
+  background-size: cover;
+  margin: 0;
+  height: 80vh;
+}
+
+.box_whatequipment {
+  background: url("../images/workout/whatequipment.png") center;
+  background-size: cover;
+}
+
+.box_thepowerofbreaks {
+  background: url("../images/workout/breakpower.png") center;
+  background-size: cover;
+}
+
+.box_doyouevenbmi {
+  background: url("../images/workout/doyouevenbmi.png") center;
+  background-size: cover;
+}
+
+.box_beachbodychallenge {
+  background: url("../images/workout/beachbodychallenge.png") center;
+  background-size: cover;
+}
+
+.box_listentoyourself {
+  background: url("../images/workout/listentoyourself.png") center;
+  background-size: cover;
+}
+
+.box_theperfectass {
+  background: url("../images/workout/theperfectass.png") center;
+  background-size: cover;
+}
+
+.box_bodyshapes {
+  background: url("../images/workout/bodyshapes.png") center;
+  background-size: cover;
+}
+
+.box_theabsabc {
+  background: url("../images/workout/theabsabc.png") center;
+  background-size: cover;
+}
+
+/* COMMUNITY */
+.community_bg {
+  background: url("../images/community/background.png") fixed;
+  background-size: cover;
+  margin: 0;
+  height: auto;
+}
+
+.community_section {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.community_section > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 40%;
+  margin: 0 30% 0 30%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.community_section > div > p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14pt;
+  text-shadow: #0b2e13;
+  width: 60%;
+  padding: 0 20% 10px 20%;
+}
+
+.community_section_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 70%;
+  height: auto;
+  margin: 0 15% 0 15%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.community_text_section {
+  width: 30%;
+  height: auto;
+  padding: 50px;
+}
+
+.community_text_section > p {
+  padding: 10px;
+  text-align: left;
+}
+
+.community_box_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 70%;
+  margin: 0 10% 0 0;
+}
+
+.community_box_section > div {
+  width: 280px;
+  height: 205px;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: dimgrey 0 0 2px 0;
+          box-shadow: dimgrey 0 0 2px 0;
+  margin: 10px 0 10px 0;
+}
+
+.community_box_link {
+  font-family: "AR DARLING", sans-serif;
+  font-size: 20pt;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  width: 98%;
+  padding-top: 50%;
+  height: 98px;
+}
+
+.community_box_link:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  color: black;
+  width: 98%;
+  text-shadow: none;
+  vertical-align: middle;
+}
+
+.community_box_beforeafter {
+  background: url("../images/community/beforeafter.png") center;
+  background-size: cover;
+}
+
+.community_box_workoutbuddies {
+  background: url("../images/community/workoutbuddies.png") center;
+  background-size: cover;
+}
+
+.community_box_diaries {
+  background: url("../images/community/diaries.png") center;
+  background-size: cover;
+}
+
+.community_box_meetups {
+  background: url("../images/community/meetups.png") center;
+  background-size: cover;
+}
+
+/* COMMUNITY ~~ BUDDIES */
+.buddy_bg {
+  background: url("../images/community/buddy_background.png") fixed;
+  background-size: cover;
+}
+
+.buddy_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 70%;
+  height: auto;
+  margin: 0 15% 0 15%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.buddy_section > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin: 20px;
+}
+
+.buddy_section_same {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.buddy_section_same_1 {
+  border-right: lightgrey 1px solid;
+}
+
+.buddy_section_same_2 {
+  border-left: lightgrey 1px solid;
+}
+
+.buddy_section_same > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+
+.buddy_section_same_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: lightgrey solid 1px;
+}
+
+.buddy_section_same_content > a {
+  width: 150px;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  border-radius: 100px;
+  background-size: cover;
+}
+
+.community_pescetarian {
+  background: url("../images/community/pescetarian.png") center;
+  margin-right: 100px;
+}
+
+.community_vegetarian {
+  background: url("../images/community/vegetarian.png") center;
+  margin-right: 100px;
+}
+
+.community_vegan {
+  background: url("../images/community/vegan.png") center;
+  margin-left: 100px;
+}
+
+.community_nospecialdiet {
+  background: url("../images/community/nospecialdiet.png") center;
+  margin-left: 100px;
+}
+
+.community_loseweight {
+  background: url("../images/community/loseweight.png") center;
+  margin-left: 100px;
+}
+
+.community_buildmuscles {
+  background: url("../images/community/buildmuscles.png") center;
+  margin-left: 100px;
+}
+
+.community_becomefit {
+  background: url("../images/community/becomefit.png") center;
+  margin-right: 100px;
+}
+
+.community_stayhealthy {
+  background: url("../images/community/stayhealthy.png") center;
+  margin-right: 100px;
+}
+
+/* MEETUPS */
+.meetups_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.meetups_section {
+  width: 90%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.upcomin_meetups {
+  width: 65%;
+}
+
+.upcoming_meetups_section {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  margin-left: 2%;
+  margin-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.upcoming_meetups_section > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.event_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  border-top: lightgrey 1px solid;
+  padding: 5px 0 5px 0;
+}
+
+.event_box {
+  width: 100%;
+  height: auto;
+  border: 1px lightgrey solid;
+  margin: 5px 0 10px 0;
+}
+
+.event_box_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+.event_box_details > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  text-align: left;
+}
+
+.event_what {
+  border-left: 1px solid lightgrey;
+  padding-left: 20px;
+}
+
+.event_details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.event_details > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 90%;
+}
+
+.event_date_and_time_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
+.event_date_and_time_info_1 {
+  width: 40%;
+  font-weight: bold;
+}
+
+.meetup_event_googlemaps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin: 20px;
+}
+
+.former_event_section {
+  width: 20%;
+  padding: 50px;
+  border-left: solid 1px lightgrey;
+  margin-left: 2%;
+  font-size: 10pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.former_event_section > p {
+  text-align: left;
+}
+
+.former_event {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 115px;
+  padding: 5px;
+}
+
+.former_event_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 70px;
+  padding-top: 40px;
+  border-top: lightgrey solid 1px;
+}
+
+.ticket_button {
+  /* ff3.6+ */
+  /* safari4+,chrome */
+  /* safari5.1+,chrome10+ */
+  /* opera 11.10+ */
+  /* ie10+ */
+  background: radial-gradient(ellipse at center, #d1e802 0%, #688000 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0);
+  /* ie6-9 */
+  width: 150px;
+  padding: 8px;
+  -webkit-box-shadow: dimgrey 0 0 5px 0;
+          box-shadow: dimgrey 0 0 5px 0;
+  color: black;
+  font-weight: bold;
+}
+
+.sold_out {
+  /* ff3.6+ */
+  /* safari4+,chrome */
+  /* safari5.1+,chrome10+ */
+  /* opera 11.10+ */
+  /* ie10+ */
+  background: radial-gradient(ellipse at center, #dc4009 0%, #6b0505 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0);
+  /* ie6-9 */
+  width: 150px;
+  padding: 8px;
+  -webkit-box-shadow: dimgrey 0 0 5px 0;
+          box-shadow: dimgrey 0 0 5px 0;
+  color: black;
+  font-weight: bold;
+}
+
+/* FOOTER */
 footer {
   height: auto;
   width: 100%;
