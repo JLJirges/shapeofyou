@@ -42,3 +42,23 @@ Route::get('profile', function () {
 Route::get('recipe', function () {
     return view('recipe');
 });
+
+Route::get('contact', function () {
+    return view('contact');
+});
+
+Route::get('jobs', function () {
+    return view('jobs');
+});
+
+Route::get('termsandconditions', function () {
+    return view('termsandconditions');
+});
+
+Route::get('faq', function () {
+    return view('faq');
+});
+
+Route::get('aboutus', function () {
+    return view('aboutus');
+});

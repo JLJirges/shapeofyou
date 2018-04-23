@@ -3,6 +3,11 @@ html, body {
   font-family: 'Century Schoolbook', sans-serif;
   height: auto;
   margin: 0;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a {
@@ -22,6 +27,8 @@ h2 {
   display: flex;
   justify-content: center;
   align-self: center;
+
+
 }
 
 h3 {
@@ -1019,6 +1026,96 @@ h3 {
   box-shadow: dimgrey 0 0 5px 0;
   color: black;
   font-weight: bold;
+}
+
+/* CONTACT */
+
+.contact_content {
+width: 100%;
+  margin-bottom: 2%;
+
+}
+
+.contact_info {
+
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+}
+
+/* JOBS */
+.jobs_content > p {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+/* TERMS AND CONDITIONS */
+.termsandconditions {
+  text-align: left;
+  width:60%;
+  margin: 5% 20% 5% 20%;
+}
+
+.termsandconditions > li {
+  margin-top: 2%;
+}
+
+/* FAQ */
+.faq_content {
+  width: 100%;
+
+}
+
+.faq {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: left;
+}
+
+.faq > li {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ABOUT US */
+.aboutus_content {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.aboutusteam {
+  margin-top: 50px;
+}
+
+.aboutusteam_profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px lightgrey solid;
+}
+
+.aboutusteam_profile > div {
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.aboutusteam_profile > img {
+  max-width: 300px;
+  max-height: 300px;
 }
 
 /* FOOTER */
