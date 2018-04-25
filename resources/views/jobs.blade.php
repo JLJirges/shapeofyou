@@ -49,15 +49,15 @@
 <footer>
     <div class="footer_content footer_content_1">
         <div class="footer_options">
-            <a href="#">About us</a>
-            <a href="#">Jobs</a>
-            <a href="#">Contact</a>
+            <a href="{{ url('aboutus') }}">About us</a>
+            <a href="{{ url('jobs') }}">Jobs</a>
+            <a href="{{ url('contact') }}">Contact</a>
         </div>
 
         <div class="footer_options">
-            <a href="#">Become a Member</a>
-            <a href="#">Terms and Conditions</a>
-            <a href="#">FAQ</a>
+            <a href="{{ url('register') }}">Become a Member</a>
+            <a href="{{ url('termsandconditions') }}">Terms and Conditions</a>
+            <a href="{{ url('faq') }}">FAQ</a>
         </div>
     </div>
     <div class="footer_content footer_content_2">

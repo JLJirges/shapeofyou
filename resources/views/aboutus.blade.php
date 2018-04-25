@@ -56,7 +56,7 @@
 
 
                     <div>
-                        <p>'Hello everybody! My name is Mira. I am one of your Bloggers and I love to give you some tips
+                        <p>'Hello Peeps! My name is Mira. I am one of your Bloggers and I love to give you some tips
                             and tricks for your body and to make the best out of your unique way of being!'</p>
                     </div>
                     <img alt="founder image" src="{{ asset('images\aboutus\Mira.jpg') }}">
@@ -64,8 +64,8 @@
                 <div class="aboutusteam_profile">
 
 
-                        <img alt="founder image" src="{{ asset('images\aboutus\Founder.jpg') }}">
-                   
+                    <img alt="founder image" src="{{ asset('images\aboutus\Lea.png') }}">
+
                     <div>
                         <p>'Listen everybody! Lea is the name, Blogger by heart and I'm here for you and your nutrition
                             troubles! Your trouble is my trouble. So do not be afraid of trouble makers, because like
@@ -77,21 +77,23 @@
 
 
                     <div>
-                        <p>'Heyhey, I am Corinna! Blogger Nr. 3 about your workout and muscle buildings! You'll see me at the events, running around and talking to everybody. Feel free to say hello, I'll be ver happy to have a nice conversation and to help you out with whatever you need!'</p>
+                        <p>'Heyhey, I am Corinna! Blogger Nr. 3 about your workout and muscle buildings! You'll see me
+                            at the events, running around and talking to everybody. Feel free to say hello, I'll be ver
+                            happy to have a nice conversation and to help you out with whatever you need!'</p>
                     </div>
 
-                        <img alt="founder image" src="{{ asset('images\aboutus\Corinna.png') }}">
+                    <img alt="founder image" src="{{ asset('images\aboutus\Corinna.png') }}">
 
                 </div>
                 <div class="aboutusteam_profile">
 
-                    <div class="aboutusteam_profile_founder">
-                        <img alt="founder image" src="{{ asset('images\aboutus\Founder.jpg') }}" width="200"
-                             height="200">
-                    </div>
+
+                        <img alt="founder image" src="{{ asset('images\aboutus\Joao.png') }}">
+
                     <div>
-                        <p>Hi, my name is Janet L. Jirges! I am the Designer and Programmer of SHAPE OF YOU.
-                            If you write us, calls us, find us - I'll be the one you'll be most likely to talk to!</p>
+                        <p>'Olá, Hello and Hallo! Nice to meet you, I'm João and I'm one of your fitness guides. You will
+                            mostly see my comments on fitness posts and workout diaries, same as on festivals. Fell free
+                            to have a nice conversation - I'm up for motivational talks!'</p>
                     </div>
 
                 </div>
@@ -115,7 +117,7 @@
 <footer>
     <div class="footer_content footer_content_1">
         <div class="footer_options">
-            <a href="#">About us</a>
+            <a href="{{ url('aboutus') }}">About us</a>
             <a href="{{ url('jobs') }}">Jobs</a>
             <a href="{{ url('contact') }}">Contact</a>
         </div>
@@ -123,7 +125,7 @@
         <div class="footer_options">
             <a href="{{ url('register') }}">Become a Member</a>
             <a href="{{ url('termsandconditions') }}">Terms and Conditions</a>
-            <a href="#">FAQ</a>
+            <a href="{{ url('faq') }}">FAQ</a>
         </div>
     </div>
     <div class="footer_content footer_content_2">
@@ -140,6 +142,7 @@
                 </span>
         </div>
     </div>
+
 </footer>
 </body>
 </html>

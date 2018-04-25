@@ -9,139 +9,14 @@
 
 
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <style>
-        html, body {
-            background-color: #fff;
-            font-family: 'Century Schoolbook', sans-serif;
-            height: auto;
-            margin: 0;
-        }
 
-        a {
-            text-decoration: none;
-        }
-
-        .top-middle {
-            position: fixed;
-            right: 0;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background-color: white;
-            box-shadow: grey 2px 1px 5px 2px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo_header {
-            width: 110px;
-            height: 110px;
-            vertical-align: middle;
-            margin-top: 50px;
-            background-color: white;
-            border-radius: 60px;
-            box-shadow: grey 0 7px 7px -4px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 55px 0 55px;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: .2rem;
-            text-decoration: none;
-            text-transform: uppercase;
-            width: 100%;
-        }
-
-        .links > a:hover {
-            color: lightgrey;
-        }
-
-        /* REGISTER */
-
-        .register_content {
-            width: 100%;
-            height: 100vh;
-            background: url("../assets/images/register/register_bg.png") fixed;
-            background-size: cover;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        form {
-            width: 25%;
-            height: auto;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: black 0 0 1px 0;
-            border: 3px black solid;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            margin: 10px;
-
-        }
-
-        .register_form > div {
-            display: flex;
-            justify-content: space-around;
-            margin: 5px;
-        }
-
-        .register_form > div > div {
-            display: flex;
-            flex-direction: column;
-
-        }
-
-        /*  FOOTER */
-        footer {
-            height: auto;
-            width: 100%;
-            background-color: white;
-            border-top: 1px lightgrey solid;
-        }
-
-        .footer_content_1 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            width: 50%;
-            margin: 1% 25% 1% 25%;
-        }
-
-        .footer_options {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 5px;
-        }
-
-        .footer_options > a {
-            color: black;
-            font-weight: inherit;
-            padding: 3px;
-            font-size: 10pt;
-        }
-
-        .footer_content_2 {
-            border-top: lightgrey 1px solid;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1%;
-        }
-
-        .footer_follow_images {
-            display: flex;
-        }
 
     </style>
 </head>
@@ -175,14 +50,14 @@
         <span>*Fortgot Password</span>
     </form>
     <form class="register_form" method="post" action="">
-        <div>
+        <div class="form-group">
             <div>
                 <label>First Name</label>
-                <input type="text" name="firstname" placeholder="Write your first name...">
+                <input class="form-control" type="text" name="firstname" placeholder="Write your first name...">
                 <label>Last Name</label>
-                <input type="text" name="lastname" placeholder="Write your last name...">
+                <input class="form-control" type="text" name="lastname" placeholder="Write your last name...">
                 <label>Email</label>
-                <input type="email" name="email" placeholder="Your.email@example.com">
+                <input class="form-control" type="email" name="email" placeholder="Your.email@example.com">
             </div>
             <div>
                 <label>Username</label>
@@ -206,15 +81,15 @@
 <footer>
     <div class="footer_content footer_content_1">
         <div class="footer_options">
-            <a href="#">About us</a>
-            <a href="#">Jobs</a>
-            <a href="#">Contact</a>
+            <a href="{{ url('aboutus') }}">About us</a>
+            <a href="{{ url('jobs') }}">Jobs</a>
+            <a href="{{ url('contact') }}">Contact</a>
         </div>
 
         <div class="footer_options">
-            <a href="#">Become a Member</a>
-            <a href="#">Terms and Conditions</a>
-            <a href="#">FAQ</a>
+            <a href="{{ url('register') }}">Become a Member</a>
+            <a href="{{ url('termsandconditions') }}">Terms and Conditions</a>
+            <a href="{{ url('faq') }}">FAQ</a>
         </div>
     </div>
     <div class="footer_content footer_content_2">
@@ -222,8 +97,8 @@
             <span>Follow us on</span>
         </div>
         <div class="footer_follow footer_follow_images">
-            <a href="#"><img alt="share instagram" src="../assets/images/headerfooter/share_instagram.png"></a>
-            <a href="#"><img alt="share instagram" src="../assets/images/headerfooter/share_facebook.png"></a>
+            <a href="#"><img alt="share instagram" src="{{ asset('images/headerfooter/share_instagram.png') }}"></a>
+            <a href="#"><img alt="share instagram" src="{{ asset('images/headerfooter/share_facebook.png') }}"></a>
         </div>
         <div class="follow_footer">
                 <span>

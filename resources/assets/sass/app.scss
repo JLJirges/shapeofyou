@@ -28,7 +28,6 @@ h2 {
   justify-content: center;
   align-self: center;
 
-
 }
 
 h3 {
@@ -462,7 +461,7 @@ h3 {
 }
 
 /* WORKOUT */
-.workout_bg{
+.workout_bg {
   background: url("../images/workout/workout_bg2.png") fixed;
   background-size: cover;
   margin: 0;
@@ -534,10 +533,8 @@ h3 {
   margin: 10px 0 10px 0;
 }
 
-
-
 .box_indoor {
-  background: url("../images/workout/indoor.png")center;
+  background: url("../images/workout/indoor.png") center;
   background-size: cover;
 }
 
@@ -577,7 +574,7 @@ h3 {
 }
 
 /* WORKOUT ~~ BLOGS */
-.workout_blog_bg{
+.workout_blog_bg {
   background: url("../images/workout/workout_bg.png") fixed;
   background-size: cover;
   margin: 0;
@@ -623,7 +620,6 @@ h3 {
   background: url("../images/workout/theabsabc.png") center;
   background-size: cover;
 }
-
 
 /* COMMUNITY */
 
@@ -744,7 +740,7 @@ h3 {
 }
 
 /* COMMUNITY ~~ BUDDIES */
-.buddy_bg{
+.buddy_bg {
   background: url("../images/community/buddy_background.png") fixed;
   background-size: cover;
 
@@ -847,7 +843,6 @@ h3 {
   background: url("../images/community/stayhealthy.png") center;
   margin-right: 100px;
 }
-
 
 /* MEETUPS */
 .meetups_title {
@@ -1028,10 +1023,167 @@ h3 {
   font-weight: bold;
 }
 
+/* REGISTER */
+
+.register_content {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/register/register_bg.png") fixed;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register_form, .login_form {
+  width: 25%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: black 0 0 1px 0;
+  border: 3px black solid;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+}
+
+.register_form > div {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+}
+
+.register_form > div > div {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* PROFILE */
+
+/* NAVIGATION */
+
+.profile_section {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+.profile_info_section {
+  width: 65%;
+  height: auto;
+}
+
+.profile_navigation {
+  width: 10%;
+  padding: 50px;
+  border: solid 1px lightgrey;
+  margin-left: 2%;
+
+  font-size: 10pt;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: grey 0 0 4px 0;
+}
+
+.profile_navigation_sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 5px;
+
+}
+
+.profile_navigation__section_box {
+  display: flex;
+  flex-direction: column;
+
+  border-bottom: lightgrey solid 1px;
+  border-top: lightgrey solid 1px;
+}
+
+.profile_personal_section > img {
+  max-width: 100px;
+  max-height: 100px;
+  padding: 5px;
+}
+
+.profile_personal_section > p {
+  text-align: center;
+}
+
+/* ABOUT YOU */
+.profile_section_myprofile {
+  width: 100%;
+  border-top: lightgrey solid 1px;
+  margin-top: 2%;
+}
+
+/* FIX PROFILE INFO */
+
+.profile_picture {
+  max-width: 150px;
+  max-height: 300px;
+  border-radius: 70px;
+  box-shadow: 0 1px 10px 0 grey;
+}
+
+.profile_info_section {
+  width: 65%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile_info_section_images {
+
+  display: flex;
+  justify-content: space-around;
+  height: 30%;
+  /*box-shadow: 0 0 4px 0 gray;
+  border: 1px solid lightgrey;*/
+}
+
+.profile_info_section_images > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.profile_section_personal {
+ /* box-shadow: 0 0 4px 0 gray;
+  border: 1px solid lightgrey;*/
+  border-top: 1px solid lightgrey;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.profile_info_section_personal_details {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 20% 0 20%;
+  width: 60%;
+  text-align: left;
+}
+
 /* CONTACT */
 
 .contact_content {
-width: 100%;
+  width: 100%;
   margin-bottom: 2%;
 
 }
@@ -1054,7 +1206,7 @@ width: 100%;
 /* TERMS AND CONDITIONS */
 .termsandconditions {
   text-align: left;
-  width:60%;
+  width: 60%;
   margin: 5% 20% 5% 20%;
 }
 

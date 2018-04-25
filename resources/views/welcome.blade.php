@@ -43,15 +43,16 @@
             <div>
                 <h3>Choose your goal!</h3>
                 <div class="home_section_goals">
-                    <img alt="lose weight" src="{{ asset('images/lose_weight_3.png') }}" width="120" height="110">
-                    <img alt="become fit" src="{{ asset('images/become_fit_2.png') }}" width="120" height="110">
-                    <img alt="lose weight" src="{{ asset('images/build_muscles_2.png') }}" width="120" height="110">
-                    <img alt="become fit" src="{{ asset('images/healthy_lifestyle_2.png') }}" width="120" height="110">
+                    <img alt="lose weight" src="{{ asset('images/lose_weight_3.png') }}" width="110" height="110">
+                    <img alt="become fit" src="{{ asset('images/become_fit_2.png') }}" width="110" height="110">
+                    <img alt="lose weight" src="{{ asset('images/build_muscles_2.png') }}" width="110" height="110">
+                    <img alt="become fit" src="{{ asset('images/healthy_lifestyle_2.png') }}" width="110" height="110">
                 </div>
                 <div class="goal_info">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam architecto dolor error
-                        incidunt ipsum itaque, iure, iusto non obcaecati officiis, quas quo repudiandae vel velit? Nobis
-                        obcaecati tempore velit!
+                    <p>Whatever your personal goal might be - we are here to help you! Lose weight, improve stamina,
+                        build muscles or find your way to a healthy/healthier lifestyle.
+                        It is your desicion, your goal, your achievements -
+                        SHAPE OF YOU!
                     </p>
 
                 </div>
@@ -74,7 +75,7 @@
             are always there to help you out - online and in person!
             What do you think? We think, you should:
         </p>
-        <a href="#">START NOW</a>
+        <a href="{{ url('register') }}">START NOW</a>
     </div>
 </div>
 
@@ -103,7 +104,7 @@
                 are always there to help you out - online and in person!
                 What do you think? We think, you should:
             </p>
-            <a href="#">START NOW</a>
+            <a href="{{ url('register') }}">START NOW</a>
         </div>
     </div>
 </div>
