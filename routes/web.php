@@ -62,3 +62,7 @@ Route::get('faq', function () {
 Route::get('aboutus', function () {
     return view('aboutus');
 });
+
+Route::get('blog', function () {
+    return view('blog');
+});

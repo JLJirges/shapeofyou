@@ -93,8 +93,8 @@
 
             <div class="profile_section_personal">
                 <div>
-                <p>MOTIVATION QUOTE</p>
-                <p>'If you can dream it, you can do it!'</p>
+                    <p>MOTIVATION QUOTE</p>
+                    <p>'If you can dream it, you can do it!'</p>
                 </div>
 
                 <div class="profile_info_section_personal_details">
@@ -113,25 +113,89 @@
 
         </div>
     </div>
+    <div class="profile_section profile_section_2">
+        <div class="profile_navigation_two">
 
-    <div class="profile_section_myprofile">
-        <div class="profile_section">
-            <div class="profile_navigation">
+            <div class="profile_navigation_sections profile_navigation__section_box">
+                <p>My Diary</p>
+            </div>
+            <div class="profile_navigation_sections profile_navigation__section_box">
+                <p>My Before/After-Story</p>
+            </div>
+            <div class="profile_navigation_sections profile_navigation__section_box">
+                <p>My Motivation Letters</p>
+            </div>
+        </div>
 
-                <div class="profile_navigation_sections profile_navigation__section_box">
-                    <p>Write Diary</p>
-                </div>
-                <div class="profile_navigation_sections profile_navigation__section_box">
-                    <p>Before/After Story</p>
-                </div>
-                <div class="profile_navigation_sections profile_navigation__section_box">
-                    <p>Motivation Letter</p>
+        <div class="profile_diary_section">
+
+            <h3>Write a new Diary Entry</h3>
+            <form class="diary_form" method="post" enctype="multipart/form-data">
+                <label>Write a title</label>
+                <input type="text" row="2"><br>
+                <label>Write your entry</label><br>
+                <textarea name="comment" form="usrform">Time to write a diary...</textarea>
+                <label>Upload Image</label><br>
+                <input type="file" name="DiaryfileToUpload" id="DiaryfileToUpload">
+                <input type="submit" value="Post Diary Entry" name="submit">
+            </form>
+
+
+        </div>
+    </div>
+
+    <div class="profile_diary_entry_section">
+
+        <div class="old_diary_entry">
+            <div class="old_diary_entry_setting">
+                <span>Date</span>
+                <span>delete</span>
+            </div>
+
+            <div class="profile_old_diary_entry_box">
+                <h4>Diary Entry Title</h4>
+                <div>
+                    <img src="{{('../images/workout/workout_bg.png')}}" alt="diray image">
+
+                    <div class="old_diary_entry_text">
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                            quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
+                    </div>
                 </div>
             </div>
+
+        </div>
     </div>
 
 
 </div>
+
 
 
 <footer>

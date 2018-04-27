@@ -76,7 +76,7 @@
         </div>
         <div class="community_box_section">
             <div class="community_box_beforeafter">
-                <a class="community_box_link" href="#">BEFORE/ AFTER STORIES</a>
+                <a class="community_box_link" href="{{ url('blog') }}">BEFORE/ AFTER STORIES</a>
             </div>
             <div class="community_box_workoutbuddies">
                 <a class="community_box_link" href="#">WORKOUT BUDDIES</a>

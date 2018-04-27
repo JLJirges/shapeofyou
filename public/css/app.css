@@ -1298,6 +1298,13 @@ h3 {
   margin-top: 2%;
 }
 
+.profile_section_2 {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .profile_info_section {
   width: 65%;
   height: auto;
@@ -1357,7 +1364,7 @@ h3 {
 }
 
 /* ABOUT YOU */
-.profile_section_myprofile {
+.profile_section_navigation {
   width: 100%;
   border-top: lightgrey solid 1px;
   margin-top: 2%;
@@ -1435,6 +1442,89 @@ h3 {
   margin: 0 20% 0 20%;
   width: 60%;
   text-align: left;
+}
+
+.profile_section_myprofile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+}
+
+.profile_section_myprofile > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/* PROFILE PART TWO */
+.profile_navigation_two {
+  width: 10%;
+  height: auto;
+  padding: 50px;
+  border: solid 1px lightgrey;
+  margin-left: 2%;
+  font-size: 10pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: grey 0 0 4px 0;
+          box-shadow: grey 0 0 4px 0;
+}
+
+/* PROFILE DIARY */
+.profile_diary_section {
+  width: 65%;
+}
+
+.old_diary_entry {
+  padding: 10px;
+  border: 1px solid lightgrey;
+  max-width: 60%;
+  height: auto;
+  margin: 4% 20% 1% 20%;
+  -webkit-box-shadow: grey 0 5px 5px 0;
+          box-shadow: grey 0 5px 5px 0;
+  background: url("../images/diary/diaryentry_BG.png") no-repeat;
+  background-size: cover;
+}
+
+.profile_old_diary_entry_box {
+  max-width: 96%;
+  margin: 2%;
+}
+
+.old_diary_entry_setting {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  margin-top: 2%;
+}
+
+.profile_old_diary_entry_box > div > img {
+  max-width: 800px;
+  max-height: 400px;
+}
+
+.old_diary_entry_text {
+  text-align: left;
+  font-family: "Informal Roman", 'Century Schoolbook', sans-serif;
+}
+
+.old_diary_entry_text > p {
+  font-size: 18pt;
+  font-weight: lighter;
 }
 
 /* CONTACT */
@@ -1543,6 +1633,102 @@ h3 {
 .aboutusteam_profile > img {
   max-width: 300px;
   max-height: 300px;
+}
+
+/* BLOG */
+.blog_section {
+  width: 65%;
+}
+
+.blog_entry {
+  padding: 100px 10px 10px 10px;
+  border: 1px solid lightgrey;
+  max-width: 60%;
+  height: auto;
+  margin: 2% 20% 1% 20%;
+  -webkit-box-shadow: grey 0 5px 5px 0;
+          box-shadow: grey 0 5px 5px 0;
+  background: url("../images/diary/diaryentry_BG.png") no-repeat;
+  background-size: cover;
+}
+
+.blog_box {
+  max-width: 96%;
+  margin: 2%;
+}
+
+.blog_box > div > img {
+  max-width: 800px;
+  max-height: 400px;
+}
+
+.blog_text {
+  text-align: justify;
+  font-family: 'Century Schoolbook', sans-serif;
+}
+
+.blog_text > p {
+  font-size: 14pt;
+  font-weight: lighter;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.blog_text > img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  max-width: 850px;
+  height: auto;
+}
+
+.blog_abouttheauthor {
+  width: 40%;
+  -webkit-box-shadow: 0 1px 5px 0 lightgrey;
+          box-shadow: 0 1px 5px 0 lightgrey;
+  border-radius: 5px;
+  height: auto;
+  padding: 20px;
+  margin: 2% 30% 2% 30%;
+  background: url("../images/register/register_bg.png") fixed;
+  background-size: cover;
+}
+
+.blog_abouttheauthor_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.blog_abouttheauthor_content > img {
+  max-width: 250px;
+  height: auto;
+}
+
+.blog_abouttheauthor_content_info > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.blog_abouttheauthor_content_bio {
+  text-align: justify;
+  padding: 20px;
+}
+
+.blog_abouttheauthor_content > div {
+  width: 300px;
 }
 
 /* FOOTER */
