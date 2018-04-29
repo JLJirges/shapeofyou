@@ -48,7 +48,7 @@
                     <div>
                         <p>'Hi, my name is Janet L. Jirges! I am 24 years old and the Founder & Designer + Programmer of
                             SHAPE OF YOU.
-                            If you write us, call us, find us - I'll be the one you'll be most likely to talk to!'</p>
+                            If you write us, call us, find us - I'll be the one you'll most likely to talk to!'</p>
                     </div>
 
                 </div>
@@ -68,7 +68,8 @@
 
                     <div>
                         <p>'Listen everybody! Lea is the name, Blogger by heart and I'm here for you and your nutrition
-                            troubles! Your trouble is my trouble. So do not be afraid of trouble makers, because like
+                            troubles! Your trouble is my trouble. So do not be afraid of trouble makers, because it's
+                            like
                             with carbs - there are bad and good types!'</p>
                     </div>
 
@@ -77,7 +78,8 @@
 
 
                     <div>
-                        <p>'Heyhey, I am Corinna! Blogger Nr. 3 about your workout and muscle buildings! You'll see me
+                        <p>'Heyhey, I am Corinna! Nutrition Guide and Blogger Nr. 3 about your workout and muscle
+                            buildings! You'll see me
                             at the events, running around and talking to everybody. Feel free to say hello, I'll be ver
                             happy to have a nice conversation and to help you out with whatever you need!'</p>
                     </div>
@@ -88,26 +90,40 @@
                 <div class="aboutusteam_profile">
 
 
-                        <img alt="founder image" src="{{ asset('images\aboutus\Joao.png') }}">
+                    <img alt="founder image" src="{{ asset('images\aboutus\Joao.png') }}">
 
                     <div>
-                        <p>'Olá, Hello and Hallo! Nice to meet you, I'm João and I'm one of your fitness guides. You will
+                        <p>'Olá, Hello and Hallo! Nice to meet you, I'm João and I'm one of your fitness guides. You
+                            will
                             mostly see my comments on fitness posts and workout diaries, same as on festivals. Fell free
                             to have a nice conversation - I'm up for motivational talks!'</p>
                     </div>
 
                 </div>
+
                 <div class="aboutusteam_profile">
 
 
                     <div>
-                        <p>Hi, my name is Janet L. Jirges! I am the Designer and Programmer of SHAPE OF YOU.
-                            If you write us, calls us, find us - I'll be the one you'll be most likely to talk to!</p>
+                        <p>'So this is it!? Are you sure you're ready to shape your body? Because once you've started, I
+                            swear I won't stop pushing you until you made the best version of yourself possible! Still
+                            ready to go? Follow me and SHAPE OF YOU to SHAPE YOUR BODY! By the way, call me Remus!'</p>
                     </div>
-                    <div class="aboutusteam_profile_founder">
-                        <img alt="founder image" src="{{ asset('images\aboutus\Founder.jpg') }}" width="200"
-                             height="200">
+
+                    <img alt="founder image" src="{{ asset('images\aboutus\Remus.png') }}">
+
+                </div>
+                <div class="aboutusteam_profile">
+
+
+                    <img alt="founder image" src="{{ asset('images\aboutus\Nina.png') }}">
+
+                    <div>
+                        <p>'Are you going to join some of our festivals? I hope so, because I plan thoe events for you.
+                            My name is Nina and if you want to attend one of the most amazing events of your life -
+                            visit one of mine, or with other words: Shape of You - Events!'</p>
                     </div>
+
                 </div>
             </div>
         </div>

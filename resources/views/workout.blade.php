@@ -54,28 +54,28 @@
 
         <div class="workout_box_section">
             <div class="box_indoor">
-                <a class="workout_box_link" href="#">INDOOR</a>
+                <a class="workout_box_link" href="{{url('overview')}}">INDOOR</a>
             </div>
             <div class="box_outdoor">
-                <a class="box_link" href="#">OUTDOOR</a>
+                <a class="box_link" href="{{url('overview')}}">OUTDOOR</a>
             </div>
             <div class="box_stretch">
-                <a class="workout_box_link" href="#">STRETCHING</a>
+                <a class="workout_box_link" href="{{url('overview')}}">STRETCHING</a>
             </div>
             <div class="box_tenminutes">
-                <a class="box_link" href="#">10 MINUTES WORKOUT</a>
+                <a class="box_link" href="{{url('overview')}}">10 MINUTES WORKOUT</a>
             </div>
             <div class="box_partnerworkout">
-                <a class="workout_box_link" href="#">PARTNER WORKOUT</a>
+                <a class="workout_box_link" href="{{url('overview')}}">PARTNER WORKOUT</a>
             </div>
             <div class="box_yoga">
-                <a class="box_link" href="#">YOGA</a>
+                <a class="box_link" href="{{url('overview')}}">YOGA</a>
             </div>
             <div class="box_workoutwithequipment">
-                <a class="workout_box_link" href="#">POWER WORKOUT WITH EQUIPMENT</a>
+                <a class="workout_box_link" href="{{url('overview')}}">POWER WORKOUT WITH EQUIPMENT</a>
             </div>
             <div class="box_withoutequipment">
-                <a class="box_link" href="#">WITHOUT EQUIPMENT</a>
+                <a class="box_link" href="{{url('overview')}}">WITHOUT EQUIPMENT</a>
             </div>
         </div>
     </div>
@@ -85,28 +85,28 @@
        </div>
         <div class="workout_box_section">
             <div class="box_whatequipment">
-                <a class="workout_box_link" href="#">WHAT EQUIPMENT</a>
+                <a class="workout_box_link" href="{{url('blog')}}">WHAT EQUIPMENT</a>
             </div>
             <div class="box_thepowerofbreaks">
-                <a class="workout_box_link" href="#">THE POWER OF BREAKS</a>
+                <a class="workout_box_link" href="{{url('blog')}}">THE POWER OF BREAKS</a>
             </div>
             <div class="box_doyouevenbmi">
-                <a class="workout_box_link" href="#">DO YOU EVEN BMI</a>
+                <a class="workout_box_link" href="{{url('blog')}}">DO YOU EVEN BMI</a>
             </div>
             <div class="box_beachbodychallenge">
-                <a class="workout_box_link" href="#">BEACH BODY CHALLENGE</a>
+                <a class="workout_box_link" href="{{url('blog')}}">BEACH BODY CHALLENGE</a>
             </div>
             <div class="box_listentoyourself">
-                <a class="workout_box_link" href="#">LISTEN TO YOURSELF</a>
+                <a class="workout_box_link" href="{{url('blog')}}">LISTEN TO YOURSELF</a>
             </div>
             <div class="box_theperfectass">
-                <a class="workout_box_link" href="#">THE PERFECT ASS</a>
+                <a class="workout_box_link" href="{{url('blog')}}">THE PERFECT ASS</a>
             </div>
             <div class="box_bodyshapes">
-                <a class="workout_box_link" href="#">BODYSHAPES</a>
+                <a class="workout_box_link" href="{{url('blog')}}">BODYSHAPES</a>
             </div>
             <div class="box_theabsabc">
-                <a class="workout_box_link" href="#">THE ABS - ABC</a>
+                <a class="workout_box_link" href="{{url('blog')}}">THE ABS - ABC</a>
             </div>
         </div>
 

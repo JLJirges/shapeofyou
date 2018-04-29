@@ -208,7 +208,7 @@ h3 {
 
 /* RECIPES */
 
-.entrytext {
+.superfood_text {
   width: 60%;
 
   margin: 2% 20% 2% 20%;
@@ -282,7 +282,7 @@ h3 {
   margin-left: 1%;
   margin-right: 1%;
 
-  border-bottom: solid lightgrey 1px;
+  /*border-bottom: solid lightgrey 1px;*/
 
 }
 
@@ -388,7 +388,8 @@ h3 {
   font-weight: bold;
 }
 
-/* BLOGS */
+/* SUPERFOOD BLOGS */
+
 .superfood_blog_bg {
   background: url("../images/superfood/superfood_bg.png") fixed;
   background-size: cover;
@@ -418,6 +419,11 @@ h3 {
   align-items: center;
   box-shadow: dimgrey 0 0 2px 0;
   margin: 10px;
+}
+
+.superfood_blog_section {
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .superfood_box_nuts {
@@ -457,6 +463,26 @@ h3 {
 
 .superfood_box_gowiththeseason {
   background: url("../images/superfood/gowiththeseason.png") center;
+  background-size: cover;
+}
+
+.superfood_box_vegan {
+  background: url("../images/community/vegan.png") center;
+  background-size: cover;
+}
+
+.superfood_box_vegetarian {
+  background: url("../images/community/vegetarian.png") center;
+  background-size: cover;
+}
+
+.superfood_box_pescetarian {
+  background: url("../images/community/pescetarian.png") center;
+  background-size: cover;
+}
+
+.superfood_box_nospecialdiet {
+  background: url("../images/community/nospecialdiet.png") center;
   background-size: cover;
 }
 
@@ -1076,7 +1102,12 @@ h3 {
   margin-top: 2%;
 }
 
-.profile_section_2{
+.profile_section_personal_motivation_quote {
+  font-family: "Informal Roman", 'Century Schoolbook', sans-serif;
+  font-size: 20pt;
+}
+
+.profile_section_2 {
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
   padding-top: 50px;
@@ -1170,8 +1201,8 @@ h3 {
 }
 
 .profile_section_personal {
- /* box-shadow: 0 0 4px 0 gray;
-  border: 1px solid lightgrey;*/
+  /* box-shadow: 0 0 4px 0 gray;
+   border: 1px solid lightgrey;*/
   border-top: 1px solid lightgrey;
   height: 60%;
   display: flex;
@@ -1189,7 +1220,7 @@ h3 {
 
 .profile_section_myprofile {
   display: flex;
-  max-width:100%;
+  max-width: 100%;
 }
 
 .profile_section_myprofile > div {
@@ -1215,19 +1246,17 @@ h3 {
 
 /* PROFILE DIARY */
 
-
 .profile_diary_section {
-width: 65%;
+  width: 65%;
 
 }
-
 
 .old_diary_entry {
   padding: 10px;
   border: 1px solid lightgrey;
   max-width: 60%;
   height: auto;
-  margin: 4% 20% 1% 20%;
+  margin: 4% 20% 4% 20%;
 
   box-shadow: grey 0 5px 5px 0;
 
@@ -1262,6 +1291,64 @@ width: 65%;
   font-size: 18pt;
   font-weight: lighter;
 }
+
+.diary_comments {
+  width: 60%;
+  margin: 1% 20% 2% 20%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-top: solid 2px lightgrey;
+  border-bottom: solid 2px lightgrey;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.diary_comments_interaction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.diary_comments_details {
+  border: 1px solid lightgrey;
+  height: auto;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.diary_comments_details_user {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  padding: 10px;
+}
+
+.old_diary_entries {
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+
+.profile_diary_section_loadolddiaries {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.profile_diary_section_loadolddiaries > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  border-top: lightgrey solid 1px;
+  border-bottom: lightgrey solid 1px;
+}
+
+.profile_diary_section_loadolddiaries_details:hover {
+  background: url("../images/background_colour.png") no-repeat;
+}
+
 /* CONTACT */
 
 .contact_content {
@@ -1347,6 +1434,10 @@ width: 65%;
   margin-bottom: 20px;
 }
 
+.aboutusteam_profile > div > p {
+  text-align: left;
+}
+
 .aboutusteam_profile > img {
   max-width: 300px;
   max-height: 300px;
@@ -1421,20 +1512,28 @@ width: 65%;
   height: auto;
 }
 
-.blog_abouttheauthor_content_info > div{
-display: flex;
+.blog_abouttheauthor_content_info > div {
+  display: flex;
   justify-content: space-between;
   width: 100%;
 
 }
 
-.blog_abouttheauthor_content_bio{
+.blog_abouttheauthor_content_bio {
   text-align: justify;
   padding: 20px;
 }
 
 .blog_abouttheauthor_content > div {
   width: 300px;
+}
+
+/* OVERVIEW */
+.overview_content {
+  max-width: 60%;
+  margin: 2% 20% 2% 20%;
+
+  text-align: justify;
 }
 
 /* FOOTER */

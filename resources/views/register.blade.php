@@ -52,7 +52,7 @@
     <form class="register_form" method="post" action="">
         <div class="form-group">
             <div>
-                <label>First Name</label>
+                <label class="label-info">First Name</label>
                 <input class="form-control" type="text" name="firstname" placeholder="Write your first name...">
                 <label>Last Name</label>
                 <input class="form-control" type="text" name="lastname" placeholder="Write your last name...">
@@ -61,7 +61,7 @@
             </div>
             <div>
                 <label>Username</label>
-                <input type="text" name="username" placeholder="Choose a Username">
+                <input type="text" name="username" placeholder="Choose a Username" class="col-sm-6">
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Choose a Password">
                 <label>Re-enter Password</label>
@@ -69,8 +69,9 @@
             </div>
         </div>
         <div>
+            <label>
             <input type="checkbox" name="agb">
-            <label>I've read and agree to the AGB</label>
+            I've read and agree to the AGB</label>
         </div>
         <button>Register</button>
     </form>

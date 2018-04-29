@@ -94,7 +94,7 @@
             <div class="profile_section_personal">
                 <div>
                     <p>MOTIVATION QUOTE</p>
-                    <p>'If you can dream it, you can do it!'</p>
+                    <p class="profile_section_personal_motivation_quote">'If you can dream it, you can do it!'</p>
                 </div>
 
                 <div class="profile_info_section_personal_details">
@@ -149,11 +149,12 @@
         <div class="old_diary_entry">
             <div class="old_diary_entry_setting">
                 <span>Date</span>
+                <h4>Diary Entry Title</h4>
                 <span>delete</span>
             </div>
 
             <div class="profile_old_diary_entry_box">
-                <h4>Diary Entry Title</h4>
+
                 <div>
                     <img src="{{('../images/workout/workout_bg.png')}}" alt="diray image">
 
@@ -191,11 +192,139 @@
             </div>
 
         </div>
+        <div class="diary_comments">
+            <div class="diary_comments_interaction">
+                <h5>Read Comments</h5>
+                <h5>Write a Comment</h5>
+                <h5>Hide Comments</h5>
+            </div>
+            <div class="diary_comments_details">
+                <div class="diary_comments_details_user">
+                    <span>Date</span>
+                    <span>Username</span>
+                    <span>Delete</span>
+                    <span>Report Comment/User</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
+            </div>
+            <div class="diary_comments_details">
+                <div class="diary_comments_details_user">
+                    <span>Date</span>
+                    <span>Username</span>
+                    <span>Delete</span>
+                    <span>Report Comment/User</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
+            </div>
+            <div class="diary_comments_details">
+                <div class="diary_comments_details_user">
+                    <span>Date</span>
+                    <span>Username</span>
+                    <span>Delete</span>
+                    <span>Report Comment/User</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
+            </div>
+            <div class="diary_comments_details">
+                <div class="diary_comments_details_user">
+                    <span>Date</span>
+                    <span>Username</span>
+                    <span>Delete</span>
+                    <span>Report Comment/User</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
+            </div>
+            <div class="diary_comments_details">
+                <div class="diary_comments_details_user">
+                    <span>Date</span>
+                    <span>Username</span>
+                    <span>Delete</span>
+                    <span>Report Comment/User</span>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
+            </div>
+        </div>
+    </div>
+    <div class="old_diary_entries">
+        <div class="profile_diary_section_loadolddiaries">
+            <div class="profile_diary_section_loadolddiaries_details">
+                <span>Date</span>
+                <h4>Diary Entry Title</h4>
+                <span>Read Entry</span>
+                <span>delete</span>
+
+            </div>
+        </div>
+        <div class="profile_diary_section_loadolddiaries">
+            <div class="profile_diary_section_loadolddiaries_details">
+                <span>Date</span>
+                <h4>Diary Entry Title</h4>
+                <span>Read Entry</span>
+                <span>delete</span>
+
+            </div>
+        </div>
+        <div class="profile_diary_section_loadolddiaries">
+            <div class="profile_diary_section_loadolddiaries_details">
+                <span>Date</span>
+                <h4>Diary Entry Title</h4>
+                <span>Read Entry</span>
+                <span>delete</span>
+
+            </div>
+        </div>
+        <div class="profile_diary_section_loadolddiaries">
+            <div class="profile_diary_section_loadolddiaries_details">
+                <span>Date</span>
+                <h4>Diary Entry Title</h4>
+                <span>Read Entry</span>
+                <span>delete</span>
+
+            </div>
+        </div>
     </div>
 
-
 </div>
-
 
 
 <footer>

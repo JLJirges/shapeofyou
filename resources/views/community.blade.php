@@ -76,16 +76,16 @@
         </div>
         <div class="community_box_section">
             <div class="community_box_beforeafter">
-                <a class="community_box_link" href="{{ url('blog') }}">BEFORE/ AFTER STORIES</a>
+                <a class="community_box_link" href="{{ url('overview') }}">BEFORE/ AFTER STORIES</a>
             </div>
             <div class="community_box_workoutbuddies">
-                <a class="community_box_link" href="#">WORKOUT BUDDIES</a>
+                <a class="community_box_link" href="{{url('overview')}}">WORKOUT BUDDIES</a>
             </div>
             <div class="community_box_diaries">
-                <a class="community_box_link" href="#">WORKOUT DIARIES</a>
+                <a class="community_box_link" href="{{url('overview')}}">WORKOUT DIARIES</a>
             </div>
             <div class="community_box_meetups">
-                <a class="community_box_link" href="#">MEETUPS</a>
+                <a class="community_box_link" href="{{url('overview')}}">MEETUPS</a>
             </div>
         </div>
     </div>
@@ -98,20 +98,20 @@
                 <h4>Find people with the same diet</h4>
                 <div>
                     <div class="buddy_section_same_content">
-                        <a href="#" class="community_vegetarian"></a>
+                        <a href="{{url('overview')}}" class="community_vegetarian"></a>
                         <span>VEGETARIAN</span>
                     </div>
                     <div class="buddy_section_same_content">
                         <span>VEGAN</span>
-                        <a href="#" class="community_vegan"></a>
+                        <a href="{{url('overview')}}" class="community_vegan"></a>
                     </div>
                     <div class="buddy_section_same_content">
-                        <a href="#" class="community_pescetarian"></a>
+                        <a href="{{url('overview')}}" class="community_pescetarian"></a>
                         <span>PESCETARIAN</span>
                     </div>
                     <div class="buddy_section_same_content">
                         <span>NO DIET</span>
-                        <a href="#" class="community_nospecialdiet"></a>
+                        <a href="{{url('overview')}}" class="community_nospecialdiet"></a>
                     </div>
                 </div>
             </div>
@@ -122,18 +122,18 @@
                 <div>
                     <div class="buddy_section_same_content">
                         <span>LOSE WEIGHT</span>
-                        <a href="#" class="community_loseweight"></a>
+                        <a href="{{url('overview')}}" class="community_loseweight"></a>
                     </div>
                     <div class="buddy_section_same_content">
-                        <a href="#" class="community_becomefit"></a>
+                        <a href="{{url('overview')}}" class="community_becomefit"></a>
                         <span>BECOME FIT</span>
                     </div>
                     <div class="buddy_section_same_content">
                         <span>BUILD MUSCLES</span>
-                        <a href="#" class="community_buildmuscles"></a>
+                        <a href="{{url('overview')}}" class="community_buildmuscles"></a>
                     </div>
                     <div class="buddy_section_same_content">
-                        <a href="#" class="community_stayhealthy"></a>
+                        <a href="{{url('overview')}}" class="community_stayhealthy"></a>
                         <span>STAY HEALTHY</span>
                     </div>
                 </div>

@@ -7,7 +7,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-    <title>Shape of you! Overview</title>
+    <title>Shape of you! Member Overview</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -35,17 +35,59 @@
 </div>
 
 
+<div class="content">
 
 
+    <h2>COMMUNITY MEMBER OVERVIEW</h2>
 
-    <h2>'CONTENT' OVERVIEW</h2>
-<div class="overview_content">
+    <div class="overview_section">
 
+        <div class="overview_filter_section">
+            <div>
+                <p>
+                    Pescetarian
+                </p>
+                <p>
+                    Vegetarian
+                </p>
+                <p>
+                    Vegan
+                </p>
+                <p>
+                    No Diet
+                </p>
+            </div>
+            <div>
+                <p>
+                    Breakfast
+                </p>
+                <p>
+                    Snack
+                </p>
+                <p>
+                    Lunch
+                </p>
+                <p>
+                    Dinner
+                </p>
+                <p>
+                    Dessert
+                </p>
+            </div>
+            <div>
+                <p>
+                    Show filtered recipes
+                </p>
+                <p>
+                    Show all recipes
+                </p>
+            </div>
+        </div>
+        <div class="overview_filter_description">
             <p>Activate the filter by choosing one or more diets and occasions to get what you deserve: the healthiest,
-                the most delicious, the best!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis consequuntur explicabo
-                laudantium molestiae molestias nulla obcaecati placeat praesentium rem, sint sit sunt voluptate.
-                Incidunt libero repudiandae suscipit veritatis voluptas!</p>
+                the most delicious, the best!</p>
+        </div>
+    </div>
 
     <div class="box_section">
         <div class="box_indoor">
@@ -74,6 +116,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <footer>
@@ -106,4 +150,3 @@
     </div>
 </footer>
 </body>
-</html>

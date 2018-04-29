@@ -46,84 +46,68 @@
 <div class="content">
     <h2>SUPER FOOD</h2>
 
-    <p class="entrytext">Are you hungry or just looking for inspiration? Then this is the place to be!
+    <p class="superfood_text">Are you hungry or just looking for inspiration? Then this is the place to be!
         Choose the occasion, decide the diet or just go for it all! We are here to help you
         in a healthy and delicious way to get you the lifestyle you deserve!
         Healthy, delicious and perfect for any occasion!
     </p>
 
-    <div class="title_bg">
-        <h3>Ocassional Blogs</h3>
-    </div>
-    <form>
-
-
+    <div class="superfood_blog_section">
+        <div class="title_bg">
+            <h3>Ocassional Blogs</h3>
+        </div>
         <!-- <h4>Step 1: Choose the occasion</h4> -->
         <div class="box_section">
 
             <div class="box_appetizers">
-                <a class="box_link" href="#">APPETIZERS</a>
+                <a class="box_link" href="{{url('blog')}}">APPETIZERS</a>
             </div>
             <div class="box_breakfast">
-                <a class="box_link" href="#">BREAKFAST</a>
+                <a class="box_link" href="{{url('blog')}}">BREAKFAST</a>
             </div>
             <div class="box_lunch">
-                <a class="box_link" href="#">LUNCH</a>
+                <a class="box_link" href="{{url('blog')}}">LUNCH</a>
             </div>
             <div class="box_snacks">
-                <a class="box_link" href="#">SNACKS</a>
+                <a class="box_link" href="{{url('blog')}}">SNACKS</a>
             </div>
             <div class="box_dinner">
-                <a class="box_link" href="#">DINNER</a>
+                <a class="box_link" href="{{url('blog')}}">DINNER</a>
             </div>
             <div class="box_desserts">
-                <a class="box_link" href="#">DESSERTS</a>
+                <a class="box_link" href="{{url('blog')}}">DESSERTS</a>
             </div>
         </div>
+    </div>
 
-        <div class="recipe_section">
-            <div class="diet_section">
-                <div>
-                    <div class="title_bg">
-                        <h3>Diets</h3>
-                    </div>
-                    <!--   <h4>Step 2: Choose the diet</h4>-->
-                    <div class="diet_section_content">
+    <div class="superfood_blog_section">
+        <div class="title_bg">
+            <h3>Diet Blogs</h3>
+        </div>
+        <!-- <h4>Step 1: Choose the occasion</h4> -->
+        <div class="box_section">
 
-                        <a href="#" class="community_vegetarian"></a>
-                        <span>VEGETARIAN</span>
-                    </div>
-                    <div class="diet_section_content">
-                        <span>VEGAN</span>
-                        <a href="#" class="community_vegan"></a>
-                    </div>
-                    <div class="diet_section_content">
-                        <a href="#" class="community_pescetarian"></a>
-                        <span>PESCETARIAN</span>
-                    </div>
-                    <div class="diet_section_content">
-                        <span>NO DIET</span>
-                        <a href="#" class="community_nospecialdiet"></a>
-                    </div>
-                </div>
+            <div class="superfood_box_vegan">
+                <a class="box_link" href="{{url('blog')}}">VEGAN</a>
             </div>
-
-            <div class="recipe_section_choose">
-                <!--  <h4>Step 3: Find recipes</h4> -->
-                <div class="recipe_section_filter">
-                    <span class="recipe_button">Filtered recipes</span>
-                </div>
-
-                <div class="recipe_section_filter recipe_section_ignore_filter">
-                    <h4>OR</h4>
-                    <p>'I don't care about the steps, show me all you've got!'</p>
-                    <span class="recipe_button">Show all recipes</span>
-                </div>
+            <div class="superfood_box_vegetarian">
+                <a class="box_link" href="{{url('blog')}}">VEGETARIAN</a>
+            </div>
+            <div class="superfood_box_pescetarian">
+                <a class="box_link" href="{{url('blog')}}">PESCETARIAN</a>
+            </div>
+            <div class="superfood_box_nospecialdiet">
+                <a class="box_link" href="{{url('blog')}}">NO SPECIAL DIET</a>
+            </div>
+            <div class="superfood_box_lowcarbnocarb">
+                <a class="box_link" href="{{url('blog')}}">LOW CARB/ NO CARB</a>
+            </div>
+            <div class="superfood_box_ketodiet">
+                <a class="box_link" href="{{url('blog')}}">KETO DIET</a>
             </div>
         </div>
+    </div>
 
-
-    </form>
 
     <div class="title_bg">
         <h3>CURRENT EXCITERS</h3>
@@ -132,28 +116,28 @@
     <div class="superfood_blog_bg">
         <div class="superfood_box_section">
             <div class="superfood_box_nuts">
-                <a class="box_link" href="#">LET'S GO NUTS</a>
+                <a class="box_link" href="{{url('blog')}}">LET'S GO NUTS</a>
             </div>
             <div class="superfood_box_goodcarbsbadcarbs">
-                <a class="box_link" href="#">GOOD CARBS, BAD CARBS</a>
+                <a class="box_link" href="{{url('blog')}}">GOOD CARBS, BAD CARBS</a>
             </div>
             <div class="superfood_box_thepowerofchia">
-                <a class="box_link" href="#">THE POWER OF CHIA SEEDS</a>
+                <a class="box_link" href="{{url('blog')}}">THE POWER OF CHIA SEEDS</a>
             </div>
             <div class="superfood_box_proteinpowder">
-                <a class="box_link" href="#">PROTEIN POWDER</a>
+                <a class="box_link" href="{{url('blog')}}">PROTEIN POWDER</a>
             </div>
             <div class="superfood_box_superfood">
-                <a class="box_link" href="#">SUPER FOOD</a>
+                <a class="box_link" href="{{url('blog')}}">SUPER FOOD</a>
             </div>
             <div class="superfood_box_underthesea">
-                <a class="box_link" href="#">UNDER THE SEA</a>
+                <a class="box_link" href="{{url('blog')}}">UNDER THE SEA</a>
             </div>
             <div class="superfood_box_whatdoineed">
-                <a class="box_link" href="#">WHAT DO I NEED</a>
+                <a class="box_link" href="{{url('blog')}}">WHAT DO I NEED</a>
             </div>
             <div class="superfood_box_gowiththeseason">
-                <a class="box_link" href="#">GO WITH THE SEASON</a>
+                <a class="box_link" href="{{url('blog')}}">GO WITH THE SEASON</a>
             </div>
         </div>
 

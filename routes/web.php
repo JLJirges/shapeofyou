@@ -66,3 +66,11 @@ Route::get('aboutus', function () {
 Route::get('blog', function () {
     return view('blog');
 });
+
+Route::get('overview', function(){
+   return view('overview');
+});
+
+Route::get('memberoverview', function(){
+    return view('memberoverview');
+});
