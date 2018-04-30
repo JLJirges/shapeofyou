@@ -107,6 +107,52 @@ h3 {
   color: lightgrey;
 }
 
+.delete {
+  color: indianred;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: darkred;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete > img {
+  width: 30px;
+  height: auto;
+}
+
+.delete > img:hover {
+  background: indianred;
+  border-radius: 15px;
+}
+
+.report {
+  color: #f2c701;
+  cursor: pointer;
+}
+
+.report:hover {
+  color: #f2b101;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.report > img {
+  width: 30px;
+  height: auto;
+}
+
+.addworkout {
+  width: 30px;
+  height: auto;
+}
+
+.addworkout:hover {
+  cursor: pointer;
+}
+
 /* HOME */
 .goal_info {
   width: 60%;
@@ -1168,6 +1214,8 @@ h3 {
   -ms-flex-item-align: center;
       align-self: center;
   margin: 20px;
+  max-width: 400px;
+  max-height: 250px;
 }
 
 .former_event_section {
@@ -1600,6 +1648,48 @@ h3 {
           justify-content: space-between;
   border-bottom: 1px solid lightgrey;
   padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.diary_comments_details_edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  text-align: right;
+}
+
+.diary_comments_details_profilepicture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.diary_comments_details_profilepicture > span {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.diary_comments_details_profilepicture > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  -webkit-box-shadow: lightgrey 0 5px 5px 0;
+          box-shadow: lightgrey 0 5px 5px 0;
 }
 
 .old_diary_entries {
@@ -1633,6 +1723,74 @@ h3 {
 
 .profile_diary_section_loadolddiaries_details:hover {
   background: url("../images/background_colour.png") no-repeat;
+  cursor: pointer;
+}
+
+/* WORKOUT DETAILS */
+.workout_entry {
+  padding: 10px;
+  border: 1px solid lightgrey;
+  max-width: 60%;
+  height: auto;
+  margin: 4% 20% 4% 20%;
+  -webkit-box-shadow: grey 0 5px 5px 0;
+          box-shadow: grey 0 5px 5px 0;
+}
+
+.workout_entry_setting {
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid lightgrey;
+  margin-top: 2%;
+}
+
+.workout_entry_box {
+  max-width: 96%;
+  margin: 2%;
+}
+
+.workout_entry_box > div > img {
+  max-width: 800px;
+  max-height: 400px;
+}
+
+.workout_entry_text {
+  text-align: left;
+}
+
+.workout_entry_text > p {
+  font-size: 14pt;
+  text-align: justify;
+}
+
+.workout_details_profilepicture {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.workout_details_profilepicture > span {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.workout_details_profilepicture > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  -webkit-box-shadow: lightgrey 0 5px 5px 0;
+          box-shadow: lightgrey 0 5px 5px 0;
 }
 
 /* CONTACT */
@@ -1822,6 +1980,8 @@ h3 {
 .blog_abouttheauthor_content > img {
   max-width: 250px;
   height: auto;
+  -webkit-box-shadow: grey 0 1px 5px 0;
+          box-shadow: grey 0 1px 5px 0;
 }
 
 .blog_abouttheauthor_content_info > div {

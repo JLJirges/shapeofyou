@@ -71,6 +71,7 @@ Route::get('overview', function(){
    return view('overview');
 });
 
-Route::get('memberoverview', function(){
-    return view('memberoverview');
+
+Route::get('detail', function(){
+   return view('detail');
 });

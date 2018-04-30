@@ -59,8 +59,9 @@
         </div>
     </div>
 
-
+<div class="title_bg">
     <h3>STAY MOTIVATED</h3>
+</div>
     <div class="community_section_2">
         <div class="community_text_section">
             <h4>Our Stories</h4>
@@ -89,13 +90,14 @@
             </div>
         </div>
     </div>
-
-    <h3>FIND YOUR WORKOUT BUDDY</h3>
+<div class="title_bg">
+    <h3>FIND NEW WORKOUT BUDDIES</h3>
+</div>
     <div class="buddy_bg">
     <div class="buddy_section">
         <div>
             <div class="buddy_section_same buddy_section_same_1">
-                <h4>Find people with the same diet</h4>
+                <h4>Find people with other diets</h4>
                 <div>
                     <div class="buddy_section_same_content">
                         <a href="{{url('overview')}}" class="community_vegetarian"></a>
@@ -118,7 +120,7 @@
         </div>
         <div>
             <div class="buddy_section_same buddy_section_same_2">
-                <h4>Find people with the same goal</h4>
+                <h4>Find people with other goals</h4>
                 <div>
                     <div class="buddy_section_same_content">
                         <span>LOSE WEIGHT</span>

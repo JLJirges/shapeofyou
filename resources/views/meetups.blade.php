@@ -73,8 +73,7 @@
                                     </div>
                                 </div>
 
-                                <img src="../assets/images/meetups/google_maps.jpg" alt="google maps placeholder"
-                                     width="400" height="250" class="meetup_event_googlemaps">
+                                <img class="meetup_event_googlemaps" src="{{ asset('images/meetups/google_maps.jpg')}}" alt="google maps placeholder">
                             </div>
 
                             <div class="event_what">
@@ -116,8 +115,7 @@
                                     </div>
                                 </div>
 
-                                <img src="../assets/images/meetups/google_maps.jpg" alt="google maps placeholder"
-                                     width="400" height="250" class="meetup_event_googlemaps">
+                                <img class="meetup_event_googlemaps" src="{{ asset('images/meetups/google_maps.jpg')}}" alt="google maps placeholder">
                             </div>
 
                             <div class="event_what">
@@ -159,8 +157,7 @@
                                     </div>
                                 </div>
 
-                                <img src="../assets/images/meetups/google_maps.jpg" alt="google maps placeholder"
-                                     width="400" height="250" class="meetup_event_googlemaps">
+                                <img class="meetup_event_googlemaps" src="{{ asset('images/meetups/google_maps.jpg')}}" alt="google maps placeholder">
                             </div>
 
                             <div class="event_what">

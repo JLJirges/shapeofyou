@@ -49,28 +49,28 @@
 
     <div class="box_section">
         <div class="box_indoor">
-            <a class="box_link" href="#">INDOOR</a>
+            <a class="box_link" href="{{url('detail')}}">INDOOR</a>
         </div>
         <div class="box_outdoor">
-            <a class="box_link" href="#">OUTDOOR</a>
+            <a class="box_link" href="{{url('detail')}}">OUTDOOR</a>
         </div>
         <div class="box_stretch">
-            <a class="box_link" href="#">STRETCHING</a>
+            <a class="box_link" href="{{url('detail')}}">STRETCHING</a>
         </div>
         <div class="box_tenminutes">
-            <a class="box_link" href="#">10 MINUTES WORKOUT</a>
+            <a class="box_link" href="{{url('detail')}}">10 MINUTES WORKOUT</a>
         </div>
         <div class="box_partnerworkout">
-            <a class="box_link" href="#">PARTNER WORKOUT</a>
+            <a class="box_link" href="{{url('detail')}}">PARTNER WORKOUT</a>
         </div>
         <div class="box_yoga">
-            <a class="box_link" href="#">YOGA</a>
+            <a class="box_link" href="{{url ('detail')}}">YOGA</a>
         </div>
         <div class="box_workoutwithequipment">
-            <a class="box_link" href="#">POWER WORKOUT WITH EQUIPMENT</a>
+            <a class="box_link" href="{{url('detail')}}">POWER WORKOUT WITH EQUIPMENT</a>
         </div>
         <div class="box_withoutequipment">
-            <a class="box_link" href="#">WITHOUT EQUIPMENT</a>
+            <a class="box_link" href="{{url('detail')}}">WITHOUT EQUIPMENT</a>
         </div>
     </div>
 </div>

@@ -100,7 +100,7 @@
 
 
     <div class="blog_abouttheauthor">
-        <h5>About the author</h5>
+        <h4>About the author</h4>
         <div class="blog_abouttheauthor_content">
 
             <img alt="blogger image" src="{{ asset('images/aboutus/Mira.jpg') }}">
@@ -130,7 +130,128 @@
         </div>
     </div>
 
+    <div class="diary_comments">
+        <div class="diary_comments_interaction">
+            <h5>Read Comments</h5>
+            <h5>Write a Comment</h5>
+            <h5>Hide Comments</h5>
+        </div>
+        <div class="diary_comments_details">
+            <div class="diary_comments_details_user">
 
+                <div class="diary_comments_details_profilepicture">
+                    <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
+                    <span>Username</span>
+                </div>
+                <span>Date</span>
+                <div class="diary_comments_details_edit">
+                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.</p>
+        </div>
+        <div class="diary_comments_details">
+            <div class="diary_comments_details_user">
+
+                <div class="diary_comments_details_profilepicture">
+                    <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
+                    <span>Username</span>
+                </div>
+                <span>Date</span>
+                <div class="diary_comments_details_edit">
+                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.</p>
+        </div>
+        <div class="diary_comments_details">
+            <div class="diary_comments_details_user">
+
+                <div class="diary_comments_details_profilepicture">
+                    <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
+                    <span>Username</span>
+                </div>
+                <span>Date</span>
+                <div class="diary_comments_details_edit">
+                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.</p>
+        </div>
+        <div class="diary_comments_details">
+            <div class="diary_comments_details_user">
+
+                <div class="diary_comments_details_profilepicture">
+                    <img src="{{asset('images/aboutus/Corinna.png')}}" alt="user profile picture">
+                    <span>Username</span>
+                </div>
+                <span>Date</span>
+                <div class="diary_comments_details_edit">
+                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.</p>
+        </div>
+        <div class="diary_comments_details">
+            <div class="diary_comments_details_user">
+
+                <div class="diary_comments_details_profilepicture">
+                    <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
+                    <span>Username</span>
+                </div>
+                <span>Date</span>
+                <div class="diary_comments_details_edit">
+                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                dignissimos earum ex
+                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                recusandae saepe tempora.</p>
+        </div>
+    </div>
 </div>
 
 

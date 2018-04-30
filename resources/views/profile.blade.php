@@ -58,7 +58,7 @@
                 <p>BMI Calculator</p>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <p>My Recipes</p>
+                <p>My Blogs</p>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <p>My Workout</p>
@@ -150,7 +150,7 @@
             <div class="old_diary_entry_setting">
                 <span>Date</span>
                 <h4>Diary Entry Title</h4>
-                <span>delete</span>
+                <span class="delete"><img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
             </div>
 
             <div class="profile_old_diary_entry_box">
@@ -200,10 +200,16 @@
             </div>
             <div class="diary_comments_details">
                 <div class="diary_comments_details_user">
+
+                    <div class="diary_comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
                     <span>Date</span>
-                    <span>Username</span>
-                    <span>Delete</span>
-                    <span>Report Comment/User</span>
+                    <div class="diary_comments_details_edit">
+                        <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                        <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    </div>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
                     facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
@@ -217,10 +223,16 @@
             </div>
             <div class="diary_comments_details">
                 <div class="diary_comments_details_user">
+
+                    <div class="diary_comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
                     <span>Date</span>
-                    <span>Username</span>
-                    <span>Delete</span>
-                    <span>Report Comment/User</span>
+                    <div class="diary_comments_details_edit">
+                        <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                        <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    </div>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
                     facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
@@ -234,10 +246,16 @@
             </div>
             <div class="diary_comments_details">
                 <div class="diary_comments_details_user">
+
+                    <div class="diary_comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
                     <span>Date</span>
-                    <span>Username</span>
-                    <span>Delete</span>
-                    <span>Report Comment/User</span>
+                    <div class="diary_comments_details_edit">
+                        <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                        <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    </div>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
                     facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
@@ -251,10 +269,16 @@
             </div>
             <div class="diary_comments_details">
                 <div class="diary_comments_details_user">
+
+                    <div class="diary_comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Corinna.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
                     <span>Date</span>
-                    <span>Username</span>
-                    <span>Delete</span>
-                    <span>Report Comment/User</span>
+                    <div class="diary_comments_details_edit">
+                        <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                        <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    </div>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
                     facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
@@ -268,10 +292,16 @@
             </div>
             <div class="diary_comments_details">
                 <div class="diary_comments_details_user">
+
+                    <div class="diary_comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
                     <span>Date</span>
-                    <span>Username</span>
-                    <span>Delete</span>
-                    <span>Report Comment/User</span>
+                    <div class="diary_comments_details_edit">
+                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
+                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    </div>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
                     facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
@@ -291,7 +321,7 @@
                 <span>Date</span>
                 <h4>Diary Entry Title</h4>
                 <span>Read Entry</span>
-                <span>delete</span>
+                <span class="delete"><img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
 
             </div>
         </div>
@@ -300,7 +330,7 @@
                 <span>Date</span>
                 <h4>Diary Entry Title</h4>
                 <span>Read Entry</span>
-                <span>delete</span>
+                <span class="delete"><img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
 
             </div>
         </div>
@@ -309,7 +339,7 @@
                 <span>Date</span>
                 <h4>Diary Entry Title</h4>
                 <span>Read Entry</span>
-                <span>delete</span>
+                <span class="delete"><img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
 
             </div>
         </div>
@@ -318,7 +348,7 @@
                 <span>Date</span>
                 <h4>Diary Entry Title</h4>
                 <span>Read Entry</span>
-                <span>delete</span>
+                <span class="delete"><img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
 
             </div>
         </div>
