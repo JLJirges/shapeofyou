@@ -119,7 +119,7 @@
                     <img alt="founder image" src="{{ asset('images\aboutus\Nina.png') }}">
 
                     <div>
-                        <p>'Are you going to join some of our festivals? I hope so, because I plan thoe events for you.
+                        <p>'Are you going to join some of our festivals? I hope so, because I plan those events for you.
                             My name is Nina and if you want to attend one of the most amazing events of your life -
                             visit one of mine, or with other words: Shape of You - Events!'</p>
                     </div>

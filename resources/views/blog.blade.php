@@ -145,8 +145,8 @@
                 </div>
                 <span>Date</span>
                 <div class="diary_comments_details_edit">
-                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
-                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    <span class="delete"></span>
+                    <span class="report"></span>
                 </div>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
@@ -168,8 +168,8 @@
                 </div>
                 <span>Date</span>
                 <div class="diary_comments_details_edit">
-                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
-                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    <span class="delete"></span>
+                    <span class="report"></span>
                 </div>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
@@ -191,8 +191,8 @@
                 </div>
                 <span>Date</span>
                 <div class="diary_comments_details_edit">
-                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
-                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    <span class="delete"></span>
+                    <span class="report"></span>
                 </div>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
@@ -214,8 +214,8 @@
                 </div>
                 <span>Date</span>
                 <div class="diary_comments_details_edit">
-                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
-                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    <span class="delete"></span>
+                    <span class="report"></span>
                 </div>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
@@ -237,8 +237,8 @@
                 </div>
                 <span>Date</span>
                 <div class="diary_comments_details_edit">
-                    <span class="delete">delete<img alt="delete" src="{{asset('images/trash_icon.png')}}"></span>
-                    <span class="report">report<img alt="report" src="{{asset('images/report_icon.png')}}"></span>
+                    <span class="delete"></span>
+                    <span class="report"></span>
                 </div>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex

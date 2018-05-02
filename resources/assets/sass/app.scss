@@ -97,41 +97,44 @@ h3 {
 }
 
 .delete {
-  color: indianred;
+  width: 30px;
+  height: 30px;
+  background: url("../images/trash_icon.png") no-repeat;
+  background-size: cover;
   cursor: pointer;
 }
+
 
 .delete:hover {
-  color: darkred;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.delete > img {
   width: 30px;
-  height: auto;
+  height: 30px;
+  background: url("../images/open_trash_icon.png") no-repeat;
+  background-size: cover;
+
+  cursor: pointer;
+
 }
 
-.delete > img:hover {
- background: indianred;
-  border-radius: 15px;
-}
+
 
 .report {
-  color: #f2c701;
+  width: 30px;
+  height: 30px;
+  background: url("../images/report_icon.png") no-repeat;
+  background-size: cover;
+
   cursor: pointer;
 }
 
 .report:hover {
-  color: #f2b101;
-  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  background: url("../images/open_report_icon.png") no-repeat;
+  background-size: cover;
+
   cursor: pointer;
 }
 
-.report > img {
-  width: 30px;
-  height: auto;
-}
 
 .addworkout {
   width: 30px;
@@ -233,7 +236,7 @@ h3 {
   width: 150px;
   padding: 8px;
 
-  box-shadow: dimgrey 0 0 10px 0;
+  box-shadow: black 0 0 10px 0;
   color: black;
   font-family: "AR DARLING", sans-serif;
 }
@@ -1421,7 +1424,6 @@ h3 {
 }
 
 .profile_diary_section_loadolddiaries_details:hover {
-  background: url("../images/background_colour.png") no-repeat;
   cursor: pointer;
 }
 

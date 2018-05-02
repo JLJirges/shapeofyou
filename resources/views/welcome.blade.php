@@ -31,12 +31,7 @@
 
     </div>
 
-
     <div class="content">
-        <!-- <div class="heroimg">
-
-         </div> -->
-
         <h2> SHAPE OF YOU</h2>
 
         <div class="home_section goal_bg">
@@ -139,3 +134,4 @@
 </footer>
 </body>
 </html>
+
