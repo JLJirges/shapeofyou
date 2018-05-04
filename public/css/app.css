@@ -14,13 +14,11 @@ a {
   text-decoration: none;
 }
 
-h2 {
+h1 {
   font-family: 'AR DARLING', sans-serif;
   font-size: 40pt;
-  background: url("../images/background_colour.png") no-repeat;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 110px 25px 25px 25px;
+  padding-top: 5%;
+  padding-bottom: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,16 +29,28 @@ h2 {
       align-self: center;
 }
 
-h3 {
-  margin-top: 0;
+.h1_bg {
+  background: url("../images/background_colour.png") no-repeat;
+  width: 100%;
+}
+
+h2 {
   font-size: 24pt;
 }
 
 .title_bg {
   background: url("../images/background_colour.png");
   width: 100%;
-  height: 50px;
-  padding: 10px;
+  height: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .flex-center {
@@ -151,7 +161,6 @@ h3 {
 /* HOME */
 .goal_info {
   width: 60%;
-  margin: 30px 20% 2% 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,7 +178,6 @@ h3 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-bottom: 50px;
-  margin: 0;
 }
 
 .home_section_goals > img {
@@ -177,7 +185,6 @@ h3 {
           box-shadow: lightgrey 0 0 20px 0;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 100px;
-  margin: 15px;
 }
 
 .home_section_goals > img:hover {
@@ -187,6 +194,8 @@ h3 {
 .goal_bg {
   background: url("../images/welcome/hero_bg.png") fixed;
   background-size: cover;
+  height: auto;
+  margin-top: -3%;
 }
 
 .shape_bg {
@@ -241,15 +250,7 @@ h3 {
 }
 
 .home_section > div > a {
-  /* ff3.6+ */
-  /* safari4+,chrome */
-  /* safari5.1+,chrome10+ */
-  /* opera 11.10+ */
-  /* ie10+ */
   background: radial-gradient(ellipse at center, #d1e802 0%, #688000 100%);
-  /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0);
-  /* ie6-9 */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -479,15 +480,7 @@ h3 {
 }
 
 .recipe_button {
-  /* ff3.6+ */
-  /* safari4+,chrome */
-  /* safari5.1+,chrome10+ */
-  /* opera 11.10+ */
-  /* ie10+ */
   background: radial-gradient(ellipse at center, #d1e802 0%, #688000 100%);
-  /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0);
-  /* ie6-9 */
   width: 150px;
   padding: 8px;
   -webkit-box-shadow: dimgrey 0 0 5px 0;
@@ -1260,15 +1253,7 @@ h3 {
 }
 
 .ticket_button {
-  /* ff3.6+ */
-  /* safari4+,chrome */
-  /* safari5.1+,chrome10+ */
-  /* opera 11.10+ */
-  /* ie10+ */
   background: radial-gradient(ellipse at center, #d1e802 0%, #688000 100%);
-  /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0);
-  /* ie6-9 */
   width: 150px;
   padding: 8px;
   -webkit-box-shadow: dimgrey 0 0 5px 0;
@@ -1278,15 +1263,7 @@ h3 {
 }
 
 .sold_out {
-  /* ff3.6+ */
-  /* safari4+,chrome */
-  /* safari5.1+,chrome10+ */
-  /* opera 11.10+ */
-  /* ie10+ */
-  background: radial-gradient(ellipse at center, #dc4009 0%, #6b0505 100%);
-  /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0);
-  /* ie6-9 */
+  background: radial-gradient(center, ellipse cover, #dc4009 0%, #6b0505 100%);
   width: 150px;
   padding: 8px;
   -webkit-box-shadow: dimgrey 0 0 5px 0;

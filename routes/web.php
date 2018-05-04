@@ -36,7 +36,7 @@ Route::get('community', function () {
 });
 
 Route::get('profile', function () {
-    return view('profile');
+    return view('profile/profile');
 });
 
 Route::get('recipe', function () {

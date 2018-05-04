@@ -14,33 +14,34 @@ a {
   text-decoration: none;
 }
 
-h2 {
+h1 {
   font-family: 'AR DARLING', sans-serif;
   font-size: 40pt;
 
-  background: url("../images/background_colour.png") no-repeat;
-
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 110px 25px 25px 25px;
+  padding-top: 5%;
+  padding-bottom: 1%;
 
   display: flex;
   justify-content: center;
   align-self: center;
-
 }
 
-h3 {
-  margin-top: 0;
-  font-size: 24pt;
+.h1_bg {
+  background: url("../images/background_colour.png") no-repeat;
+  width: 100%;
+}
 
+h2 {
+  font-size: 24pt;
 }
 
 .title_bg {
   background: url("../images/background_colour.png");
   width: 100%;
-  height: 50px;
-  padding: 10px;
+  height: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-center {
@@ -148,7 +149,6 @@ h3 {
 
 .goal_info {
   width: 60%;
-  margin: 30px 20% 2% 20%;
   display: flex;
   justify-content: center;
 
@@ -160,14 +160,12 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 50px;
-  margin: 0;
 }
 
 .home_section_goals > img {
   box-shadow: lightgrey 0 0 20px 0;
   background: rgba(000, 000, 000, 0.1);
   border-radius: 100px;
-  margin: 15px;
 }
 
 .home_section_goals > img:hover {
@@ -177,6 +175,8 @@ h3 {
 .goal_bg {
   background: url("../images/welcome/hero_bg.png") fixed;
   background-size: cover;
+  height: auto;
+  margin-top: -3%;
 }
 
 .shape_bg {
@@ -221,13 +221,7 @@ h3 {
 }
 
 .home_section > div > a {
-  background: -moz-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(209, 232, 2, 1)), color-stop(100%, rgba(104, 128, 0, 1))); /* safari4+,chrome */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* opera 11.10+ */
-  background: -ms-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* ie10+ */
-  background: radial-gradient(ellipse at center, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0); /* ie6-9 */
+  background: radial-gradient(ellipse at center, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%);
 
   display: flex;
   justify-content: center;
@@ -420,13 +414,7 @@ h3 {
 }
 
 .recipe_button {
-  background: -moz-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(209, 232, 2, 1)), color-stop(100%, rgba(104, 128, 0, 1))); /* safari4+,chrome */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* opera 11.10+ */
-  background: -ms-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* ie10+ */
-  background: radial-gradient(ellipse at center, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0); /* ie6-9 */
+  background: radial-gradient(ellipse at center, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%);
 
   width: 150px;
   padding: 8px;
@@ -1066,13 +1054,7 @@ h3 {
 }
 
 .ticket_button {
-  background: -moz-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(209, 232, 2, 1)), color-stop(100%, rgba(104, 128, 0, 1))); /* safari4+,chrome */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* opera 11.10+ */
-  background: -ms-radial-gradient(center, ellipse cover, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* ie10+ */
-  background: radial-gradient(ellipse at center, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0); /* ie6-9 */
+  background: radial-gradient(ellipse at center, rgba(209, 232, 2, 1) 0%, rgba(104, 128, 0, 1) 100%);
 
   width: 150px;
   padding: 8px;
@@ -1083,13 +1065,8 @@ h3 {
 }
 
 .sold_out {
-  background: -moz-radial-gradient(center, ellipse cover, rgba(220, 64, 9, 1) 0%, rgba(107, 5, 5, 1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(220, 64, 9, 1)), color-stop(100%, rgba(107, 5, 5, 1))); /* safari4+,chrome */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(220, 64, 9, 1) 0%, rgba(107, 5, 5, 1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-radial-gradient(center, ellipse cover, rgba(220, 64, 9, 1) 0%, rgba(107, 5, 5, 1) 100%); /* opera 11.10+ */
-  background: -ms-radial-gradient(center, ellipse cover, rgba(220, 64, 9, 1) 0%, rgba(107, 5, 5, 1) 100%); /* ie10+ */
-  background: radial-gradient(ellipse at center, rgba(220, 64, 9, 1) 0%, rgba(107, 5, 5, 1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E802', endColorstr='#688000', GradientType=0); /* ie6-9 */
+  background: radial-gradient(center, ellipse cover, rgba(220, 64, 9, 1) 0%, rgba(107, 5, 5, 1) 100%);
+
 
   width: 150px;
   padding: 8px;
