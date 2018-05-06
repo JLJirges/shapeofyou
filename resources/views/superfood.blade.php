@@ -17,7 +17,6 @@
         <div class="title_bg">
             <h2>Ocassional Blogs</h2>
         </div>
-        <!-- <h4>Step 1: Choose the occasion</h4> -->
         <div class="box_section">
 
             <div class="box_appetizers">
@@ -45,7 +44,6 @@
         <div class="title_bg">
             <h2>Diet Blogs</h2>
         </div>
-        <!-- <h4>Step 1: Choose the occasion</h4> -->
         <div class="box_section">
 
             <div class="superfood_box_vegan">
@@ -75,31 +73,33 @@
     </div>
 
     <div class="superfood_blog_bg">
-        <div class="superfood_box_section">
-            <div class="superfood_box_nuts">
-                <a class="box_link" href="{{url('blog')}}">LET'S GO NUTS</a>
-            </div>
-            <div class="superfood_box_goodcarbsbadcarbs">
-                <a class="box_link" href="{{url('blog')}}">GOOD CARBS, BAD CARBS</a>
-            </div>
-            <div class="superfood_box_thepowerofchia">
-                <a class="box_link" href="{{url('blog')}}">THE POWER OF CHIA SEEDS</a>
-            </div>
-            <div class="superfood_box_proteinpowder">
-                <a class="box_link" href="{{url('blog')}}">PROTEIN POWDER</a>
-            </div>
-            <div class="superfood_box_superfood">
-                <a class="box_link" href="{{url('blog')}}">SUPER FOOD</a>
-            </div>
-            <div class="superfood_box_underthesea">
-                <a class="box_link" href="{{url('blog')}}">UNDER THE SEA</a>
-            </div>
-            <div class="superfood_box_whatdoineed">
-                <a class="box_link" href="{{url('blog')}}">WHAT DO I NEED</a>
-            </div>
-            <div class="superfood_box_gowiththeseason">
-                <a class="box_link" href="{{url('blog')}}">GO WITH THE SEASON</a>
-            </div>
+        <div class="square_box_section">
+
+                <div class="superfood_box_nuts">
+                    <a class="box_link" href="{{url('blog')}}">LET'S GO NUTS</a>
+                </div>
+                <div class="superfood_box_goodcarbsbadcarbs">
+                    <a class="box_link" href="{{url('blog')}}">GOOD CARBS, BAD CARBS</a>
+                </div>
+                <div class="superfood_box_thepowerofchia">
+                    <a class="box_link" href="{{url('blog')}}">THE POWER OF CHIA SEEDS</a>
+                </div>
+                <div class="superfood_box_proteinpowder">
+                    <a class="box_link" href="{{url('blog')}}">PROTEIN POWDER</a>
+                </div>
+                <div class="superfood_box_superfood">
+                    <a class="box_link" href="{{url('blog')}}">SUPER FOOD</a>
+                </div>
+                <div class="superfood_box_underthesea">
+                    <a class="box_link" href="{{url('blog')}}">UNDER THE SEA</a>
+                </div>
+                <div class="superfood_box_whatdoineed">
+                    <a class="box_link" href="{{url('blog')}}">WHAT DO I NEED</a>
+                </div>
+                <div class="superfood_box_gowiththeseason">
+                    <a class="box_link" href="{{url('blog')}}">GO WITH THE SEASON</a>
+                </div>
+
         </div>
 
     </div>
