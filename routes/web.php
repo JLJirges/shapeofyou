@@ -39,28 +39,32 @@ Route::get('profile', function () {
     return view('profile/profile');
 });
 
-Route::get('recipe', function () {
-    return view('recipe');
+Route::get('beforeafterprofile', function () {
+    return view('profile/beforeafterprofile');
+});
+
+Route::get('motivationprofile', function () {
+    return view('profile/motivationprofile');
 });
 
 Route::get('contact', function () {
-    return view('contact');
+    return view('footer/contact');
 });
 
 Route::get('jobs', function () {
-    return view('jobs');
+    return view('footer/jobs');
 });
 
 Route::get('termsandconditions', function () {
-    return view('termsandconditions');
+    return view('footer/termsandconditions');
 });
 
 Route::get('faq', function () {
-    return view('faq');
+    return view('footer/faq');
 });
 
 Route::get('aboutus', function () {
-    return view('aboutus');
+    return view('footer/aboutus');
 });
 
 Route::get('blog', function () {

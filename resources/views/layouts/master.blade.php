@@ -20,13 +20,14 @@
 
 @include('partials.header')
 
-@yield('sidebar')
 
 <main class="content">
 
     @yield('content')
 
+
 </main>
+
 
 @include('partials.footer')
 

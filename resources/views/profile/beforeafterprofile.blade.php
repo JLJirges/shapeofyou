@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="h1_bg">
-        <h1>WELCOME 'username'</h1>
+        <h1>MY STORIES</h1>
     </div>
     <div class="profile_section">
         <div class="profile_navigation">
@@ -90,15 +90,15 @@
 
         <div class="profile_diary_section">
 
-            <h3>Write a new Diary Entry</h3>
+            <h3>Write a new Before/After Story</h3>
             <form class="diary_form" method="post" enctype="multipart/form-data">
                 <label>Write a title</label>
                 <input type="text" name="title" placeholder="I am the Title"><br>
                 <label>Write your entry</label>
-                <input type="text" name="diarytext" placeholder="Time to write a diary...">
+                <input type="text" name="diarytext" placeholder="Time to tell a story...">
                 <label>Upload Image</label><br>
                 <input type="file" name="DiaryfileToUpload" id="DiaryfileToUpload">
-                <button type="submit" value="Write Diary" name="writediary" class="profile_button">Write in my Diary</button>
+                <button type="submit" value="Post Story" name="poststory" class="profile_button">Post Story</button>
             </form>
 
 
@@ -110,7 +110,7 @@
         <div class="old_diary_entry">
             <div class="old_diary_entry_setting">
                 <span>Date</span>
-                <h4>Diary Entry Title</h4>
+                <h4>Story Title</h4>
                 <span class="delete"></span>
             </div>
 
@@ -324,7 +324,7 @@
         <div class="profile_diary_section_loadolddiaries">
             <div class="profile_diary_section_loadolddiaries_details">
                 <span>Date</span>
-                <h4>Diary Entry Title</h4>
+                <h4>Story Title</h4>
                 <span>Read</span>
                 <span class="delete"></span>
 
@@ -333,7 +333,7 @@
         <div class="profile_diary_section_loadolddiaries">
             <div class="profile_diary_section_loadolddiaries_details">
                 <span>Date</span>
-                <h4>Diary Entry Title</h4>
+                <h4>Story Title</h4>
                 <span>Read</span>
                 <span class="delete"></span>
 
@@ -342,7 +342,7 @@
         <div class="profile_diary_section_loadolddiaries">
             <div class="profile_diary_section_loadolddiaries_details">
                 <span>Date</span>
-                <h4>Diary Entry Title</h4>
+                <h4>Story Title</h4>
                 <span>Read</span>
                 <span class="delete"></span>
 
@@ -351,7 +351,7 @@
         <div class="profile_diary_section_loadolddiaries">
             <div class="profile_diary_section_loadolddiaries_details">
                 <span>Date</span>
-                <h4>Diary Entry Title</h4>
+                <h4>Story Title</h4>
                 <span>Read</span>
                 <span class="delete"></span>
 
@@ -361,4 +361,3 @@
 
 
 @endsection
-
