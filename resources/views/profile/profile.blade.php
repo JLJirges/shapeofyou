@@ -15,7 +15,10 @@
                 <a href="{{ url ('profile')}}">My Profile</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('bmiprofile')}}">BMI Calculator</a>
+                <a href="{{ url ('beforeafterprofile')}}">My Before/After-Stories</a>
+            </div>
+            <div class="profile_navigation_sections profile_navigation__section_box">
+                <a href="{{ url ('motivationprofile')}}">My Motivation</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <a href="{{ url ('blogprofile')}}">My Blogs</a>
@@ -75,18 +78,7 @@
     </div>
 
     <div class="profile_section profile_section_2">
-        <div class="profile_navigation_two">
 
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('profile')}}">My Diary</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('beforeafterprofile')}}">My Before/After-Story</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('motivationprofile')}}">My Motivation Letters</a>
-            </div>
-        </div>
 
         <div class="profile_diary_section">
 
@@ -153,23 +145,23 @@
             </div>
 
         </div>
-        <div class="diary_comments">
-            <div class="diary_comments_interaction">
+        <div class="comments_section">
+            <div class="comments_section_interaction">
                 <h5>Read Comments</h5>
                 <h5>Write a Comment</h5>
                 <h5>Hide Comments</h5>
             </div>
             <div class="profile_diary_content">
                 <div>
-                    <div class="diary_comments_details">
-                        <div class="diary_comments_details_user">
+                    <div class="comments_details">
+                        <div class="comments_details_user">
 
-                            <div class="diary_comments_details_profilepicture">
+                            <div class="comments_details_profilepicture">
                                 <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
                                 <span>Username</span>
                             </div>
                             <span>Date</span>
-                            <div class="diary_comments_details_edit">
+                            <div class="comments_details_edit">
                                 <span class="delete"></span>
                                 <span class="report"></span>
                             </div>
@@ -192,15 +184,15 @@
                             ratione
                             recusandae saepe tempora.</p>
                     </div>
-                    <div class="diary_comments_details">
-                        <div class="diary_comments_details_user">
+                    <div class="comments_details">
+                        <div class="comments_details_user">
 
-                            <div class="diary_comments_details_profilepicture">
+                            <div class="comments_details_profilepicture">
                                 <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
                                 <span>Username</span>
                             </div>
                             <span>Date</span>
-                            <div class="diary_comments_details_edit">
+                            <div class="comments_details_edit">
                                 <span class="delete"></span>
                                 <span class="report"></span>
                             </div>
@@ -223,15 +215,15 @@
                             ratione
                             recusandae saepe tempora.</p>
                     </div>
-                    <div class="diary_comments_details">
-                        <div class="diary_comments_details_user">
+                    <div class="comments_details">
+                        <div class="comments_details_user">
 
-                            <div class="diary_comments_details_profilepicture">
+                            <div class="comments_details_profilepicture">
                                 <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
                                 <span>Username</span>
                             </div>
                             <span>Date</span>
-                            <div class="diary_comments_details_edit">
+                            <div class="comments_details_edit">
                                 <span class="delete"></span>
                                 <span class="report"></span>
                             </div>
@@ -254,15 +246,15 @@
                             ratione
                             recusandae saepe tempora.</p>
                     </div>
-                    <div class="diary_comments_details">
-                        <div class="diary_comments_details_user">
+                    <div class="comments_details">
+                        <div class="comments_details_user">
 
-                            <div class="diary_comments_details_profilepicture">
+                            <div class="comments_details_profilepicture">
                                 <img src="{{asset('images/aboutus/Corinna.png')}}" alt="user profile picture">
                                 <span>Username</span>
                             </div>
                             <span>Date</span>
-                            <div class="diary_comments_details_edit">
+                            <div class="comments_details_edit">
                                 <span class="delete"></span>
                                 <span class="report"></span>
                             </div>
@@ -285,15 +277,15 @@
                             ratione
                             recusandae saepe tempora.</p>
                     </div>
-                    <div class="diary_comments_details">
-                        <div class="diary_comments_details_user">
+                    <div class="comments_details">
+                        <div class="comments_details_user">
 
-                            <div class="diary_comments_details_profilepicture">
+                            <div class="comments_details_profilepicture">
                                 <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
                                 <span>Username</span>
                             </div>
                             <span>Date</span>
-                            <div class="diary_comments_details_edit">
+                            <div class="comments_details_edit">
                                 <span class="delete"></span>
                                 <span class="report"></span>
                             </div>

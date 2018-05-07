@@ -15,7 +15,10 @@
                 <a href="{{ url ('profile')}}">My Profile</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('bmiprofile')}}">BMI Calculator</a>
+                <a href="{{ url ('beforeafterprofile')}}">My Before/After-Stories</a>
+            </div>
+            <div class="profile_navigation_sections profile_navigation__section_box">
+                <a href="{{ url ('motivationprofile')}}">My Motivation Letters</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <a href="{{ url ('blogprofile')}}">My Blogs</a>
@@ -31,60 +34,6 @@
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <a href="{{ url ('welcome')}}">Logout</a>
-            </div>
-        </div>
-
-        <div class="profile_info_section">
-            <div class="profile_info_section_images">
-                <img alt="profile picture" src="{{ ('images/aboutus/Founder.jpg') }}" class="profile_picture">
-                <div class="profile_personal_section">
-                    <p>Diet</p>
-                    <img alt="diet" src="{{('images/community/nospecialdiet.png')}}">
-                </div>
-                <div class="profile_personal_section">
-                    <p>Goal</p>
-                    <img alt="diet" src="{{('images/community/stayhealthy.png')}}">
-                </div>
-                <div class="profile_personal_section">
-                    <p>Body Shape</p>
-                    <img alt="diet" src="{{ asset('images/hourglass_shape_1.png') }}">
-                </div>
-            </div>
-
-            <div class="profile_section_personal">
-                <div>
-                    <p>MOTIVATION QUOTE</p>
-                    <p class="profile_section_personal_motivation_quote">'If you can dream it, you can do it!'</p>
-                </div>
-
-                <div class="profile_info_section_personal_details">
-                    <div>
-                        <p>NAME:</p>
-                        <p>AGE:</p>
-                        <p>COUNTRY:</p>
-                    </div>
-                    <div>
-                        <p>Jeanne Jirges</p>
-                        <p>24</p>
-                        <p>Austria</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="profile_section profile_section_2">
-        <div class="profile_navigation_two">
-
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('profile')}}">My Diary</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('beforeafterprofile')}}">My Before/After-Story</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('motivationprofile')}}">My Motivation Letters</a>
             </div>
         </div>
 
