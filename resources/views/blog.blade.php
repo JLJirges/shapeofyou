@@ -13,7 +13,7 @@
 
         <div class="blog_box">
             <div>
-                <img src="{{('../images/workout/workout_bg.png')}}" alt="diray image">
+                <img src="{{('../images/workout/workout_bg.png')}}" alt="blog hero image">
 
                 <div class="blog_text">
 
@@ -35,7 +35,7 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
                         consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
                         quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
-                    <img src="{{('../images/workout/workout_bg.png')}}" alt="diray image">
+                    <img src="{{('../images/workout/workout_bg.png')}}" alt="blog hero image">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
                         consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
                         quae quidem, repellat repudiandae sapiente tenetur veritatis?

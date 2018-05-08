@@ -1613,12 +1613,16 @@ form > input {
 }
 
 .blog_entry {
-  padding: 100px 10px 10px 10px;
+  padding: 1%;
   border: 1px solid lightgrey;
-  max-width: 60%;
+  width: 60%;
   height: auto;
-  margin: 2% 20% 1% 20%;
+ margin-top: 50px;
+  margin-bottom: 2%;
 
+  display: flex;
+  justify-content: center;
+align-self: center;
   box-shadow: grey 0 5px 5px 0;
 
   background: url("../images/diary/diaryentry_BG.png") no-repeat;
@@ -1758,3 +1762,133 @@ footer {
   display: flex;
 }
 
+
+
+@media only screen and (max-width: 768px) {
+.shape_bg{
+  background: url("../images/welcome/responsive_shape_bg.png") no-repeat fixed;
+  background-size: cover;
+}
+  .goal_bg{
+    background: url("../images/welcome/responsive_goal_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+
+  /* COMMUNITY */
+
+  .community_bg {
+    background: url("../images/community/responsive_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+
+  .buddy_bg {
+    background: url("../images/community/responsive_buddy_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+
+  .community_section_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .community_text_section {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .buddy_section_dietandgoals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buddy_section_dietandgoals > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .buddy_section_dietandgoals > div > a{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+/* PROFILE */
+  .profile_diary_entry_section {
+    width: 100%;
+  background-color: yellow;
+
+  }
+
+  .old_diary_entry{
+    width: 100%;
+  }
+
+  .profile_old_diary_entry_box {
+    width: 100%;
+  }
+
+  .profile_old_diary_entry_box > div > img {
+    width: 100%;
+  }
+
+  /* BLOGS */
+  .blog_entry {
+    width: 90%;
+   padding: 5px;
+    margin-top: 50px;
+  }
+
+  .blog_box {
+    width: 100%;
+  }
+;
+
+  .blog_box > div > img {
+    width: 100%;
+  }
+
+  .blog_text > img {
+    width: 100%;
+  }
+
+
+  .blog_author_section {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    width: 90%;
+
+  }
+
+  .blog_abouttheauthor {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    width: 90%;
+    background: url("../images/blogs/responsive_author_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+
+  .blog_abouttheauthor_content {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .comments_section {
+    width: 100%;
+  }
+}

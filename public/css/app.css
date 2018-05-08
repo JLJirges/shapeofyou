@@ -1981,11 +1981,20 @@ form > input {
 }
 
 .blog_entry {
-  padding: 100px 10px 10px 10px;
+  padding: 1%;
   border: 1px solid lightgrey;
-  max-width: 60%;
+  width: 60%;
   height: auto;
-  margin: 2% 20% 1% 20%;
+  margin-top: 50px;
+  margin-bottom: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   -webkit-box-shadow: grey 0 5px 5px 0;
           box-shadow: grey 0 5px 5px 0;
   background: url("../images/diary/diaryentry_BG.png") no-repeat;
@@ -2165,4 +2174,171 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .shape_bg {
+    background: url("../images/welcome/responsive_shape_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+  .goal_bg {
+    background: url("../images/welcome/responsive_goal_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+  /* COMMUNITY */
+  .community_bg {
+    background: url("../images/community/responsive_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+  .buddy_bg {
+    background: url("../images/community/responsive_buddy_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+  .community_section_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .community_text_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    width: 90%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .buddy_section_dietandgoals {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .buddy_section_dietandgoals > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .buddy_section_dietandgoals > div > a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  /* PROFILE */
+  .profile_diary_entry_section {
+    width: 100%;
+    background-color: yellow;
+  }
+  .old_diary_entry {
+    width: 100%;
+  }
+  .profile_old_diary_entry_box {
+    width: 100%;
+  }
+  .profile_old_diary_entry_box > div > img {
+    width: 100%;
+  }
+  /* BLOGS */
+  .blog_entry {
+    width: 90%;
+    padding: 5px;
+    margin-top: 50px;
+  }
+  .blog_box {
+    width: 100%;
+  }
+  .blog_box > div > img {
+    width: 100%;
+  }
+  .blog_text > img {
+    width: 100%;
+  }
+  .blog_author_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+  }
+  .blog_abouttheauthor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    background: url("../images/blogs/responsive_author_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+  .blog_abouttheauthor_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .comments_section {
+    width: 100%;
+  }
 }

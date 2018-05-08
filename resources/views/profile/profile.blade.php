@@ -97,21 +97,20 @@
         </div>
     </div>
 
-    <div class="profile_diary_entry_section">
 
-        <div class="old_diary_entry">
-            <div class="old_diary_entry_setting">
-                <span>Date</span>
-                <h4>Diary Entry Title</h4>
-                <span class="delete"></span>
-            </div>
+        <div class="blog_entry">
 
-            <div class="profile_old_diary_entry_box">
 
+            <div class="blog_box">
+                <div class="old_diary_entry_setting">
+                    <span>Date</span>
+                    <h4>Diary Entry Title</h4>
+                    <span class="delete"></span>
+                </div>
                 <div>
-                    <img src="{{('../images/workout/workout_bg.png')}}" alt="diray image">
+                    <img src="{{('../images/workout/workout_bg.png')}}" alt="blog hero image">
 
-                    <div class="old_diary_entry_text">
+                    <div class="blog_text">
 
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
                             consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
@@ -144,7 +143,9 @@
                 </div>
             </div>
 
+
         </div>
+
         <div class="comments_section">
             <div class="comments_section_interaction">
                 <h5>Read Comments</h5>
@@ -311,7 +312,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
     <div class="old_diary_entries">
         <div class="profile_diary_section_loadolddiaries">
             <div class="profile_diary_section_loadolddiaries_details">
