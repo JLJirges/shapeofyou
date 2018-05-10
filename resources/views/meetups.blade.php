@@ -10,7 +10,7 @@
     </div>
     <div class="meetups_title">
         <h2>Upcoming Events</h2>
-        <h2>Former Events</h2>
+        <h2 class="h2_desktop_view">Former Events</h2>
     </div>
     <div class="meetups_section">
 
@@ -142,6 +142,7 @@
             </div>
         </div>
 
+        <h2 class="h2_mobile_view">Former Events</h2>
         <div class="former_event_section">
 
             <p>

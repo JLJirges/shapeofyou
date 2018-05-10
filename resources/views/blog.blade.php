@@ -6,12 +6,19 @@
 
 @section('content')
     <div class="h1_bg">
-        <h1>BLOG TITLE</h1>
+
+
     </div>
 
     <div class="blog_entry">
 
         <div class="blog_box">
+            <div class="workout_entry_setting">
+                <span class="fav_icon"></span>
+                <h1> A REALLY LONG BLOG TITLE, WHAT WILL HAPPEN?</h1>
+
+            </div>
+
             <div>
                 <img src="{{('../images/workout/workout_bg.png')}}" alt="blog hero image">
 

@@ -178,6 +178,30 @@ h3 {
   cursor: pointer;
 }
 
+.fav_icon {
+  width: 30px;
+  height: 30px;
+  background: url("../images/unclicked_fav_icon.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.clicked_fav_icon {
+  width: 30px;
+  height: 30px;
+  background: url("../images/fav_icon.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.fav_icon:hover {
+  width: 30px;
+  height: 30px;
+  background: url("../images/fav_icon.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
 /* HOME */
 .goal_info {
   width: 60%;
@@ -1071,6 +1095,10 @@ h3 {
 }
 
 /* MEETUPS */
+.h2_mobile_view {
+  display: none;
+}
+
 .meetups_title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1598,6 +1626,7 @@ form > input {
   width: 65%;
 }
 
+.profile_
 .old_diary_entry {
   padding: 10px;
   border: 1px solid lightgrey;
@@ -1781,6 +1810,21 @@ form > input {
   cursor: pointer;
 }
 
+/* PROFILE BLOG */
+.profile_blog_explain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile_fav_section {
+  margin-left: -10%;
+}
+
+.explain_fav_blogs_p {
+  text-align: right;
+}
+
 /* WORKOUT DETAILS */
 .workout_entry {
   padding: 10px;
@@ -1912,8 +1956,7 @@ form > input {
 /* ABOUT US */
 .aboutus_content {
   width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 5% 10% 5% 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1927,8 +1970,6 @@ form > input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 5%;
-  margin-top: 5%;
 }
 
 .aboutusteam {
@@ -2177,12 +2218,102 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+  .h1_bg {
+    height: 120px;
+  }
+  h1 {
+    margin-top: 40px;
+    font-size: 30pt;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 25pt;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+  h3 {
+    font-size: 20pt;
+  }
+  /* HOME */
+  .home_section {
+    width: 100%;
+    margin: 0;
+  }
+  .goal_info {
+    width: 90%;
+    text-align: justify;
+  }
+  .home_section_community > div {
+    width: 100%;
+    margin: 0;
+  }
+  .home_section_community > div > p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    width: 90%;
+  }
+  .home_section_food > div {
+    width: 100%;
+    margin: 0;
+  }
+  .home_section_food > div > p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    width: 90%;
+  }
   .shape_bg {
     background: url("../images/welcome/responsive_shape_bg.png") no-repeat fixed;
     background-size: cover;
   }
   .goal_bg {
     background: url("../images/welcome/responsive_goal_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+  /* SUPERFOOD */
+  .superfood_text {
+    width: 80%;
+    text-align: justify;
+  }
+  .superfood_blog_bg {
+    background: url("../images/superfood/responsive_superfood_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+  /* WORKOUT */
+  .workout_section > div {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .workout_section > div > p {
+    width: 80%;
+    margin: 0;
+    padding: 20px;
+  }
+  .workout_bg {
+    background: url("../images/workout/responsive_bg_1.png") no-repeat fixed;
+    background-size: cover;
+  }
+  .workout_blog_bg {
+    background: url("../images/workout/responsive_bg_2.png") no-repeat fixed;
     background-size: cover;
   }
   /* COMMUNITY */
@@ -2193,6 +2324,11 @@ footer {
   .buddy_bg {
     background: url("../images/community/responsive_buddy_bg.png") no-repeat fixed;
     background-size: cover;
+  }
+  .community_section > div {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
   }
   .community_section_2 {
     display: -webkit-box;
@@ -2209,6 +2345,7 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
+    padding: 0;
   }
   .community_text_section {
     display: -webkit-box;
@@ -2217,15 +2354,65 @@ footer {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-item-align: center;
-        align-self: center;
     width: 90%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 0;
+    padding: 0;
+  }
+  .community_text_section > p {
+    margin-top: 0;
+  }
+  .buddy_section {
+    width: 90%;
+    padding: 10px;
   }
   .buddy_section_dietandgoals {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .buddy_section_dietandgoals > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .buddy_section_dietandgoals > div > a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+  /* MEETUPS */
+  .h2_desktop_view {
+    display: none;
+  }
+  .h2_mobile_view {
+    display: inherit;
+  }
+  .meetups_section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .upcomin_meetups {
+    width: 90%;
+    margin: 0;
+    padding: 10px;
+  }
+  .upcoming_meetups_section > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2235,32 +2422,74 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
-  }
-  .buddy_section_dietandgoals > div {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .buddy_section_dietandgoals > div > a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .event_box > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .event_box {
+    border: none;
+  }
+  .event_date_and_time_info {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .event_what {
+    border: none;
+  }
+  .meetup_event_googlemaps {
+    width: 280px;
+    padding: 0;
+    margin: 0;
+    height: auto;
+  }
+  .former_event_section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .former_event_section > p {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin: 0;
+    padding-bottom: 20px;
+    text-align: justify;
   }
   /* PROFILE */
   .profile_diary_entry_section {

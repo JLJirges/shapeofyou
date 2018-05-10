@@ -21,7 +21,7 @@
                 <a href="{{ url ('motivationprofile')}}">My Motivation</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('blogprofile')}}">My Blogs</a>
+                <a href="{{ url ('blogoverviewprofile')}}">My Blogs</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <a href="{{ url ('workoutprofile')}}">My Workout</a>

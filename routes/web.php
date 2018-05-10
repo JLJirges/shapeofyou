@@ -47,6 +47,10 @@ Route::get('motivationprofile', function () {
     return view('profile/motivationprofile');
 });
 
+Route::get('blogoverviewprofile', function () {
+    return view('profile/blogoverviewprofile');
+});
+
 Route::get('contact', function () {
     return view('footer/contact');
 });
