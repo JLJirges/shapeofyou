@@ -170,11 +170,18 @@ h3 {
 }
 
 .addworkout {
-  width: 30px;
-  height: auto;
+  width: 80px;
+  height: 80px;
+  background: url("../images/addworkout_icon.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
 }
 
 .addworkout:hover {
+  width: 80px;
+  height: 80px;
+  background: url("../images/addedworkout_icon.png") no-repeat;
+  background-size: cover;
   cursor: pointer;
 }
 
@@ -1825,13 +1832,80 @@ form > input {
   text-align: right;
 }
 
+.profile_fav_box_section {
+  margin-top: 50px;
+}
+
+/* PROFILE WORKOUT */
+.profile_workout_section {
+  width: 90%;
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left {
+  width: 100px;
+  height: 100px;
+  background: url("../images/profile/left_icon.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.right {
+  width: 100px;
+  height: 100px;
+  background: url("../images/profile/right_icon.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.profile_workout_section_workoutdetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  border-top: solid 1px lightgrey;
+  width: 50%;
+}
+
+.hide_or_show_section {
+  padding: 10px;
+  border-top: solid 1px lightgrey;
+  margin: 10px;
+  font-weight: bold;
+}
+
 /* WORKOUT DETAILS */
 .workout_entry {
   padding: 10px;
   border: 1px solid lightgrey;
-  max-width: 60%;
+  width: 60%;
   height: auto;
-  margin: 4% 20% 4% 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-shadow: grey 0 5px 5px 0;
           box-shadow: grey 0 5px 5px 0;
 }
@@ -1849,13 +1923,36 @@ form > input {
 }
 
 .workout_entry_box {
-  max-width: 96%;
+  width: 96%;
   margin: 2%;
 }
 
+.workout_entry_box > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .workout_entry_box > div > img {
-  max-width: 800px;
-  max-height: 400px;
+  width: 80%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .workout_entry_text {
@@ -2241,6 +2338,12 @@ footer {
   h3 {
     font-size: 20pt;
   }
+  h4 {
+    font-size: 18pt;
+  }
+  p {
+    font-size: 12pt;
+  }
   /* HOME */
   .home_section {
     width: 100%;
@@ -2315,6 +2418,60 @@ footer {
   .workout_blog_bg {
     background: url("../images/workout/responsive_bg_2.png") no-repeat fixed;
     background-size: cover;
+  }
+  /* WORKOUT DETAIL */
+  .comments_interaction {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .workout_entry {
+    width: 90%;
+    padding: 10px;
+  }
+  .workout_entry_box {
+    width: 95%;
+    padding: 5px;
+  }
+  .workout_entry_box > div > img {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+  }
+  .workout_entry_setting {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .workout_details_profilepicture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   /* COMMUNITY */
   .community_bg {
@@ -2494,7 +2651,6 @@ footer {
   /* PROFILE */
   .profile_diary_entry_section {
     width: 100%;
-    background-color: yellow;
   }
   .old_diary_entry {
     width: 100%;

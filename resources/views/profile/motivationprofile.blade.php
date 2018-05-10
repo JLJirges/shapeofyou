@@ -15,10 +15,10 @@
                 <a href="{{ url ('profile')}}">My Profile</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('beforeafterprofile')}}">My Before/After-Stories</a>
+                <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('motivationprofile')}}">My Motivation Letters</a>
+                <a href="{{ url ('motivationprofile')}}">Motivation</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <a href="{{ url ('blogoverviewprofile')}}">My Blogs</a>
@@ -27,10 +27,10 @@
                 <a href="{{ url ('workoutprofile')}}">My Workout</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('buddyprofile')}}">Workout Buddies</a>
+                <a href="{{ url ('buddyprofile')}}">My Buddies</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('settingsprofile')}}">Help & Seetings</a>
+                <a href="{{ url ('settingsprofile')}}">Seetings</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <a href="{{ url ('welcome')}}">Logout</a>

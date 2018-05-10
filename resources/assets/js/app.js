@@ -6,6 +6,3 @@
 
 require('./bootstrap');
 
-console.log('hello world!');
-
-$('h2').addClass('gaga');

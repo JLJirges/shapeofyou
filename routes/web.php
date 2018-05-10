@@ -51,6 +51,14 @@ Route::get('blogoverviewprofile', function () {
     return view('profile/blogoverviewprofile');
 });
 
+Route::get('workoutprofile', function () {
+    return view('profile/workoutprofile');
+});
+
+Route::get('settingsprofile', function () {
+    return view('profile/settingsprofile');
+});
+
 Route::get('contact', function () {
     return view('footer/contact');
 });

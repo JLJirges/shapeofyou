@@ -143,11 +143,20 @@ h3 {
 }
 
 .addworkout {
-  width: 30px;
-  height: auto;
+  width: 80px;
+  height: 80px;
+  background: url("../images/addworkout_icon.png") no-repeat;
+  background-size: cover;
+
+  cursor: pointer;
 }
 
 .addworkout:hover {
+  width: 80px;
+  height: 80px;
+  background: url("../images/addedworkout_icon.png") no-repeat;
+  background-size: cover;
+
   cursor: pointer;
 }
 
@@ -1208,8 +1217,6 @@ form > input {
   padding-bottom: 15px;
 }
 
-
-
 .profile_navigation_two > div {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -1339,7 +1346,6 @@ form > input {
 }
 
 .profile_
-
 .old_diary_entry {
   padding: 10px;
   border: 1px solid lightgrey;
@@ -1478,7 +1484,6 @@ form > input {
   cursor: pointer;
 }
 
-
 /* PROFILE BLOG */
 .profile_blog_explain {
   display: flex;
@@ -1492,15 +1497,63 @@ form > input {
   text-align: right;
 }
 
+.profile_fav_box_section {
+  margin-top: 50px;
+}
+
+/* PROFILE WORKOUT */
+
+.profile_workout_section {
+  width: 90%;
+  margin: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  width: 100px;
+  height: 100px;
+  background: url("../images/profile/left_icon.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.right {
+  width: 100px;
+  height: 100px;
+  background: url("../images/profile/right_icon.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.profile_workout_section_workoutdetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  border-top: solid 1px lightgrey;
+  width: 50%;
+}
+
+.hide_or_show_section {
+  padding: 10px;
+  border-top: solid 1px lightgrey;
+  margin: 10px;
+  font-weight: bold;
+}
 
 /* WORKOUT DETAILS */
 
 .workout_entry {
   padding: 10px;
   border: 1px solid lightgrey;
-  max-width: 60%;
+  width: 60%;
   height: auto;
-  margin: 4% 20% 4% 20%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
 
   box-shadow: grey 0 5px 5px 0;
 
@@ -1515,13 +1568,23 @@ form > input {
 }
 
 .workout_entry_box {
-  max-width: 96%;
+  width: 96%;
   margin: 2%;
 }
 
+.workout_entry_box > div {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+}
+
 .workout_entry_box > div > img {
-  max-width: 800px;
-  max-height: 400px;;
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .workout_entry_text {
@@ -1603,7 +1666,7 @@ form > input {
   flex-direction: column;
 }
 
-.faq > li > .question{
+.faq > li > .question {
   font-weight: bold;
   font-size: 16pt;
 }
@@ -1662,12 +1725,12 @@ form > input {
   border: 1px solid lightgrey;
   width: 60%;
   height: auto;
- margin-top: 50px;
+  margin-top: 50px;
   margin-bottom: 2%;
 
   display: flex;
   justify-content: center;
-align-self: center;
+  align-self: center;
   box-shadow: grey 0 5px 5px 0;
 
   background: url("../images/diary/diaryentry_BG.png") no-repeat;
@@ -1807,8 +1870,6 @@ footer {
   display: flex;
 }
 
-
-
 @media only screen and (max-width: 768px) {
 
   .h1_bg {
@@ -1833,6 +1894,14 @@ footer {
     font-size: 20pt;
   }
 
+  h4 {
+    font-size: 18pt;
+  }
+
+  p {
+    font-size: 12pt;
+  }
+
   /* HOME */
 
   .home_section {
@@ -1851,7 +1920,7 @@ footer {
   }
 
   .home_section_community > div > p {
-   display: flex;
+    display: flex;
     justify-content: center;
     align-self: center;
     width: 90%;
@@ -1869,11 +1938,11 @@ footer {
     width: 90%;
   }
 
-  .shape_bg{
-  background: url("../images/welcome/responsive_shape_bg.png") no-repeat fixed;
-  background-size: cover;
-}
-  .goal_bg{
+  .shape_bg {
+    background: url("../images/welcome/responsive_shape_bg.png") no-repeat fixed;
+    background-size: cover;
+  }
+  .goal_bg {
     background: url("../images/welcome/responsive_goal_bg.png") no-repeat fixed;
     background-size: cover;
   }
@@ -1884,7 +1953,7 @@ footer {
     text-align: justify;
   }
 
-  .superfood_blog_bg{
+  .superfood_blog_bg {
     background: url("../images/superfood/responsive_superfood_bg.png") no-repeat fixed;
     background-size: cover;
   }
@@ -1911,6 +1980,47 @@ footer {
   .workout_blog_bg {
     background: url("../images/workout/responsive_bg_2.png") no-repeat fixed;
     background-size: cover;
+  }
+
+  /* WORKOUT DETAIL */
+
+  .comments_interaction{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .workout_entry {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .workout_entry_box {
+    width: 95%;
+    padding: 5px;
+  }
+
+
+  .workout_entry_box > div > img {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .workout_entry_setting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .workout_details_profilepicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   /* COMMUNITY */
@@ -1962,13 +2072,13 @@ footer {
     align-items: center;
   }
 
-  .buddy_section_dietandgoals > div{
+  .buddy_section_dietandgoals > div {
     display: flex;
-  align-items: center;
+    align-items: center;
   }
 
-  .buddy_section_dietandgoals > div > a{
-   display: flex;
+  .buddy_section_dietandgoals > div > a {
+    display: flex;
     justify-content: center;
     align-self: center;
   }
@@ -2002,16 +2112,16 @@ footer {
     flex-direction: column;
   }
 
-  .event_box >div {
+  .event_box > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-.event_box {
-  border: none;
-}
+  .event_box {
+    border: none;
+  }
 
   .event_date_and_time_info {
     width: 100%;
@@ -2051,16 +2161,13 @@ footer {
     text-align: justify;
   }
 
-
-
-/* PROFILE */
+  /* PROFILE */
   .profile_diary_entry_section {
     width: 100%;
-  background-color: yellow;
 
   }
 
-  .old_diary_entry{
+  .old_diary_entry {
     width: 100%;
   }
 
@@ -2072,10 +2179,12 @@ footer {
     width: 100%;
   }
 
+
+
   /* BLOGS */
   .blog_entry {
     width: 90%;
-   padding: 5px;
+    padding: 5px;
     margin-top: 50px;
   }
 
@@ -2091,7 +2200,6 @@ footer {
   .blog_text > img {
     width: 100%;
   }
-
 
   .blog_author_section {
     display: flex;

@@ -25,7 +25,7 @@
         <div class="square_box_section">
 
             <div class="box_indoor">
-                <a class="box_link" href="{{url('overview')}}">INDOOR</a>
+                <a class="box_link" href="{{url('overview')}}">WARM UP</a>
             </div>
             <div class="box_outdoor">
                 <a class="box_link" href="{{url('overview')}}">OUTDOOR</a>
@@ -46,7 +46,7 @@
                 <a class="box_link" href="{{url('overview')}}">POWER WITH EQUIPMENT</a>
             </div>
             <div class="box_withoutequipment">
-                <a class="box_link" href="{{url('overview')}}">WITHOUT EQUIPMENT</a>
+                <a class="box_link" href="{{url('overview')}}">COOL DOWN</a>
             </div>
         </div>
 

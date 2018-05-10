@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="h1_bg">
-        <h1>'content' OVERVIEW</h1>
+        <h1>OVERVIEW</h1>
     </div>
 
     <p class="superfood_text">Activate the filter by choosing one or more diets and occasions to get what you deserve: the healthiest,
