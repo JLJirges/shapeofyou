@@ -186,6 +186,11 @@ h3 {
   cursor: pointer;
 }
 
+.user_overview {
+  border-radius: 50px;
+  background-color: yellow;
+}
+
 /* HOME */
 
 .goal_info {
@@ -1169,6 +1174,10 @@ form > input {
   font-weight: bold;
 }
 
+.delete_account {
+  background: radial-gradient(ellipse at center, rgba(220, 64, 9, 1) 0%, rgba(107, 5, 5, 1) 100%);
+}
+
 .profile_section {
   width: 90%;
   height: auto;
@@ -1542,6 +1551,36 @@ form > input {
   margin: 10px;
   font-weight: bold;
 }
+
+/*profile settings*/
+
+.profile_setting_section{
+  display: flex;
+justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  max-width: 50%;
+  height: auto;
+  padding: 2%;
+  margin-top: 10px;
+}
+
+.profile_setting_section > div {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  text-align: left;
+}
+
+.profile_setting_section > div > form {
+  padding: 10px;
+}
+
+.profile_setting_section > div > form > button{
+  margin-left: 0;
+  width: auto;
+}
+
 
 /* WORKOUT DETAILS */
 
@@ -2179,7 +2218,33 @@ footer {
     width: 100%;
   }
 
+  /* SETTINGS */
 
+  .profile_setting_section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    max-width: 90%;
+    height: auto;
+    padding: 2%;
+    margin-top: 10px;
+  }
+
+  .profile_setting_section > div {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    flex-direction: column;
+  }
+
+  .profile_setting_section > div > form {
+    padding: 10px;
+  }
+
+  .profile_setting_section > div > form > button{
+    width: auto;
+  }
 
   /* BLOGS */
   .blog_entry {

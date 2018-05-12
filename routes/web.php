@@ -59,6 +59,10 @@ Route::get('settingsprofile', function () {
     return view('profile/settingsprofile');
 });
 
+Route::get('buddiesprofile', function () {
+    return view('profile/buddiesprofile');
+});
+
 Route::get('contact', function () {
     return view('footer/contact');
 });

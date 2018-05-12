@@ -27,10 +27,10 @@
                 <a href="{{ url ('workoutprofile')}}">My Workout</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('buddyprofile')}}">My Buddies</a>
+                <a href="{{ url ('buddiesprofile')}}">My Buddies</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('settingsprofile')}}">Seetings</a>
+                <a href="{{ url ('settingsprofile')}}">Settings</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <a href="{{ url ('welcome')}}">Logout</a>
