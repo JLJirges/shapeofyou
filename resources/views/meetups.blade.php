@@ -155,19 +155,19 @@
                 <h4>WOMEN POWER</h4>
                 <p>Vienna|Donauinsel</p>
                 <p>1st, February 2018</p>
-                <span class="ticket_button">Show gallery</span>
+                <span class="white_button">Show gallery</span>
             </div>
             <div class="former_event former_event_box">
                 <h4>LIFE CHANGERS</h4>
                 <p>Vienna|Donauinsel</p>
                 <p>1st, February 2018</p>
-                <span class="ticket_button">Show gallery</span>
+                <span class="white_button">Show gallery</span>
             </div>
             <div class="former_event former_event_box">
                 <h4>BODY BUILDING PROFESSIONALS</h4>
                 <p>Vienna|Donauinsel</p>
                 <p>1st, February 2018</p>
-                <span class="ticket_button">Show gallery</span>
+                <span class="white_button">Show gallery</span>
             </div>
         </div>
     </div>

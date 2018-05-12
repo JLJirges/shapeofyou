@@ -59,125 +59,139 @@
     </div>
 
     <div class="comments_section">
-        <div class="comments_interaction">
-            <span>Read Comments</span>
-            <span>Write a Comment</span>
-        </div>
-        <div class="comments_details">
-            <div class="comments_details_user">
+        <ul class="comments_section_interaction tabs">
+            <li class="tab-link shown_tab" data-tab="comment-tab-1"><h5>Read Comments</h5></li>
+            <li class="tab-link" data-tab="comment-tab-2"><h5>Write a Comment</h5></li>
+            <li class="tab-link" data-tab="comment-tab-3"><h5>Hide Comments</h5></li>
+        </ul>
+        <div class="tab-content shown_tab" id="comment-tab-1">
 
-                <div class="comments_details_profilepicture">
-                    <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
-                    <span>Username</span>
-                </div>
-                <span>Date</span>
-                <div class="comments_details_edit">
-                    <span class="delete"></span>
-                    <span class="report"></span>
-                </div>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.</p>
-        </div>
-        <div class="comments_details">
-            <div class="comments_details_user">
+            <div class="comments_details">
 
-                <div class="comments_details_profilepicture">
-                    <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
-                    <span>Username</span>
+                <div class="comments_details_user">
+                    <div class="comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
+                    <span>Date</span>
+                    <div class="comments_details_edit">
+                        <span class="delete"></span>
+                        <span class="report"></span>
+                    </div>
                 </div>
-                <span>Date</span>
-                <div class="comments_details_edit">
-                    <span class="delete"></span>
-                    <span class="report"></span>
-                </div>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.</p>
-        </div>
-        <div class="comments_details">
-            <div class="comments_details_user">
 
-                <div class="comments_details_profilepicture">
-                    <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
-                    <span>Username</span>
-                </div>
-                <span>Date</span>
-                <div class="comments_details_edit">
-                    <span class="delete"></span>
-                    <span class="report"></span>
-                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.</p>
-        </div>
-        <div class="comments_details">
-            <div class="comments_details_user">
+            <div class="comments_details">
+                <div class="comments_details_user">
 
-                <div class="comments_details_profilepicture">
-                    <img src="{{asset('images/aboutus/Corinna.png')}}" alt="user profile picture">
-                    <span>Username</span>
+                    <div class="comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
+                    <span>Date</span>
+                    <div class="comments_details_edit">
+                        <span class="delete"></span>
+                        <span class="report"></span>
+                    </div>
                 </div>
-                <span>Date</span>
-                <div class="comments_details_edit">
-                    <span class="delete"></span>
-                    <span class="report"></span>
-                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.</p>
-        </div>
-        <div class="comments_details">
-            <div class="comments_details_user">
+            <div class="comments_details">
+                <div class="comments_details_user">
 
-                <div class="comments_details_profilepicture">
-                    <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
-                    <span>Username</span>
+                    <div class="comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Joao.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
+                    <span>Date</span>
+                    <div class="comments_details_edit">
+                        <span class="delete"></span>
+                        <span class="report"></span>
+                    </div>
                 </div>
-                <span>Date</span>
-                <div class="comments_details_edit">
-                    <span class="delete"></span>
-                    <span class="report"></span>
-                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                dignissimos earum ex
-                facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                recusandae saepe tempora.</p>
+            <div class="comments_details">
+                <div class="comments_details_user">
+
+                    <div class="comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Corinna.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
+                    <span>Date</span>
+                    <div class="comments_details_edit">
+                        <span class="delete"></span>
+                        <span class="report"></span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
+            </div>
+            <div class="comments_details">
+                <div class="comments_details_user">
+
+                    <div class="comments_details_profilepicture">
+                        <img src="{{asset('images/aboutus/Remus.png')}}" alt="user profile picture">
+                        <span>Username</span>
+                    </div>
+                    <span>Date</span>
+                    <div class="comments_details_edit">
+                        <span class="delete"></span>
+                        <span class="report"></span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                    dignissimos earum ex
+                    facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                    recusandae saepe tempora.</p>
+            </div>
         </div>
+        <div  class="tab-content" id="comment-tab-2">
+            <form class="comment_form" method="post" action="">
+                <h2>Leave a Comment</h2>
+                <label>Write your comment</label>
+                <input type="text" name="comment" placeholder="I will be your comment...">
+                <button class="white_button">Add Comment</button>
+            </form>
+        </div>
+        <div class="tab-content" id="comment-tab-3"></div>
     </div>
 
 @endsection

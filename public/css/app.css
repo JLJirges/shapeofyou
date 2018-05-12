@@ -214,6 +214,43 @@ h3 {
   background-color: yellow;
 }
 
+.shown_tab {
+  display: inherit;
+}
+
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ul.tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.current {
+  color: #222;
+}
+
+.tab-content {
+  display: none;
+  padding: 15px;
+}
+
+.tab-content.current_tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 /* HOME */
 .goal_info {
   width: 60%;
@@ -236,14 +273,14 @@ h3 {
   padding-bottom: 50px;
 }
 
-.home_section_goals > img {
+.home_section_goals > li > img {
   -webkit-box-shadow: lightgrey 0 0 20px 0;
           box-shadow: lightgrey 0 0 20px 0;
   background: rgba(0, 0, 0, 0.1);
   border-radius: 100px;
 }
 
-.home_section_goals > img:hover {
+.home_section_goals > li > img:hover {
   background: rgba(255, 255, 255, 0.6);
 }
 
@@ -1515,7 +1552,7 @@ form > input {
 .profile_personal_section > img {
   max-width: 100px;
   max-height: 100px;
-  padding: 5px;
+  margin: 5px;
 }
 
 .profile_personal_section > p {
@@ -1642,7 +1679,6 @@ form > input {
   width: 65%;
 }
 
-.profile_
 .old_diary_entry {
   padding: 10px;
   border: 1px solid lightgrey;
@@ -1702,6 +1738,17 @@ form > input {
   border-bottom: solid 2px lightgrey;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.comments_section_tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: yellow;
 }
 
 .diary_form {
@@ -1795,31 +1842,98 @@ form > input {
           box-shadow: lightgrey 0 5px 5px 0;
 }
 
-.old_diary_entries {
-  margin-top: 2%;
-  margin-bottom: 4%;
-}
-
-.profile_diary_section_loadolddiaries {
-  width: 100%;
+.comment_form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.white_button {
+  background: inherit;
+  border: double 4px lightgrey;
+  width: 150px;
+  padding: 8px;
+  margin: 15px;
+  color: black;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.old_diary_entries {
+  margin-top: 2%;
+  margin-bottom: 4%;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_diary_section_loadolddiaries {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .profile_diary_section_loadolddiaries > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
   border-top: lightgrey solid 1px;
   border-bottom: lightgrey solid 1px;
+}
+
+.whole_old_entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .profile_diary_section_loadolddiaries_details:hover {
@@ -2699,6 +2813,36 @@ footer {
     text-align: justify;
   }
   /* PROFILE */
+  .profile_section_personal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .profile_info_section_images {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .profile_diary_entry_section {
     width: 100%;
   }
@@ -2814,5 +2958,26 @@ footer {
   }
   .comments_section {
     width: 100%;
+  }
+  .comments_details_user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .comments_details_profilepicture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .comments_details_profilepicture > img {
+    margin: 10px;
   }
 }
