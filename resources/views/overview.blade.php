@@ -9,11 +9,6 @@
         <h1>OVERVIEW</h1>
     </div>
 
-    <p class="superfood_text">Activate the filter by choosing one or more diets and occasions to get what you deserve: the healthiest,
-        the most delicious, the best!
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis consequuntur explicabo
-        laudantium molestiae molestias nulla obcaecati placeat praesentium rem, sint sit sunt voluptate.
-        Incidunt libero repudiandae suscipit veritatis voluptas!</p>
 
     <div class="square_box_section">
         <div class="box_indoor">

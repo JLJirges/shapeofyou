@@ -52,12 +52,13 @@
         </div>
     </div>
 
-    <div class="title_bg">
-        <h2>Warm up</h2>
-    </div>
+
+<div class="title_bg">
+    <h2>Warm Up</h2>
+</div>
 
     <div class="profile_workout_section profile_workout_section_warmup">
-        <div class="left"></div>
+        <div>&lt;</div>
 
         <div class="square_box_section">
             <div class="box_indoor">
@@ -71,7 +72,7 @@
             </div>
         </div>
 
-        <div class="right"></div>
+        <div>&gt;</div>
 
     </div>
 
@@ -212,5 +213,9 @@
 
     </div>
     <div class="hide_or_show_section">Show Details</div>
+
+
+
+
 
 @endsection

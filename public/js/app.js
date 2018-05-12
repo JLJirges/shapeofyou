@@ -13705,12 +13705,6 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
-    $(".whole_old_entry_trigger").click(function () {
-        $(".whole_old_entry").toggle();
-    });
-});
-
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {

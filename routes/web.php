@@ -95,3 +95,7 @@ Route::get('overview', function(){
 Route::get('detail', function(){
    return view('detail');
 });
+
+Route::get('dashboard', function(){
+    return view('backend/dashboard');
+});

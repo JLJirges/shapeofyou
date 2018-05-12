@@ -1,4 +1,4 @@
-<div class="top-middle links">
+<div class="top-middle links nav">
 
 
     <a href="{{ url('superfood') }}">Super Food</a>
