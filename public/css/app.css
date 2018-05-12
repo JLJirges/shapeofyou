@@ -1517,6 +1517,11 @@ form > input {
   padding-bottom: 25px;
 }
 
+.profile_navigation__section_box:hover {
+  background: rgba(0, 0, 0, 0.1);
+  font-size: larger;
+}
+
 .profile_navigation_sections {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1568,9 +1573,9 @@ form > input {
 
 /* FIX PROFILE INFO */
 .profile_picture {
-  max-width: 150px;
-  max-height: 300px;
-  border-radius: 70px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
   -webkit-box-shadow: 0 1px 10px 0 grey;
           box-shadow: 0 1px 10px 0 grey;
 }
@@ -1596,7 +1601,7 @@ form > input {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 30%;
+  height: auto;
   /*box-shadow: 0 0 4px 0 gray;
   border: 1px solid lightgrey;*/
 }
@@ -2508,6 +2513,9 @@ footer {
   p {
     font-size: 12pt;
   }
+  .white_button {
+    border: double 3px lightgrey;
+  }
   /* HOME */
   .home_section {
     width: 100%;
@@ -2813,6 +2821,26 @@ footer {
     text-align: justify;
   }
   /* PROFILE */
+  .profile_section {
+    width: 100%;
+    margin: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .profile_navigation {
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+  }
   .profile_section_personal {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2821,12 +2849,15 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    width: 100%;
+  }
+  .profile_info_section {
+    width: 100%;
   }
   .profile_info_section_images {
     display: -webkit-box;
@@ -2842,6 +2873,23 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 100%;
+  }
+  .profile_diary_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
   }
   .profile_diary_entry_section {
     width: 100%;
@@ -2854,6 +2902,41 @@ footer {
   }
   .profile_old_diary_entry_box > div > img {
     width: 100%;
+  }
+  .profile_diary_section_loadolddiaries {
+    width: 100%;
+  }
+  .old_diary_entries {
+    width: 100%;
+  }
+  .profile_diary_section_loadolddiaries_details {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+  .comments_section {
+    width: 90%;
+    margin: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   /* SETTINGS */
   .profile_setting_section {

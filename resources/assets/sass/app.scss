@@ -1271,6 +1271,11 @@ form > input {
   padding-bottom: 25px;
 }
 
+.profile_navigation__section_box:hover {
+  background: rgba(000,000,000,0.1);
+  font-size: larger;
+}
+
 .profile_navigation_sections {
   display: flex;
   justify-content: center;
@@ -1314,9 +1319,9 @@ form > input {
 /* FIX PROFILE INFO */
 
 .profile_picture {
-  max-width: 150px;
-  max-height: 300px;
-  border-radius: 70px;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
   box-shadow: 0 1px 10px 0 grey;
 }
 
@@ -1333,7 +1338,7 @@ form > input {
 
   display: flex;
   justify-content: space-around;
-  height: 30%;
+  height: auto;
   /*box-shadow: 0 0 4px 0 gray;
   border: 1px solid lightgrey;*/
 }
@@ -2022,6 +2027,10 @@ footer {
     font-size: 12pt;
   }
 
+  .white_button {
+    border: double 3px lightgrey;
+  }
+
   /* HOME */
 
   .home_section {
@@ -2282,11 +2291,35 @@ footer {
   }
 
   /* PROFILE */
+
+  .profile_section {
+    width: 100%;
+    margin:0;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+
+  .profile_navigation{
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 0;
+    box-shadow: none;
+    border-right: none;
+    border-left:none;
+    border-top: none;
+  }
+
   .profile_section_personal {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    width: 100%;
+  }
+
+  .profile_info_section {
+    width: 100%;
   }
 
   .profile_info_section_images {
@@ -2294,16 +2327,26 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .profile_diary_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
   }
 
   .profile_diary_entry_section {
     width: 100%;
-
   }
 
   .old_diary_entry {
     width: 100%;
   }
+
+
 
   .profile_old_diary_entry_box {
     width: 100%;
@@ -2311,6 +2354,31 @@ footer {
 
   .profile_old_diary_entry_box > div > img {
     width: 100%;
+  }
+
+  .profile_diary_section_loadolddiaries {
+    width: 100%;
+  }
+
+  .old_diary_entries {
+    width: 100%;
+  }
+
+  .profile_diary_section_loadolddiaries_details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .comments_section{
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 
   /* SETTINGS */

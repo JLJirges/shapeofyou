@@ -38,16 +38,41 @@
         </div>
 
         <div class="profile_info_section">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda atque dolores doloribus
-                eaque
-                enim, hic laborum non odit pariatur perspiciatis, recusandae saepe sequi sint tempora tempore vitae
-                voluptate. Harum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias corporis dolor
-                facilis,
-                inventore modi mollitia placeat praesentium quas quisquam temporibus? A, aliquid commodi impedit
-                perspiciatis quos sit tenetur totam vel?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aperiam
-                dignissimos est id nostrum possimus qui quia rem rerum, vero voluptatem! Consequuntur eligendi error in,
-                maxime placeat quam quis repellat sed?</p>
+            <div class="profile_info_section_images">
+                <img alt="profile picture" src="{{ ('images/aboutus/Founder.jpg') }}" class="profile_picture">
+                <div class="profile_personal_section">
+                    <p>Diet</p>
+                    <img alt="diet" src="{{('images/community/nospecialdiet.png')}}">
+                </div>
+                <div class="profile_personal_section">
+                    <p>Goal</p>
+                    <img alt="diet" src="{{('images/community/stayhealthy.png')}}">
+                </div>
+                <div class="profile_personal_section">
+                    <p>Body Shape</p>
+                    <img alt="diet" src="{{ asset('images/hourglass_shape_1.png') }}">
+                </div>
+            </div>
+
+            <div class="profile_section_personal">
+                <div>
+                    <p>MOTIVATION QUOTE</p>
+                    <p class="profile_section_personal_motivation_quote">'If you can dream it, you can do it!'</p>
+                </div>
+
+                <div class="profile_info_section_personal_details">
+                    <div>
+                        <p>NAME:</p>
+                        <p>AGE:</p>
+                        <p>COUNTRY:</p>
+                    </div>
+                    <div>
+                        <p>Jeanne Jirges</p>
+                        <p>24</p>
+                        <p>Austria</p>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -68,14 +93,14 @@
                 <label>Last Name</label>
                 <input type="text" name="lastname" placeholder="Last Name">
 
-                <button class="login_button">Change Name</button>
+                <button class="white_button">Change Name</button>
             </form>
             <form class="edit_profile_form" method="post" action="">
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Your password">
                 <label>Repeat Password</label>
                 <input type="password" name="password" placeholder="Repeat password">
-                <button class="login_button">Change Password</button>
+                <button class="white_button">Change Password</button>
             </form>
         </div>
 
@@ -83,12 +108,12 @@
             <form class="edit_profile_form" method="post" action="">
                 <label>Email</label>
                 <input type="email" name="email" placeholder="Email">
-                <button class="login_button">Update Email</button>
+                <button class="white_button">Update Email</button>
             </form>
             <form class="edit_profile_form" method="post" action="">
                 <label>Username</label>
                 <input type="text" name="username" placeholder="Username">
-                <button class="login_button">Change Username</button>
+                <button class="white_button">Change Username</button>
             </form>
 
         </div>
@@ -96,12 +121,12 @@
             <form class="edit_profile_form" method="post" action="">
                 <label>Change Profile Picture</label><br>
                 <input type="file" name="ProfileToUpload" id="ProfileToUpload">
-                <button class="login_button">Change Profile Picture</button>
+                <button class="white_button">Change Profile Picture</button>
             </form>
             <form class="edit_profile_form" method="post" action="">
                 <label>Motivational Quote</label>
                 <input type="text" name="username" placeholder="Username">
-                <button class="login_button">Update</button>
+                <button class="white_button">Update</button>
             </form>
         </div>
 
@@ -115,7 +140,7 @@
                     <option>Straight</option>
                 </select>
 
-                <button class="login_button">Change</button>
+                <button class="white_button">Change</button>
             </form>
             <form class="edit_profile_form" method="post" action="">
                 <label>Change Diet</label><br>
@@ -125,7 +150,7 @@
                     <option>Vegetarian</option>
                     <option>Pescetarian</option>
                 </select>
-                <button class="login_button">Change</button>
+                <button class="white_button">Change</button>
             </form>
             <form class="edit_profile_form" method="post" action="">
                 <label>Change Goal</label><br>
@@ -136,7 +161,7 @@
                     <option>Stay/Become healthy</option>
                 </select>
 
-                <button class="login_button">Change</button>
+                <button class="white_button">Change</button>
             </form>
         </div>
         <div>

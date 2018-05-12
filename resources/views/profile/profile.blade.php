@@ -287,7 +287,6 @@
             <div class="profile_diary_section_loadolddiaries_details">
                 <span>Date</span>
                 <h4 class="whole_old_entry_trigger">Example to try out - click me</h4>
-                <span>Read</span>
                 <span class="delete"></span>
             </div>
         </div>
