@@ -18,7 +18,7 @@
         <input type="password" name="password" placeholder="Your password">
 
         <button class="login_button">Login</button>
-        <span>Fortgot Password</span>
+        <span>Forgot Password</span>
     </form>
 
     <form class="register_form" method="post" action="">

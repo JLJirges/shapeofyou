@@ -13706,6 +13706,12 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    $(".whole_old_entry_trigger").click(function () {
+        $(".whole_old_entry").toggle();
+    });
+});
+
+$(document).ready(function () {
     $("#burgericon").click(function () {
         $("#responsive_nav").slideToggle("slow");
     });
