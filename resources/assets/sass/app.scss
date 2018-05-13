@@ -106,6 +106,10 @@ h3 {
   color: lightgrey;
 }
 
+.topnav {
+  display: none;
+}
+
 .delete {
   width: 30px;
   height: 30px;
@@ -188,7 +192,6 @@ h3 {
 
 .user_overview {
   border-radius: 50px;
-  background-color: yellow;
 }
 
 .shown_tab {
@@ -2004,7 +2007,7 @@ footer {
   }
 
   h1 {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 30pt;
     margin-bottom: 10px;
   }
@@ -2474,5 +2477,65 @@ footer {
 
   .comments_details_profilepicture > img {
     margin: 10px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .topnav {
+    display: block;
+    position: relative;
+    background-color: #333;
+    height: 100px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .topnav > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .burgericon:hover {
+    cursor: pointer;
+  }
+
+  .topnav > a {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+  }
+
+  .topnav > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  #responsive_nav {
+    display: none;
+  }
+
+  .topnav > ul > li {
+    width: 100%;
+border-top: 1px solid lightgrey;
+    margin: 0;
+  }
+
+  .topnav > ul > li > a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
   }
 }

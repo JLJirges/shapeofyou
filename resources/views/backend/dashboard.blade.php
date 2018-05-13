@@ -29,7 +29,7 @@
                 <a class="box_link" href="{{url ('overview')}}">EVENTS</a>
             </div>
             <div class="box_administrative">
-                <a class="box_link" href="{{url('overview')}}">ADMINISTRATIVE</a>
+                <a class="box_link" href="{{url('overview')}}">ADMIN INFOS</a>
             </div>
         </div>
 

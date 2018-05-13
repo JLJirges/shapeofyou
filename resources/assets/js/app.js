@@ -20,3 +20,8 @@ $(document).ready(function () {
 
 });
 
+$(document).ready(function(){
+    $("#burgericon").click(function(){
+        $("#responsive_nav").slideToggle("slow");
+    });
+});
