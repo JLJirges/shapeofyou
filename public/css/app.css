@@ -355,8 +355,8 @@ ul.tabs li.current {
       align-self: center;
   width: 150px;
   padding: 8px;
-  -webkit-box-shadow: black 0 0 10px 0;
-          box-shadow: black 0 0 10px 0;
+  -webkit-box-shadow: black 0 0 3px 0;
+          box-shadow: black 0 0 3px 0;
   color: black;
   font-family: "AR DARLING", sans-serif;
 }
@@ -3005,11 +3005,11 @@ footer {
   /* PROFILE */
   .profile_section {
     width: 100%;
-    margin: 0;
+    margin: 10px 0 0 0;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
