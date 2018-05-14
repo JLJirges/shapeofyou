@@ -57,112 +57,51 @@
     <h2>Warm Up</h2>
 </div>
 
-    <div class="profile_workout_section profile_workout_section_warmup">
-        <div>&lt;</div>
-
-        <div class="square_box_section">
-            <div class="box_indoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 1</a>
-            </div>
-            <div class="box_outdoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 2</a>
-            </div>
-            <div class="box_stretch">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 3</a>
-            </div>
-        </div>
-
-        <div>&gt;</div>
-
+    <div class="slide_box">
+        <div class="prev">&lt;</div>
+        <ul class="slide_list">
+            <li class="page box_indoor">
+                    <a href="{{url('detail')}}">EXERCISE 1</a>
+            </li>
+            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
+            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
+        </ul>
+        <div class="next">&gt;</div>
     </div>
-
     <div class="hide_or_show_section">Show Details</div>
+
 
     <div class="title_bg">
         <h2>Stretching</h2>
     </div>
 
-    <div class="profile_workout_section profile_workout_section_warmup">
-        <div class="left"></div>
-
-        <div class="square_box_section">
-            <div class="box_indoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 4</a>
-            </div>
-            <div class="box_outdoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 5</a>
-            </div>
-            <div class="box_stretch">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 6</a>
-            </div>
-        </div>
-
-        <div class="right"></div>
-
+    <div class="slide_box">
+        <div class="prev">&lt;</div>
+        <ul class="slide_list">
+            <li class="page box_indoor">
+                <a href="{{url('detail')}}">EXERCISE 1</a>
+            </li>
+            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
+            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
+        </ul>
+        <div class="next">&gt;</div>
     </div>
-    <div class="hide_or_show_section">Hide Details</div>
+    <div class="hide_or_show_section">Show Details</div>
 
-    <div class="profile_workout_section_workoutdetail">
-        <h3>Exeercise 5 - Whatever title it has</h3>
-        <div class="workout_entry_box">
-
-            <div>
-                <img src="{{('../images/workout/workout_bg.png')}}" alt="diray image">
-
-                <div class="workout_entry_text">
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                        quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="title_bg">
-        <h2>Main Workout</h2>
+        <h2>Power Up</h2>
     </div>
 
-    <div class="profile_workout_section profile_workout_section_warmup">
-        <div class="left"></div>
-
-        <div class="square_box_section">
-            <div class="box_indoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 1</a>
-            </div>
-            <div class="box_outdoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 2</a>
-            </div>
-            <div class="box_stretch">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 3</a>
-            </div>
-        </div>
-
-        <div class="right"></div>
-
+    <div class="slide_box">
+        <div class="prev">&lt;</div>
+        <ul class="slide_list">
+            <li class="page box_indoor">
+                <a href="{{url('detail')}}">EXERCISE 1</a>
+            </li>
+            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
+            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
+        </ul>
+        <div class="next">&gt;</div>
     </div>
     <div class="hide_or_show_section">Show Details</div>
 
@@ -170,23 +109,16 @@
         <h2>Stretching</h2>
     </div>
 
-    <div class="profile_workout_section profile_workout_section_warmup">
-        <div class="left"></div>
-
-        <div class="square_box_section">
-            <div class="box_indoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 1</a>
-            </div>
-            <div class="box_outdoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 2</a>
-            </div>
-            <div class="box_stretch">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 3</a>
-            </div>
-        </div>
-
-        <div class="right"></div>
-
+    <div class="slide_box">
+        <div class="prev">&lt;</div>
+        <ul class="slide_list">
+            <li class="page box_indoor">
+                <a href="{{url('detail')}}">EXERCISE 1</a>
+            </li>
+            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
+            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
+        </ul>
+        <div class="next">&gt;</div>
     </div>
     <div class="hide_or_show_section">Show Details</div>
 
@@ -194,28 +126,18 @@
         <h2>Cool Down</h2>
     </div>
 
-    <div class="profile_workout_section profile_workout_section_warmup">
-        <div class="left"></div>
-
-        <div class="square_box_section">
-            <div class="box_indoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 1</a>
-            </div>
-            <div class="box_outdoor">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 2</a>
-            </div>
-            <div class="box_stretch">
-                <a class="box_link" href="{{url('detail')}}">EXERCISE 3</a>
-            </div>
-        </div>
-
-        <div class="right"></div>
-
+    <div class="slide_box">
+        <div class="prev">&lt;</div>
+        <ul class="slide_list">
+            <li class="page box_indoor">
+                <a href="{{url('detail')}}">EXERCISE 1</a>
+            </li>
+            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
+            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
+        </ul>
+        <div class="next">&gt;</div>
     </div>
     <div class="hide_or_show_section">Show Details</div>
-
-
-
 
 
 @endsection

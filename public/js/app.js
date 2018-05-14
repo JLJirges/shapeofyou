@@ -13717,6 +13717,31 @@ $(document).ready(function () {
     });
 });
 
+(function ($, undefined) {
+    $(document).ready(function () {
+
+        $('.slide_box').width($('.page').width());
+        $('.slide_list').width($('.page').width() * $('.page').length);
+
+        $('.next').on('click', function () {
+            $('.slide_list').animate({
+                left: $('.page').width() * -1
+            }, function () {
+                $('.page').last().after($('.page').first());
+                $('.slide_list').css('left', 0);
+            });
+        });
+
+        $('.prev').on('click', function () {
+            $('.page').first().before($('.page').last());
+            $('.slide_list').css('left', $('.page').width() * -1);
+            $('.slide_list').animate({
+                left: 0
+            });
+        });
+    });
+})(jQuery);
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
