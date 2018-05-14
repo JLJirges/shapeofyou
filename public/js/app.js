@@ -13720,22 +13720,47 @@ $(document).ready(function () {
 (function ($, undefined) {
     $(document).ready(function () {
 
-        $('.slide_box').width($('.page').width());
-        $('.slide_list').width($('.page').width() * $('.page').length);
+        $('.slide_box_warmup').width($('.page_warmup').width());
+        $('.slide_list_warmup').width($('.page_warmup').width() * $('.page_warmup').length);
 
-        $('.next').on('click', function () {
-            $('.slide_list').animate({
-                left: $('.page').width() * -1
+        $('.next_warmup').on('click', function () {
+            $('.slide_list_warmup').animate({
+                left: $('.page_warmup').width() * -1
             }, function () {
-                $('.page').last().after($('.page').first());
-                $('.slide_list').css('left', 0);
+                $('.page_warmup').last().after($('.page_warmup').first());
+                $('.slide_list_warmup').css('left', 0);
             });
         });
 
-        $('.prev').on('click', function () {
-            $('.page').first().before($('.page').last());
-            $('.slide_list').css('left', $('.page').width() * -1);
-            $('.slide_list').animate({
+        $('.prev_warmup').on('click', function () {
+            $('.page_warmup').first().before($('.page_warmup').last());
+            $('.slide_list_warmup').css('left', $('.page_warmup').width() * -1);
+            $('.slide_list_warmup').animate({
+                left: 0
+            });
+        });
+    });
+})(jQuery);
+
+(function ($, undefined) {
+    $(document).ready(function () {
+
+        $('.slide_box_stretch').width($('.page_stretch').width());
+        $('.slide_list_stretch').width($('.page_stretch').width() * $('.page_stretch').length);
+
+        $('.next_stretch').on('click', function () {
+            $('.slide_list_stretch').animate({
+                left: $('.page_stretch').width() * -1
+            }, function () {
+                $('.page_stretch').last().after($('.page_stretch').first());
+                $('.slide_list_stretch').css('left', 0);
+            });
+        });
+
+        $('.prev_stretch').on('click', function () {
+            $('.page_stretch').first().before($('.page_stretch').last());
+            $('.slide_list_stretch').css('left', $('.page_stretch').width() * -1);
+            $('.slide_list_stretch').animate({
                 left: 0
             });
         });

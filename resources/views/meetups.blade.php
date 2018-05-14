@@ -49,10 +49,13 @@
                                 <p>Open Air</p>
                                 <p>Special guests</p>
                                 <p>3 stages</p>
+                                <p>One Ticket: 55,- €</p>
                             </div>
                         </div>
                     </div>
-                    <span class="ticket_button">Get your ticket</span>
+                    <form>
+                    <button type="button" class="ticket_button">Get your ticket</button>
+                    </form>
                 </div>
             </div>
 
@@ -92,6 +95,7 @@
                                 <p>Fitness & Balance Workouts</p>
                                 <p>Nutrition experts</p>
                                 <p>Indoor</p>
+                                <p>One Ticket: 85,- €</p>
                             </div>
                         </div>
                     </div>
@@ -134,10 +138,13 @@
                                 <p>Awesome Competitions</p>
                                 <p>Streetfood Area</p>
                                 <p>Indoor & Outdoor</p>
+                                <p>One Ticket: 79,- €</p>
                             </div>
                         </div>
                     </div>
-                    <span class="ticket_button">Get your ticket</span>
+                    <form>
+                        <button type="button" class="ticket_button">Get your ticket</button>
+                    </form>
                 </div>
             </div>
         </div>

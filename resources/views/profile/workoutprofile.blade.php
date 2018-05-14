@@ -52,92 +52,41 @@
         </div>
     </div>
 
+    <div class="profile_section_workout">
 
-<div class="title_bg">
-    <h2>Warm Up</h2>
-</div>
+        <div class="title_bg">
+            <h2>Warm Up</h2>
+        </div>
 
-    <div class="slide_box">
-        <div class="prev">&lt;</div>
-        <ul class="slide_list">
-            <li class="page box_indoor">
+        <div class="slide_box_warmup">
+            <div class="prev_warmup">&lt;</div>
+            <ul class="slide_list_warmup">
+                <li class="page_warmup box_indoor">
                     <a href="{{url('detail')}}">EXERCISE 1</a>
-            </li>
-            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
-            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
-        </ul>
-        <div class="next">&gt;</div>
+                </li>
+                <li class="page_warmup box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
+                <li class="page_warmup box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
+            </ul>
+            <div class="next_warmup">&gt;</div>
+        </div>
+        <div class="hide_or_show_section">Show Details</div>
+
+        <div class="title_bg">
+            <h2>Stretching</h2>
+        </div>
+
+        <div class="slide_box_stretch">
+            <div class="prev_stretch">&lt;</div>
+            <ul class="slide_list_stretch">
+                <li class="page_stretch box_indoor">
+                    <a href="{{url('detail')}}">EXERCISE 1</a>
+                </li>
+                <li class="page_stretch box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
+                <li class="page_stretch box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
+            </ul>
+            <div class="next_stretch">&gt;</div>
+        </div>
+        <div class="hide_or_show_section">Show Details</div>
     </div>
-    <div class="hide_or_show_section">Show Details</div>
-
-
-    <div class="title_bg">
-        <h2>Stretching</h2>
-    </div>
-
-    <div class="slide_box">
-        <div class="prev">&lt;</div>
-        <ul class="slide_list">
-            <li class="page box_indoor">
-                <a href="{{url('detail')}}">EXERCISE 1</a>
-            </li>
-            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
-            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
-        </ul>
-        <div class="next">&gt;</div>
-    </div>
-    <div class="hide_or_show_section">Show Details</div>
-
-    <div class="title_bg">
-        <h2>Power Up</h2>
-    </div>
-
-    <div class="slide_box">
-        <div class="prev">&lt;</div>
-        <ul class="slide_list">
-            <li class="page box_indoor">
-                <a href="{{url('detail')}}">EXERCISE 1</a>
-            </li>
-            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
-            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
-        </ul>
-        <div class="next">&gt;</div>
-    </div>
-    <div class="hide_or_show_section">Show Details</div>
-
-    <div class="title_bg">
-        <h2>Stretching</h2>
-    </div>
-
-    <div class="slide_box">
-        <div class="prev">&lt;</div>
-        <ul class="slide_list">
-            <li class="page box_indoor">
-                <a href="{{url('detail')}}">EXERCISE 1</a>
-            </li>
-            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
-            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
-        </ul>
-        <div class="next">&gt;</div>
-    </div>
-    <div class="hide_or_show_section">Show Details</div>
-
-    <div class="title_bg">
-        <h2>Cool Down</h2>
-    </div>
-
-    <div class="slide_box">
-        <div class="prev">&lt;</div>
-        <ul class="slide_list">
-            <li class="page box_indoor">
-                <a href="{{url('detail')}}">EXERCISE 1</a>
-            </li>
-            <li class="page box_outdoor"><a href="{{url('detail')}}">EXERCISE 2</a></li>
-            <li class="page box_stretch"><a href="{{url('detail')}}">EXERCISE 3</a></li>
-        </ul>
-        <div class="next">&gt;</div>
-    </div>
-    <div class="hide_or_show_section">Show Details</div>
-
 
 @endsection

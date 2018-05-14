@@ -56,7 +56,6 @@ h3 {
 
 .position-ref {
   position: relative;
-
 }
 
 .top-middle {
@@ -1138,7 +1137,6 @@ ul.tabs li.current{
   width: 150px;
   padding: 8px;
 
-  box-shadow: black 0 0 10px 0;
   color: black;
   font-weight: bold;
 }
@@ -1275,7 +1273,6 @@ form > input {
 }
 
 .profile_navigation__section_box:hover {
-  background: rgba(000,000,000,0.1);
   font-size: larger;
 }
 
@@ -1600,6 +1597,15 @@ justify-content: space-around;
 
 /* PROFILE WORKOUT */
 
+.profile_section_workout {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .profile_workout_section {
   width: 90%;
   margin: 10px;
@@ -1674,20 +1680,21 @@ justify-content: center;
 
 /* WORKOUT DETAILS */
 
-.slide_box {
+.slide_box_stretch {
   border: 1px solid #ccc;
   overflow: hidden;
   margin: 10px 0 0 0;
   position: relative;
 }
-ul {
+
+.slide_box_stretch > ul {
   width: 100%;
   height: 100%;
   overflow: hidden;
   margin: 0 auto;
   padding: 0;
 }
-.prev {
+.prev_stretch {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1700,7 +1707,7 @@ ul {
   cursor: pointer;
   z-index: 2;
 }
-.next {
+.next_stretch {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1714,21 +1721,21 @@ ul {
   z-index: 2;
 }
 
-.prev:hover {
+.prev_stretch:hover {
   color: white;
 }
 
-.next:hover {
+.next_stretch:hover {
   color: white;
 }
 
-.slide_list {
+.slide_list_stretch {
   position: relative;
   display: block;
   white-space: nowrap;
   height: 100%;
 }
-.page {
+.page_stretch {
   float: left;
   width: 300px;
   height: 300px;
@@ -1737,11 +1744,82 @@ ul {
   align-items: center;
   color: white;
   font-size: 24px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffaf4b+0,ff920a+100;Orange+3D+%231 */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=1 ); /* IE6-9 */
+
 }
 
-.page > a{
+.page_stretch > a{
+  color: white;
+  font-family: "AR DARLING";
+}
+
+.slide_box_warmup {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin: 10px 0 0 0;
+  position: relative;
+}
+
+.slide_box_warmup > ul {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+.prev_warmup {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  left: 4px;
+  background: rgba(000, 000, 000, 0.5);
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 2;
+}
+.next_warmup {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  right: 4px;
+  background: rgba(000, 000, 000, 0.5);
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev_warmup:hover {
+  color: white;
+}
+
+.next_warmup:hover {
+  color: white;
+}
+
+.slide_list_warmup {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  height: 100%;
+}
+.page_warmup {
+  float: left;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+
+}
+
+.page_warmup > a{
   color: white;
   font-family: "AR DARLING";
 }
@@ -2074,11 +2152,11 @@ footer {
 @media only screen and (max-width: 768px) {
 
   .h1_bg {
-    height: 120px;
+    height: 200px;
   }
 
   h1 {
-    margin-top: 20px;
+    margin-top: 100px;
     font-size: 30pt;
     margin-bottom: 10px;
   }
@@ -2366,6 +2444,12 @@ footer {
     text-align: justify;
   }
 
+  .former_event_box {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
   /* PROFILE */
 
   .profile_section {
@@ -2556,7 +2640,7 @@ footer {
 
   .topnav {
     display: block;
-    position: relative;
+    position: fixed;
     background-color: #333;
     height: 100px;
     width: 100%;
