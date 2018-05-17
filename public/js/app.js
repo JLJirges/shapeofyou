@@ -13713,7 +13713,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $("#burgericon").click(function () {
-        $("#responsive_nav").slideToggle("slow");
+        $("#responsive_nav").slideToggle("2000");
     });
 });
 

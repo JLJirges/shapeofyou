@@ -73,7 +73,7 @@ h3 {
   position: relative;
 }
 
-.top-middle {
+.nav {
   position: fixed;
   right: 0;
   top: 0;
@@ -119,7 +119,7 @@ h3 {
           flex-direction: column;
 }
 
-.links > a {
+.nav-links > a {
   color: #636b6f;
   padding: 0 3% 0 3%;
   font-size: 10px;
@@ -133,11 +133,11 @@ h3 {
   display: flex;
 }
 
-.links > a:hover {
+.nav-links > a:hover {
   color: lightgrey;
 }
 
-.topnav {
+.responsive-nav {
   display: none;
 }
 
@@ -2232,7 +2232,7 @@ form > input {
 
 .page_warmup > a {
   color: white;
-  font-family: "AR DARLING";
+  font-family: "AR DARLING", sans-serif;
 }
 
 .workout_entry {
@@ -3248,7 +3248,7 @@ footer {
   .nav {
     display: none;
   }
-  .topnav {
+  .responsive-nav {
     display: block;
     position: fixed;
     background-color: #333;
@@ -3256,7 +3256,7 @@ footer {
     width: 100%;
     margin: 0;
   }
-  .topnav > div {
+  .responsive-nav > div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3270,7 +3270,7 @@ footer {
   .burgericon:hover {
     cursor: pointer;
   }
-  .topnav > a {
+  .responsive-nav > a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3278,7 +3278,7 @@ footer {
         justify-content: space-around;
     width: 50%;
   }
-  .topnav > ul {
+  .responsive-nav > ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3300,12 +3300,12 @@ footer {
   #responsive_nav {
     display: none;
   }
-  .topnav > ul > li {
+  .responsive-nav > ul > li {
     width: 100%;
     border-top: 1px solid lightgrey;
     margin: 0;
   }
-  .topnav > ul > li > a {
+  .responsive-nav > ul > li > a {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;

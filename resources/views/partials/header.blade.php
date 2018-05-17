@@ -1,6 +1,4 @@
-<div class="top-middle links nav">
-
-
+<div class="nav nav-links">
     <a href="{{ url('superfood') }}">Super Food</a>
     <a href="{{ url('workout') }}">Workout</a>
     <a href="{{ url('community') }}">Community</a>
@@ -12,7 +10,7 @@
     <a href="{{ url('register') }}">Start now</a>
 </div>
 
-<div class="topnav" id="ResponsiveTopnav">
+<div class="responsive-nav">
     <div>
         <a href="{{ url('') }}">
             <img width="100" height="100" src="{{ asset('images/headerfooter/Logo_2.png') }}" alt="mobile logo">

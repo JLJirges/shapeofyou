@@ -17,32 +17,7 @@
                 It is your desicion, your goal, your achievements -
                 SHAPE OF YOU!
             </div>
-        <!--
-            <ul class="home_section_goals">
-                <li><img alt="lose weight" src="{{ asset('images/lose_weight_3.png') }}" width="110" height="110"></li>
-                <li><img alt="become fit" src="{{ asset('images/become_fit_2.png') }}" width="110" height="110"></li>
-                <li><img alt="build muscles" src="{{ asset('images/build_muscles_2.png') }}" width="110" height="110"></li>
-                <li><img alt="become fit" src="{{ asset('images/healthy_lifestyle_2.png') }}" width="110" height="110"></li>
-            </ul>
-            <div class="goal_info">
-                <div class="home_section_goals_content shown_tab">Whatever your personal goal might be - we are here to help you! Lose weight, improve stamina,
-                    build muscles or find your way to a healthy/healthier lifestyle.
-                    It is your desicion, your goal, your achievements -
-                    SHAPE OF YOU!
-                </div>
-                <div class="home_section_goals_content">If you want to lose weight, we are going to help! You'll find a lot of interesting Blogs about
-                    Nutrition and Workout, so you are going to feel as awesome as possible with the SHAPE OF YOU!</div>
-                <div class="home_section_goals_content">Are you thinking about running a Marathon or just noticed you'd like to be able to take the stairs
-                    without gasping for air afterwards? No need to search more! We are here for you and together we will
-                    make you fit to run stairs so fast you could call yourself The Flash!</div>
-                <div class="home_section_goals_content">You are already fit and have a healthy lifestyle, but now it's time to define your body or add some
-                    new muscles? This is the place to be! With our Workouts and Nutrition Guides you will be able to
-                    build muscles at places you did not know you could even have muscles there!</div>
-                <div class="home_section_goals_content">Pizza, Burger, Fries and Coke! No thanks, those times are over! If your goal is a healthier
-                    lifestyle, we have Blogs and light Workouts to comfort you in your new and healthy way of living!
-                    Your body will love you for it, and you will love the SHAPE OF YOU!</div>
-            </div>
-            -->
+
             <ul class="tabs home_section_goals">
                 <li class="tab-link current_tab" data-tab="goal-tab-1">
                     <img alt="lose weight" src="{{ asset('images/lose_weight_3.png') }}" width="110" height="110">
@@ -96,17 +71,10 @@
             <a href="{{ url('register') }}">START NOW</a>
         </div>
     </div>
+
     <div class="home_section shape_bg">
         <div>
             <h2>Choose Your Body Shape</h2>
-
-        <!--    <div class="home_body_shape_img">
-                <img alt="hour glass shape" src="{{ asset('images/hourglass_shape_1.png') }}" width="120" height="120">
-                <img alt="apple shape" src="{{ asset('images/apple_shape_1.png') }}" width="120" height="120">
-                <img alt="pear shape" src="{{ asset('images/pear_shape_1.png') }}" width="120" height="120">
-                <img alt="stick_shape" src="{{ asset('images/stick_shape_1.png') }}" width="120" height="120">
-            </div>
-            -->
 
             <ul class="tabs">
                 <li class="tab-link current_tab" data-tab="shape-tab-1">
@@ -151,6 +119,7 @@
             </div>
         </div>
     </div>
+
     <div class="home_section home_section_food">
         <div>
             <h2>Super Food</h2>
