@@ -14,10 +14,10 @@
     </div>
     <div class="meetups_section">
 
-        <div class="upcomin_meetups">
-            <div class="upcoming_meetups_section">
+        <div class="upcoming_meetups">
+            <div class="event">
                 <div>
-                    <div class="event_info">
+                    <div class="event_available_info">
                         <span>373 tickets available</span>
                         <span>327 tickets sold</span>
                     </div>
@@ -40,10 +40,10 @@
                                 <img class="meetup_event_googlemaps" src="{{ asset('images/meetups/google_maps.jpg')}}" alt="google maps placeholder">
                             </div>
 
-                            <div class="event_what">
-                                <div class="event_date_and_time_info_1">
-                                    <p>WHAT:</p>
-                                </div>
+                            <div class="event_details">
+
+                                    <p class="event_W">WHAT:</p>
+
                                 <p>5km, 10km or 15km run</p>
                                 <p>Food, drinks and live music</p>
                                 <p>Open Air</p>
@@ -60,9 +60,9 @@
             </div>
 
 
-            <div class="upcoming_meetups_section">
+            <div class="event">
                 <div>
-                    <div class="event_info">
+                    <div class="event_available_info">
                         <span>0 tickets available</span>
                         <span>750 tickets sold</span>
                     </div>
@@ -86,9 +86,9 @@
                             </div>
 
                             <div class="event_what">
-                                <div class="event_date_and_time_info_1">
-                                    <p>WHAT:</p>
-                                </div>
+
+                                    <p class="event_W">WHAT:</p>
+
                                 <p>Vegan Food</p>
                                 <p>Newest Trends</p>
                                 <p>Stage Talks</p>
@@ -103,9 +103,9 @@
                 </div>
             </div>
 
-            <div class="upcoming_meetups_section">
+            <div class="event">
                 <div>
-                    <div class="event_info">
+                    <div class="event_available_info">
                         <span>855 tickets available</span>
                         <span>645 tickets sold</span>
                     </div>
@@ -129,9 +129,9 @@
                             </div>
 
                             <div class="event_what">
-                                <div class="event_date_and_time_info_1">
-                                    <p>WHAT:</p>
-                                </div>
+
+                                    <p class="event_W">WHAT:</p>
+
                                 <p>Food, drinks & live music</p>
                                 <p>Fitness Professionals</p>
                                 <p>Blogger Talks</p>

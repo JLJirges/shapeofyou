@@ -1003,11 +1003,11 @@ ul.tabs li.current{
   margin-right: 5%;
 }
 
-.upcomin_meetups {
+.upcoming_meetups {
   width: 65%;
 }
 
-.upcoming_meetups_section {
+.event {
 
   width: 100%;
   height: auto;
@@ -1021,7 +1021,11 @@ ul.tabs li.current{
 
 }
 
-.upcoming_meetups_section > div {
+.event_W{
+  font-weight: bold;
+}
+
+.event > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -1029,7 +1033,7 @@ ul.tabs li.current{
   align-items: center;
 }
 
-.event_info {
+.event_available_info {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -1750,7 +1754,7 @@ justify-content: center;
 
 .page_stretch > a{
   color: white;
-  font-family: "AR DARLING";
+  font-family: "AR DARLING", sans-serif;
 }
 
 .slide_box_warmup {
@@ -2383,13 +2387,13 @@ footer {
     padding: 0;
   }
 
-  .upcomin_meetups {
+  .upcoming_meetups {
     width: 90%;
     margin: 0;
     padding: 10px;
   }
 
-  .upcoming_meetups_section > div {
+  .event > div {
     display: flex;
     justify-content: center;
     align-items: center;
