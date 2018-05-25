@@ -42,18 +42,39 @@ class RegisterController extends Controller
             'lastname' => 'string|max:50',
             'username' => 'string|max:50',
             'email' => 'email',
-            'password' => '',
+            'password' => 'min:4|confirmed',
             'mq' => 'string',
             'profilepic' => '',
             'birthdate' => 'date',
             'origin' => 'string|max:50',
-            'User-Diet' => '',
-            'User-Goal' => '',
-            'User-Shape' => ''
+            'UserDiet' => '',
+            'UserGoal' => '',
+            'UserShape' => ''
         ]);
 
-        $user = User::findOrFail(\Auth::user() -> id);
+        $user = User::findOrFail(\Auth::user()->id);
         $user->update($request->all());
+        return redirect()->to('/settingsprofile');
+    }
+
+    public function upload_photo(Request $request)
+    {
+
+        if ($request->hasFile('ProfileToUpload')) {
+            // Read image
+            $image = $request->file('ProfileToUpload');
+
+            // Get filename
+            $filename = $image->getClientOriginalName();
+
+            // Insert filename in database
+            \DB::table('users')
+                ->where('id', \Auth::user()->id)
+                ->update(['profilepic' => $filename]);
+
+            // Save  Image locally
+            $request->ProfileToUpload->move(public_path('images/uploads/'), $filename);
+        }
         return redirect()->to('/settingsprofile');
     }
 

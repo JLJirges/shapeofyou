@@ -30,6 +30,7 @@ Route::get('workout', function () {
 Route::get('register','RegisterController@create');
 Route::post('register','RegisterController@store');
 Route::post('edit', 'RegisterController@edit');
+Route::post('upload_photo', 'RegisterController@upload_photo');
 
 Route::group(['middleware' => ['web']], function(){
     Route::get('/login', ['as' => 'login', 'uses' => 'SessionsController@login']);

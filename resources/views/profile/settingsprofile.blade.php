@@ -39,25 +39,61 @@
 
         <div class="profile_info_section">
             <div class="profile_info_section_images">
-                <img alt="profile picture" src="{{ ('images/profile/default_profile_pic_v1.png') }}" class="profile_picture">
+                @if(Auth::user()->profilepic)
+                    <!--<img alt="profile picture" src={{ (Auth::user()->profilepic)}}> -->
+                        <img src="{{ 'images/uploads/' . Auth::user()->profilepic }}" class="profile_picture">
+                @else
+                    <img alt="diet" src="{{('images/profile/default_profile_pic_v1.png')}}" class="profile_picture">
+                @endif
                 <div class="profile_personal_section">
                     <p>Diet</p>
-                    <img alt="diet" src="{{('images/profile/default_secret.png')}}">
+                    @if((Auth::user()->UserDiet === 0) || (Auth::user()->UserDiet === NULL))
+                        <img alt="diet" src="{{('images/profile/default_secret.png')}}">
+                    @elseif(Auth::user()->UserDiet === 1)
+                        <img alt="diet" src="{{('images/community/nospecialdiet.png')}}">
+                    @elseif(Auth::user()->UserDiet === 2)
+                        <img alt="diet" src="{{('images/community/pescetarian.png')}}">
+                    @elseif (Auth::user()->UserDiet === 3)
+                        <img alt="diet" src="{{('images/community/vegan.png')}}">
+                    @elseif (Auth::user()->UserDiet === 4)
+                        <img alt="diet" src="{{('images/community/vegetarian.png')}}">
+                    @endif
                 </div>
                 <div class="profile_personal_section">
                     <p>Goal</p>
-                    <img alt="diet" src="{{('images/profile/default_secret.png')}}">
+                    @if((Auth::user()->UserGoal === 0) || (Auth::user()->UserGoal === NULL))
+                        <img alt="goal" src="{{('images/profile/default_secret.png')}}">
+                    @elseif(Auth::user()->UserGoal === 1)
+                        <img alt="goal" src="{{('images/lose_weight_3.png')}}">
+                    @elseif(Auth::user()->UserGoal === 2)
+                        <img alt="goal" src="{{('images/become_fit_2.png')}}">
+                    @elseif (Auth::user()->UserGoal === 3)
+                        <img alt="goal" src="{{('images/build_muscles_2.png')}}">
+                    @elseif (Auth::user()->UserGoal === 4)
+                        <img alt="goal" src="{{('images/healthy_lifestyle_2.png')}}">
+                    @endif
                 </div>
                 <div class="profile_personal_section">
                     <p>Body Shape</p>
-                    <img alt="diet" src="{{ asset('images/profile/default_secret.png') }}">
+                    @if((Auth::user()->UserShape === 0) || (Auth::user()->UserShape === NULL))
+                        <img alt="shape" src="{{('images/profile/default_secret.png')}}">
+                    @elseif(Auth::user()->UserShape === 1)
+                        <img alt="shape" src="{{('images/pear_shape_1.png')}}">
+                    @elseif(Auth::user()->UserShape === 2)
+                        <img alt="shape" src="{{('images/apple_shape_1.png')}}">
+                    @elseif (Auth::user()->UserShape === 3)
+                        <img alt="shape" src="{{('images/hourglass_shape_1.png')}}">
+                    @elseif (Auth::user()->UserShape === 4)
+                        <img alt="shape" src="{{('images/stick_shape_1.png')}}">
+                    @endif
                 </div>
             </div>
 
             <div class="profile_section_personal">
                 <div>
                     <p>MOTIVATION QUOTE</p>
-                    <p class="profile_section_personal_motivation_quote">@if(Auth::user()->mq){{ Auth::user()->mq }} @else 'No motivational quote defined...' @endif</p>
+                    <p class="profile_section_personal_motivation_quote">@if(Auth::user()->mq){{ Auth::user()->mq }} @else
+                            'No motivational quote defined...' @endif</p>
                 </div>
 
                 <div class="profile_info_section_personal_details">
@@ -68,7 +104,8 @@
                     </div>
                     <div>
                         <p> {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }}  </p>
-                        <p> @if(Auth::user()->birthdate){{ Auth::user()->birthdate }} @else no birth date defined @endif </p>
+                        <p> @if(Auth::user()->birthdate){{ Auth::user()->birthdate }} @else no birth date
+                            defined @endif </p>
                         <p> @if(Auth::user()->origin){{ Auth::user()->origin }} @else no origin defined @endif</p>
                     </div>
                 </div>
@@ -101,7 +138,8 @@
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Your password">
                 <label>Repeat Password</label>
-                <input type="password" name="password" placeholder="Repeat password">
+                <input type="password" name="password_confirmation" placeholder="Repeat password"
+                       id="password_confirmation">
                 <button class="white_button">Change Password</button>
             </form>
         </div>
@@ -121,16 +159,14 @@
 
         </div>
         <div>
-            <form class="edit_profile_form" method="post" action="/edit">
+            <form class="edit_profile_form" method="post" action="/upload_photo" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Profile Picture</label><br>
                 <input type="file" name="ProfileToUpload" id="ProfileToUpload">
                 <button class="white_button">Change Profile Picture</button>
             </form>
-                <form class="edit_profile_form" method="post" action="/edit">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    {{ csrf_field() }}
-                    {{ method_field('patch') }}
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Motivational Quote</label>
                 <input type="text" name="mq" placeholder="Your motivational Quote...">
                 <button class="white_button">Update</button>
@@ -143,12 +179,12 @@
                 <input type="date" name="birthdate">
                 <button class="white_button">Change</button>
             </form>
-                <form class="edit_profile_form" method="post" action="/edit">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <label>Origin</label><br>
-                    <input type="Text" name="origin" placeholder="Origin">
-                    <button class="white_button">Update</button>
-                </form>
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <label>Origin</label><br>
+                <input type="Text" name="origin" placeholder="Origin">
+                <button class="white_button">Update</button>
+            </form>
 
         </div>
 
@@ -156,37 +192,39 @@
             <form class="edit_profile_form" method="post" action="/edit">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Body Shape</label><br>
-                <select type="text" name="selectdiet">
-                    <option>Pear</option>
-                    <option>Apple</option>
-                    <option>Hour Glass</option>
-                    <option>Straight</option>
-                    <option>Secret</option>
+                <select type="text" name="UserShape">
+                    <option value="0">Secret</option>
+                    <option value="1">Pear</option>
+                    <option value="2">Apple</option>
+                    <option value="3">Hour Glass</option>
+                    <option value="4">Straight</option>
                 </select>
 
                 <button class="white_button">Change</button>
             </form>
+
             <form class="edit_profile_form" method="post" action="/edit">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Diet</label><br>
-                <select type="text" name="selectdiet">
-                    <option>No diet</option>
-                    <option>Vegan</option>
-                    <option>Vegetarian</option>
-                    <option>Pescetarian</option>
-                    <option>Secret</option>
+                <select type="text" name="UserDiet">
+                    <option value="0">Secret</option>
+                    <option value="1">No diet</option>
+                    <option value="2">Pescetarian</option>
+                    <option value="3">Vegan</option>
+                    <option value="4">Vegetarian</option>
                 </select>
                 <button class="white_button">Change</button>
             </form>
+
             <form class="edit_profile_form" method="post" action="/edit">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Goal</label><br>
-                <select type="text" name="selectdiet">
-                    <option>Lose weight</option>
-                    <option>Stay/Become fit</option>
-                    <option>Build muscles</option>
-                    <option>Stay/Become healthy</option>
-                    <option>Secret</option>
+                <select type="text" name="UserGoal">
+                    <option value="0">Secret</option>
+                    <option value="1">Lose weight</option>
+                    <option value="2">Stay/Become fit</option>
+                    <option value="3">Build muscles</option>
+                    <option value="4">Stay/Become healthy</option>
                 </select>
 
                 <button class="white_button">Change</button>

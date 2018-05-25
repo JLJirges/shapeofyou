@@ -15,7 +15,7 @@
         <div class="blog_box">
             <div class="workout_entry_setting">
                 <span class="fav_icon"></span>
-                <h1>UNDER THE SEA - THE TRUTH ABOUT SEA FOOD</h1>
+                <h1>{{ Auth::blogs()->blogtitle }}</h1>
             </div>
 
             <div>
