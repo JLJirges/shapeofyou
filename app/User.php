@@ -2,20 +2,22 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+namespace App;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
-    use Notifiable;
-
+    protected $table = 'users';
+    public $timestamps = false; // added for 10** error
+    public $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'firstname','lastname', 'email', 'username', 'password', 'mq', 'profilepic', 'birthdate', 'origin', 'User-Diet', 'User-Goal', 'User-Shape'
     ];
 
     /**
@@ -24,6 +26,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->password;
+    }
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = bcrypt($password);
+    }
 }

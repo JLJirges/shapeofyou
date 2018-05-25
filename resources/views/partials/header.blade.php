@@ -6,8 +6,13 @@
         <img class="logo_header" src="{{ asset('images/headerfooter/Logo.png') }}" alt="logo">
     </a>
     <a href="{{ url ('meetups') }}">Meetups</a>
-    <a href="{{ url('profile') }}">Login</a>
-    <a href="{{ url('register') }}">Start now</a>
+    @if( auth()->check() )
+        <a href="{{ url('profile') }}">Profile</a>
+        <a href="{{ url('logout') }}">Log Out</a>
+    @else
+        <a href="{{ url('login') }}">Login</a>
+        <a href="{{ url('register') }}">Start now</a>
+    @endif
 </div>
 
 <div class="responsive-nav">
@@ -16,7 +21,8 @@
             <img width="100" height="100" src="{{ asset('images/headerfooter/Logo_2.png') }}" alt="mobile logo">
         </a>
         <a>
-            <img id="burgericon" class="burgericon" width="100" height="100" src="{{ asset('images/headerfooter/burger_icon.png') }}" alt="burger icon">
+            <img id="burgericon" class="burgericon" width="100" height="100"
+                 src="{{ asset('images/headerfooter/burger_icon.png') }}" alt="burger icon">
         </a>
     </div>
     <ul id="responsive_nav">
@@ -24,8 +30,13 @@
         <li><a href="{{ url('workout') }}">Workout</a></li>
         <li><a href="{{ url('community') }}">Community</a></li>
         <li><a href="{{ url ('meetups') }}">Meetups</a></li>
-        <li><a href="{{ url('profile') }}">Login</a></li>
-        <li><a href="{{ url('register') }}">Start now</a></li>
+        @if( auth()->check() )
+            <li><a href="{{ url('profile') }}">Profile</a></li>
+            <li><a href="{{ url('/logout') }}">Log Out</a></li>
+        @else
+            <li><a href="{{ url('login') }}">Login</a></li>
+            <li><a href="{{ url('register') }}">Start now</a></li>
+        @endif
     </ul>
 </div>
 

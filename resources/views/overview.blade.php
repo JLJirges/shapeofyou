@@ -11,7 +11,7 @@
 
 
     <div class="square_box_section">
-        <div class="box_indoor">
+        <div class="box_indoor" style="background-image: ">
             <a class="box_link" href="{{url('detail')}}">INDOOR</a>
         </div>
         <div class="box_outdoor">

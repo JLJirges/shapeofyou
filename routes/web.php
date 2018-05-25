@@ -27,11 +27,33 @@ Route::get('workout', function () {
     return view('workout');
 });
 
-Route::get('register', function () {
-    return view('register');
+Route::get('register','RegisterController@create');
+Route::post('register','RegisterController@store');
+Route::post('edit', 'RegisterController@edit');
+
+Route::group(['middleware' => ['web']], function(){
+    Route::get('/login', ['as' => 'login', 'uses' => 'SessionsController@login']);
+    Route::get('/logout', ['as' => 'logout', 'uses' => 'SessionsController@logout']);
+    Route::post('/handlelogin', ['as' => 'handlelogin', 'uses' => 'SessionsController@handlelogin']);
 });
 
-Route::get('community', function () {
+
+//Route::post('/login', 'SessionsController@store');
+//Route::get('/logout', 'SessionsController@destroy');
+/*
+Route::get('login', function () {
+    return view('login');
+});
+
+Route::get('/register', 'RegisterController@create');
+Route::post('register', 'RegisterController@store');
+
+Route::get('/login', 'SessionsController@create');
+Route::post('/login', 'SessionsController@store');
+Route::get('/logout', 'SessionsController@destroy');
+*/
+
+Route::get('/community', function () {
     return view('community');
 });
 

@@ -39,25 +39,25 @@
 
         <div class="profile_info_section">
             <div class="profile_info_section_images">
-                <img alt="profile picture" src="{{ ('images/aboutus/Founder.jpg') }}" class="profile_picture">
+                <img alt="profile picture" src="{{ ('images/profile/default_profile_pic_v1.png') }}" class="profile_picture">
                 <div class="profile_personal_section">
                     <p>Diet</p>
-                    <img alt="diet" src="{{('images/community/nospecialdiet.png')}}">
+                    <img alt="diet" src="{{('images/profile/default_secret.png')}}">
                 </div>
                 <div class="profile_personal_section">
                     <p>Goal</p>
-                    <img alt="diet" src="{{('images/community/stayhealthy.png')}}">
+                    <img alt="diet" src="{{('images/profile/default_secret.png')}}">
                 </div>
                 <div class="profile_personal_section">
                     <p>Body Shape</p>
-                    <img alt="diet" src="{{ asset('images/hourglass_shape_1.png') }}">
+                    <img alt="diet" src="{{ asset('images/profile/default_secret.png') }}">
                 </div>
             </div>
 
             <div class="profile_section_personal">
                 <div>
                     <p>MOTIVATION QUOTE</p>
-                    <p class="profile_section_personal_motivation_quote">'If you can dream it, you can do it!'</p>
+                    <p class="profile_section_personal_motivation_quote">@if(Auth::user()->mq){{ Auth::user()->mq }} @else 'No motivational quote defined...' @endif</p>
                 </div>
 
                 <div class="profile_info_section_personal_details">
@@ -67,9 +67,9 @@
                         <p>COUNTRY:</p>
                     </div>
                     <div>
-                        <p>Jeanne Jirges</p>
-                        <p>24</p>
-                        <p>Austria</p>
+                        <p> {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }}  </p>
+                        <p> @if(Auth::user()->birthdate){{ Auth::user()->birthdate }} @else no birth date defined @endif </p>
+                        <p> @if(Auth::user()->origin){{ Auth::user()->origin }} @else no origin defined @endif</p>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,8 @@
     <div class="profile_setting_section">
 
         <div>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>First Name</label>
                 <input type="text" name="firstname" placeholder="First Name">
                 <label>Last Name</label>
@@ -95,7 +96,8 @@
 
                 <button class="white_button">Change Name</button>
             </form>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Your password">
                 <label>Repeat Password</label>
@@ -105,12 +107,13 @@
         </div>
 
         <div>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Email</label>
                 <input type="email" name="email" placeholder="Email">
                 <button class="white_button">Update Email</button>
             </form>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
                 <label>Username</label>
                 <input type="text" name="username" placeholder="Username">
                 <button class="white_button">Change Username</button>
@@ -118,54 +121,79 @@
 
         </div>
         <div>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Profile Picture</label><br>
                 <input type="file" name="ProfileToUpload" id="ProfileToUpload">
                 <button class="white_button">Change Profile Picture</button>
             </form>
-            <form class="edit_profile_form" method="post" action="">
+                <form class="edit_profile_form" method="post" action="/edit">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    {{ csrf_field() }}
+                    {{ method_field('patch') }}
                 <label>Motivational Quote</label>
-                <input type="text" name="username" placeholder="Username">
+                <input type="text" name="mq" placeholder="Your motivational Quote...">
                 <button class="white_button">Update</button>
             </form>
         </div>
+        <div>
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <label>Birthdate</label><br>
+                <input type="date" name="birthdate">
+                <button class="white_button">Change</button>
+            </form>
+                <form class="edit_profile_form" method="post" action="/edit">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <label>Origin</label><br>
+                    <input type="Text" name="origin" placeholder="Origin">
+                    <button class="white_button">Update</button>
+                </form>
+
+        </div>
 
         <div>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Body Shape</label><br>
                 <select type="text" name="selectdiet">
                     <option>Pear</option>
                     <option>Apple</option>
                     <option>Hour Glass</option>
                     <option>Straight</option>
+                    <option>Secret</option>
                 </select>
 
                 <button class="white_button">Change</button>
             </form>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Diet</label><br>
                 <select type="text" name="selectdiet">
                     <option>No diet</option>
                     <option>Vegan</option>
                     <option>Vegetarian</option>
                     <option>Pescetarian</option>
+                    <option>Secret</option>
                 </select>
                 <button class="white_button">Change</button>
             </form>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Goal</label><br>
                 <select type="text" name="selectdiet">
                     <option>Lose weight</option>
                     <option>Stay/Become fit</option>
                     <option>Build muscles</option>
                     <option>Stay/Become healthy</option>
+                    <option>Secret</option>
                 </select>
 
                 <button class="white_button">Change</button>
             </form>
         </div>
         <div>
-            <form class="edit_profile_form" method="post" action="">
+            <form class="edit_profile_form" method="post" action="/edit">
                 <label>Delete My Account</label><br>
 
                 <button class="login_button delete_account">DELETE ACCOUNT</button>

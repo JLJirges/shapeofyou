@@ -39,25 +39,25 @@
 
         <div class="profile_info_section">
             <div class="profile_info_section_images">
-                <img alt="profile picture" src="{{ ('images/aboutus/Founder.jpg') }}" class="profile_picture">
+                <img alt="profile picture" src="{{ ('images/profile/default_profile_pic_v1.png') }}" class="profile_picture">
                 <div class="profile_personal_section">
                     <p>Diet</p>
-                    <img alt="diet" src="{{('images/community/nospecialdiet.png')}}">
+                    <img alt="diet" src="{{('images/profile/default_secret.png')}}">
                 </div>
                 <div class="profile_personal_section">
                     <p>Goal</p>
-                    <img alt="diet" src="{{('images/community/stayhealthy.png')}}">
+                    <img alt="diet" src="{{('images/profile/default_secret.png')}}">
                 </div>
                 <div class="profile_personal_section">
                     <p>Body Shape</p>
-                    <img alt="diet" src="{{ asset('images/hourglass_shape_1.png') }}">
+                    <img alt="diet" src="{{ asset('images/profile/default_secret.png') }}">
                 </div>
             </div>
 
             <div class="profile_section_personal">
                 <div>
                     <p>MOTIVATION QUOTE</p>
-                    <p class="profile_section_personal_motivation_quote">'If you can dream it, you can do it!'</p>
+                    <p class="profile_section_personal_motivation_quote">@if(Auth::user()->mq){{ Auth::user()->mq }} @else 'No motivational quote defined...' @endif</p>
                 </div>
 
                 <div class="profile_info_section_personal_details">
@@ -67,9 +67,9 @@
                         <p>COUNTRY:</p>
                     </div>
                     <div>
-                        <p>Jeanne Jirges</p>
-                        <p>24</p>
-                        <p>Austria</p>
+                        <p> {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }}  </p>
+                        <p>  @if((Auth::user()->birthdate) && ((Auth::user()->birthdate) != '0000-00-00')){{ Auth::user()->birthdate }} @else no birth date defined @endif </p>
+                        <p> @if(Auth::user()->origin){{ Auth::user()->origin }} @else no origin defined @endif</p>
                     </div>
                 </div>
             </div>
