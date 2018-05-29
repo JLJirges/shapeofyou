@@ -14,13 +14,13 @@
         Healthy, delicious and perfect for any occasion!
     </p>
 
+
     <div class="superfood_blog_section">
         <div class="title_bg">
             <h2>Ocassional Blogs</h2>
         </div>
         <div class="superfood_blog_bg">
             <div class="square_box_section">
-
                 <div class="box_appetizers">
                     <a class="box_link" href="{{url('blog')}}">APPETIZERS</a>
                 </div>
@@ -42,6 +42,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="superfood_blog_section">
         <div class="title_bg">
@@ -77,11 +78,15 @@
 
     <div class="superfood_blog_bg">
         <div class="square_box_section">
+            @foreach($blogs as $blog)
+               <div style="background-image:url({{'images/blog_images/' . $blog->BlogImage}});background-size:cover; background-position:center;">
 
-            <div class="superfood_box_nuts">
-                <a class="box_link" href="{{url('blog')}}">LET'S GO NUTS</a>
-            </div>
-            <div class="superfood_box_goodcarbsbadcarbs">
+                    <a class="box_link" href="{{url('blog/' . $blog->id)}}">
+                        <!--LET'S GO NUTS --> {{$blog->BlogTitle}}  </a>
+             </div>
+            @endforeach
+
+        <!-- <div class="superfood_box_goodcarbsbadcarbs">
                 <a class="box_link" href="{{url('blog')}}">GOOD CARBS, BAD CARBS</a>
             </div>
             <div class="superfood_box_thepowerofchia">
@@ -102,7 +107,7 @@
             <div class="superfood_box_gowiththeseason">
                 <a class="box_link" href="{{url('blog')}}">GO WITH THE SEASON</a>
             </div>
-
+-->
         </div>
 
     </div>

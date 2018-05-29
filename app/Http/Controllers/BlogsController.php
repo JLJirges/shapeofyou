@@ -16,31 +16,31 @@ class BlogsController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'blogtitle' => 'required|string|max:50',
-            'blog-category' => 'required',
-            'blog-author-name' => 'required|string|max:50',
-            'blog-author-bio' => 'required|string|max:200',
-            'blog-author-birthdate' => 'required',
-            'blog-author-image' => 'required',
-            'blog-author-origin' => 'required|string|max:50',
-            'blog-hero-image' => 'required',
-            'blog-image' => 'required',
-            'blog-content-one' => 'required|string|max:300',
-            'blog-content-two' => 'required|string|max:300'
+            'BlogTitle' => 'required|string|max:50',
+            'BlogCategory' => 'required',
+            'BlogAuthorName' => 'required|string|max:50',
+            'BlogAuthorBio' => 'required|string|max:200',
+            'BlogAuthorBirthdate' => 'required',
+            'BlogAuthorImage' => 'required',
+            'BlogAuthorOrigin' => 'required|string|max:50',
+            'BlogHeroImage' => 'required',
+            'BlogImage' => 'required',
+            'BlogContentOne' => 'required|string|max:300',
+            'BlogContentTwo' => 'required|string|max:300'
 
         ]);
         Blogs::create([
-            'blogtitle' => request('blogtitle'),
-            'blog-category' => request('blog-category'),
-            'blog-author-name' => request('blog-author-name'),
-            'blog-author-bio' => request('blog-author-bio'),
-            'blog-author-birthdate' => request('blog-author-birthdate'),
-            'blog-author-image' => request('blog-author-image'),
-            'blog-author-origin' => request('blog-author-origin'),
-            'blog-hero-image' => request('blog-hero-image'),
-            'blog-image' => request('blog-image'),
-            'blog-content-one' => request('blog-content-one'),
-            'blog-content-two' => request('blog-content-two')
+            'BlogTitle' => request('BlogTitle'),
+            'BlogCategory' => request('BlogCategory'),
+            'BlogAuthorName' => request('BlogAuthorName'),
+            'BlogAuthorBio' => request('BlogAuthorBio'),
+            'BlogAuthorBirthdate' => request('BlogAuthorBirthdate'),
+            'BlogAuthorImage' => request('BlogAuthorImage'),
+            'BlogAuthorOrigin' => request('BlogAuthorOrigin'),
+            'BlogHeroImage' => request('BlogHeroImage'),
+            'BlogImage' => request('BlogImage'),
+            'BlogContentOne' => request('BlogContentOne'),
+            'BlogContentTwo' => request('BlogContentTwo')
         ]);
         \Session::flash('flash_message', 'Blog upload successful!');
 
@@ -51,17 +51,17 @@ class BlogsController extends Controller
     public function edit(Request $request)
     {
         $this->validate(request(), [
-            'blogtitle' => 'string|max:50',
-            'blog-category' => 'required',
-            'blog-author-name' => 'string|max:50',
-            'blog-author-bio' => 'string|max:200',
-            'blog-author-birthdate' => '',
-            'blog-author-image' => '',
-            'blog-author-origin' => 'string|max:50',
-            'blog-hero-image' => '',
-            'blog-image' => '',
-            'blog-content-one' => 'string|max:300',
-            'blog-content-two' => 'string|max:300'
+            'BlogTitle' => 'string|max:50',
+            'BlogCategory' => 'required',
+            'BlogAuthorName' => 'string|max:50',
+            'BlogAuthorBio' => 'string|max:200',
+            'BlogAuthorBirthdate' => '',
+            'BlogAuthorImage' => '',
+            'BlogAuthorOrigin' => 'string|max:50',
+            'BlogHeroImage' => '',
+            'BlogImage' => '',
+            'BlogContentOne' => 'string|max:300',
+            'BlogContentTwo' => 'string|max:300'
         ]);
 
 

@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('superfood', function () {
-    return view('superfood');
+
+    return view('superfood')
+        ->with('blogs', App\Blogs::all());
 });
 
 Route::get('meetups', function () {
@@ -37,22 +39,6 @@ Route::group(['middleware' => ['web']], function(){
     Route::get('/logout', ['as' => 'logout', 'uses' => 'SessionsController@logout']);
     Route::post('/handlelogin', ['as' => 'handlelogin', 'uses' => 'SessionsController@handlelogin']);
 });
-
-
-//Route::post('/login', 'SessionsController@store');
-//Route::get('/logout', 'SessionsController@destroy');
-/*
-Route::get('login', function () {
-    return view('login');
-});
-
-Route::get('/register', 'RegisterController@create');
-Route::post('register', 'RegisterController@store');
-
-Route::get('/login', 'SessionsController@create');
-Route::post('/login', 'SessionsController@store');
-Route::get('/logout', 'SessionsController@destroy');
-*/
 
 Route::get('/community', function () {
     return view('community');
@@ -106,8 +92,17 @@ Route::get('aboutus', function () {
     return view('footer/aboutus');
 });
 
-Route::get('blog', function () {
-    return view('blog');
+Route::get('blog/{id}', function ($id) {
+    $blog_comments = \DB::table('blogcomment')
+        ->where('BlogId', $id);
+    $user_ids = $blog_comments->pluck('UserId')->toArray();
+    $data = [
+        'blog'  => App\Blogs::where('id', $id)->first(),
+        'blog_comments'   => $blog_comments->get(),
+        'users' => \DB::table('users')
+            ->whereIn('id', $user_ids)->get()
+    ];
+    return view('blog')->with($data);
 });
 
 Route::get('overview', function(){
