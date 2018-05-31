@@ -54,38 +54,20 @@
         </div>
     </div>
 
-    <div class="square_box_section profile_fav_box_section">
-        <div class="box_appetizers">
-            <a class="box_link" href="{{url('blog')}}">APPETIZERS</a>
-        </div>
-        <div class="box_breakfast">
-            <a class="box_link" href="{{url('blog')}}">BREAKFAST</a>
-        </div>
-        <div class="box_lunch">
-            <a class="box_link" href="{{url('blog')}}">LUNCH</a>
-        </div>
-        <div class="box_snacks">
-            <a class="box_link" href="{{url('blog')}}">SNACKS</a>
-        </div>
-    </div>
-    <div class="square_box_section">
-        <div class="box_appetizers">
-            <a class="box_link" href="{{url('blog')}}">APPETIZERS</a>
-        </div>
-        <div class="box_breakfast">
-            <a class="box_link" href="{{url('blog')}}">BREAKFAST</a>
-        </div>
-        <div class="box_lunch">
-            <a class="box_link" href="{{url('blog')}}">LUNCH</a>
-        </div>
-        <div class="box_snacks">
-            <a class="box_link" href="{{url('blog')}}">SNACKS</a>
-        </div>
-    </div>
 
+    @if($fave_blog_ids)
 
+            <div class="square_box_section">
+                @foreach($blogs-> whereIn('id', $fave_blog_ids) as $fave_blog)
+                    <div style="background-image:url({{'images/' . $fave_blog->BlogBoxImage}});background-size:cover; background-position:center;">
 
+                        <a class="box_link"
+                           href="{{url('blog/' . $fave_blog->id)}}">
+                            {{$fave_blog->BlogTitle}}  </a>
+                    </div>
+                @endforeach
+            </div>
 
-
-
+    @endif
+    
 @endsection

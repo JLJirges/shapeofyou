@@ -18,8 +18,8 @@ Route::get('/', function () {
 Route::get('superfood', function () {
 
 
-    $data= [
-        'blogs'   => \DB::table('blogs')->get(),
+    $data = [
+        'blogs' => \DB::table('blogs')->get(),
     ];
 
 
@@ -37,12 +37,12 @@ Route::get('workout', function () {
     return view('workout');
 });
 
-Route::get('register','RegisterController@create');
-Route::post('register','RegisterController@store');
+Route::get('register', 'RegisterController@create');
+Route::post('register', 'RegisterController@store');
 Route::post('edit', 'RegisterController@edit');
 Route::post('upload_photo', 'RegisterController@upload_photo');
 
-Route::group(['middleware' => ['web']], function(){
+Route::group(['middleware' => ['web']], function () {
     Route::get('/login', ['as' => 'login', 'uses' => 'SessionsController@login']);
     Route::get('/logout', ['as' => 'logout', 'uses' => 'SessionsController@logout']);
     Route::post('/handlelogin', ['as' => 'handlelogin', 'uses' => 'SessionsController@handlelogin']);
@@ -79,7 +79,15 @@ Route::get('motivationprofile', function () {
 });
 
 Route::get('blogoverviewprofile', function () {
-    $data = ['user' => Auth::user()];
+
+
+    $data = [
+        'user' => Auth::user(),
+        'blogs' => \DB::table('blogs')->get(),
+        'fave_blog_ids' => \DB::table('user_favorites')->where('UserId', Auth::user()->id)->pluck('type_id')->toArray()
+    ];
+
+
     return view('profile/blogoverviewprofile')->with($data);
 });
 
@@ -148,12 +156,12 @@ Route::get('blog/{blog_id}', function ($blog_id) {
 
         // I need the blog entry from the 'blogs' table.
         // Go to the Blogs and find the entry where 'id'=$id
-        'blog'  => \DB::table('blogs')->where('id', $blog_id)->first(),
+        'blog' => \DB::table('blogs')->where('id', $blog_id)->first(),
 
         'blog_author' => \DB::table('users')->where('id', $blogger_id)->first(),
 
         // get blog comments ordered by their date
-        'blog_comments'   => $blog_comments->orderBy('BlogCommentDate','desc')->get(),
+        'blog_comments' => $blog_comments->orderBy('BlogCommentDate', 'desc')->get(),
 
         // get users associated with blog comments
         'users' => \DB::table('users')
@@ -164,7 +172,7 @@ Route::get('blog/{blog_id}', function ($blog_id) {
 
         // Boolean variable: true if user likes blog, false otherwise
         'user_likes_blog' => \DB::table('user_favorites')
-            ->where(['UserId' => Auth::user()->id, 'type' => 'blog', 'type_id' => $blog_id])->count() > 0
+                ->where(['UserId' => Auth::user()->id, 'type' => 'blog', 'type_id' => $blog_id])->count() > 0
     ];
     return view('blog')->with($data);
 });
@@ -173,15 +181,15 @@ Route::post('/favorite_blog/{action}/{blog_id}/{user_id}', 'SessionsController@f
 
 Route::post('/write_comment/{type}/{id}/{user_id}', 'SessionsController@write_comments');
 
-Route::get('overview', function(){
-   return view('overview');
+Route::get('overview', function () {
+    return view('overview');
 });
 
 
-Route::get('detail', function(){
-   return view('detail');
+Route::get('detail', function () {
+    return view('detail');
 });
 
-Route::get('dashboard', function(){
+Route::get('dashboard', function () {
     return view('backend/dashboard');
 });

@@ -24,7 +24,7 @@
             <div class="superfood_blog_bg">
                 <div class="square_box_section">
                     @foreach($blogs->where('BlogCategory', 1) as $blog)
-                        <div style="background-image:url({{'images/superfood/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
+                        <div style="background-image:url({{'images/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
 
                             <a class="box_link"
                                href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
@@ -34,7 +34,6 @@
                 </div>
             </div>
 
-        @else
         @endif
 
 
@@ -48,7 +47,7 @@
             <div class="superfood_blog_bg">
                 <div class="square_box_section">
                     @foreach($blogs->where('BlogCategory', 2) as $blog)
-                        <div style="background-image:url({{'images/superfood/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
+                        <div style="background-image:url({{'images/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
 
                             <a class="box_link"
                                href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
@@ -58,7 +57,7 @@
                 </div>
             </div>
 
-            @else
+
             @endif
 
 
@@ -71,7 +70,7 @@
             <div class="superfood_blog_bg">
                 <div class="square_box_section">
                     @foreach($blogs->where('BlogCategory', 3) as $blog)
-                        <div style="background-image:url({{'images/superfood/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
+                        <div style="background-image:url({{'images/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
 
                             <a class="box_link"
                                href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
@@ -81,9 +80,6 @@
                 </div>
             </div>
 
-        @else
-
-            <p>No Blogs to show</p>
         @endif
 
 
