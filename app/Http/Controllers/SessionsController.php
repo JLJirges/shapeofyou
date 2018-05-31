@@ -30,7 +30,7 @@ class SessionsController extends Controller
     public function write_comments($type, $id, $user_id)
     {
         $this->validate(request(), [
-            'comment' => 'required|string|max:50'
+            'comment' => 'required|string|max:500'
         ]);
 
         if ($type == 'blog'){
@@ -40,11 +40,15 @@ class SessionsController extends Controller
                 'BlogCommentContent' => request('comment')
             ]);
         }else if ($type == 'detail'){
-            return 'not implemented (see code of SessionsController)';
+            \App\WorkoutComments::create([
+                'WorkoutId' => $id,
+                'UserId' => $user_id,
+                'WorkoutCommentContent' => request('comment')
+            ]);
         }else if ($type == 'diary'){
-            return 'not implemented (see code of SessionsController)';
+            return 'Diary not implemented (see code of SessionsController)';
         }else{
-            return 'not implemented (see code of SessionsController)';
+            return 'Something else not implemented (see code of SessionsController)';
         }
 
         \Session::flash('flash_message', 'Comment successful!');
@@ -73,6 +77,28 @@ class SessionsController extends Controller
             )->delete();
         }
         return redirect()->to('blog' . '/' . $blog_id);
+    }
+
+    public function favorite_workout($action, $workout_id, $user_id){
+        if ($action == 'insert'){
+            \DB::table('user_favorites')->insert(
+                [
+                    'UserId' => $user_id,
+                    'type' => 'detail',
+                    'type_id' => $workout_id
+                ]
+            );
+        }else{
+            // action == delete
+            \DB::table('user_favorites')->where(
+                [
+                    'UserId' => $user_id,
+                    'type' => 'detail',
+                    'type_id' => $workout_id
+                ]
+            )->delete();
+        }
+        return redirect()->to('detail' . '/' . $workout_id);
     }
 
 }

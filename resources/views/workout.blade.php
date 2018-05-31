@@ -23,68 +23,79 @@
         </div>
 
         <div class="square_box_section">
-
-            <div class="box_indoor">
-                <a class="box_link" href="{{url('overview')}}">WARM UP</a>
-            </div>
-            <div class="box_outdoor">
-                <a class="box_link" href="{{url('overview')}}">OUTDOOR</a>
-            </div>
-            <div class="box_stretch">
-                <a class="box_link" href="{{url('overview')}}">STRETCHING</a>
-            </div>
-            <div class="box_tenminutes">
-                <a class="box_link" href="{{url('overview')}}">10 MINUTES WORKOUT</a>
-            </div>
-            <div class="box_partnerworkout">
-                <a class="box_link" href="{{url('overview')}}">PARTNER WORKOUT</a>
-            </div>
-            <div class="box_yoga">
-                <a class="box_link" href="{{url('overview')}}">YOGA</a>
-            </div>
-            <div class="box_workoutwithequipment">
-                <a class="box_link" href="{{url('overview')}}">POWER WITH EQUIPMENT</a>
-            </div>
-            <div class="box_withoutequipment">
-                <a class="box_link" href="{{url('overview')}}">COOL DOWN</a>
-            </div>
+            @if($workout->where('WorkoutCategory', 1)->count() > 0)
+                <div class="box_indoor">
+                    <a class="box_link"
+                       href="@if( (auth()->check())){{url('overview/1')}}@else{{ url ('register') }}@endif">WARM UP</a>
+                </div>
+            @endif
+                @if($workout->where('WorkoutCategory', 2)->count() > 0)
+                    <div class="box_stretch">
+                        <a class="box_link"
+                           href="@if( (auth()->check())){{url('overview/2')}}@else{{ url ('register') }}@endif">STRETCHING</a>
+                    </div>
+                @endif
+                @if($workout->where('WorkoutCategory', 3)->count() > 0)
+                <div class="box_outdoor">
+                    <a class="box_link"
+                       href="@if( (auth()->check())){{url('overview/3')}}@else{{ url ('register') }}@endif">OUTDOOR</a>
+                </div>
+                @endif
+            @if($workout->where('WorkoutCategory', 4)->count() > 0)
+                <div class="box_tenminutes">
+                    <a class="box_link"
+                       href="@if( (auth()->check())){{url('overview/4')}}@else{{ url ('register') }}@endif">10 MINUTES
+                        WORKOUT</a>
+                </div>
+                @endif
+            @if($workout->where('WorkoutCategory', 5)->count() > 0)
+                <div class="box_partnerworkout">
+                    <a class="box_link"
+                       href="@if( (auth()->check())){{url('overview/5')}}@else{{ url ('register') }}@endif">PARTNER
+                        WORKOUT</a>
+                </div>
+                @endif
+            @if($workout->where('WorkoutCategory', 6)->count() > 0)
+                <div class="box_yoga">
+                    <a class="box_link"
+                       href="@if( (auth()->check())){{url('overview/6')}}@else{{ url ('register') }}@endif">YOGA</a>
+                </div>
+                @endif
+            @if($workout->where('WorkoutCategory', 7)->count() > 0)
+                <div class="box_workoutwithequipment">
+                    <a class="box_link"
+                       href="@if( (auth()->check())){{url('overview/7')}}@else{{ url ('register') }}@endif">POWER WITH
+                        EQUIPMENT</a>
+                </div>
+                @endif
+            @if($workout->where('WorkoutCategory', 8)->count() > 0)
+                <div class="box_withoutequipment">
+                    <a class="box_link"
+                       href="@if( (auth()->check())){{url('overview/8')}}@else{{ url ('register') }}@endif">COOL DOWN</a>
+                </div>
+            @endif
         </div>
 
     </div>
+
+    @if($blogs->where('BlogCategory', 4)->count() > 0)
     <div class="workout_blog_bg">
 
         <div class="title_bg"><h2>Workout and Training Blogs</h2>
         </div>
         <div class="square_box_section">
-            <div class="box_whatequipment">
-                <a class="box_link" href="{{url('blog')}}">WHAT EQUIPMENT</a>
-            </div>
-            <div class="box_thepowerofbreaks">
-                <a class="box_link" href="{{url('blog')}}">THE POWER OF BREAKS</a>
-            </div>
-            <div class="box_doyouevenbmi">
-                <a class="box_link" href="{{url('blog')}}">DO YOU EVEN BMI</a>
-            </div>
-            <div class="box_beachbodychallenge">
-                <a class="box_link" href="{{url('blog')}}">BEACH BODY CHALLENGE</a>
-            </div>
-            <div class="box_listentoyourself">
-                <a class="box_link" href="{{url('blog')}}">LISTEN TO YOURSELF</a>
-            </div>
-            <div class="box_theperfectass">
-                <a class="box_link" href="{{url('blog')}}">THE PERFECT ASS</a>
-            </div>
-            <div class="box_bodyshapes">
-                <a class="box_link" href="{{url('blog')}}">BODYSHAPES</a>
-            </div>
-            <div class="box_theabsabc">
-                <a class="box_link" href="{{url('blog')}}">THE ABS - ABC</a>
-            </div>
+            @foreach($blogs->where('BlogCategory', 4) as $blog)
+                <div style="background-image:url({{'images/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
+                    <a class="box_link"
+                       href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
+                        {{$blog->BlogTitle}}  </a>
+                </div>
+            @endforeach
         </div>
 
     </div>
 
-
+    @endif
 
 
 @endsection

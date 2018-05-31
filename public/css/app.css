@@ -173,6 +173,10 @@ h3 {
   cursor: pointer;
 }
 
+.addworkout_button {
+  border: none;
+}
+
 .addworkout {
   width: 80px;
   height: 80px;
@@ -189,26 +193,30 @@ h3 {
   cursor: pointer;
 }
 
+.fav_icon_button {
+  border: none;
+}
+
 .fav_icon {
   margin-top: 60px;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   background: url("../images/unclicked_fav_icon.png") no-repeat;
   background-size: cover;
   cursor: pointer;
 }
 
 .clicked_fav_icon {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   background: url("../images/fav_icon.png") no-repeat;
   background-size: cover;
   cursor: pointer;
 }
 
 .fav_icon:hover {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   background: url("../images/fav_icon.png") no-repeat;
   background-size: cover;
   cursor: pointer;
@@ -637,11 +645,6 @@ ul.tabs li.current {
 .superfood_blog_section {
   margin-top: 2%;
   margin-bottom: 2%;
-}
-
-.superfood_box_nuts {
-  background: url("../images/superfood/nuts.png") center;
-  background-size: cover;
 }
 
 .superfood_box_goodcarbsbadcarbs {
@@ -2333,7 +2336,7 @@ form > input {
   font-weight: bold;
 }
 
-.workout_details_profilepicture > img {
+.workout_author {
   width: 100px;
   height: 100px;
   border-radius: 50px;

@@ -13767,6 +13767,56 @@ $(document).ready(function () {
     });
 })(jQuery);
 
+(function ($, undefined) {
+    $(document).ready(function () {
+
+        $('.slide_box_mainworkout').width($('.page_mainworkout').width());
+        $('.slide_list_mainworkout').width($('.page_mainworkout').width() * $('.page_mainworkout').length);
+
+        $('.next_mainworkout').on('click', function () {
+            $('.slide_list_mainworkout').animate({
+                left: $('.page_mainworkout').width() * -1
+            }, function () {
+                $('.page_mainworkout').last().after($('.page_mainworkout').first());
+                $('.slide_list_mainworkout').css('left', 0);
+            });
+        });
+
+        $('.prev_mainworkout').on('click', function () {
+            $('.page_mainworkout').first().before($('.page_mainworkout').last());
+            $('.slide_list_mainworkout').css('left', $('.page_mainworkout').width() * -1);
+            $('.slide_list_mainworkout').animate({
+                left: 0
+            });
+        });
+    });
+})(jQuery);
+
+(function ($, undefined) {
+    $(document).ready(function () {
+
+        $('.slide_box_cooldown').width($('.page_cooldown').width());
+        $('.slide_list_cooldown').width($('.page_cooldown').width() * $('.page_cooldown').length);
+
+        $('.next_cooldown').on('click', function () {
+            $('.slide_list_cooldown').animate({
+                left: $('.page_cooldown').width() * -1
+            }, function () {
+                $('.page_cooldown').last().after($('.page_cooldown').first());
+                $('.slide_list_cooldown').css('left', 0);
+            });
+        });
+
+        $('.prev_cooldown').on('click', function () {
+            $('.page_cooldown').first().before($('.page_cooldown').last());
+            $('.slide_list_cooldown').css('left', $('.page_cooldown').width() * -1);
+            $('.slide_list_cooldown').animate({
+                left: 0
+            });
+        });
+    });
+})(jQuery);
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {

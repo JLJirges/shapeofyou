@@ -34,7 +34,13 @@ Route::get('meetups', function () {
 });
 
 Route::get('workout', function () {
-    return view('workout');
+
+    $data = [
+        'blogs' => \DB::table('blogs')->get(),
+        'workout' => \DB::table('workouts')->get(),
+    ];
+
+    return view('workout')->with($data);
 });
 
 Route::get('register', 'RegisterController@create');
@@ -98,7 +104,12 @@ Route::get('blogoverviewprofile/{username}', function ($username) {
 });
 
 Route::get('workoutprofile', function () {
-    return view('profile/workoutprofile');
+    $data = [
+        'user' => Auth::user(),
+        'workouts' => \DB::table('workouts')->get(),
+        'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', Auth::user()->id)->pluck('type_id')->toArray()
+    ];
+    return view('profile/workoutprofile')->with($data);
 });
 
 Route::get('settingsprofile', function () {
@@ -177,17 +188,63 @@ Route::get('blog/{blog_id}', function ($blog_id) {
     return view('blog')->with($data);
 });
 
+Route::post('/favorite_workout/{action}/{workout_id}/{user_id}', 'SessionsController@favorite_workout');
+
 Route::post('/favorite_blog/{action}/{blog_id}/{user_id}', 'SessionsController@favorite_blog');
 
 Route::post('/write_comment/{type}/{id}/{user_id}', 'SessionsController@write_comments');
 
-Route::get('overview', function () {
-    return view('overview');
+Route::get('overview/{workout_category}', function ($workout_category) {
+
+    $data = [
+        'workouts' => \DB::table('workouts'),
+        'workout_category' => $workout_category
+    ];
+
+    return view('overview')->with($data);
 });
 
 
-Route::get('detail', function () {
-    return view('detail');
+Route::get('detail/{workout_id}', function ($workout_id) {
+
+    // Get blog comments of blog with the BlogId=$id
+    // blog_comments is an array of entries of the table 'blogcomment'
+    $workout_comments = \DB::table('workoutcomment')
+        ->where('WorkoutId', $workout_id);
+
+    // Get UserIds that are in the blog_comments
+    // user_ids is an array of UserIds (e.g., [1,2,3])
+    $user_ids = $workout_comments->pluck('UserId')->toArray();
+
+    // Get BloggerId
+    $blogger_id = \DB::table('workouts')->where('id', $workout_id)->first()->BloggerId;
+
+    // Get all the data needed to pass to the blade view
+    $data = [
+        // blog_id is in the url
+        'workout_id' => $workout_id,
+
+        // I need the blog entry from the 'blogs' table.
+        // Go to the Blogs and find the entry where 'id'=$id
+        'workout' => \DB::table('workouts')->where('id', $workout_id)->first(),
+
+        'workout_author' => \DB::table('users')->where('id', $blogger_id)->first(),
+
+        // get blog comments ordered by their date
+        'workout_comments' => $workout_comments->orderBy('WorkoutCommentDate', 'desc')->get(),
+
+        // get users associated with blog comments
+        'users' => \DB::table('users')
+            ->whereIn('id', $user_ids)->get(),
+
+        // get authenticated user
+        'user_id' => Auth::user()->id,
+
+        // Boolean variable: true if user likes blog, false otherwise
+        'user_likes_workout' => \DB::table('user_favorites')
+                ->where(['UserId' => Auth::user()->id, 'type' => 'workout', 'type_id' => $workout_id])->count() > 0
+    ];
+    return view('detail')->with($data);
 });
 
 Route::get('dashboard', function () {

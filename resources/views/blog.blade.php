@@ -14,7 +14,7 @@
                     <form method="POST" action="{{ '/favorite_blog/remove/' . $blog_id . '/' . $user_id }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                        <button class="fav_icon_button">
+                        <button class="fav_icon fav_icon_button">
                             change image please. go to blog.blade.php
                             <span class="fav_icon">Fave me</span>
                         </button>
@@ -23,7 +23,7 @@
                     <form method="POST" action="{{ '/favorite_blog/insert/' . $blog_id . '/' . $user_id }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                        <button class="fav_icon">
+                        <button class="fav_icon fav_icon_button">
                             <span class="fav_icon"></span>
                         </button>
                     </form>
@@ -124,7 +124,7 @@
                         @endif
                     </div>
 
-                    <p>{{ $blog_comments->where('BlogCommentContent', $blog_comment->BlogCommentContent)->first()->BlogCommentContent}}</p>
+                    <p>{{ $blog_comment->BlogCommentContent}}</p>
                 </div>
 
             @endforeach
