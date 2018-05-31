@@ -33,7 +33,7 @@
                 <a href="{{ url ('settingsprofile')}}">Settings</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('welcome')}}">Logout</a>
+                <a href="{{ url('logout') }}">Logout</a>
             </div>
         </div>
 

@@ -5,21 +5,35 @@
 @endsection
 
 @section('content')
-    <div class="h1_bg">
-
-
-    </div>
 
     <div class="blog_entry">
 
         <div class="blog_box">
             <div class="workout_entry_setting">
-                <span class="fav_icon"></span>
+                @if($user_likes_blog)
+                    <form method="POST" action="{{ '/favorite_blog/remove/' . $blog_id . '/' . $user_id }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                        <button class="fav_icon_button">
+                            change image please. go to blog.blade.php
+                            <span class="fav_icon">Fave me</span>
+                        </button>
+                    </form>
+                @else
+                    <form method="POST" action="{{ '/favorite_blog/insert/' . $blog_id . '/' . $user_id }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                        <button class="fav_icon">
+                            <span class="fav_icon"></span>
+                        </button>
+                    </form>
+                @endif
                 <h1>{{ $blog->BlogTitle }}</h1>
             </div>
 
             <div>
-                <img src="{{ asset('images/blogs/seafood/title_image.png')}}" alt="blog hero image">
+
+                <img src="{{ asset('images/superfood/blogs/' . $blog->BlogHeroImage) }}" alt="blog hero image">
 
                 <div class="blog_text">
 
@@ -27,7 +41,8 @@
 
                         {{ $blog->BlogContentOne }}
                     </p>
-                    <img src="{{ asset('images\blogs\seafood\second_blog_image.png')}}" alt="second blog image">
+                    <img src="{{ asset('images/blogs/' . $blog->BlogImage) }}" alt="second blog image"
+                         class="second_blog_image">
                     <p>
 
                         {{ $blog->BlogContentTwo }}
@@ -43,30 +58,29 @@
         <div class="blog_abouttheauthor">
             <h4>About the author</h4>
             <div class="blog_abouttheauthor_content">
+                <div>
 
-                <img alt="blogger image" src="{{ asset('images/aboutus/Lea.png') }}">
-
+                    <div style="background-image: url({{asset('images/uploads/' . $blog_author->profilepic )}});background-size: cover; background-position: center"
+                         class="profile_picture"></div>
+                </div>
                 <div class="blog_abouttheauthor_content_info">
                     <div>
-                        <h5>Name</h5>
-                        <p>Lea Schächter</p>
+                        <h5>Blogger Name</h5>
+                        <p>{{ $blog_author->username }}</p>
                     </div>
                     <div>
                         <h5>Birthday</h5>
-                        <p>August 3rd, 1993</p>
+                        <p>{{ $blog_author->birthdate }}</p>
                     </div>
                     <div>
                         <h5>Origin</h5>
-                        <p>Austria | Vienna</p>
+                        <p>{{ $blog_author->origin }}</p>
                     </div>
                 </div>
             </div>
             <div class="blog_abouttheauthor_content_bio">
                 <h5>Biography</h5>
-                <p>As a half German half Austrian, jewish girl, Lea Schächter was bron and raised as a pure mix between
-                    cultures. She gratuated at the age of 18, did a Diploma in Comics and Animation and studies
-                    journalism. Because of her mother - who was working as a translator for some years - Lea's
-                    mothertongue ist German, but she is also fluent in English, Hebrew and French.</p>
+                <p>{{ $blog_author->BloggerBio }}</p>
             </div>
         </div>
     </div>
@@ -84,31 +98,42 @@
 
 
                     <div class="comments_details_user">
-                        <div class="comments_details_profilepicture">
-                            <img src="{{asset('images/uploads/' . $users->where('id', $blog_comment->UserId)->first()->profilepic)}}" alt="user profile picture">
-                        </div>
-                        <span>Date</span>
-                        <div class="comments_details_edit">
-                            <span class="delete"></span>
-                            <span class="report"></span>
-                        </div>
+                        <a href="{{url('profile/' . $users->where('id', $blog_comment->UserId)->first()->username)}}">
+                            <div class="comments_details_profilepicture">
+                                @if($users->where('id', $blog_comment->UserId)->first()->profilepic)
+                                    <img src="{{asset('images/uploads/' . $users->where('id', $blog_comment->UserId)->first()->profilepic)}}"
+                                         alt="user profile picture">
+                                @else
+                                    <img src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
+                                         alt="user profile picture">
+                                @endif
+                                <span>{{ $users->where('id', $blog_comment->UserId)->first()->username}}</span>
+
+                            </div>
+                        </a>
+                        <span>{{ $blog_comments->where('BlogCommentDate', $blog_comment->BlogCommentDate)->first()->BlogCommentDate}}</span>
+                        @if( (auth()->check()) && (Auth::user()->isAdmin === 1) )
+                            <div class="comments_details_edit">
+                                <span class="delete"></span>
+                                <span class="report"></span>
+                            </div>
+                        @else
+                            <div class="comments_details_edit">
+                                <span class="report"></span>
+                            </div>
+                        @endif
                     </div>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                        facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                        recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                        dignissimos earum ex
-                        facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                        recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
-                        dignissimos earum ex
-                        facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                        recusandae saepe tempora.</p>
+                    <p>{{ $blog_comments->where('BlogCommentContent', $blog_comment->BlogCommentContent)->first()->BlogCommentContent}}</p>
                 </div>
 
             @endforeach
         </div>
-        <div  class="tab-content" id="comment-tab-2">
-            <form class="comment_form" method="post" action="">
+        <div class="tab-content" id="comment-tab-2">
+            <form class="comment_form" method="post"
+                  action="{{'/write_comment/blog/' . $blog_id . '/' . $user_id}}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                 <h2>Leave a Comment</h2>
                 <label>Write your comment</label>
                 <input type="text" name="comment" placeholder="I will be your comment...">

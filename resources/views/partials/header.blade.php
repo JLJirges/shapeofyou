@@ -6,7 +6,10 @@
         <img class="logo_header" src="{{ asset('images/headerfooter/Logo.png') }}" alt="logo">
     </a>
     <a href="{{ url ('meetups') }}">Meetups</a>
-    @if( auth()->check() )
+    @if( (auth()->check()) && (Auth::user()->isAdmin === 1) )
+        <a href="{{ url('profile') }}">Profile</a>
+        <a href="{{ url('dashboard') }}">Backend</a>
+    @elseif( (auth()->check()))
         <a href="{{ url('profile') }}">Profile</a>
         <a href="{{ url('logout') }}">Log Out</a>
     @else
@@ -30,7 +33,10 @@
         <li><a href="{{ url('workout') }}">Workout</a></li>
         <li><a href="{{ url('community') }}">Community</a></li>
         <li><a href="{{ url ('meetups') }}">Meetups</a></li>
-        @if( auth()->check() )
+        @if( (auth()->check()) && (Auth::user()->isAdmin === 1) )
+           <li> <a href="{{ url('profile') }}">Profile</a></li>
+            <li> <a href="{{ url('dashboard') }}">Backend</a></li>
+        @elseif( (auth()->check()))
             <li><a href="{{ url('profile') }}">Profile</a></li>
             <li><a href="{{ url('/logout') }}">Log Out</a></li>
         @else

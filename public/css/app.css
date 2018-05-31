@@ -190,6 +190,7 @@ h3 {
 }
 
 .fav_icon {
+  margin-top: 60px;
   width: 30px;
   height: 30px;
   background: url("../images/unclicked_fav_icon.png") no-repeat;
@@ -2521,7 +2522,10 @@ form > input {
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
-  max-width: 850px;
+}
+
+.second_blog_image {
+  width: 100%;
   height: auto;
 }
 
@@ -2555,13 +2559,7 @@ form > input {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-}
-
-.blog_abouttheauthor_content > img {
-  max-width: 250px;
-  height: auto;
-  -webkit-box-shadow: grey 0 1px 5px 0;
-          box-shadow: grey 0 1px 5px 0;
+  width: 100%;
 }
 
 .blog_abouttheauthor_content_info > div {

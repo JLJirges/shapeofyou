@@ -57,7 +57,7 @@
 
     <div class="home_section home_section_community">
         <div>
-            <h2>Community</h2>
+            <h2>Awesome Events</h2>
             <p>
                 Are you ready to become part of Austria's biggest lifestyle event? Choose your goal and achieve it.
                 Alone or
@@ -68,7 +68,11 @@
                 are always there to help you out - online and in person!
                 What do you think? We think, you should:
             </p>
-            <a href="{{ url('register') }}">START NOW</a>
+            @if(auth()->check())
+                <a href="{{ url('meetups') }}">GO TO EVENTS</a>
+            @else
+                <a href="{{ url('register') }}">START NOW</a>
+            @endif
         </div>
     </div>
 
@@ -133,7 +137,11 @@
                 are always there to help you out - online and in person!
                 What do you think? We think, you should:
             </p>
-            <a href="{{ url('register') }}">START NOW</a>
+            @if(auth()->check())
+                <a href="{{ url('superfood') }}">NEWEST BLOG</a>
+            @else
+                <a href="{{ url('register') }}">START NOW</a>
+            @endif
         </div>
     </div>
 @endsection

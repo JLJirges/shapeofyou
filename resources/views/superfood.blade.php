@@ -14,102 +14,77 @@
         Healthy, delicious and perfect for any occasion!
     </p>
 
+    @if($blogs->where('BlogCategory', 1)->count() > 0)
 
-    <div class="superfood_blog_section">
+
+            <div class="title_bg">
+                <h2>Ocassional Blogs</h2>
+            </div>
+
+            <div class="superfood_blog_bg">
+                <div class="square_box_section">
+                    @foreach($blogs->where('BlogCategory', 1) as $blog)
+                        <div style="background-image:url({{'images/superfood/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
+
+                            <a class="box_link"
+                               href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
+                                {{$blog->BlogTitle}}  </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+        @else
+        @endif
+
+
+    @if($blogs->where('BlogCategory', 2)->count() > 0)
+
+            <div class="title_bg">
+                <h2>Diet Blogs</h2>
+            </div>
+
+
+            <div class="superfood_blog_bg">
+                <div class="square_box_section">
+                    @foreach($blogs->where('BlogCategory', 2) as $blog)
+                        <div style="background-image:url({{'images/superfood/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
+
+                            <a class="box_link"
+                               href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
+                                {{$blog->BlogTitle}}  </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            @else
+            @endif
+
+
+
         <div class="title_bg">
-            <h2>Ocassional Blogs</h2>
-        </div>
-        <div class="superfood_blog_bg">
-            <div class="square_box_section">
-                <div class="box_appetizers">
-                    <a class="box_link" href="{{url('blog')}}">APPETIZERS</a>
-                </div>
-                <div class="box_breakfast">
-                    <a class="box_link" href="{{url('blog')}}">BREAKFAST</a>
-                </div>
-                <div class="box_lunch">
-                    <a class="box_link" href="{{url('blog')}}">LUNCH</a>
-                </div>
-                <div class="box_snacks">
-                    <a class="box_link" href="{{url('blog')}}">SNACKS</a>
-                </div>
-                <div class="box_dinner">
-                    <a class="box_link" href="{{url('blog')}}">DINNER</a>
-                </div>
-                <div class="box_desserts">
-                    <a class="box_link" href="{{url('blog')}}">DESSERTS</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="superfood_blog_section">
-        <div class="title_bg">
-            <h2>Diet Blogs</h2>
-        </div>
-        <div class="square_box_section">
-
-            <div class="superfood_box_vegan">
-                <a class="box_link" href="{{url('blog')}}">VEGAN</a>
-            </div>
-            <div class="superfood_box_vegetarian">
-                <a class="box_link" href="{{url('blog')}}">VEGETARIAN</a>
-            </div>
-            <div class="superfood_box_pescetarian">
-                <a class="box_link" href="{{url('blog')}}">PESCETARIAN</a>
-            </div>
-            <div class="superfood_box_nospecialdiet">
-                <a class="box_link" href="{{url('blog')}}">NO SPECIAL DIET</a>
-            </div>
-            <div class="superfood_box_lowcarbnocarb">
-                <a class="box_link" href="{{url('blog')}}">LOW CARB/ NO CARB</a>
-            </div>
-            <div class="superfood_box_ketodiet">
-                <a class="box_link" href="{{url('blog')}}">KETO DIET</a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="title_bg">
-        <h2>Current Exciters</h2>
-    </div>
-
-    <div class="superfood_blog_bg">
-        <div class="square_box_section">
-            @foreach($blogs as $blog)
-               <div style="background-image:url({{'images/blog_images/' . $blog->BlogImage}});background-size:cover; background-position:center;">
-
-                    <a class="box_link" href="{{url('blog/' . $blog->id)}}">
-                        <!--LET'S GO NUTS --> {{$blog->BlogTitle}}  </a>
-             </div>
-            @endforeach
-
-        <!-- <div class="superfood_box_goodcarbsbadcarbs">
-                <a class="box_link" href="{{url('blog')}}">GOOD CARBS, BAD CARBS</a>
-            </div>
-            <div class="superfood_box_thepowerofchia">
-                <a class="box_link" href="{{url('blog')}}">THE POWER OF CHIA SEEDS</a>
-            </div>
-            <div class="superfood_box_proteinpowder">
-                <a class="box_link" href="{{url('blog')}}">PROTEIN POWDER</a>
-            </div>
-            <div class="superfood_box_superfood">
-                <a class="box_link" href="{{url('blog')}}">SUPER FOOD</a>
-            </div>
-            <div class="superfood_box_underthesea">
-                <a class="box_link" href="{{url('blog')}}">UNDER THE SEA</a>
-            </div>
-            <div class="superfood_box_whatdoineed">
-                <a class="box_link" href="{{url('blog')}}">WHAT DO I NEED</a>
-            </div>
-            <div class="superfood_box_gowiththeseason">
-                <a class="box_link" href="{{url('blog')}}">GO WITH THE SEASON</a>
-            </div>
--->
+            <h2>Current Exciters</h2>
         </div>
 
-    </div>
+        @if($blogs->where('BlogCategory', 3)->count() > 0)
+            <div class="superfood_blog_bg">
+                <div class="square_box_section">
+                    @foreach($blogs->where('BlogCategory', 3) as $blog)
+                        <div style="background-image:url({{'images/superfood/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
+
+                            <a class="box_link"
+                               href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
+                                {{$blog->BlogTitle}}  </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+        @else
+
+            <p>No Blogs to show</p>
+        @endif
+
 
 @endsection

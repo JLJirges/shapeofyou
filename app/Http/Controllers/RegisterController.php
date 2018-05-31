@@ -18,8 +18,8 @@ class RegisterController extends Controller
         $this->validate(request(), [
             'firstname' => 'required|string|max:50',
             'lastname' => 'required|string|max:50',
-            'username' => 'required|string|max:50',
-            'email' => 'required|email',
+            'username' => 'unique:users|required|string|max:50',
+            'email' => 'unique:users|required|email',
             'password' => 'required',
         ]);
         User::create([
@@ -31,8 +31,15 @@ class RegisterController extends Controller
         ]);
         \Session::flash('flash_message', 'User registration successful!');
 
-        return redirect()->to('/profile');
-
+        // Authenticate/Login right away
+        $credentials = array('username' => request('username'), 'password' => request('password'));
+        if (\Auth::attempt($credentials, true)) {
+            return redirect()->to('/profile');
+        }else{
+            return back()->withErrors([
+                'message' => 'Username/Password do not match'
+            ]);
+        }
     }
 
     public function edit(Request $request)

@@ -5,18 +5,7 @@
 @endsection
 
 @section('content')
-    @if(\Session::has('flash_message'))
-        <div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
-            {{ \Session::get('flash_message') }}
-        </div>
-    @endif
-    @if($errors->any())
-        <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
-            @foreach($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-        </div>
-    @endif
+
 
     <div class="h1_bg">
         <h1>REGISTER</h1>
@@ -45,6 +34,19 @@
         <button class="login_button" type="submit">Sign up</button>
 
     </form>
+
+    @if(\Session::has('flash_message'))
+        <div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
+            {{ \Session::get('flash_message') }}
+        </div>
+    @endif
+    @if($errors->any())
+        <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
+            @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
 
 
 @endsection

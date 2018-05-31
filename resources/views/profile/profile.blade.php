@@ -33,31 +33,70 @@
                 <a href="{{ url ('settingsprofile')}}">Settings</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('welcome')}}">Logout</a>
+                <a href="{{ url('logout') }}">Logout</a>
             </div>
         </div>
 
         <div class="profile_info_section">
             <div class="profile_info_section_images">
-                <img alt="profile picture" src="{{ ('images/profile/default_profile_pic_v1.png') }}" class="profile_picture">
+                @if($user->profilepic)
+                    <div style="background-image:url({{'images/uploads/' . $user->profilepic}});background-size:cover; background-position:center;"
+                         class="profile_picture">
+                    </div>
+                @else
+                    <img alt="diet" src="{{asset('images/profile/default_profile_pic_v1.png')}}"
+                         class="profile_picture">
+                @endif
+                <div class="profile_personal_section">
+                    <p>Body Shape</p>
+                    @if(($user->UserShape === 0) || ($user->UserShape === NULL))
+                        <img alt="shape" src="{{asset('images/profile/default_secret.png')}}">
+                    @elseif($user->UserShape === 1)
+                        <img alt="shape" src="{{asset('images/pear_shape_1.png')}}">
+                    @elseif($user->UserShape === 2)
+                        <img alt="shape" src="{{asset('images/apple_shape_1.png')}}">
+                    @elseif ($user->UserShape === 3)
+                        <img alt="shape" src="{{asset('images/hourglass_shape_1.png')}}">
+                    @elseif ($user->UserShape === 4)
+                        <img alt="shape" src="{{asset('images/stick_shape_1.png')}}">
+                    @endif
+                </div>
                 <div class="profile_personal_section">
                     <p>Diet</p>
-                    <img alt="diet" src="{{('images/profile/default_secret.png')}}">
+                    @if(($user->UserDiet === 0) || ($user->UserDiet === NULL))
+                        <img alt="diet" src="{{asset('images/profile/default_secret.png')}}">
+                    @elseif($user->UserDiet === 1)
+                        <img alt="diet" src="{{asset('images/community/nospecialdiet.png')}}">
+                    @elseif($user->UserDiet === 2)
+                        <img alt="diet" src="{{asset('images/community/pescetarian.png')}}">
+                    @elseif ($user->UserDiet === 3)
+                        <img alt="diet" src="{{asset('images/community/vegan.png')}}">
+                    @elseif ($user->UserDiet === 4)
+                        <img alt="diet" src="{{asset('images/community/vegetarian.png')}}">
+                    @endif
                 </div>
                 <div class="profile_personal_section">
                     <p>Goal</p>
-                    <img alt="diet" src="{{('images/profile/default_secret.png')}}">
+                    @if(($user->UserGoal === 0) || ($user->UserGoal === NULL))
+                        <img alt="goal" src="{{asset('images/profile/default_secret.png')}}">
+                    @elseif($user->UserGoal === 1)
+                        <img alt="goal" src="{{asset('images/lose_weight_3.png')}}">
+                    @elseif($user->UserGoal === 2)
+                        <img alt="goal" src="{{asset('images/become_fit_2.png')}}">
+                    @elseif ($user->UserGoal === 3)
+                        <img alt="goal" src="{{asset('images/build_muscles_2.png')}}">
+                    @elseif ($user->UserGoal === 4)
+                        <img alt="goal" src="{{asset('images/healthy_lifestyle_2.png')}}">
+                    @endif
                 </div>
-                <div class="profile_personal_section">
-                    <p>Body Shape</p>
-                    <img alt="diet" src="{{ asset('images/profile/default_secret.png') }}">
-                </div>
+
             </div>
 
             <div class="profile_section_personal">
                 <div>
                     <p>MOTIVATION QUOTE</p>
-                    <p class="profile_section_personal_motivation_quote">@if(Auth::user()->mq){{ Auth::user()->mq }} @else 'No motivational quote defined...' @endif</p>
+                    <p class="profile_section_personal_motivation_quote">@if($user->mq){{ $user->mq }} @else
+                            'No motivational quote defined...' @endif</p>
                 </div>
 
                 <div class="profile_info_section_personal_details">
@@ -67,9 +106,10 @@
                         <p>COUNTRY:</p>
                     </div>
                     <div>
-                        <p> {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }}  </p>
-                        <p>  @if((Auth::user()->birthdate) && ((Auth::user()->birthdate) != '0000-00-00')){{ Auth::user()->birthdate }} @else no birth date defined @endif </p>
-                        <p> @if(Auth::user()->origin){{ Auth::user()->origin }} @else no origin defined @endif</p>
+                        <p> {{ $user->username }} </p>
+                        <p> @if($user->birthdate){{ $user->birthdate }} @else no birth date
+                            defined @endif </p>
+                        <p> @if($user->origin){{ $user->origin }} @else no origin defined @endif</p>
                     </div>
                 </div>
             </div>
@@ -90,7 +130,8 @@
                 <input type="text" name="diarytext" placeholder="Time to write a diary...">
                 <label>Upload Image</label><br>
                 <input type="file" name="DiaryfileToUpload" id="DiaryfileToUpload">
-                <button type="submit" value="Write Diary" name="writediary" class="profile_button">Write in my Diary</button>
+                <button type="submit" value="Write Diary" name="writediary" class="profile_button">Write in my Diary
+                </button>
             </form>
 
 
@@ -98,53 +139,53 @@
     </div>
 
 
-        <div class="blog_entry">
+    <div class="blog_entry">
 
 
-            <div class="blog_box">
-                <div class="old_diary_entry_setting">
-                    <span>Date</span>
-                    <h4>Diary Entry Title</h4>
-                    <span class="delete"></span>
-                </div>
-                <div>
-                    <img src="{{('../images/workout/workout_bg.png')}}" alt="blog hero image">
+        <div class="blog_box">
+            <div class="old_diary_entry_setting">
+                <span>Date</span>
+                <h4>Diary Entry Title</h4>
+                <span class="delete"></span>
+            </div>
+            <div>
+                <img src="{{('../images/workout/workout_bg.png')}}" alt="blog hero image">
 
-                    <div class="blog_text">
+                <div class="blog_text">
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                            consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
-                            quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
-                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
+                        consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                        quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
                 </div>
             </div>
-
-
         </div>
+
+
+    </div>
 
     <div class="comments_section">
         <ul class="comments_section_interaction tabs">
@@ -271,7 +312,7 @@
                     recusandae saepe tempora.</p>
             </div>
         </div>
-        <div  class="tab-content" id="comment-tab-2">
+        <div class="tab-content" id="comment-tab-2">
             <form class="comment_form" method="post" action="">
                 <h2>Leave a Comment</h2>
                 <label>Write your comment</label>
@@ -307,31 +348,46 @@
                         <div class="blog_text">
 
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae
+                                blanditiis
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae
+                                blanditiis
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae
+                                blanditiis
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae
+                                blanditiis
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae
+                                blanditiis
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae blanditiis
-                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati placeat
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda, beatae
+                                blanditiis
+                                consectetur culpa ducimus est exercitationem hic, impedit magnam nesciunt obcaecati
+                                placeat
                                 quae quidem, repellat repudiandae sapiente tenetur veritatis?</p>
                         </div>
                     </div>
@@ -362,14 +418,20 @@
                             </div>
                         </div>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum
+                            ex
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
                             recusandae saepe tempora.</p>
                     </div>
                     <div class="comments_details">
@@ -385,14 +447,20 @@
                                 <span class="report"></span>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum
+                            ex
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
                             recusandae saepe tempora.</p>
                     </div>
                     <div class="comments_details">
@@ -408,14 +476,20 @@
                                 <span class="report"></span>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum
+                            ex
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
                             recusandae saepe tempora.</p>
                     </div>
                     <div class="comments_details">
@@ -431,14 +505,20 @@
                                 <span class="report"></span>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum
+                            ex
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
                             recusandae saepe tempora.</p>
                     </div>
                     <div class="comments_details">
@@ -454,18 +534,24 @@
                                 <span class="report"></span>
                             </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa dignissimos earum
+                            ex
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
-                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
+                            recusandae saepe tempora.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Accusantium culpa
                             dignissimos earum ex
-                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae ratione
+                            facere hic iste labore, nemo neque, nostrum odit, officia optio perspiciatis placeat quae
+                            ratione
                             recusandae saepe tempora.</p>
                     </div>
                 </div>
-                <div  class="tab-content" id="oldentry-comment-tab-2">
+                <div class="tab-content" id="oldentry-comment-tab-2">
                     <form class="comment_form" method="post" action="">
                         <h2>Leave a Comment</h2>
                         <label>Write your comment</label>

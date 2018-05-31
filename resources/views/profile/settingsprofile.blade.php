@@ -33,18 +33,36 @@
                 <a href="{{ url ('settingsprofile')}}">Settings</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('welcome')}}">Logout</a>
+                <a href="{{ url('logout') }}">Logout</a>
             </div>
         </div>
 
         <div class="profile_info_section">
             <div class="profile_info_section_images">
                 @if(Auth::user()->profilepic)
-                    <!--<img alt="profile picture" src={{ (Auth::user()->profilepic)}}> -->
-                        <img src="{{ 'images/uploads/' . Auth::user()->profilepic }}" class="profile_picture">
+                        <div style="background-image:url({{'images/uploads/' . Auth::user()->profilepic}});background-size:cover; background-position:center;"
+                             class="profile_picture">
+                        </div>
+
                 @else
-                    <img alt="diet" src="{{('images/profile/default_profile_pic_v1.png')}}" class="profile_picture">
+                    <img alt="default profilepic" src="{{('images/profile/default_profile_pic_v1.png')}}" class="profile_picture">
                 @endif
+
+                    <div class="profile_personal_section">
+                        <p>Body Shape</p>
+                        @if((Auth::user()->UserShape === 0) || (Auth::user()->UserShape === NULL))
+                            <img alt="shape" src="{{('images/profile/default_secret.png')}}">
+                        @elseif(Auth::user()->UserShape === 1)
+                            <img alt="shape" src="{{('images/pear_shape_1.png')}}">
+                        @elseif(Auth::user()->UserShape === 2)
+                            <img alt="shape" src="{{('images/apple_shape_1.png')}}">
+                        @elseif (Auth::user()->UserShape === 3)
+                            <img alt="shape" src="{{('images/hourglass_shape_1.png')}}">
+                        @elseif (Auth::user()->UserShape === 4)
+                            <img alt="shape" src="{{('images/stick_shape_1.png')}}">
+                        @endif
+                    </div>
+
                 <div class="profile_personal_section">
                     <p>Diet</p>
                     @if((Auth::user()->UserDiet === 0) || (Auth::user()->UserDiet === NULL))
@@ -59,6 +77,7 @@
                         <img alt="diet" src="{{('images/community/vegetarian.png')}}">
                     @endif
                 </div>
+
                 <div class="profile_personal_section">
                     <p>Goal</p>
                     @if((Auth::user()->UserGoal === 0) || (Auth::user()->UserGoal === NULL))
@@ -73,20 +92,7 @@
                         <img alt="goal" src="{{('images/healthy_lifestyle_2.png')}}">
                     @endif
                 </div>
-                <div class="profile_personal_section">
-                    <p>Body Shape</p>
-                    @if((Auth::user()->UserShape === 0) || (Auth::user()->UserShape === NULL))
-                        <img alt="shape" src="{{('images/profile/default_secret.png')}}">
-                    @elseif(Auth::user()->UserShape === 1)
-                        <img alt="shape" src="{{('images/pear_shape_1.png')}}">
-                    @elseif(Auth::user()->UserShape === 2)
-                        <img alt="shape" src="{{('images/apple_shape_1.png')}}">
-                    @elseif (Auth::user()->UserShape === 3)
-                        <img alt="shape" src="{{('images/hourglass_shape_1.png')}}">
-                    @elseif (Auth::user()->UserShape === 4)
-                        <img alt="shape" src="{{('images/stick_shape_1.png')}}">
-                    @endif
-                </div>
+
             </div>
 
             <div class="profile_section_personal">
@@ -103,7 +109,7 @@
                         <p>COUNTRY:</p>
                     </div>
                     <div>
-                        <p> {{ Auth::user()->firstname }}  {{ Auth::user()->lastname }}  </p>
+                        <p> {{ Auth::user()->username }} </p>
                         <p> @if(Auth::user()->birthdate){{ Auth::user()->birthdate }} @else no birth date
                             defined @endif </p>
                         <p> @if(Auth::user()->origin){{ Auth::user()->origin }} @else no origin defined @endif</p>
