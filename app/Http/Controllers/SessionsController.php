@@ -52,7 +52,11 @@ class SessionsController extends Controller
                 'DiaryCommentContent' => request('comment')
             ]);
         }else{
-            return 'Something else not implemented (see code of SessionsController)';
+            \App\BeforeAfterComments::create([
+                'BASId' => $id,
+                'UserId' => $user_id,
+                'BASContent' => request('comment')
+            ]);
         }
 
         \Session::flash('flash_message', 'Comment successful!');

@@ -43,7 +43,7 @@
         </div>
         <div class="community_box_section">
             <div class="community_box_beforeafter">
-                <a class="community_box_link" href="{{ url('usertalkoverview/beforeafterstories/') }}">BEFORE/ AFTER STORIES</a>
+                <a class="community_box_link" href="{{ url('beforeafteroverview/beforeafterstories') }}">BEFORE/ AFTER STORIES</a>
             </div>
             <div class="community_box_workoutbuddies">
                 <a class="community_box_link" href="{{url('buddyoverview/')}}">WORKOUT BUDDIES</a>

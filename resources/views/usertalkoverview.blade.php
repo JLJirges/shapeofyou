@@ -22,16 +22,6 @@
         </div>
     @endforeach
 
-    @foreach($beforeafterstories as $bfstory)
 
-        <div class="square_box_section">
-            <div style="background-image:url({{asset('images/uploads/' . $bfstory->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
-
-                <a class="box_link"
-                   href="{{url('diary/' . $bfstory->id)}}">
-                    {{$bfstory->BeforeAfterStoryTitle}}  </a>
-            </div>
-        </div>
-    @endforeach
 
 @endsection
