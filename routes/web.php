@@ -59,7 +59,13 @@ Route::get('/community', function () {
 });
 
 Route::get('profile', function () {
-    $data = ['user' => Auth::user()];
+
+    $data = [
+        'user' => Auth::user(),
+        'diary' => \DB::table('diaries')->get()
+    ];
+
+
     return view('profile/profile')->with($data);
 });
 
@@ -117,7 +123,18 @@ Route::get('settingsprofile', function () {
 });
 
 Route::get('buddiesprofile', function () {
-    $data = ['user' => Auth::user()];
+
+    $data = [
+        'user' => Auth::user(),
+        'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where(
+            ['UserDiet' => Auth::user()->UserDiet,
+                'UserGoal' => Auth::user()->UserGoal,
+                'UserShape' => Auth::user()->UserShape])->get(),
+
+    ];
+
+
+
     return view('profile/buddiesprofile')->with($data);
 });
 
@@ -196,6 +213,7 @@ Route::post('/write_comment/{type}/{id}/{user_id}', 'SessionsController@write_co
 
 Route::get('overview/{workout_category}', function ($workout_category) {
 
+
     $data = [
         'workouts' => \DB::table('workouts'),
         'workout_category' => $workout_category
@@ -204,6 +222,47 @@ Route::get('overview/{workout_category}', function ($workout_category) {
     return view('overview')->with($data);
 });
 
+Route::get('usertalkoverview/{type}', function ($type) {
+
+
+    $data = [
+        'user' => Auth::user(),
+        'diaries' => \DB::table('diaries')->get(),
+        'beforeafterstories' => \DB::table('beforeafterstories'),
+        'users' => \DB::table('users')->where('id', '!=', Auth::user()->id),
+        'type' => $type,
+    ];
+
+    return view('usertalkoverview')->with($data);
+});
+
+
+Route::get('useroverview/{type}/{type_id}', function ($type, $type_id) {
+
+    $data = [
+        'user' => Auth::user(),
+        'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where($type, $type_id)->get(),
+        'type' => $type,
+        'type_id' => $type_id
+    ];
+
+    return view('useroverview')->with($data);
+});
+
+
+Route::get('buddyoverview/', function () {
+
+    $data = [
+        'user' => Auth::user(),
+        'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where(
+            ['UserDiet' => Auth::user()->UserDiet,
+                'UserGoal' => Auth::user()->UserGoal,
+                'UserShape' => Auth::user()->UserShape])->get(),
+
+    ];
+
+    return view('useroverview')->with($data);
+});
 
 Route::get('detail/{workout_id}', function ($workout_id) {
 
@@ -245,6 +304,45 @@ Route::get('detail/{workout_id}', function ($workout_id) {
                 ->where(['UserId' => Auth::user()->id, 'type' => 'workout', 'type_id' => $workout_id])->count() > 0
     ];
     return view('detail')->with($data);
+});
+
+Route::get('diary/{diary_id}', function ($diary_id) {
+
+    // Get blog comments of blog with the BlogId=$id
+    // blog_comments is an array of entries of the table 'blogcomment'
+    $diary_comments = \DB::table('diarycomment')
+        ->where('DiaryId', $diary_id);
+
+    // Get UserIds that are in the blog_comments
+    // user_ids is an array of UserIds (e.g., [1,2,3])
+    $user_ids = $diary_comments->pluck('UserId')->toArray();
+
+    // Get BloggerId
+    $blogger_id = \DB::table('diaries')->where('id', $diary_id)->first()->DiaryUserId;
+
+    // Get all the data needed to pass to the blade view
+    $data = [
+        // blog_id is in the url
+        'diary_id' => $diary_id,
+
+        // I need the blog entry from the 'blogs' table.
+        // Go to the Blogs and find the entry where 'id'=$id
+        'diary' => \DB::table('diaries')->where('id', $diary_id)->first(),
+
+        'diary_author' => \DB::table('users')->where('id', $blogger_id)->first(),
+
+        // get blog comments ordered by their date
+        'diary_comments' => $diary_comments->orderBy('DiaryCommentDate', 'desc')->get(),
+
+        // get users associated with blog comments
+        'users' => \DB::table('users')
+            ->whereIn('id', $user_ids)->get(),
+
+        // get authenticated user
+        'user_id' => Auth::user()->id,
+
+    ];
+    return view('diary')->with($data);
 });
 
 Route::get('dashboard', function () {

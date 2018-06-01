@@ -43,16 +43,16 @@
         </div>
         <div class="community_box_section">
             <div class="community_box_beforeafter">
-                <a class="community_box_link" href="{{ url('overview') }}">BEFORE/ AFTER STORIES</a>
+                <a class="community_box_link" href="{{ url('usertalkoverview/beforeafterstories/') }}">BEFORE/ AFTER STORIES</a>
             </div>
             <div class="community_box_workoutbuddies">
-                <a class="community_box_link" href="{{url('overview')}}">WORKOUT BUDDIES</a>
+                <a class="community_box_link" href="{{url('buddyoverview/')}}">WORKOUT BUDDIES</a>
             </div>
             <div class="community_box_diaries">
-                <a class="community_box_link" href="{{url('overview')}}">WORKOUT DIARIES</a>
+                <a class="community_box_link" href="{{url('usertalkoverview/diaries/')}}">WORKOUT DIARIES</a>
             </div>
             <div class="community_box_meetups">
-                <a class="community_box_link" href="{{url('overview')}}">MEETUPS</a>
+                <a class="community_box_link" href="{{url('meetups')}}">MEETUPS</a>
             </div>
         </div>
     </div>
@@ -66,19 +66,19 @@
             <div class="buddy_section_dietandgoals buddy_section_diet_style">
                 <h3>Find people with different diets</h3>
                 <div>
-                    <a href="{{url('overview')}}" class="buddy_section_same_content">
+                    <a href="{{url('useroverview/UserDiet/4')}}" class="buddy_section_same_content">
                         <div class="community_vegetarian"></div>
                         <span>VEGETARIAN</span>
                     </a>
-                    <a href="{{url('overview')}}" class="buddy_section_same_content">
+                    <a href="{{url('useroverview/UserDiet/3')}}" class="buddy_section_same_content">
                         <span>VEGAN</span>
                         <div class="community_vegan"></div>
                     </a>
-                    <a href="{{url('overview')}}" class="buddy_section_same_content">
+                    <a href="{{url('useroverview/UserDiet/2')}}" class="buddy_section_same_content">
                         <div class="community_pescetarian"></div>
                         <span>PESCETARIAN</span>
                     </a>
-                    <a href="{{url('overview')}}" class="buddy_section_same_content">
+                    <a href="{{url('useroverview/UserDiet/1')}}" class="buddy_section_same_content">
                         <span>NO DIET</span>
                         <div class="community_nospecialdiet"></div>
                     </a>
@@ -88,19 +88,19 @@
             <div class="buddy_section_dietandgoals buddy_section_goal_style">
                 <h3>Find people with different goals</h3>
                 <div>
-                    <a href="{{url('overview')}}" class="buddy_section_same_content">
+                    <a href="{{url('useroverview/UserGoal/1')}}" class="buddy_section_same_content">
                         <span>LOSE WEIGHT</span>
                         <div class="community_loseweight"></div>
                     </a>
-                    <a href="{{url('overview')}}" class="buddy_section_same_content">
+                    <a href="{{url('useroverview/UserGoal/2')}}" class="buddy_section_same_content">
                         <div class="community_becomefit"></div>
                         <span>BECOME FIT</span>
                     </a>
-                    <a href="{{url('overview')}}" class="buddy_section_same_content">
+                    <a href="{{url('useroverview/UserGoal/3')}}" class="buddy_section_same_content">
                         <span>BUILD MUSCLES</span>
                         <div class="community_buildmuscles"></div>
                     </a>
-                    <a href="{{url('overview')}}" class="buddy_section_same_content">
+                    <a href="{{url('useroverview/UserGoal/4')}}" class="buddy_section_same_content">
                         <div class="community_stayhealthy"></div>
                         <span>STAY HEALTHY</span>
                     </a>

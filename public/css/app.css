@@ -2473,6 +2473,11 @@ form > input {
   width: 65%;
 }
 
+.diary_bg {
+  background: url("../images/diary/diaryentry_BG.png") no-repeat;
+  background-size: cover;
+}
+
 .blog_entry {
   padding: 1%;
   border: 1px solid lightgrey;

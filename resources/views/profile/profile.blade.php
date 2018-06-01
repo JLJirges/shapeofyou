@@ -40,7 +40,7 @@
         <div class="profile_info_section">
             <div class="profile_info_section_images">
                 @if($user->profilepic)
-                    <div style="background-image:url({{'images/uploads/' . $user->profilepic}});background-size:cover; background-position:center;"
+                    <div style="background-image:url({{asset('images/uploads/' . $user->profilepic)}});background-size:cover; background-position:center;"
                          class="profile_picture">
                     </div>
                 @else
@@ -130,7 +130,7 @@
                 <input type="text" name="diarytext" placeholder="Time to write a diary...">
                 <label>Upload Image</label><br>
                 <input type="file" name="DiaryfileToUpload" id="DiaryfileToUpload">
-                <button type="submit" value="Write Diary" name="writediary" class="profile_button">Write in my Diary
+                <button type="submit" value="Write Diary" name="writediary" class="white_button">Write in my Diary
                 </button>
             </form>
 

@@ -24,6 +24,18 @@
 
     @endif
 
+    @foreach($type as $showtype)
+
+        <div class="square_box_section">
+            <div style="background-image:url({{'images/' . $diaries->DiaryHeroImage}});background-size:cover; background-position:center;">
+
+                <a class="box_link"
+                   href="{{url('personalentry/' . $diaries->id)}}">
+                    {{$diaries->DiaryTitle}}  </a>
+            </div>
+        </div>
+    @endforeach
+
     <!--
     <div class="square_box_section">
         <div class="box_indoor" style="background-image: ">

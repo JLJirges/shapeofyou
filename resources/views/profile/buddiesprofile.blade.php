@@ -54,34 +54,19 @@
         </div>
     </div>
 
-    <div class="square_box_section profile_fav_box_section">
-        <div class="box_appetizers">
-            <a class="box_link" href="{{url('blog')}}">APPETIZERS</a>
-        </div>
-        <div class="box_breakfast">
-            <a class="box_link" href="{{url('blog')}}">BREAKFAST</a>
-        </div>
-        <div class="box_lunch">
-            <a class="box_link" href="{{url('blog')}}">LUNCH</a>
-        </div>
-        <div class="box_snacks">
-            <a class="box_link" href="{{url('blog')}}">SNACKS</a>
-        </div>
-    </div>
-    <div class="square_box_section">
-        <div class="box_appetizers">
-            <a class="box_link" href="{{url('blog')}}">APPETIZERS</a>
-        </div>
-        <div class="box_breakfast">
-            <a class="box_link" href="{{url('blog')}}">BREAKFAST</a>
-        </div>
-        <div class="box_lunch">
-            <a class="box_link" href="{{url('blog')}}">LUNCH</a>
-        </div>
-        <div class="box_snacks">
-            <a class="box_link" href="{{url('blog')}}">SNACKS</a>
-        </div>
-    </div>
+    @foreach($users as $showuser)
+        @if($showuser->profilepic )
+
+            <a href="{{url('profile/' . $showuser->username)}}" style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
+               class="profile_picture">
+            </a>
+        @else
+            <a href="{{url('profile/' . $showuser->username)}}"><img src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
+                                                                     alt="user profile picture"></a>
+        @endif
+        <span><a href="{{url('profile/' . $showuser->username)}}">{{$showuser->username}}</a>
+                </span>
+    @endforeach
 
 
 

@@ -46,7 +46,11 @@ class SessionsController extends Controller
                 'WorkoutCommentContent' => request('comment')
             ]);
         }else if ($type == 'diary'){
-            return 'Diary not implemented (see code of SessionsController)';
+            \App\DiaryComments::create([
+                'DiaryId' => $id,
+                'UserId' => $user_id,
+                'DiaryCommentContent' => request('comment')
+            ]);
         }else{
             return 'Something else not implemented (see code of SessionsController)';
         }
