@@ -21,7 +21,7 @@
                 <div>
                     <p>'Hi, my name is Janet L. Jirges! I am 24 years old and the Founder & Designer + Programmer of
                         SHAPE OF YOU.
-                        If you write us, call us, find us - I'll be the one you are about 90% going to talk to!'</p>
+                        If you write us, call us, find us - I'll be the one you are to 90% going to talk to!'</p>
                 </div>
 
             </div>
