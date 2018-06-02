@@ -20,7 +20,7 @@
         </a>
     </div>
     <ul id="responsive_nav">
-       
+
         <li><a href="{{ url('') }}">Frontend</a></li>
         <li><a href="{{ url('logout') }}">Log Out</a></li>
     </ul>

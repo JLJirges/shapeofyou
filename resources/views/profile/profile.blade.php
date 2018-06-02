@@ -123,16 +123,24 @@
         <div class="profile_diary_section">
 
             <h3>Write a new Diary Entry</h3>
-            <form class="diary_form" method="post" enctype="multipart/form-data">
+            <form class="diary_form" method="POST" action="/profile">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Write a title</label>
-                <input type="text" name="title" placeholder="I am the Title"><br>
+                <input type="text" name="DiaryTitle" placeholder="I am the Title"><br>
                 <label>Write your entry</label>
-                <input type="text" name="diarytext" placeholder="Time to write a diary...">
+                <input type="text" name="DiaryContent" placeholder="Time to write a diary...">
                 <label>Upload Image</label><br>
-                <input type="file" name="DiaryfileToUpload" id="DiaryfileToUpload">
-                <button type="submit" value="Write Diary" name="writediary" class="white_button">Write in my Diary
+                <input type="file" name="DiaryToUpload" id="DiaryToUpload">
+                <button type="submit" value="Write Diary" name="Diary" class="white_button">Write in my Diary
                 </button>
             </form>
+            @if($errors->any())
+                <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
+                    @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
 
 
         </div>

@@ -58,22 +58,28 @@ Route::get('/community', function () {
     return view('community');
 });
 
+Route::get('profile', 'ProfileDiaryController@create');
+Route::post('profile', 'ProfileDiaryController@store');
+Route::post('upload_photo', 'ProfileDiaryController@upload_photo');
 Route::get('profile', function () {
 
     $data = [
         'user' => Auth::user(),
-        'diary' => \DB::table('diaries')->get()
+        'diary' => \DB::table('Diaries')->get()
     ];
 
 
     return view('profile/profile')->with($data);
 });
 
+
+
 Route::get('profile/{username}', function ($username) {
     $data = ['user' => \DB::table('users')
         ->where('username', $username)->first()];
     return view('profile/profile')->with($data);
 });
+
 
 Route::get('beforeafterprofile', function () {
     $data = ['user' => Auth::user()];
