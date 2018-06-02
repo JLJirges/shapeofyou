@@ -21,6 +21,7 @@ class ProfileDiaryController extends Controller
             'DiaryTitle' => 'required|string|max:20',
             'DiaryContent' => 'required|string|max:500',
             'DiaryHeroImage' => '',
+            'DiaryDate' => ''
 
 
         ]);
@@ -28,6 +29,7 @@ class ProfileDiaryController extends Controller
             'DiaryTitle' => request('DiaryTitle'),
             'DiaryContent' => request('DiaryContent'),
             'DiaryHeroImage' => '',
+            'DiaryDate' => ''
         ]);
 
         \Session::flash('flash_message', 'Diary upload successful!');

@@ -11,12 +11,16 @@
 
     <div class="workout_entry diary_bg">
         <div class="workout_entry_setting">
+
             <div class="workout_details_profilepicture">
+
                 <div style="background-image: url({{asset('images/uploads/' . $diary_author->profilepic )}});background-size: cover; background-position: center"
                      class="workout_author"></div>
                 <span>{{$diary_author->username}}</span>
             </div>
+
             <h2>{{ $diary->DiaryTitle }}</h2>
+            <span>{{$diary->DiaryDate}}</span>
         </div>
 
         <div class="workout_entry_box">

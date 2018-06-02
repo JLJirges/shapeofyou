@@ -10,17 +10,21 @@
     </div>
 
     
-    @foreach($diaries as $diary)
+
 
         <div class="square_box_section">
+            @foreach($diaries as $diary)
             <div style="background-image:url({{asset('images/uploads/' . $diary->DiaryHeroImage)}});background-size:cover; background-position:center;">
 
                 <a class="box_link"
                    href="{{url('diary/' . $diary->id)}}">
                     {{$diary->DiaryTitle}}  </a>
             </div>
+            @endforeach
+
         </div>
-    @endforeach
+
+
 
 
 

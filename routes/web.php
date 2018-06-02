@@ -80,6 +80,10 @@ Route::get('profile/{username}', function ($username) {
     return view('profile/profile')->with($data);
 });
 
+Route::post('BeforeAfterStory', 'BeforeAfterStoryController@store');
+Route::get('BeforeAfterStory', 'BeforeAfterStoryController@create');
+Route::post('upload_photo_one', 'BeforeAfterStoryController@upload_photo_one');
+Route::post('upload_photo_two', 'BeforeAfterStoryController@upload_photo_two');
 
 Route::get('beforeafterprofile', function () {
     $data = ['user' => Auth::user()];
@@ -247,10 +251,9 @@ Route::get('usertalkoverview/{type}', function ($type) {
 
 
     $data = [
-        'user' => Auth::user(),
+        'users' => \DB::table('users')->where('id', '!=', Auth::user()->id),
         'diaries' => \DB::table('diaries')->get(),
         'beforeafterstories' => \DB::table('beforeafterstories'),
-        'users' => \DB::table('users')->where('id', '!=', Auth::user()->id),
         'type' => $type,
     ];
 

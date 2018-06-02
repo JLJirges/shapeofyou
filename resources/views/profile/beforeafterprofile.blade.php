@@ -40,17 +40,26 @@
         <div class="profile_diary_section">
 
             <h3>Write a new Before/After Story</h3>
-            <form class="diary_form" method="post" enctype="multipart/form-data">
+            <form class="diary_form" method="post" action="/BeforeAfterStory">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Write a title</label>
-                <input type="text" name="title" placeholder="I am the Title"><br>
+                <input type="text" name="BeforeAfterStoryTitle" placeholder="I am the Title"><br>
                 <label>Write your entry</label>
-                <input type="text" name="diarytext" placeholder="Time to tell a story...">
-                <label>Upload Image</label><br>
-                <input type="file" name="DiaryfileToUpload" id="DiaryfileToUpload">
-                <button type="submit" value="Post Story" name="poststory" class="profile_button">Post Story</button>
+                <input type="text" name="BeforeAfterStoryContent" placeholder="Time to tell a story...">
+                <label>Upload BEFORE Image</label><br>
+                <input type="file" name="StoryOneToUpload" id="StoryOneToUpload">
+                <label>Upload AFTER Image</label><br>
+                <input type="file" name="StoryTwoToUpload" id="StoryTwoToUpload">
+                <button type="submit" value="Post Story" name="BeforeAfterStory" class="white_button">Post Story</button>
             </form>
 
-
+            @if($errors->any())
+                <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
+                    @foreach($errors->all() as $error)
+                        <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
 
