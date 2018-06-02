@@ -83,7 +83,7 @@
                 <ul class="slide_list_warmup square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 1) as $workout)
                         <li class="page_warmup" style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link" href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
+                            <a class="box_link" href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -103,7 +103,7 @@
                 <ul class="slide_list_stretch square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 2) as $workout)
                         <li class="page_stretch" style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link" href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
+                            <a class="box_link" href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -123,7 +123,7 @@
                 <ul class="slide_list_mainworkout square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 4) as $workout)
                         <li class="page_mainworkout" style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link" href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
+                            <a class="box_link" href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -142,7 +142,7 @@
                 <ul class="slide_list_cooldown square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 2) as $workout)
                         <li class="page_cooldown" style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link" href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
+                            <a class="box_link" href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
