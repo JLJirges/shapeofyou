@@ -65,7 +65,9 @@ Route::get('profile', function () {
 
     $data = [
         'user' => Auth::user(),
-        'diary' => \DB::table('Diaries')->get()
+        'diary' => \DB::table('diaries')->where('DiaryUserId', Auth::user()->id)->orderBy('DiaryDate', 'desc')->get()
+
+
     ];
 
 
@@ -73,10 +75,13 @@ Route::get('profile', function () {
 });
 
 
-
 Route::get('profile/{username}', function ($username) {
-    $data = ['user' => \DB::table('users')
-        ->where('username', $username)->first()];
+
+    $user_id = DB::table('users')->where('username', $username)->first()->id;
+    $data = [
+        'user' => \DB::table('users')->where('username', $username)->first(),
+        'diary' => \DB::table('diaries')->where('DiaryUserId', $user_id)->orderBy('DiaryDate', 'desc')->get()
+    ];
     return view('profile/profile')->with($data);
 });
 
@@ -142,7 +147,6 @@ Route::get('buddiesprofile', function () {
                 'UserShape' => Auth::user()->UserShape])->get(),
 
     ];
-
 
 
     return view('profile/buddiesprofile')->with($data);
