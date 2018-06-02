@@ -66,8 +66,6 @@ Route::get('profile', function () {
     $data = [
         'user' => Auth::user(),
         'diary' => \DB::table('diaries')->where('DiaryUserId', Auth::user()->id)->orderBy('DiaryDate', 'desc')->get()
-
-
     ];
 
 
@@ -91,13 +89,19 @@ Route::post('upload_photo_one', 'BeforeAfterStoryController@upload_photo_one');
 Route::post('upload_photo_two', 'BeforeAfterStoryController@upload_photo_two');
 
 Route::get('beforeafterprofile', function () {
-    $data = ['user' => Auth::user()];
+    $data = [
+        'user' => Auth::user(),
+        'bas' => \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', Auth::user()->id)->orderBy('BeforeAfterStoryDate', 'desc')->get()
+    ];
     return view('profile/beforeafterprofile')->with($data);
 });
 
 Route::get('beforeafterprofile/{username}', function ($username) {
-    $data = ['user' => \DB::table('users')
-        ->where('username', $username)->first()];
+    $user_id = DB::table('users')->where('username', $username)->first()->id;
+    $data = [
+        'user' => \DB::table('users')->where('username', $username)->first(),
+        'bas' => \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', $user_id)->orderBy('BeforeAfterStoryDate', 'desc')->get()
+    ];
     return view('profile/beforeafterprofile')->with($data);
 });
 

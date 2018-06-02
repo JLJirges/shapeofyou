@@ -9,33 +9,52 @@
         <h1>MY BUDDIES</h1>
     </div>
     <div class="profile_section">
-        <div class="profile_navigation">
-
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('profile')}}">My Profile</a>
+        @if($user->username === Auth::user()->username)
+            <div class="profile_navigation">
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('profile')}}">My Profile</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('motivationprofile')}}">Motivation</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('blogoverviewprofile')}}">My Blogs</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('workoutprofile')}}">My Workout</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('buddiesprofile')}}">My Buddies</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('settingsprofile')}}">Settings</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url('logout') }}">Logout</a>
+                </div>
             </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
+        @else
+            <div class="profile_navigation">
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('profile/' . $user->username)}}">Profile</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('beforeafterprofile/' . $user->username)}}">Stories</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('blogoverviewprofile/' . $user->username)}}">Blogs</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('workoutprofile/' . $user->username)}}">Workout</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('buddiesprofile/' . $user->username)}}">Buddies</a>
+                </div>
             </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('motivationprofile')}}">Motivation</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('blogoverviewprofile')}}">My Blogs</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('workoutprofile')}}">My Workout</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('buddiesprofile')}}">My Buddies</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('settingsprofile')}}">Settings</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url('logout') }}">Logout</a>
-            </div>
-        </div>
+        @endif
 
         <div class="profile_diary_section">
             <p class="explain_fav_blogs_p">THIS OVERVIEW IS GOING TO BE AN OVERVIEW OF THE WORKOUT BUDDIES. SINCE

@@ -9,43 +9,52 @@
         <h1>MY PROFILE</h1>
     </div>
     <div class="profile_section">
-        <div class="profile_navigation">
-            @if($user->username ===Auth::user()->username)
+        @if($user->username === Auth::user()->username)
+            <div class="profile_navigation">
                 <div class="profile_navigation_sections profile_navigation__section_box">
-                    <a href="{{ url ('profile/' . Auth::user()->username)}}">My Profile</a>
+                    <a href="{{ url ('profile')}}">My Profile</a>
                 </div>
-            @else
                 <div class="profile_navigation_sections profile_navigation__section_box">
-                    <a href="{{ url ('profile/' . $user->username)}}">Profile</a>
+                    <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
                 </div>
-            @endif
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
-            </div>
-            @if($user->username ===Auth::user()->username)
                 <div class="profile_navigation_sections profile_navigation__section_box">
                     <a href="{{ url ('motivationprofile')}}">Motivation</a>
                 </div>
-            @endif
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('blogoverviewprofile')}}">My Blogs</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('workoutprofile')}}">My Workout</a>
-            </div>
-            <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('buddiesprofile')}}">My Buddies</a>
-            </div>
-            @if($user->username ===Auth::user()->username)
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('blogoverviewprofile')}}">My Blogs</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('workoutprofile')}}">My Workout</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('buddiesprofile')}}">My Buddies</a>
+                </div>
                 <div class="profile_navigation_sections profile_navigation__section_box">
                     <a href="{{ url ('settingsprofile')}}">Settings</a>
                 </div>
                 <div class="profile_navigation_sections profile_navigation__section_box">
                     <a href="{{ url('logout') }}">Logout</a>
                 </div>
-            @endif
-        </div>
-
+            </div>
+        @else
+            <div class="profile_navigation">
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('profile/' . $user->username)}}">Profile</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('beforeafterprofile/' . $user->username)}}">Stories</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('blogoverviewprofile/' . $user->username)}}">Blogs</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('workoutprofile/' . $user->username)}}">Workout</a>
+                </div>
+                <div class="profile_navigation_sections profile_navigation__section_box">
+                    <a href="{{ url ('buddiesprofile/' . $user->username)}}">Buddies</a>
+                </div>
+            </div>
+        @endif
         <div class="profile_info_section">
             <div class="profile_info_section_images">
                 @if($user->profilepic)
@@ -127,7 +136,7 @@
     </div>
 
     <div class="profile_section profile_section_2">
-
+        @if($user->username === Auth::user()->username)
 
         <div class="profile_diary_section">
 
@@ -152,6 +161,7 @@
             @endif
 
         </div>
+        @endif
 
         @if(($user->username === Auth::user()->username) && ($diary->where('DiaryUserId', Auth::user()->id)->count() > 0))
             <div class="square_box_section">
@@ -165,7 +175,7 @@
                 @endforeach
             </div>
 
-            @else
+        @else
             <div class="square_box_section">
                 @foreach($diary->where('DiaryUserId', $user->id) as $diaryentry)
                     <div style="background-image:url({{asset('images/uploads/' . $diaryentry->DiaryHeroImage)}});background-size:cover; background-position:center;">

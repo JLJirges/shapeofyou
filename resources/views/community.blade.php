@@ -107,6 +107,28 @@
                 </div>
             </div>
 
+            <div class="buddy_section_dietandgoals buddy_section_diet_style">
+                <h3>Find people with different Body Shapes</h3>
+                <div>
+                    <a href="{{url('useroverview/UserShape/3')}}" class="buddy_section_same_content">
+                        <div class="community_vegetarian"></div>
+                        <span>HOUR GLASS</span>
+                    </a>
+                    <a href="{{url('useroverview/UserShape/2')}}" class="buddy_section_same_content">
+                        <span>APPLE</span>
+                        <div class="community_vegan"></div>
+                    </a>
+                    <a href="{{url('useroverview/UserDiet/4')}}" class="buddy_section_same_content">
+                        <div class="community_pescetarian"></div>
+                        <span>STRAIGHT</span>
+                    </a>
+                    <a href="{{url('useroverview/UserDiet/1')}}" class="buddy_section_same_content">
+                        <span>PEAR</span>
+                        <div class="community_nospecialdiet"></div>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 

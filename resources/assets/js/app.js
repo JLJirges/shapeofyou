@@ -111,7 +111,6 @@ $(document).ready(function(){
     });
 })(jQuery);
 
-
 (function($, undefined){
     $(document).ready(function(){
 
@@ -137,3 +136,4 @@ $(document).ready(function(){
 
     });
 })(jQuery);
+

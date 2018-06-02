@@ -207,12 +207,13 @@ h3 {
   display: inherit;
 }
 
-ul.tabs{
+ul.tabs {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-ul.tabs li{
+
+ul.tabs li {
   background: none;
   color: #222;
   display: inline-block;
@@ -220,16 +221,16 @@ ul.tabs li{
   cursor: pointer;
 }
 
-ul.tabs li.current{
+ul.tabs li.current {
   color: #222;
 }
 
-.tab-content{
+.tab-content {
   display: none;
   padding: 15px;
 }
 
-.tab-content.current_tab{
+.tab-content.current_tab {
   display: flex;
   flex-direction: column;
 }
@@ -249,7 +250,6 @@ ul.tabs li.current{
   align-items: center;
   flex-direction: column;
 }
-
 
 /* HOME */
 
@@ -422,6 +422,23 @@ ul.tabs li.current{
 .community_nospecialdiet {
   background: url("../images/community/nospecialdiet.png") center;
   margin-left: 30px;
+}
+
+.community_apple {
+  background: url("../images/community/vegan.png") center;
+  margin-left: 30px;
+}
+
+.community_hourglass {
+  background: url("../images/hourglass_shape_1.png") center;
+}
+
+.community_hourglass {
+  background: url("../images/hourglass_shape_1.png") center;
+}
+
+.community_hourglass {
+  background: url("../images/hourglass_shape_1.png") center;
 }
 
 .box_section {
@@ -1039,7 +1056,7 @@ ul.tabs li.current{
 
 }
 
-.event_W{
+.event_W {
   font-weight: bold;
 }
 
@@ -1574,17 +1591,16 @@ form > input {
   align-items: center;
 }
 
-
 .profile_diary_section_loadolddiaries {
   width: 50%;
   display: flex;
   justify-content: center;
-align-items: center;
+  align-items: center;
 }
 
 .profile_diary_section_loadolddiaries > div {
   display: flex;
-justify-content: space-around;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   border-top: lightgrey solid 1px;
@@ -1638,8 +1654,6 @@ justify-content: space-around;
   align-items: center;
 }
 
-
-
 .left {
   width: 100px;
   height: 100px;
@@ -1674,9 +1688,9 @@ justify-content: space-around;
 
 /*profile settings*/
 
-.profile_setting_section{
+.profile_setting_section {
   display: flex;
-justify-content: center;
+  justify-content: center;
   flex-direction: column;
   align-self: center;
   max-width: 50%;
@@ -1696,11 +1710,10 @@ justify-content: center;
   padding: 10px;
 }
 
-.profile_setting_section > div > form > button{
+.profile_setting_section > div > form > button {
   margin-left: 0;
   width: auto;
 }
-
 
 /* WORKOUT DETAILS */
 
@@ -1718,7 +1731,8 @@ justify-content: center;
   margin: 0 auto;
   padding: 0;
 }
-.prev_stretch {
+
+.prev_stretch  {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1731,7 +1745,8 @@ justify-content: center;
   cursor: pointer;
   z-index: 2;
 }
-.next_stretch {
+
+.next_stretch  {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1745,11 +1760,11 @@ justify-content: center;
   z-index: 2;
 }
 
-.prev_stretch:hover {
+.prev_stretch :hover {
   color: white;
 }
 
-.next_stretch:hover {
+.next_stretch :hover {
   color: white;
 }
 
@@ -1759,6 +1774,7 @@ justify-content: center;
   white-space: nowrap;
   height: 100%;
 }
+
 .page_stretch {
   float: left;
   width: 300px;
@@ -1771,7 +1787,7 @@ justify-content: center;
 
 }
 
-.page_stretch > a{
+.page_stretch  > a {
   color: white;
   font-family: "AR DARLING", sans-serif;
 }
@@ -1790,7 +1806,8 @@ justify-content: center;
   margin: 0 auto;
   padding: 0;
 }
-.prev_warmup {
+
+.prev_warmup  {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1803,7 +1820,8 @@ justify-content: center;
   cursor: pointer;
   z-index: 2;
 }
-.next_warmup {
+
+.next_warmup  {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1817,11 +1835,11 @@ justify-content: center;
   z-index: 2;
 }
 
-.prev_warmup:hover {
+.prev_warmup :hover {
   color: white;
 }
 
-.next_warmup:hover {
+.next_warmup :hover {
   color: white;
 }
 
@@ -1831,6 +1849,7 @@ justify-content: center;
   white-space: nowrap;
   height: 100%;
 }
+
 .page_warmup {
   float: left;
   width: 300px;
@@ -1843,7 +1862,157 @@ justify-content: center;
 
 }
 
-.page_warmup > a{
+.page_warmup  > a {
+  color: white;
+  font-family: "AR DARLING", sans-serif;
+}
+
+.slide_box_mainworkout {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin: 10px 0 0 0;
+  position: relative;
+}
+
+.slide_box_mainworkout > ul {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.prev_mainworkout  {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  left: 4px;
+  background: rgba(000, 000, 000, 0.5);
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.next_mainworkout  {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  right: 4px;
+  background: rgba(000, 000, 000, 0.5);
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev_mainworkout :hover {
+  color: white;
+}
+
+.next_mainworkout :hover {
+  color: white;
+}
+
+.slide_list_mainworkout {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.page_mainworkout {
+  float: left;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+
+}
+
+.page_mainworkout  > a {
+  color: white;
+  font-family: "AR DARLING", sans-serif;
+}
+
+.slide_box_cooldown {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin: 10px 0 0 0;
+  position: relative;
+}
+
+.slide_box_cooldown > ul {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.prev_cooldown {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  left: 4px;
+  background: rgba(000, 000, 000, 0.5);
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.next_cooldown {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  right: 4px;
+  background: rgba(000, 000, 000, 0.5);
+  line-height: 30px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev_cooldown:hover {
+  color: white;
+}
+
+.next_cooldown:hover {
+  color: white;
+}
+
+.slide_list_cooldown {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.page_cooldown {
+  float: left;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+
+}
+
+.page_cooldown > a {
   color: white;
   font-family: "AR DARLING", sans-serif;
 }
@@ -2102,8 +2271,6 @@ justify-content: center;
   width: 100%;
 }
 
-
-
 .blog_abouttheauthor_content_info > div {
   display: flex;
   justify-content: space-between;
@@ -2296,7 +2463,7 @@ footer {
 
   /* WORKOUT DETAIL */
 
-  .comments_interaction{
+  .comments_interaction {
     display: flex;
     justify-content: space-between;
     margin-left: 10px;
@@ -2313,13 +2480,11 @@ footer {
     padding: 5px;
   }
 
-
   .workout_entry_box > div > img {
     width: 90%;
     margin: 0;
     padding: 0;
   }
-
 
   .workout_entry_setting {
     display: flex;
@@ -2488,14 +2653,13 @@ footer {
     justify-content: space-around;
   }
 
-
-  .profile_navigation{
+  .profile_navigation {
     width: 100%;
     margin-bottom: 50px;
     padding: 0;
     box-shadow: none;
     border-right: none;
-    border-left:none;
+    border-left: none;
     border-top: none;
   }
 
@@ -2535,8 +2699,6 @@ footer {
     width: 100%;
   }
 
-
-
   .profile_old_diary_entry_box {
     width: 100%;
   }
@@ -2562,7 +2724,7 @@ footer {
     padding: 10px;
   }
 
-  .comments_section{
+  .comments_section {
     width: 90%;
     margin: 5px;
     display: flex;
@@ -2572,7 +2734,7 @@ footer {
 
   /* SETTINGS */
 
-  .profile_setting_section{
+  .profile_setting_section {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -2594,7 +2756,7 @@ footer {
     padding: 10px;
   }
 
-  .profile_setting_section > div > form > button{
+  .profile_setting_section > div > form > button {
     width: auto;
   }
 
@@ -2709,7 +2871,7 @@ footer {
 
   .responsive-nav > ul > li {
     width: 100%;
-border-top: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
     margin: 0;
   }
 
@@ -2722,8 +2884,5 @@ border-top: 1px solid lightgrey;
     padding-bottom: 10px;
     color: white;
   }
-
-
-
 
 }
