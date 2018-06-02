@@ -43,13 +43,13 @@
         </div>
         <div class="community_box_section">
             <div class="community_box_beforeafter">
-                <a class="community_box_link" href="{{ url('beforeafteroverview/beforeafterstories') }}">BEFORE/ AFTER STORIES</a>
+                <a class="community_box_link" href="@if( (auth()->check())){{ url('beforeafteroverview/beforeafterstories') }}@else{{url('register')}}@endif">BEFORE/ AFTER STORIES</a>
             </div>
             <div class="community_box_workoutbuddies">
-                <a class="community_box_link" href="{{url('buddyoverview/')}}">WORKOUT BUDDIES</a>
+                <a class="community_box_link" href="@if( (auth()->check())){{url('buddyoverview/')}}@else{{url('register')}}@endif">WORKOUT BUDDIES</a>
             </div>
             <div class="community_box_diaries">
-                <a class="community_box_link" href="{{url('usertalkoverview/diaries/')}}">WORKOUT DIARIES</a>
+                <a class="community_box_link" href="@if( (auth()->check())){{url('usertalkoverview/diaries/')}}@else{{url('register')}}@endif">WORKOUT DIARIES</a>
             </div>
             <div class="community_box_meetups">
                 <a class="community_box_link" href="{{url('meetups')}}">MEETUPS</a>
@@ -66,19 +66,19 @@
             <div class="buddy_section_dietandgoals buddy_section_diet_style">
                 <h3>Find people with different diets</h3>
                 <div>
-                    <a href="{{url('useroverview/UserDiet/4')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserDiet/4')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <div class="community_vegetarian"></div>
                         <span>VEGETARIAN</span>
                     </a>
-                    <a href="{{url('useroverview/UserDiet/3')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserDiet/3')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <span>VEGAN</span>
                         <div class="community_vegan"></div>
                     </a>
-                    <a href="{{url('useroverview/UserDiet/2')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserDiet/2')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <div class="community_pescetarian"></div>
                         <span>PESCETARIAN</span>
                     </a>
-                    <a href="{{url('useroverview/UserDiet/1')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserDiet/1')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <span>NO DIET</span>
                         <div class="community_nospecialdiet"></div>
                     </a>
@@ -88,19 +88,19 @@
             <div class="buddy_section_dietandgoals buddy_section_goal_style">
                 <h3>Find people with different goals</h3>
                 <div>
-                    <a href="{{url('useroverview/UserGoal/1')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserGoal/1')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <span>LOSE WEIGHT</span>
                         <div class="community_loseweight"></div>
                     </a>
-                    <a href="{{url('useroverview/UserGoal/2')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserGoal/2')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <div class="community_becomefit"></div>
                         <span>BECOME FIT</span>
                     </a>
-                    <a href="{{url('useroverview/UserGoal/3')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserGoal/3')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <span>BUILD MUSCLES</span>
                         <div class="community_buildmuscles"></div>
                     </a>
-                    <a href="{{url('useroverview/UserGoal/4')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserGoal/4')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <div class="community_stayhealthy"></div>
                         <span>STAY HEALTHY</span>
                     </a>
@@ -110,19 +110,19 @@
             <div class="buddy_section_dietandgoals buddy_section_diet_style">
                 <h3>Find people with different Body Shapes</h3>
                 <div>
-                    <a href="{{url('useroverview/UserShape/3')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserShape/3')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <div class="community_vegetarian"></div>
                         <span>HOUR GLASS</span>
                     </a>
-                    <a href="{{url('useroverview/UserShape/2')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserShape/2')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <span>APPLE</span>
                         <div class="community_vegan"></div>
                     </a>
-                    <a href="{{url('useroverview/UserDiet/4')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserDiet/4')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <div class="community_pescetarian"></div>
                         <span>STRAIGHT</span>
                     </a>
-                    <a href="{{url('useroverview/UserDiet/1')}}" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserDiet/1')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <span>PEAR</span>
                         <div class="community_nospecialdiet"></div>
                     </a>
