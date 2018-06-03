@@ -137,6 +137,17 @@ Route::get('workoutprofile', function () {
     return view('profile/workoutprofile')->with($data);
 });
 
+Route::get('workoutprofile/{username}', function ($username) {
+    $user_id = DB::table('users')->where('username', $username)->first()->id;
+    $data = [
+        'user' => \DB::table('users')->where('username', $username)->first(),
+        'workouts' => \DB::table('workouts')->get(),
+        'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()
+    ];
+
+    return view('profile/workoutprofile')->with($data);
+});
+
 Route::get('settingsprofile', function () {
     return view('profile/settingsprofile');
 });

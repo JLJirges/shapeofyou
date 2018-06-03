@@ -1543,6 +1543,7 @@ form > input {
 
 .profile_navigation {
   width: 10%;
+  height: auto;
   padding: 50px;
   border: solid 1px lightgrey;
   margin-left: 2%;
@@ -1618,6 +1619,7 @@ form > input {
 /* ABOUT YOU */
 .profile_section_navigation {
   width: 100%;
+  height: auto;
   border-top: lightgrey solid 1px;
   margin-top: 2%;
 }
