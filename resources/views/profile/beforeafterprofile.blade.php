@@ -107,6 +107,7 @@
             @if(($user->username === Auth::user()->username) && ($bas->where('BeforeAfterStoryUserId', Auth::user()->id)->count() > 0))
                 <div class="square_box_section">
                     @foreach($bas->where('DiaryUserId', Auth::user()->id) as $basentry)
+
                         <div style="background-image:url({{asset('images/uploads/' . $basentry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
 
                             <a class="box_link"

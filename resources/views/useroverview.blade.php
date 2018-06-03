@@ -18,9 +18,9 @@
             </a>
         @else
             <a href="{{url('profile/' . $showuser->username)}}"><img src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
-                                                                     alt="user profile picture"></a>
+                                                                     alt="user profile picture" class="profile_picture"></a>
         @endif
-        <span><a href="{{url('profile/' . $showuser->username)}}">{{$showuser->username}}</a>
+        <span class="username_overview"><a href="{{url('profile/' . $showuser->username)}}">{{$showuser->username}}</a>
                 </span>
     @endforeach
 

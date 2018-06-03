@@ -85,7 +85,7 @@
                 </div>
             </div>
 
-            <div class="buddy_section_dietandgoals buddy_section_goal_style">
+            <div class="buddy_section_dietandgoals buddy_section_diet_style">
                 <h3>Find people with different goals</h3>
                 <div>
                     <a href="@if( (auth()->check())){{url('useroverview/UserGoal/1')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
@@ -111,23 +111,27 @@
                 <h3>Find people with different Body Shapes</h3>
                 <div>
                     <a href="@if( (auth()->check())){{url('useroverview/UserShape/3')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
-                        <div class="community_vegetarian"></div>
+                        <div class="community_hourglassshape"></div>
                         <span>HOUR GLASS</span>
                     </a>
                     <a href="@if( (auth()->check())){{url('useroverview/UserShape/2')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <span>APPLE</span>
-                        <div class="community_vegan"></div>
+                        <div class="community_appleshape"></div>
                     </a>
-                    <a href="@if( (auth()->check())){{url('useroverview/UserDiet/4')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
-                        <div class="community_pescetarian"></div>
+                    <a href="@if( (auth()->check())){{url('useroverview/UserShape/4')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
+                        <div class="community_straightshape"></div>
                         <span>STRAIGHT</span>
                     </a>
-                    <a href="@if( (auth()->check())){{url('useroverview/UserDiet/1')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
+                    <a href="@if( (auth()->check())){{url('useroverview/UserShape/1')}}@else{{url('register')}}@endif" class="buddy_section_same_content">
                         <span>PEAR</span>
-                        <div class="community_nospecialdiet"></div>
+                        <div class="community_pearshape"></div>
                     </a>
                 </div>
             </div>
+
+            <a href="@if( (auth()->check())){{url('alluseroverview/')}}@else{{url('register')}}@endif" class="white_button">
+                <span>Show all Users!</span>
+            </a>
 
         </div>
     </div>

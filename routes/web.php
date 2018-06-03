@@ -300,6 +300,15 @@ Route::get('useroverview/{type}/{type_id}', function ($type, $type_id) {
     return view('useroverview')->with($data);
 });
 
+Route::get('alluseroverview/', function () {
+
+    $data = [
+        'user' => Auth::user(),
+        'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->get()
+    ];
+
+    return view('useroverview')->with($data);
+});
 
 Route::get('buddyoverview/', function () {
 

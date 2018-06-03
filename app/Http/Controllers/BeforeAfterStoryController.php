@@ -12,7 +12,7 @@ class BeforeAfterStoryController extends Controller
 
     public function create()
     {
-        return ('hey');
+
         return view('/beforeafterprofile');
     }
 
