@@ -9,7 +9,7 @@ class BeforeAfterStory extends Model
 {
 
     protected $table = 'beforeafterstories';
-    public $timestamps = false; // added for 10** error
+    public $timestamps = true; // added for 10** error
     public $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.

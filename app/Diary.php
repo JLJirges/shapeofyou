@@ -23,5 +23,7 @@ class Diary extends Model
         'DiaryTitle', 'DiaryContent', 'DiaryHeroImage', 'DiaryDate', 'DiaryUserId',
     ];
 
+
+
 }
 

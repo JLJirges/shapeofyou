@@ -58,11 +58,10 @@ Route::get('/community', function () {
     return view('community');
 });
 
-Route::get('profile', 'ProfileDiaryController@create');
-Route::post('profile', 'ProfileDiaryController@store');
+Route::get('profile/', 'ProfileDiaryController@create');
+Route::post('profile/', 'ProfileDiaryController@store');
 Route::post('upload_photo', 'ProfileDiaryController@upload_photo');
-Route::get('profile', function () {
-
+Route::get('profile/', function () {
     $data = [
         'user' => Auth::user(),
         'diary' => \DB::table('diaries')->where('DiaryUserId', Auth::user()->id)->orderBy('DiaryDate', 'desc')->get()
@@ -138,7 +137,8 @@ Route::get('workoutprofile', function () {
 });
 
 Route::get('workoutprofile/{username}', function ($username) {
-    $user_id = DB::table('users')->where('username', $username)->first()->id;
+
+    $user_id = \DB::table('users')->where('username', $username)->first()->id;
     $data = [
         'user' => \DB::table('users')->where('username', $username)->first(),
         'workouts' => \DB::table('workouts')->get(),
@@ -444,6 +444,20 @@ Route::get('beforeafter/{bas_id}', function ($bas_id) {
     return view('beforeafter')->with($data);
 });
 
+
+/* BACKEND */
+
 Route::get('dashboard', function () {
     return view('backend/dashboard');
+});
+
+Route::get('/backend/useroverview', function () {
+
+
+
+    $data = [
+        'users' => \DB::table('users')->get()
+            ];
+
+    return view('backend/useroverview')->with($data);
 });

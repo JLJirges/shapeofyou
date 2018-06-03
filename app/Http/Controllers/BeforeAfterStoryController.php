@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\BeforeAfterStory;
-use App\Diary;
 use Illuminate\Http\Request;
 use App\User;
 

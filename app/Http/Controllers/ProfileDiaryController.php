@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Diary;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 use App\User;
 
 class ProfileDiaryController extends Controller
@@ -21,15 +22,16 @@ class ProfileDiaryController extends Controller
             'DiaryTitle' => 'required|string|max:20',
             'DiaryContent' => 'required|string|max:500',
             'DiaryHeroImage' => '',
-            'DiaryDate' => ''
-
+            'DiaryDate' => '',
+            'DiaryUserId' => ''
 
         ]);
         Diary::create([
             'DiaryTitle' => request('DiaryTitle'),
             'DiaryContent' => request('DiaryContent'),
             'DiaryHeroImage' => '',
-            'DiaryDate' => ''
+            'DiaryDate' => '',
+            'DiaryUserId' => 'DiaryUserId'
         ]);
 
         \Session::flash('flash_message', 'Diary upload successful!');

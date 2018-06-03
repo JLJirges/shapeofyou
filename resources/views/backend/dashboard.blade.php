@@ -11,7 +11,7 @@
 
         <div class="square_box_section">
             <div class="box_users">
-                <a class="box_link" href="{{url('overview')}}">USERS</a>
+                <a class="box_link" href="{{url('/backend/useroverview')}}">USERS</a>
             </div>
             <div class="box_blogs">
                 <a class="box_link" href="{{url('overview')}}">BLOGS</a>

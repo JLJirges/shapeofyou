@@ -2909,6 +2909,58 @@ footer {
   display: flex;
 }
 
+.show_username_profile {
+  width: 200px;
+  height: auto;
+  font-weight: bold;
+  border: 1px double lightgrey;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: 150px;
+  margin-left: 5px;
+  margin-right: 5px;
+  -webkit-box-shadow: gray 5px 5px 10px 0;
+          box-shadow: gray 5px 5px 10px 0;
+}
+
+/* BACKEND */
+.username_backend_overview {
+  font-weight: bold;
+  border: 1px double lightgrey;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: 150px;
+  margin-left: 5px;
+  margin-right: 5px;
+  -webkit-box-shadow: gray 5px 5px 10px 0;
+          box-shadow: gray 5px 5px 10px 0;
+}
+
+.backend_profile_picture_overview {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  -webkit-box-shadow: 0 1px 10px 0 grey;
+          box-shadow: 0 1px 10px 0 grey;
+  margin: 10px;
+}
+
 @media only screen and (max-width: 768px) {
   .h1_bg {
     height: 200px;

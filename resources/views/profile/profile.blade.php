@@ -59,11 +59,12 @@
             <div class="profile_info_section_images">
                 @if($user->profilepic)
                     <div style="background-image:url({{asset('images/uploads/' . $user->profilepic)}});background-size:cover; background-position:center;"
-                         class="profile_picture">
+                         class="profile_picture"><span class="show_username_profile">{{$user->username}}
+                </span>
                     </div>
                 @else
-                    <img alt="diet" src="{{asset('images/profile/default_profile_pic_v1.png')}}"
-                         class="profile_picture">
+                    <a href="{{url('profile/' . $user->username)}}" style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;" class="backend_profile_picture_overview"><span class="show_username_profile">{{$user->username}}
+                </span></a>
                 @endif
                 <div class="profile_personal_section">
                     <p>Body Shape</p>
@@ -119,14 +120,14 @@
 
                 <div class="profile_info_section_personal_details">
                     <div>
-                        <p>NAME:</p>
-                        <p>AGE:</p>
-                        <p>COUNTRY:</p>
+                        <!--    <p>NAME:</p>
+                        <p>AGE:</p>-->
+                        <p>ORIGIN:</p>
                     </div>
                     <div>
-                        <p> {{ $user->username }} </p>
-                        <p> @if($user->birthdate){{ $user->birthdate }} @else no birth date
-                            defined @endif </p>
+                    <!--    <p> {{ $user->username }} </p>
+                       <p> @if($user->birthdate){{ $user->birthdate }} @else no birth date
+                            defined @endif </p>-->
                         <p> @if($user->origin){{ $user->origin }} @else no origin defined @endif</p>
                     </div>
                 </div>
@@ -143,6 +144,7 @@
                 <h3>Write a new Diary Entry</h3>
                 <form class="diary_form" method="POST" action="/profile">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="DiaryUserId" value="{{Auth::user()->id}}">
                     <label>Write a title</label>
                     <input type="text" name="DiaryTitle" placeholder="I am the Title"><br>
                     <label>Write your entry</label>
@@ -170,7 +172,7 @@
                         <div style="background-image:url({{asset('images/uploads/' . $entry->DiaryHeroImage)}});background-size:cover; background-position:center;">
                             @else
                                 <div class="community_box_diaries">
-                             @endif
+                                    @endif
 
                                     <a class="box_link"
                                        href="{{url('diary/' . $entry->id)}}">
@@ -188,22 +190,21 @@
                                             <div class="community_box_diaries">
                                                 @endif
 
-                                    <a class="box_link"
-                                       href="{{url('diary/' . $diaryentry->id)}}">
-                                        {{$diaryentry->DiaryTitle}}  </a>
-                                </div>
-                            @endforeach
-                        </div>
+                                                <a class="box_link"
+                                                   href="{{url('diary/' . $diaryentry->id)}}">
+                                                    {{$diaryentry->DiaryTitle}}  </a>
+                                            </div>
+                                            @endforeach
+                                    </div>
 
-                    @endif
+                                @endif
+
+
+                        </div>
 
 
             </div>
-
-
-
-
-
+    </div>
 
 @endsection
 

@@ -55,58 +55,90 @@
                 </div>
             </div>
         @endif
+        @if($user->username === Auth::user()->username)
+            <div class="profile_diary_section">
+                <p class="explain_fav_blogs_p">THIS OVERVIEW IS GOING TO BE AN OVERVIEW OF THE WORKOUT BUDDIES. SINCE
+                    DATABASE DOES NOT EXIST YET THERE ARE NO BUDDIES TO SHOW.</p>
+                <p class="explain_fav_blogs_p">Have you ever noticed this strange Icon and wondered what it might do?
+                    No need to be afraid, you won*t lose your heart to a person, who gives it back after a second. This
+                    Icon
+                    is meant for real love -
+                    Nutrition Love! Do you have Blogs you'd like to remember? Simply click the item and...</p>
+                <p class="explain_fav_blogs_p">...it will turn into this wonderful, heartwarming image, to remind you to
+                    have a favorite! BUT... Yes, it could be,
+                    that Blogs you faved might disappear from your list. Not because we are mean and like to see your
+                    reaction in the hidden camera that turns on, after your first sign up
+                    at SHAPE OF YOU. (Please notice, that this was a joke!) No. The reason is, that sometimes Trends or
+                    even
+                    experts change their mind and
+                    we only want our Blogs to be up-to-date!</p>
+            </div>
 
-        <div class="profile_diary_section">
-            <p class="explain_fav_blogs_p">THIS OVERVIEW IS GOING TO BE AN OVERVIEW OF THE WORKOUT BUDDIES. SINCE
-                DATABASE DOES NOT EXIST YET THERE ARE NO BUDDIES TO SHOW.</p>
-            <p class="explain_fav_blogs_p">Have you ever noticed this strange Icon and wondered what it might do?
-                No need to be afraid, you won*t lose your heart to a person, who gives it back after a second. This Icon
-                is meant for real love -
-                Nutrition Love! Do you have Blogs you'd like to remember? Simply click the item and...</p>
-            <p class="explain_fav_blogs_p">...it will turn into this wonderful, heartwarming image, to remind you to
-                have a favorite! BUT... Yes, it could be,
-                that Blogs you faved might disappear from your list. Not because we are mean and like to see your
-                reaction in the hidden camera that turns on, after your first sign up
-                at SHAPE OF YOU. (Please notice, that this was a joke!) No. The reason is, that sometimes Trends or even
-                experts change their mind and
-                we only want our Blogs to be up-to-date!</p>
-        </div>
+        @else
+            <div class="profile_info_section">
+                <div class="profile_info_section_images">
+                    <div>
+                        @if($user->profilepic)
+                            <div style="background-image:url({{asset('images/uploads/' . $user->profilepic)}});background-size:cover; background-position:center;"
+                                 class="profile_picture"><span class="show_username_profile">{{$user->username}}
+                </span>
+                            </div>
+                        @else
+                            <a href="{{url('profile/' . $user->username)}}"
+                               style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
+                               class="backend_profile_picture_overview"><span class="show_username_profile">{{$user->username}}
+                </span></a>
+                        @endif
+
+                    </div>
+
+                    <p class="profile_section_personal_motivation_quote">@if($user->mq){{ $user->mq }} @else
+                            'No motivational quote defined...' @endif</p>
+                </div>
+            </div>
+        @endif
     </div>
 
     @if($user->username === Auth::user()->username)
-        @foreach($users as $showuser)
-            @if($showuser->profilepic )
+        <div class="square_box_section">
 
-                <a href="{{url('profile/' . $showuser->username)}}"
-                   style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
-                   class="profile_picture">
-                </a>
-            @else
-                <a href="{{url('profile/' . $showuser->username)}}"><img
-                            src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
-                            alt="user profile picture" class="profile_picture"></a>
-            @endif
-            <span class="username_overview"><a
-                        href="{{url('profile/' . $showuser->username)}}">{{$showuser->username}}</a>
+            @foreach($users as $showuser)
+                @if($showuser->profilepic )
+
+                    <a href="{{url('profile/' . $showuser->username)}}"
+                       style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span class="username_backend_overview">{{$showuser->username}}
                 </span>
-        @endforeach
+                    </a>
+                @else
+                    <a href="{{url('profile/' . $showuser->username)}}"
+                       style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span class="username_backend_overview">{{$showuser->username}}
+                </span></a>
+                @endif
+
+            @endforeach
+        </div>
     @else
-        @foreach($users as $showuser)
-            @if($showuser->profilepic )
+        <div class="square_box_section">
 
-                <a href="{{url('profile/' . $showuser->username)}}"
-                   style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
-                   class="profile_picture">
-                </a>
-            @else
-                <a href="{{url('profile/' . $showuser->username)}}"><img
-                            src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
-                            alt="user profile picture" class="profile_picture"></a>
-            @endif
-            <span class="username_overview"><a
-                        href="{{url('profile/' . $showuser->username)}}">{{$showuser->username}}</a>
+            @foreach($users as $showuser)
+                @if($showuser->profilepic )
+
+                    <a href="{{url('profile/' . $showuser->username)}}"
+                       style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span class="username_backend_overview">{{$showuser->username}}
                 </span>
-        @endforeach
+                    </a>
+                @else
+                    <a href="{{url('profile/' . $showuser->username)}}"
+                       style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span class="username_backend_overview">{{$showuser->username}}
+                </span></a>
+                @endif
+
+            @endforeach
+        </div>
     @endif
 
 
