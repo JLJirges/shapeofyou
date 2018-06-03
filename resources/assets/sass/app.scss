@@ -1434,7 +1434,13 @@ form > input {
   box-shadow: grey 0 0 4px 0;
 }
 
-/* PROFILE DIARY */
+/*   PROFILE BUDDIES   */
+.username_overview {
+  margin-bottom: 30px;
+  border-bottom: 1px solid lightgrey;
+}
+
+  /* PROFILE DIARY */
 
 .profile_diary_section {
   width: 65%;
@@ -2649,7 +2655,7 @@ footer {
   .profile_section {
     width: 100%;
     margin: 10px 0 0 0;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-around;
   }
 

@@ -157,8 +157,16 @@ Route::get('buddiesprofile', function () {
 });
 
 Route::get('buddiesprofile/{username}', function ($username) {
-    $data = ['user' => \DB::table('users')
-        ->where('username', $username)->first()];
+
+    $data = [
+        'user' => \DB::table('users')->where('username', $username)->first(),
+        'users' => \DB::table('users')->where('username', '!=', $username)->where(
+            ['UserDiet' => Auth::user()->UserDiet,
+                'UserGoal' => Auth::user()->UserGoal,
+                'UserShape' => Auth::user()->UserShape])->get(),
+    ];
+
+
     return view('profile/buddiesprofile')->with($data);
 });
 

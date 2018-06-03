@@ -73,21 +73,41 @@
         </div>
     </div>
 
-    @foreach($users as $showuser)
-        @if($showuser->profilepic )
+    @if($user->username === Auth::user()->username)
+        @foreach($users as $showuser)
+            @if($showuser->profilepic )
 
-            <a href="{{url('profile/' . $showuser->username)}}" style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
-               class="profile_picture">
-            </a>
-        @else
-            <a href="{{url('profile/' . $showuser->username)}}"><img src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
-                                                                     alt="user profile picture"></a>
-        @endif
-        <span><a href="{{url('profile/' . $showuser->username)}}">{{$showuser->username}}</a>
+                <a href="{{url('profile/' . $showuser->username)}}"
+                   style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
+                   class="profile_picture">
+                </a>
+            @else
+                <a href="{{url('profile/' . $showuser->username)}}"><img
+                            src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
+                            alt="user profile picture" class="profile_picture"></a>
+            @endif
+            <span class="username_overview"><a
+                        href="{{url('profile/' . $showuser->username)}}">{{$showuser->username}}</a>
                 </span>
-    @endforeach
+        @endforeach
+    @else
+        @foreach($users as $showuser)
+            @if($showuser->profilepic )
 
-
+                <a href="{{url('profile/' . $showuser->username)}}"
+                   style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
+                   class="profile_picture">
+                </a>
+            @else
+                <a href="{{url('profile/' . $showuser->username)}}"><img
+                            src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
+                            alt="user profile picture" class="profile_picture"></a>
+            @endif
+            <span class="username_overview"><a
+                        href="{{url('profile/' . $showuser->username)}}">{{$showuser->username}}</a>
+                </span>
+        @endforeach
+    @endif
 
 
 
