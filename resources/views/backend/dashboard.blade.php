@@ -14,16 +14,16 @@
                 <a class="box_link" href="{{url('/backend/useroverview')}}">USERS</a>
             </div>
             <div class="box_blogs">
-                <a class="box_link" href="{{url('overview')}}">BLOGS</a>
+                <a class="box_link" href="{{url('/backend/blogoverview')}}">BLOGS</a>
             </div>
             <div class="box_stretch">
-                <a class="box_link" href="{{url('overview')}}">WORKOUTS</a>
+                <a class="box_link" href="{{url('/backend/workoutoverview')}}">WORKOUTS</a>
             </div>
             <div class="community_box_diaries">
-                <a class="box_link" href="{{url('overview')}}">DIARIES</a>
+                <a class="box_link" href="{{url('/backend/diaryoverview')}}">DIARIES</a>
             </div>
             <div class="community_box_beforeafter">
-                <a class="box_link" href="{{url('overview')}}">BEFORE/AFTER STORIES</a>
+                <a class="box_link" href="{{url('/backend/storyoverview')}}">BEFORE/AFTER STORIES</a>
             </div>
             <div class="community_box_meetups">
                 <a class="box_link" href="{{url ('overview')}}">EVENTS</a>

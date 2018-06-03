@@ -452,12 +452,34 @@ Route::get('dashboard', function () {
 });
 
 Route::get('/backend/useroverview', function () {
-
-
-
     $data = [
         'users' => \DB::table('users')->get()
             ];
-
     return view('backend/useroverview')->with($data);
+});
+
+Route::get('/backend/diaryoverview', function () {
+    $data = [
+        'diaries' => \DB::table('diaries')->get()
+    ];
+    return view('backend/diaryoverview')->with($data);
+});
+Route::get('/backend/blogoverview', function () {
+    $data = [
+        'blogs' => \DB::table('blogs')->get()
+    ];
+    return view('backend/blogoverview')->with($data);
+});
+Route::get('/backend/storyoverview', function () {
+    $data = [
+        'stories' => \DB::table('beforeafterstories')->get()
+    ];
+    return view('backend/storyoverview')->with($data);
+});
+
+Route::get('/backend/workoutoverview', function () {
+    $data = [
+        'workouts' => \DB::table('workouts')->get()
+    ];
+    return view('backend/workoutoverview')->with($data);
 });

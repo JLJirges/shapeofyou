@@ -1,12 +1,12 @@
-@extends('layouts.master')
+@extends('layouts.backendmaster')
 
 @section('title')
-    <title>SHAPE OF YOU | Usertalk</title>
+    <title>ADMIN AREA | Diary Overview</title>
 @endsection
 
 @section('content')
     <div class="h1_bg">
-        <h1>OVERVIEW</h1>
+        <h1>Diary Overview</h1>
     </div>
 
     <div class="square_box_section">
