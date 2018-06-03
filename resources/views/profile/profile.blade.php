@@ -138,59 +138,67 @@
     <div class="profile_section profile_section_2">
         @if($user->username === Auth::user()->username)
 
-        <div class="profile_diary_section">
+            <div class="profile_diary_section">
 
-            <h3>Write a new Diary Entry</h3>
-            <form class="diary_form" method="POST" action="/profile">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <label>Write a title</label>
-                <input type="text" name="DiaryTitle" placeholder="I am the Title"><br>
-                <label>Write your entry</label>
-                <input type="text" name="DiaryContent" placeholder="Time to write a diary...">
-                <label>Upload Image</label><br>
-                <input type="file" name="DiaryToUpload" id="DiaryToUpload">
-                <button type="submit" value="Write Diary" name="Diary" class="white_button">Write in my Diary
-                </button>
-            </form>
-            @if($errors->any())
-                <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
-                    @foreach($errors->all() as $error)
-                        <p>{{ $error }}</p>
-                    @endforeach
-                </div>
-            @endif
+                <h3>Write a new Diary Entry</h3>
+                <form class="diary_form" method="POST" action="/profile">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <label>Write a title</label>
+                    <input type="text" name="DiaryTitle" placeholder="I am the Title"><br>
+                    <label>Write your entry</label>
+                    <input type="text" name="DiaryContent" placeholder="Time to write a diary...">
+                    <label>Upload Image</label><br>
+                    <input type="file" name="DiaryToUpload" id="DiaryToUpload">
+                    <button type="submit" value="Write Diary" name="Diary" class="white_button">Write in my Diary
+                    </button>
+                </form>
+                @if($errors->any())
+                    <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
+                        @foreach($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                @endif
 
-        </div>
+            </div>
         @endif
 
         @if(($user->username === Auth::user()->username) && ($diary->where('DiaryUserId', Auth::user()->id)->count() > 0))
             <div class="square_box_section">
                 @foreach($diary->where('DiaryUserId', Auth::user()->id) as $entry)
-                    <div style="background-image:url({{asset('images/uploads/' . $entry->DiaryHeroImage)}});background-size:cover; background-position:center;">
+                    @if($entry->DiaryHeroImage)
+                        <div style="background-image:url({{asset('images/uploads/' . $entry->DiaryHeroImage)}});background-size:cover; background-position:center;">
+                            @else
+                                <div class="community_box_diaries">
+                             @endif
 
-                        <a class="box_link"
-                           href="{{url('diary/' . $entry->id)}}">
-                            {{$entry->DiaryTitle}}  </a>
-                    </div>
-                @endforeach
+                                    <a class="box_link"
+                                       href="{{url('diary/' . $entry->id)}}">
+                                        {{$entry->DiaryTitle}}  </a>
+                                </div>
+                                @endforeach
+                        </div>
+
+                    @else
+                        <div class="square_box_section">
+                            @foreach($diary->where('DiaryUserId', $user->id) as $diaryentry)
+                                @if($diaryentry->DiaryHeroImage)
+                                    <div style="background-image:url({{asset('images/uploads/' . $diaryentry->DiaryHeroImage)}});background-size:cover; background-position:center;">
+                                        @else
+                                            <div class="community_box_diaries">
+                                                @endif
+
+                                    <a class="box_link"
+                                       href="{{url('diary/' . $diaryentry->id)}}">
+                                        {{$diaryentry->DiaryTitle}}  </a>
+                                </div>
+                            @endforeach
+                        </div>
+
+                    @endif
+
+
             </div>
-
-        @else
-            <div class="square_box_section">
-                @foreach($diary->where('DiaryUserId', $user->id) as $diaryentry)
-                    <div style="background-image:url({{asset('images/uploads/' . $diaryentry->DiaryHeroImage)}});background-size:cover; background-position:center;">
-
-                        <a class="box_link"
-                           href="{{url('diary/' . $diaryentry->id)}}">
-                            {{$diaryentry->DiaryTitle}}  </a>
-                    </div>
-                @endforeach
-            </div>
-
-        @endif
-
-
-    </div>
 
 
 
