@@ -40,56 +40,56 @@
         <div class="profile_info_section">
             <div class="profile_info_section_images">
                 @if(Auth::user()->profilepic)
-                        <div style="background-image:url({{'images/uploads/' . Auth::user()->profilepic}});background-size:cover; background-position:center;"
-                             class="profile_picture">
-                        </div>
-
-                @else
-                    <img alt="default profilepic" src="{{('images/profile/default_profile_pic_v1.png')}}" class="profile_picture">
-                @endif
-
-                    <div class="profile_personal_section">
-                        <p>Body Shape</p>
-                        @if((Auth::user()->UserShape === 0) || (Auth::user()->UserShape === NULL))
-                            <img alt="shape" src="{{('images/profile/default_secret.png')}}">
-                        @elseif(Auth::user()->UserShape === 1)
-                            <img alt="shape" src="{{('images/pear_shape_1.png')}}">
-                        @elseif(Auth::user()->UserShape === 2)
-                            <img alt="shape" src="{{('images/apple_shape_1.png')}}">
-                        @elseif (Auth::user()->UserShape === 3)
-                            <img alt="shape" src="{{('images/hourglass_shape_1.png')}}">
-                        @elseif (Auth::user()->UserShape === 4)
-                            <img alt="shape" src="{{('images/stick_shape_1.png')}}">
-                        @endif
+                    <div style="background-image:url({{asset('images/uploads/' . Auth::user()->profilepic)}});background-size:cover; background-position:center;"
+                         class="profile_picture"><span class="show_username_profile">{{Auth::user()->username}}
+                </span>
                     </div>
-
+                @else
+                    <a href="{{url('profile/' . Auth::user()->username)}}"
+                       style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span class="show_username_profile">{{Auth::user()->username}}
+                </span></a>
+                @endif
+                <div class="profile_personal_section">
+                    <p>Body Shape</p>
+                    @if((Auth::user()->UserShape === 0) || (Auth::user()->UserShape === NULL))
+                        <img alt="shape" src="{{asset('images/profile/default_secret.png')}}">
+                    @elseif(Auth::user()->UserShape === 1)
+                        <img alt="shape" src="{{asset('images/pear_shape_1.png')}}">
+                    @elseif(Auth::user()->UserShape === 2)
+                        <img alt="shape" src="{{asset('images/apple_shape_1.png')}}">
+                    @elseif (Auth::user()->UserShape === 3)
+                        <img alt="shape" src="{{asset('images/hourglass_shape_1.png')}}">
+                    @elseif (Auth::user()->UserShape === 4)
+                        <img alt="shape" src="{{asset('images/stick_shape_1.png')}}">
+                    @endif
+                </div>
                 <div class="profile_personal_section">
                     <p>Diet</p>
                     @if((Auth::user()->UserDiet === 0) || (Auth::user()->UserDiet === NULL))
-                        <img alt="diet" src="{{('images/profile/default_secret.png')}}">
+                        <img alt="diet" src="{{asset('images/profile/default_secret.png')}}">
                     @elseif(Auth::user()->UserDiet === 1)
-                        <img alt="diet" src="{{('images/community/nospecialdiet.png')}}">
+                        <img alt="diet" src="{{asset('images/community/nospecialdiet.png')}}">
                     @elseif(Auth::user()->UserDiet === 2)
-                        <img alt="diet" src="{{('images/community/pescetarian.png')}}">
+                        <img alt="diet" src="{{asset('images/community/pescetarian.png')}}">
                     @elseif (Auth::user()->UserDiet === 3)
-                        <img alt="diet" src="{{('images/community/vegan.png')}}">
+                        <img alt="diet" src="{{asset('images/community/vegan.png')}}">
                     @elseif (Auth::user()->UserDiet === 4)
-                        <img alt="diet" src="{{('images/community/vegetarian.png')}}">
+                        <img alt="diet" src="{{asset('images/community/vegetarian.png')}}">
                     @endif
                 </div>
-
                 <div class="profile_personal_section">
                     <p>Goal</p>
                     @if((Auth::user()->UserGoal === 0) || (Auth::user()->UserGoal === NULL))
-                        <img alt="goal" src="{{('images/profile/default_secret.png')}}">
+                        <img alt="goal" src="{{asset('images/profile/default_secret.png')}}">
                     @elseif(Auth::user()->UserGoal === 1)
-                        <img alt="goal" src="{{('images/lose_weight_3.png')}}">
+                        <img alt="goal" src="{{asset('images/lose_weight_3.png')}}">
                     @elseif(Auth::user()->UserGoal === 2)
-                        <img alt="goal" src="{{('images/become_fit_2.png')}}">
+                        <img alt="goal" src="{{asset('images/become_fit_2.png')}}">
                     @elseif (Auth::user()->UserGoal === 3)
-                        <img alt="goal" src="{{('images/build_muscles_2.png')}}">
+                        <img alt="goal" src="{{asset('images/build_muscles_2.png')}}">
                     @elseif (Auth::user()->UserGoal === 4)
-                        <img alt="goal" src="{{('images/healthy_lifestyle_2.png')}}">
+                        <img alt="goal" src="{{asset('images/healthy_lifestyle_2.png')}}">
                     @endif
                 </div>
 
@@ -98,20 +98,20 @@
             <div class="profile_section_personal">
                 <div>
                     <p>MOTIVATION QUOTE</p>
-                    <p class="profile_section_personal_motivation_quote">@if(Auth::user()->mq){{ Auth::user()->mq }} @else
+                    <p class="profile_section_personal_motivation_quote">@if(Auth::user()->mq){{Auth::user()->mq }} @else
                             'No motivational quote defined...' @endif</p>
                 </div>
 
                 <div class="profile_info_section_personal_details">
                     <div>
-                        <p>NAME:</p>
-                        <p>AGE:</p>
-                        <p>COUNTRY:</p>
+                        <!--    <p>NAME:</p>
+                        <p>AGE:</p>-->
+                        <p>ORIGIN:</p>
                     </div>
                     <div>
-                        <p> {{ Auth::user()->username }} </p>
-                        <p> @if(Auth::user()->birthdate){{ Auth::user()->birthdate }} @else no birth date
-                            defined @endif </p>
+                    <!--    <p> {{ Auth::user()->username }} </p>
+                       <p> @if(Auth::user()->birthdate){{ Auth::user()->birthdate }} @else no birth date
+                            defined @endif </p>-->
                         <p> @if(Auth::user()->origin){{ Auth::user()->origin }} @else no origin defined @endif</p>
                     </div>
                 </div>

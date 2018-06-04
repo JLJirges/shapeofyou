@@ -15,6 +15,7 @@
                 <div style="background-image: url({{asset('images/uploads/' . $bas_author->profilepic )}});background-size: cover; background-position: center"
                      class="workout_author"></div>
                 <span>{{$bas_author->username}}</span>
+                <span>{{$bas->created_at}}</span>
             </div>
             <h2>{{ $bas->BeforeAfterStoryTitle }}</h2>
         </div>

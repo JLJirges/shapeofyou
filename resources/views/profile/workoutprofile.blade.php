@@ -120,7 +120,7 @@
                 <div class="next_warmup">&gt;</div>
             </div>
         </div>
-    @else
+    @elseif(($user->username !== \Auth::user()->username)&&($fave_workout_ids) && ($workouts->where('WorkoutCategory', 1)->count() > 0))
         <div class="profile_section_workout">
             <div class="title_bg">
                 <h2>Warm Up</h2>

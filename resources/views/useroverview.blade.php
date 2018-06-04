@@ -16,7 +16,7 @@
 
                 <a href="{{url('profile/' . $showuser->username)}}"
                    style="background-image:url({{asset('images/uploads/' . $showuser->profilepic)}});background-size:cover; background-position:center;"
-                   class="backend_profile_picture_overview"><span class="username_backend_overview">{{$user->username}}
+                   class="backend_profile_picture_overview"><span class="username_backend_overview">{{$showuser->username}}
                 </span>
                 </a>
             @else
@@ -26,6 +26,6 @@
 
         @endforeach
     </div>
-   
+
 
 @endsection

@@ -63,7 +63,9 @@
                 </span>
                     </div>
                 @else
-                    <a href="{{url('profile/' . $user->username)}}" style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;" class="backend_profile_picture_overview"><span class="show_username_profile">{{$user->username}}
+                    <a href="{{url('profile/' . $user->username)}}"
+                       style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span class="show_username_profile">{{$user->username}}
                 </span></a>
                 @endif
                 <div class="profile_personal_section">
@@ -132,7 +134,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 

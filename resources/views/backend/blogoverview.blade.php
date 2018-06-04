@@ -9,6 +9,10 @@
         <h1>Blog Overview</h1>
     </div>
 
+    <div class="white_button">
+        <a href="{{url('/backend/createblog')}}">Create New Blog</a>
+    </div>
+
     <div class="square_box_section">
         @foreach($blogs as $blog)
             @if($blog->BlogBoxImage)

@@ -20,7 +20,7 @@
             </div>
 
             <h2>{{ $diary->DiaryTitle }}</h2>
-            <span>{{$diary->DiaryDate}}</span>
+            <span>{{$diary->created_at}}</span>
         </div>
 
         <div class="workout_entry_box">

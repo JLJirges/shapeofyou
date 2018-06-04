@@ -22,7 +22,6 @@ class ProfileDiaryController extends Controller
             'DiaryTitle' => 'required|string|max:20',
             'DiaryContent' => 'required|string|max:500',
             'DiaryHeroImage' => '',
-            'DiaryDate' => '',
             'DiaryUserId' => ''
 
         ]);
@@ -30,7 +29,6 @@ class ProfileDiaryController extends Controller
             'DiaryTitle' => request('DiaryTitle'),
             'DiaryContent' => request('DiaryContent'),
             'DiaryHeroImage' => '',
-            'DiaryDate' => '',
             'DiaryUserId' => 'DiaryUserId'
         ]);
 

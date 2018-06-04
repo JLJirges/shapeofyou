@@ -20,7 +20,7 @@ class BeforeAfterStory extends Model
 
 
     protected $fillable = [
-        'BeforeAfterStoryUserId', 'BeforeAfterStoryTitle', 'BeforeAfterStoryContent', 'BeforeAfterStoryImageOne', 'BeforeAfterStoryImageTwo', 'BeforeAfterStoryDate',
+        'BeforeAfterStoryUserId', 'BeforeAfterStoryTitle', 'BeforeAfterStoryContent', 'BeforeAfterStoryImageOne', 'BeforeAfterStoryImageTwo', 'created_at',
     ];
 
 }

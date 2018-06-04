@@ -64,7 +64,7 @@ Route::post('upload_photo', 'ProfileDiaryController@upload_photo');
 Route::get('profile/', function () {
     $data = [
         'user' => Auth::user(),
-        'diary' => \DB::table('diaries')->where('DiaryUserId', Auth::user()->id)->orderBy('DiaryDate', 'desc')->get()
+        'diary' => \DB::table('diaries')->where('DiaryUserId', Auth::user()->id)->orderBy('created_at', 'desc')->get()
     ];
 
 
@@ -77,7 +77,7 @@ Route::get('profile/{username}', function ($username) {
     $user_id = DB::table('users')->where('username', $username)->first()->id;
     $data = [
         'user' => \DB::table('users')->where('username', $username)->first(),
-        'diary' => \DB::table('diaries')->where('DiaryUserId', $user_id)->orderBy('DiaryDate', 'desc')->get()
+        'diary' => \DB::table('diaries')->where('DiaryUserId', $user_id)->orderBy('created_at', 'desc')->get()
     ];
     return view('profile/profile')->with($data);
 });
@@ -90,7 +90,7 @@ Route::post('upload_photo_two', 'BeforeAfterStoryController@upload_photo_two');
 Route::get('beforeafterprofile', function () {
     $data = [
         'user' => Auth::user(),
-        'bas' => \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', Auth::user()->id)->orderBy('BeforeAfterStoryDate', 'desc')->get()
+        'bas' => \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', Auth::user()->id)->orderBy('created_at', 'desc')->get()
     ];
     return view('profile/beforeafterprofile')->with($data);
 });
@@ -99,7 +99,7 @@ Route::get('beforeafterprofile/{username}', function ($username) {
     $user_id = DB::table('users')->where('username', $username)->first()->id;
     $data = [
         'user' => \DB::table('users')->where('username', $username)->first(),
-        'bas' => \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', $user_id)->orderBy('BeforeAfterStoryDate', 'desc')->get()
+        'bas' => \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', $user_id)->orderBy('created_at', 'desc')->get()
     ];
     return view('profile/beforeafterprofile')->with($data);
 });
@@ -122,8 +122,11 @@ Route::get('blogoverviewprofile', function () {
 });
 
 Route::get('blogoverviewprofile/{username}', function ($username) {
-    $data = ['user' => \DB::table('users')
-        ->where('username', $username)->first()];
+    $user_id = \DB::table('users')->where('username', $username)->first()->id;
+    $data = [
+        'user' => \DB::table('users')->where('username', $username)->first(),
+        'blogs' => \DB::table('blogs')->get(),
+        'fave_blog_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()];
     return view('profile/blogoverviewprofile')->with($data);
 });
 
@@ -265,7 +268,7 @@ Route::get('beforeafteroverview/{type}', function ($type) {
     $data = [
         'user' => Auth::user(),
         'diaries' => \DB::table('diaries')->get(),
-        'beforeafterstories' => \DB::table('beforeafterstories')->get(),
+        'beforeafterstories' => \DB::table('beforeafterstories')->orderBy('created_at', 'desc')->get(),
         'users' => \DB::table('users')->where('id', '!=', Auth::user()->id),
         'type' => $type,
     ];
@@ -454,7 +457,7 @@ Route::get('dashboard', function () {
 Route::get('/backend/useroverview', function () {
     $data = [
         'users' => \DB::table('users')->get()
-            ];
+    ];
     return view('backend/useroverview')->with($data);
 });
 
@@ -470,6 +473,20 @@ Route::get('/backend/blogoverview', function () {
     ];
     return view('backend/blogoverview')->with($data);
 });
+
+Route::get('/createblog', 'CreateBlogController@create');
+Route::post('createblog', 'CreateBlogController@store');
+Route::post('upload__blogboxphoto', 'CreateBlogController@upload_blogboxphoto');
+Route::post('upload__blogherophoto', 'CreateBlogController@upload_blogherophoto');
+Route::post('upload__blogphoto', 'CreateBlogController@upload_blogphoto');
+Route::get('/backend/createblog', function () {
+
+    $data = [
+
+    ];
+    return view('backend/createblog')->with($data);
+});
+
 Route::get('/backend/storyoverview', function () {
     $data = [
         'stories' => \DB::table('beforeafterstories')->get()

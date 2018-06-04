@@ -22,8 +22,7 @@ class BeforeAfterStoryController extends Controller
             'BeforeAfterStoryTitle' => 'required|string|max:20',
             'BeforeAfterStoryContent' => 'required|string|max:500',
             'StoryOneToUpload' => 'required',
-            'StoryTwoToUpload' => 'required',
-            'BeforeAfterStoryDate' => ''
+            'StoryTwoToUpload' => 'required'
 
 
         ]);
@@ -31,8 +30,7 @@ class BeforeAfterStoryController extends Controller
             'BeforeAfterStoryTitle' => request('BeforeAfterStoryTitle'),
             'BeforeAfterStoryContent' => request('BeforeAfterStoryContent'),
             'BeforeAfterStoryImageOne' => request('StoryOneToUpload'),
-            'BeforeAfterStoryImageTwo' => request('StoryTwoToUpload'),
-            'BeforeAfterStoryDate' => ''
+            'BeforeAfterStoryImageTwo' => request('StoryTwoToUpload')
         ]);
 
         \Session::flash('flash_message', 'Story upload successful!');
