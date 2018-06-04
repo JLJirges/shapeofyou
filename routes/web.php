@@ -125,6 +125,7 @@ Route::get('blogoverviewprofile/{username}', function ($username) {
     $user_id = \DB::table('users')->where('username', $username)->first()->id;
     $data = [
         'user' => \DB::table('users')->where('username', $username)->first(),
+        'users' => \DB::table('users')->get(),
         'blogs' => \DB::table('blogs')->get(),
         'fave_blog_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()];
     return view('profile/blogoverviewprofile')->with($data);

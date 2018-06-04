@@ -95,8 +95,6 @@
 
             @foreach($blog_comments as $blog_comment)
                 <div class="comments_details">
-
-
                     <div class="comments_details_user">
                         <a href="{{url('profile/' . $users->where('id', $blog_comment->UserId)->first()->username)}}">
                             <div class="comments_details_profilepicture">
@@ -108,38 +106,41 @@
                                          alt="user profile picture">
                                 @endif
                                 <span>{{ $users->where('id', $blog_comment->UserId)->first()->username}}</span>
-
                             </div>
                         </a>
-                        <span>{{ $blog_comments->where('BlogCommentDate', $blog_comment->BlogCommentDate)->first()->BlogCommentDate}}</span>
-                        @if( (auth()->check()) && (Auth::user()->isAdmin === 1) )
-                            <div class="comments_details_edit">
-                                <span class="delete"></span>
-                                <span class="report"></span>
-                            </div>
-                        @else
-                            <div class="comments_details_edit">
-                                <span class="report"></span>
-                            </div>
-                        @endif
                     </div>
+                    <span>{{ $blog_comments->where('BlogCommentDate', $blog_comment->BlogCommentDate)->first()->BlogCommentDate}}</span>
+                    @if( (auth()->check()) && (Auth::user()->isAdmin === 1) )
+                        <div class="comments_details_edit">
+                            <span class="delete"></span>
+                            <span class="report"></span>
+                        </div>
+                    @else
+                        <div class="comments_details_edit">
+                            <span class="report"></span>
+                        </div>
+                    @endif
 
-                    <p>{{ $blog_comment->BlogCommentContent}}</p>
                 </div>
 
-            @endforeach
+                <p>{{ $blog_comment->BlogCommentContent}}</p>
         </div>
-        <div class="tab-content" id="comment-tab-2">
-            <form class="comment_form" method="post"
-                  action="{{'/write_comment/blog/' . $blog_id . '/' . $user_id}}">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                <h2>Leave a Comment</h2>
-                <label>Write your comment</label>
-                <input type="text" name="comment" placeholder="I will be your comment...">
-                <button class="comment_button">Add Comment</button>
-            </form>
-        </div>
-        <div class="tab-content" id="comment-tab-3"></div>
+        @endforeach
     </div>
+    <div class="tab-content" id="comment-tab-2">
+        <form class="comment_form" method="post"
+              action="{{'/write_comment/blog/' . $blog_id . '/' . $user_id}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+            <h2>Leave a Comment</h2>
+            <label>Write your comment</label>
+            <input type="text" name="comment" placeholder="I will be your comment...">
+            <button class="comment_button">Add Comment</button>
+        </form>
+    </div>
+    <div class="tab-content" id="comment-tab-3"></div>
+
+
+
 @endsection

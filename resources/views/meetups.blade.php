@@ -37,12 +37,14 @@
                                     </div>
                                 </div>
 
-                                <img class="meetup_event_googlemaps" src="{{ asset('images/meetups/google_maps.jpg')}}" alt="google maps placeholder">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85088.58111031275!2d16.376400371700242!3d48.206266142824994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d06d127a831ab%3A0x7cc9686bc88d5e87!2sDonauinsel!5e0!3m2!1sde!2sat!4v1528136131569"
+                                        width="600" height="450" frameborder="0" style="border:0"
+                                        allowfullscreen class="meetup_event_googlemaps"></iframe>
                             </div>
 
                             <div class="event_details">
 
-                                    <p class="event_W">WHAT:</p>
+                                <p class="event_W">WHAT:</p>
 
                                 <p>5km, 10km or 15km run</p>
                                 <p>Food, drinks and live music</p>
@@ -54,7 +56,7 @@
                         </div>
                     </div>
                     <form>
-                    <button type="button" class="ticket_button">Get your ticket</button>
+                        <button type="button" class="ticket_button">Get your ticket</button>
                     </form>
                 </div>
             </div>
@@ -81,13 +83,14 @@
                                         <p>Vienna, Stadthalle | Halle F</p>
                                     </div>
                                 </div>
-
-                                <img class="meetup_event_googlemaps" src="{{ asset('images/meetups/google_maps.jpg')}}" alt="google maps placeholder">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.22071090007!2d16.330707215391513!3d48.20236455462583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07fa0a8f5761%3A0x7645f86e440914e3!2sWiener+Stadthalle!5e0!3m2!1sde!2sat!4v1528136039287"
+                                        width="600" height="450" frameborder="0" style="border:0"
+                                        allowfullscreen class="meetup_event_googlemaps"></iframe>
                             </div>
 
                             <div class="event_what">
 
-                                    <p class="event_W">WHAT:</p>
+                                <p class="event_W">WHAT:</p>
 
                                 <p>Vegan Food</p>
                                 <p>Newest Trends</p>
@@ -125,12 +128,14 @@
                                     </div>
                                 </div>
 
-                                <img class="meetup_event_googlemaps" src="{{ asset('images/meetups/google_maps.jpg')}}" alt="google maps placeholder">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.7914833244927!2d16.356588915391775!3d48.21063215404936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07966dc3b145%3A0x1e7a761d819e68fa!2sRathausplatz!5e0!3m2!1sde!2sat!4v1528135787492"
+                                        width="600" height="450" frameborder="0" style="border:0"
+                                        allowfullscreen class="meetup_event_googlemaps"></iframe>
                             </div>
 
                             <div class="event_what">
 
-                                    <p class="event_W">WHAT:</p>
+                                <p class="event_W">WHAT:</p>
 
                                 <p>Food, drinks & live music</p>
                                 <p>Fitness Professionals</p>
