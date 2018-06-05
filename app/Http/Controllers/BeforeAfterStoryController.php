@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BeforeAfterStory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 
 class BeforeAfterStoryController extends Controller
@@ -30,7 +31,8 @@ class BeforeAfterStoryController extends Controller
             'BeforeAfterStoryTitle' => request('BeforeAfterStoryTitle'),
             'BeforeAfterStoryContent' => request('BeforeAfterStoryContent'),
             'BeforeAfterStoryImageOne' => request('StoryOneToUpload'),
-            'BeforeAfterStoryImageTwo' => request('StoryTwoToUpload')
+            'BeforeAfterStoryImageTwo' => request('StoryTwoToUpload'),
+            'BeforeAfterStoryUserId' => Auth::id()
         ]);
 
         \Session::flash('flash_message', 'Story upload successful!');

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     protected $table = 'users';
-    public $timestamps = false; // added for 10** error
+    public $timestamps = true; // added for 10** error
     public $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.

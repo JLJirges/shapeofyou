@@ -14,13 +14,15 @@
             <div class="workout_details_profilepicture">
                 <div style="background-image: url({{asset('images/uploads/' . $workout_author->profilepic )}});background-size: cover; background-position: center"
                      class="workout_author"></div>
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                 <span>{{$workout_author->username}}</span>
             </div>
             <h2>{{ $workout->WorkoutTitle }}</h2>
             @if($user_likes_workout)
                 <form method="POST" action="{{ '/favorite_workout/remove/' . $workout_id . '/' . $user_id }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button class="addworkout addworkout_button">
+                        change image please. go to detail.blade.php
                         <span class="addworkout"></span>
                     </button>
                 </form>

@@ -146,7 +146,7 @@ Route::get('workoutprofile/{username}', function ($username) {
     $data = [
         'user' => \DB::table('users')->where('username', $username)->first(),
         'workouts' => \DB::table('workouts')->get(),
-        'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()
+        'fave_workout_ids' => \DB::table('user_favorites')->whereIn('UserId', $user_id)->pluck('type_id')->toArray()
     ];
 
     return view('profile/workoutprofile')->with($data);

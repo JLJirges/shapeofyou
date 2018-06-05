@@ -12,10 +12,16 @@
     <div class="workout_entry diary_bg">
         <div class="workout_entry_setting">
             <div class="workout_details_profilepicture">
-                <div style="background-image: url({{asset('images/uploads/' . $bas_author->profilepic )}});background-size: cover; background-position: center"
-                     class="workout_author"></div>
-                <span>{{$bas_author->username}}</span>
-                <span>{{$bas->created_at}}</span>
+                @if($bas_author->profilepic )
+                    <a href="{{url('profile/' . $bas_author->username)}}" style="background-image:url({{asset('images/uploads/' . $bas_author->profilepic)}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span class="username_backend_overview">{{$bas_author->username}}</span></a>
+                @else
+                    <a href="{{url('profile/' . $bas_author->username)}}"
+                       style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span class="username_backend_overview">{{$bas_author->username}}</span>
+                </a>
+                @endif
+                    <span>{{$bas->created_at}}</span>
             </div>
             <h2>{{ $bas->BeforeAfterStoryTitle }}</h2>
         </div>
@@ -46,8 +52,6 @@
 
             @foreach($bas_comments as $bas_comment)
                 <div class="comments_details">
-
-
                     <div class="comments_details_user">
                         <a href="{{url('profile/' . $users->where('id', $bas_comment->UserId)->first()->username)}}">
                             <div class="comments_details_profilepicture">

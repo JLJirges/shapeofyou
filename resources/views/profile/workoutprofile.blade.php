@@ -98,10 +98,7 @@
     @endif
 
 
-
-
-
-    @if(($user->id === Auth::user()->id) && ($fave_workout_ids) && ($workouts->where('WorkoutCategory', 1)->count() > 0))
+    @if(($user->username === Auth::user()->username) && ($fave_workout_ids) && ($workouts->where('WorkoutCategory', 1)))
         <div class="profile_section_workout">
             <div class="title_bg">
                 <h2>Warm Up</h2>
@@ -120,7 +117,7 @@
                 <div class="next_warmup">&gt;</div>
             </div>
         </div>
-    @elseif(($user->username !== \Auth::user()->username)&&($fave_workout_ids) && ($workouts->where('WorkoutCategory', 1)->count() > 0))
+    @elseif(($user->username)&&($fave_workout_ids) && ($workouts->where('type_id', 1)->count() > 0))
         <div class="profile_section_workout">
             <div class="title_bg">
                 <h2>Warm Up</h2>
@@ -139,9 +136,12 @@
                 <div class="next_warmup">&gt;</div>
             </div>
         </div>
+
     @endif
 
-    @if(($user->id === Auth::user()->id)&&($fave_workout_ids) && ($workouts->where('WorkoutCategory', 2)->count() > 0))
+
+
+    @if(($user->username === Auth::user()->username)&&($fave_workout_ids) && ($workouts->where('WorkoutCategory', 2)->count() > 0))
         <div class="profile_section_workout">
             <div class="title_bg">
                 <h2>Stretching</h2>

@@ -107,33 +107,34 @@
 
                 @endif
             </div>
-            @if(($user->username === Auth::user()->username) && ($bas->where('BeforeAfterStoryUserId', Auth::user()->id)->count() > 0))
-                <div class="square_box_section">
-                    @foreach($bas->where('DiaryUserId', Auth::user()->id) as $basentry)
 
-                        <div style="background-image:url({{asset('images/uploads/' . $basentry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+            @if(($user->id === Auth::user()->id) && ($bas->where('BeforeAfterStoryUserId', Auth::user()->id)->count() > 0))
+                <div class="square_box_section">
+                    @foreach($bas->where('BeforeAfterStoryUserId', Auth::user()->id) as $entry)
+                        <div style="background-image:url({{asset('images/uploads/' . $entry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+
 
                             <a class="box_link"
-                               href="{{url('beforeafter/' . $basentry->id)}}">
-                                {{$basentry->BeforeAfterStoryTitle}}  </a>
+                               href="{{url('beforeafter/' . $entry->id)}}">
+                                {{$entry->BeforeAfterStoryTitle}}  </a>
+
                         </div>
                     @endforeach
-                </div>
-            @else
-                <div class="square_box_section">
-                    @foreach($bas->where('BeforeAfterStoryUserId', $user->id) as $basentry)
-                        <div style="background-image:url({{asset('images/uploads/' . $basentry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
 
-                            <a class="box_link"
-                               href="{{url('beforeafter/' . $basentry->id)}}">
-                                {{$basentry->BeforeAfterStoryTitle}}  </a>
+                    @else
+                        <div class="square_box_section">
+                            @foreach($bas->where('BeforeAfterStoryUserId', $user->id) as $basentry)
+
+                                <div style="background-image:url({{asset('images/uploads/' . $basentry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+
+                                    <a class="box_link"
+                                       href="{{url('beforeafter/' . $basentry->id)}}">
+                                        {{$basentry->BeforeAfterStoryTitle}}  </a>
+                                </div>
+                                    @endforeach
+
+                                @endif
                         </div>
-                    @endforeach
                 </div>
-
-            @endif
-
-
     </div>
-
 @endsection
