@@ -91,7 +91,7 @@
                 <h2>Leave a Comment</h2>
                 <label>Write your comment</label>
                 <input type="text" name="comment" placeholder="I will be your comment...">
-                <button class="comment_button">Add Comment</button>
+                <button class="white_button">Add Comment</button>
             </form>
         </div>
         <div class="tab-content" id="comment-tab-3"></div>

@@ -20,7 +20,7 @@ class ProfileDiaryController extends Controller
 
         $this->validate(request(), [
             'DiaryTitle' => 'required|string|max:20',
-            'DiaryContent' => 'required|string|max:500',
+            'DiaryContent' => 'required|string|max:5000',
             'DiaryHeroImage' => ''
 
         ]);
