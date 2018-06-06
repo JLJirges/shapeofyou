@@ -2961,6 +2961,21 @@ footer {
   margin: 10px;
 }
 
+.box_users {
+  background: url("../images/community/users.jpg") center;
+  background-size: cover;
+}
+
+.box_admininfos {
+  background: url("../images/community/admininfos.jpg") center;
+  background-size: cover;
+}
+
+.box_backend_blogs {
+  background: url("../images/community/blogs.jpg") center;
+  background-size: cover;
+}
+
 @media only screen and (max-width: 768px) {
   .h1_bg {
     height: 200px;

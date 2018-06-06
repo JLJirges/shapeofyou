@@ -13,7 +13,7 @@
             <div class="box_users">
                 <a class="box_link" href="{{url('/backend/useroverview')}}">USERS</a>
             </div>
-            <div class="box_blogs">
+            <div class="box_backend_blogs">
                 <a class="box_link" href="{{url('/backend/blogoverview')}}">BLOGS</a>
             </div>
             <div class="box_stretch">
@@ -28,7 +28,7 @@
             <div class="community_box_meetups">
                 <a class="box_link" href="{{url ('overview')}}">EVENTS</a>
             </div>
-            <div class="box_administrative">
+            <div class="box_admininfos">
                 <a class="box_link" href="{{url('overview')}}">ADMIN INFOS</a>
             </div>
         </div>
