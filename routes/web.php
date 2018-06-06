@@ -118,6 +118,8 @@ Route::get('blogoverviewprofile', function () {
     ];
 
 
+
+
     return view('profile/blogoverviewprofile')->with($data);
 });
 
@@ -137,16 +139,18 @@ Route::get('workoutprofile', function () {
         'workouts' => \DB::table('workouts')->get(),
         'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', Auth::user()->id)->pluck('type_id')->toArray()
     ];
+
     return view('profile/workoutprofile')->with($data);
 });
 
 Route::get('workoutprofile/{username}', function ($username) {
 
     $user_id = \DB::table('users')->where('username', $username)->first()->id;
+
     $data = [
         'user' => \DB::table('users')->where('username', $username)->first(),
         'workouts' => \DB::table('workouts')->get(),
-        'fave_workout_ids' => \DB::table('user_favorites')->whereIn('UserId', $user_id)->pluck('type_id')->toArray()
+        'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()
     ];
 
     return view('profile/workoutprofile')->with($data);
@@ -365,7 +369,7 @@ Route::get('detail/{workout_id}', function ($workout_id) {
 
         // Boolean variable: true if user likes blog, false otherwise
         'user_likes_workout' => \DB::table('user_favorites')
-                ->where(['UserId' => Auth::user()->id, 'type' => 'workout', 'type_id' => $workout_id])->count() > 0
+                ->where(['UserId' => Auth::user()->id, 'type' => 'detail', 'type_id' => $workout_id])->count() > 0
     ];
     return view('detail')->with($data);
 });

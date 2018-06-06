@@ -97,8 +97,8 @@
         </div>
     @endif
 
-
-    @if(($user->username === Auth::user()->username) && ($fave_workout_ids) && ($workouts->where('WorkoutCategory', 1)))
+<!-- my profile -->
+    @if(($user->username === Auth::user()->username) && ($fave_workout_ids) && ($workouts->where('WorkoutCategory', 1)->whereIn('id', $fave_workout_ids)->count() >0))
         <div class="profile_section_workout">
             <div class="title_bg">
                 <h2>Warm Up</h2>
@@ -106,26 +106,7 @@
             <div class="slide_box_warmup">
                 <div class="prev_warmup">&lt;</div>
                 <ul class="slide_list_warmup square_box_section">
-                    @foreach($workouts->where('WorkoutCategory', 1) as $workout)
-                        <li class="page_warmup"
-                            style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="next_warmup">&gt;</div>
-            </div>
-        </div>
-    @elseif(($user->username)&&($fave_workout_ids) && ($workouts->where('type_id', 1)->count() > 0))
-        <div class="profile_section_workout">
-            <div class="title_bg">
-                <h2>Warm Up</h2>
-            </div>
-            <div class="slide_box_warmup">
-                <div class="prev_warmup">&lt;</div>
-                <ul class="slide_list_warmup square_box_section">
-                    @foreach($workouts->where('WorkoutCategory', 1) as $workout)
+                    @foreach($workouts->where('WorkoutCategory', 1)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_warmup"
                             style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
                             <a class="box_link"
@@ -137,130 +118,27 @@
             </div>
         </div>
 
-    @endif
 
-
-
-    @if(($user->username === Auth::user()->username)&&($fave_workout_ids) && ($workouts->where('WorkoutCategory', 2)->count() > 0))
+    @elseif(($user->username)&&($fave_workout_ids) && ($fave_workout_ids) && ($workouts->where('WorkoutCategory', 1)->whereIn('id', $fave_workout_ids)->count() >0))
         <div class="profile_section_workout">
             <div class="title_bg">
-                <h2>Stretching</h2>
+                <h2>Warm Up</h2>
             </div>
-            <div class="slide_box_stretch">
-                <div class="prev_stretch">&lt;</div>
-                <ul class="slide_list_stretch square_box_section">
-                    @foreach($workouts->where('WorkoutCategory', 2) as $workout)
-                        <li class="page_stretch"
+            <div class="slide_box_warmup">
+                <div class="prev_warmup">&lt;</div>
+                <ul class="slide_list_warmup square_box_section">
+                    @foreach($workouts->where('WorkoutCategory', 1)->whereIn('id', $fave_workout_ids) as $workout)
+                        <li class="page_warmup"
                             style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
-                <div class="next_stretch">&gt;</div>
-            </div>
-        </div>
-    @else
-        <div class="profile_section_workout">
-            <div class="title_bg">
-                <h2>Stretching</h2>
-            </div>
-            <div class="slide_box_stretch">
-                <div class="prev_stretch">&lt;</div>
-                <ul class="slide_list_stretch square_box_section">
-                    @foreach($workouts->where('WorkoutCategory', 2) as $workout)
-                        <li class="page_stretch"
-                            style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="next_stretch">&gt;</div>
+                <div class="next_warmup">&gt;</div>
             </div>
         </div>
     @endif
-
-    @if(($user->id === Auth::user()->id)&&($fave_workout_ids) && ($workouts->where('WorkoutCategory', 4)->count() > 0))
-        <div class="profile_section_workout">
-            <div class="title_bg">
-                <h2>Main Workout</h2>
-            </div>
-            <div class="slide_box_mainworkout">
-                <div class="prev_mainworkout">&lt;</div>
-                <ul class="slide_list_mainworkout square_box_section">
-                    @foreach($workouts->where('WorkoutCategory', 4) as $workout)
-                        <li class="page_mainworkout"
-                            style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="next_mainworkout">&gt;</div>
-            </div>
-        </div>
-    @else
-        <div class="profile_section_workout">
-            <div class="title_bg">
-                <h2>Main Workout</h2>
-            </div>
-            <div class="slide_box_mainworkout">
-                <div class="prev_mainworkout">&lt;</div>
-                <ul class="slide_list_mainworkout square_box_section">
-                    @foreach($workouts->where('WorkoutCategory', 4) as $workout)
-                        <li class="page_mainworkout"
-                            style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="next_mainworkout">&gt;</div>
-            </div>
-        </div>
-    @endif
-
-    @if(($user->id === Auth::user()->id)&&($fave_workout_ids) && ($workouts->where('WorkoutCategory', 2)->count() > 0))
-        <div class="profile_section_workout">
-            <div class="title_bg">
-                <h2>Cool Down</h2>
-            </div>
-            <div class="slide_box_cooldown">
-                <div class="prev_cooldown">&lt;</div>
-                <ul class="slide_list_cooldown square_box_section">
-                    @foreach($workouts->where('WorkoutCategory', 2) as $workout)
-                        <li class="page_cooldown"
-                            style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="next_cooldown">&gt;</div>
-            </div>
-        </div>
-    @else
-        <div class="profile_section_workout">
-            <div class="title_bg">
-                <h2>Cool Down</h2>
-            </div>
-            <div class="slide_box_cooldown">
-                <div class="prev_cooldown">&lt;</div>
-                <ul class="slide_list_cooldown square_box_section">
-                    @foreach($workouts->where('WorkoutCategory', 2) as $workout)
-                        <li class="page_cooldown"
-                            style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
-                            <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
-                        </li>
-                    @endforeach
-                </ul>
-                <div class="next_cooldown">&gt;</div>
-            </div>
-        </div>
-    @endif
-
 
 
 
