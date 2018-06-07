@@ -43,6 +43,10 @@ Route::get('workout', function () {
     return view('workout')->with($data);
 });
 
+Route::get('register_new_user', 'RegisterController@create_new_user');
+Route::post('register_new_user', 'RegisterController@store_new_user');
+
+
 Route::get('register', 'RegisterController@create');
 Route::post('register', 'RegisterController@store');
 Route::post('edit', 'RegisterController@edit');
@@ -116,8 +120,6 @@ Route::get('blogoverviewprofile', function () {
         'blogs' => \DB::table('blogs')->get(),
         'fave_blog_ids' => \DB::table('user_favorites')->where('UserId', Auth::user()->id)->pluck('type_id')->toArray()
     ];
-
-
 
 
     return view('profile/blogoverviewprofile')->with($data);
@@ -249,6 +251,8 @@ Route::get('blog/{blog_id}', function ($blog_id) {
     ];
     return view('blog')->with($data);
 });
+
+Route::post('deleteAccount', 'User@deleteAccount');
 
 Route::post('/favorite_workout/{action}/{workout_id}/{user_id}', 'SessionsController@favorite_workout');
 
@@ -479,18 +483,22 @@ Route::get('/backend/blogoverview', function () {
     return view('backend/blogoverview')->with($data);
 });
 
-Route::get('/createblog', 'CreateBlogController@create');
-Route::post('createblog', 'CreateBlogController@store');
-Route::post('upload__blogboxphoto', 'CreateBlogController@upload_blogboxphoto');
-Route::post('upload__blogherophoto', 'CreateBlogController@upload_blogherophoto');
-Route::post('upload__blogphoto', 'CreateBlogController@upload_blogphoto');
-Route::get('/backend/createblog', function () {
+Route::get('/backend/create', function () {
 
     $data = [
+            'blog_author' => \DB::table('users')->where('AuthorId', '!=', 'NULL')->first()
+            ];
 
-    ];
-    return view('backend/createblog')->with($data);
+    return view('/backend/create');
 });
+
+
+Route::get('create', 'BlogsController@create');
+Route::post('create', 'BlogsController@store');
+Route::post('upload__blogboxphoto', 'BlogsController@upload_blogboxphoto');
+Route::post('upload__blogherophoto', 'BlogsController@upload_blogherophoto');
+Route::post('upload__blogphoto', 'BlogsController@upload_blogphoto');
+
 
 Route::get('/backend/storyoverview', function () {
     $data = [

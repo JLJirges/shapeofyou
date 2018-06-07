@@ -31,6 +31,9 @@
             <div class="box_admininfos">
                 <a class="box_link" href="{{url('overview')}}">ADMIN INFOS</a>
             </div>
+            <div class="box_create">
+                <a class="box_link" href="{{url('/backend/create')}}">NEW/ADD/CREATE</a>
+            </div>
         </div>
 
 

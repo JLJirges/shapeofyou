@@ -237,9 +237,9 @@
             </form>
         </div>
         <div>
-            <form class="edit_profile_form" method="post" action="/edit">
+            <form class="edit_profile_form" method="post" action="/deleteAccount">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Delete My Account</label><br>
-
                 <button class="login_button delete_account">DELETE ACCOUNT</button>
             </form>
         </div>

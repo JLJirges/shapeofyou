@@ -2,29 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Blogs;
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Controllers\Controller;
 
 class BlogsController extends Controller
 {
 
     public function create()
     {
-        return view('');
+        return view('/backend/create');
     }
 
     public function store()
     {
-        $this->validate(request(), [
+
+            $this->validate(request(), [
             'BlogTitle' => 'required|string|max:50',
             'BlogCategory' => 'required',
-            'BlogAuthorName' => 'required|string|max:50',
-            'BlogAuthorBio' => 'required|string|max:200',
-            'BlogAuthorBirthdate' => 'required',
-            'BlogAuthorImage' => 'required',
-            'BlogAuthorOrigin' => 'required|string|max:50',
-            'BlogHeroImage' => 'required',
-            'BlogImage' => 'required',
+            'AuthorId' => 'required',
             'BlogContentOne' => 'required|string|max:300',
             'BlogContentTwo' => 'required|string|max:300'
 
@@ -32,23 +29,17 @@ class BlogsController extends Controller
         Blogs::create([
             'BlogTitle' => request('BlogTitle'),
             'BlogCategory' => request('BlogCategory'),
-            'BlogAuthorName' => request('BlogAuthorName'),
-            'BlogAuthorBio' => request('BlogAuthorBio'),
-            'BlogAuthorBirthdate' => request('BlogAuthorBirthdate'),
-            'BlogAuthorImage' => request('BlogAuthorImage'),
-            'BlogAuthorOrigin' => request('BlogAuthorOrigin'),
-            'BlogHeroImage' => request('BlogHeroImage'),
-            'BlogImage' => request('BlogImage'),
+            'AuthorId' => request('AuthorId'),
             'BlogContentOne' => request('BlogContentOne'),
             'BlogContentTwo' => request('BlogContentTwo')
         ]);
-        \Session::flash('flash_message', 'Blog upload successful!');
+        \Session::flash('newblog_error_message', 'Blog upload successful!');
 
-        return redirect()->to('/backend/dashboard');
+        return redirect()->to('/backend/create');
 
     }
 
-    public function edit(Request $request)
+  /*  public function edit(Request $request)
     {
         $this->validate(request(), [
             'BlogTitle' => 'string|max:50',
@@ -69,6 +60,6 @@ class BlogsController extends Controller
         $blogs = Blogs::findOrFail(\Auth::blogs() -> id);
         $blogs->update($request->all());
         return redirect()->to('/backend/dashboard');
-    }
+    }*/
 
 }

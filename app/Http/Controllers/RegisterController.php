@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -40,6 +41,27 @@ class RegisterController extends Controller
                 'message' => 'Username/Password do not match'
             ]);
         }
+    }
+
+    public function store_new_user()
+    {
+        $this->validate(request(), [
+            'firstname' => 'required|string|max:50',
+            'lastname' => 'required|string|max:50',
+            'username' => 'unique:users|required|string|max:50',
+            'email' => 'unique:users|required|email',
+            'password' => 'required',
+        ]);
+        User::create([
+            'firstname' => request('firstname'),
+            'lastname' => request('lastname'),
+            'username' => request('username'),
+            'email' => request('email'),
+            'password' => request('password'),
+        ]);
+        \Session::flash('newuser_error_message', 'User registration successful!');
+
+        return view('backend/create');
     }
 
     public function edit(Request $request)
@@ -84,5 +106,8 @@ class RegisterController extends Controller
         }
         return redirect()->to('/settingsprofile');
     }
+
+
+
 
 }

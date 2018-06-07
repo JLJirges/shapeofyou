@@ -45,7 +45,7 @@ h3 {
 
 .title_bg {
   background: url("../images/background_colour.png");
-  width: 100%;
+  max-width: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2966,6 +2966,11 @@ footer {
 
 .box_users {
   background: url("../images/community/users.jpg") center;
+  background-size: cover;
+}
+
+.box_create {
+  background: url("../images/community/create.jpg") center;
   background-size: cover;
 }
 

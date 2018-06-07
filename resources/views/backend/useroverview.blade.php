@@ -9,6 +9,7 @@
         <h1>User Overview</h1>
     </div>
 
+
     <div class="square_box_section">
 
         @foreach($users as $user)

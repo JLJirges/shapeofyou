@@ -23,5 +23,9 @@ class Blogs extends Model
         'BlogTitle', 'BlogCategory', 'BlogAuthorName', 'BlogAuthorBio', 'BlogAuthorBirthdate', 'BlogAuthorImage', 'BlogAuthorOrigin', 'BlogHeroImage', 'BlogImage', 'BlogContentOne', 'BlogContentTwo'
     ];
 
+
+
+
+
 }
 
