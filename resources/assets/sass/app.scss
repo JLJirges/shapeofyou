@@ -902,7 +902,6 @@ ul.tabs li.current {
   background-size: cover;
 }
 
-
 /* COMMUNITY ~~ BUDDIES */
 .buddy_bg {
   background: url("../images/community/buddy_background.png") fixed;
@@ -1015,28 +1014,28 @@ ul.tabs li.current {
   height: 150px;
 }
 
-.community_pearshape{
+.community_pearshape {
   background: url("../images/pear_shape_1.png") center;
   background-size: cover;
   width: 150px;
   height: 150px;
 }
 
-.community_appleshape{
+.community_appleshape {
   background: url("../images/apple_shape_1.png") center;
   background-size: cover;
   width: 150px;
   height: 150px;
 }
 
-.community_hourglassshape{
+.community_hourglassshape {
   background: url("../images/hourglass_shape_1.png") center;
   background-size: cover;
   width: 150px;
   height: 150px;
 }
 
-.community_straightshape{
+.community_straightshape {
   background: url("../images/stick_shape_1.png") center;
   background-size: cover;
   width: 150px;
@@ -1470,7 +1469,7 @@ form > input {
   border-bottom: 1px solid lightgrey;
 }
 
-  /* PROFILE DIARY */
+/* PROFILE DIARY */
 
 .profile_diary_section {
   width: 65%;
@@ -1768,7 +1767,7 @@ form > input {
   padding: 0;
 }
 
-.prev_stretch  {
+.prev_stretch {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1782,7 +1781,7 @@ form > input {
   z-index: 2;
 }
 
-.next_stretch  {
+.next_stretch {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1823,7 +1822,7 @@ form > input {
 
 }
 
-.page_stretch  > a {
+.page_stretch > a {
   color: white;
   font-family: "AR DARLING", sans-serif;
 }
@@ -1843,7 +1842,7 @@ form > input {
   padding: 0;
 }
 
-.prev_warmup  {
+.prev_warmup {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1857,7 +1856,7 @@ form > input {
   z-index: 2;
 }
 
-.next_warmup  {
+.next_warmup {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1898,7 +1897,7 @@ form > input {
 
 }
 
-.page_warmup  > a {
+.page_warmup > a {
   color: white;
   font-family: "AR DARLING", sans-serif;
 }
@@ -1918,7 +1917,7 @@ form > input {
   padding: 0;
 }
 
-.prev_mainworkout  {
+.prev_mainworkout {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1932,7 +1931,7 @@ form > input {
   z-index: 2;
 }
 
-.next_mainworkout  {
+.next_mainworkout {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -1973,7 +1972,7 @@ form > input {
 
 }
 
-.page_mainworkout  > a {
+.page_mainworkout > a {
   color: white;
   font-family: "AR DARLING", sans-serif;
 }
@@ -2399,6 +2398,7 @@ footer {
   margin-right: 5px;
   box-shadow: gray 5px 5px 10px 0;
 }
+
 /* BACKEND */
 .username_backend_overview {
   font-weight: bold;
@@ -2414,7 +2414,7 @@ footer {
   box-shadow: gray 5px 5px 10px 0;
 }
 
-.backend_profile_picture_overview{
+.backend_profile_picture_overview {
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -2423,8 +2423,8 @@ footer {
 }
 
 .box_users {
-    background: url("../images/community/users.jpg") center;
-    background-size: cover;
+  background: url("../images/community/users.jpg") center;
+  background-size: cover;
 }
 
 .box_create {
@@ -2441,7 +2441,6 @@ footer {
   background: url("../images/community/blogs.jpg") center;
   background-size: cover;
 }
-
 
 @media only screen and (max-width: 768px) {
 

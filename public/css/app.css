@@ -45,7 +45,7 @@ h3 {
 
 .title_bg {
   background: url("../images/background_colour.png");
-  max-width: 900px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

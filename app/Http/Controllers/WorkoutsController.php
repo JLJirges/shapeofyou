@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Blogs;
+use App\Workouts;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Controller;
 
-class BlogsController extends Controller
+class WorkoutsController extends Controller
 {
 
     public function create()
@@ -19,25 +19,25 @@ class BlogsController extends Controller
     {
 
         $this->validate(request(), [
-            'BlogTitle' => 'required|string|max:50',
-            'BlogCategory' => 'required',
-            'BloggerId' => '',
-            'BlogContentOne' => 'required|string|max:300',
-            'BlogContentTwo' => 'required|string|max:300',
+            'WorkoutTitle' => 'required|string|max:50',
+            'WorkoutCategory' => 'required',
+            'BloggerId' => 'required',
+            'WorkoutContentOne' => 'required|string|max:300',
+            'WorkoutContentTwo' => 'required|string|max:300',
             'created_at' => '',
             'updated_at' => ''
 
         ]);
-        Blogs::create([
-            'BlogTitle' => request('BlogTitle'),
-            'BlogCategory' => request('BlogCategory'),
-            'BloggerId' => '',
-            'BlogContentOne' => request('BlogContentOne'),
-            'BlogContentTwo' => request('BlogContentTwo'),
+        Workouts::create([
+            'WorkoutTitle' => request('WorkoutTitle'),
+            'WorkoutCategory' => request('WorkoutCategory'),
+            'BloggerId' => \request('BloggerId'),
+            'WorkoutContentOne' => request('WorkoutContentOne'),
+            'WorkoutContentTwo' => request('WorkoutContentTwo'),
             'created_at' => '',
             'updated_at' => ''
         ]);
-        \Session::flash('newblog_error_message', 'Blog upload successful!');
+        \Session::flash('newworkout_error_message', 'Workout successfully added to training!');
 
         return redirect()->to('/backend/create');
 

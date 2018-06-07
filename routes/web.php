@@ -485,13 +485,11 @@ Route::get('/backend/blogoverview', function () {
 
 Route::get('/backend/create', function () {
 
-    $data = [
-            'blog_author' => \DB::table('users')->where('AuthorId', '!=', 'NULL')->first()
-            ];
-
     return view('/backend/create');
 });
 
+Route::get('add_new_workout', 'WorkoutsController@add_new_workout');
+Route::post('add_new_workout', 'WorkoutsController@store');
 
 Route::get('create', 'BlogsController@create');
 Route::post('create', 'BlogsController@store');

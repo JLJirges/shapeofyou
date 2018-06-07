@@ -5,10 +5,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Blogs extends Model
+class Workouts extends Model
 {
 
-    protected $table = 'blogs';
+    protected $table = 'workouts';
     public $timestamps = true; // added for 10** error
     public $primaryKey = 'id';
     /**
@@ -20,7 +20,7 @@ class Blogs extends Model
 
 
     protected $fillable = [
-        'BlogTitle', 'BlogCategory','BloggerId', 'BlogHeroImage', 'BlogImage', 'BlogContentOne', 'BlogContentTwo', 'created_at', 'updated_at'
+        'WorkoutTitle', 'WorkoutCategory', 'BloggerId', 'WorkoutHeroImage', 'WorkoutImage', 'WorkoutBoxImage', 'WorkoutContentOne', 'WorkoutContentTwo', 'created_at', 'updated_at'
     ];
 
 
