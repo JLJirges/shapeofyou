@@ -30,8 +30,9 @@
                     Conditions</a>
             </label>
         </div>-->
-
         <button class="login_button" type="submit">Sign up</button>
+<span>*With your registration you agree to the <a class="tandc" href="{{'termsandconditions'}}">Terms and Conditions</a> made by SHAPE OF YOU!</span>
+
 
     </form>
 

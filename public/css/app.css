@@ -43,6 +43,15 @@ h3 {
   font-size: 20pt;
 }
 
+.tandc {
+  color: blue;
+  text-decoration: underline;
+}
+
+.tandc:hover {
+  color: purple;
+}
+
 .title_bg {
   background: url("../images/background_colour.png");
   width: 100%;
