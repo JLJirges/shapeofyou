@@ -186,10 +186,18 @@ h3 {
   border: none;
 }
 
+.added_workout {
+  width: 80px;
+  height: 80px;
+  background: url("../images/addedworkout.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
 .addworkout {
   width: 80px;
   height: 80px;
-  background: url("../images/addworkout_icon.png") no-repeat;
+  background: url("../images/addworkout.png") no-repeat;
   background-size: cover;
   cursor: pointer;
 }
@@ -197,7 +205,7 @@ h3 {
 .addworkout:hover {
   width: 80px;
   height: 80px;
-  background: url("../images/addedworkout_icon.png") no-repeat;
+  background: url("../images/addedworkout.png") no-repeat;
   background-size: cover;
   cursor: pointer;
 }

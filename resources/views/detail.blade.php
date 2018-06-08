@@ -21,9 +21,7 @@
             @if($user_likes_workout)
                 <form method="POST" action="{{ '/favorite_workout/remove/' . $workout_id . '/' . $user_id }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <button class="addworkout addworkout_button">
-                        change image please. go to detail.blade.php
-                        <span class="addworkout"></span>
+                    <button class="added_workout addworkout_button">
                     </button>
                 </form>
             @else
