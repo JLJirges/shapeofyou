@@ -124,6 +124,8 @@ h3 {
   background: url("../images/trash_icon.png") no-repeat;
   background-size: cover;
   cursor: pointer;
+
+  border: none;
 }
 
 .delete:hover {
@@ -133,7 +135,7 @@ h3 {
   background-size: cover;
 
   cursor: pointer;
-
+  border: none;
 }
 
 .report {
@@ -1768,6 +1770,25 @@ form > input {
   width: auto;
 }
 
+.isadmin_form_profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: double 4px lightgrey;
+  width: 50%;
+}
+
+.delete_account_section > form{
+  width: 100%;
+  border-top: solid darkred 2px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+}
+
+
 /* WORKOUT DETAILS */
 
 .slide_box_stretch {
@@ -2249,6 +2270,7 @@ form > input {
 }
 
 .diary_bg {
+  margin-top: 30px;
   background: url("../images/diary/diaryentry_BG.png") no-repeat;
   background-size: cover;
 }
@@ -2463,7 +2485,7 @@ footer {
 @media only screen and (max-width: 768px) {
 
   .h1_bg {
-    height: 200px;
+    height: auto;
   }
 
   h1 {

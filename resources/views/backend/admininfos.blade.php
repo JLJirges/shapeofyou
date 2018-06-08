@@ -1,16 +1,16 @@
 @extends('layouts.backendmaster')
 
 @section('title')
-    <title>ADMIN AREA | New/Add/Create</title>
+    <title>ADMIN AREA | Admin Infos</title>
 @endsection
 
 @section('content')
     <div class="h1_bg">
-        <h1>NEW, ADD & CREATE</h1>
+        <h1>ADMIN JOBS</h1>
     </div>
 
     <div class="title_bg">
-        <h2>Add a new User</h2>
+        <h2>ABOUT US</h2>
     </div>
 
     @if(\Session::has('newuser_error_message'))

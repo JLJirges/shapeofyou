@@ -208,7 +208,14 @@ Route::get('faq', function () {
 });
 
 Route::get('aboutus', function () {
-    return view('footer/aboutus');
+
+
+
+    $data = [
+        'admins' => \DB::table('users')->where('isAdmin', '1')->get()
+    ];
+
+    return view('footer/aboutus')->with($data);
 });
 
 Route::get('blog/{blog_id}', function ($blog_id) {

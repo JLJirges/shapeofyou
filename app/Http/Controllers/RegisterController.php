@@ -22,6 +22,8 @@ class RegisterController extends Controller
             'username' => 'unique:users|required|string|max:50',
             'email' => 'unique:users|required|email',
             'password' => 'required',
+            'BloggerBio' => 'max: 1000',
+            'AdminText' => 'max: 1000'
         ]);
         User::create([
             'firstname' => request('firstname'),
@@ -78,7 +80,9 @@ class RegisterController extends Controller
             'origin' => 'string|max:50',
             'UserDiet' => '',
             'UserGoal' => '',
-            'UserShape' => ''
+            'UserShape' => '',
+            'BloggerBio' => 'max: 1000',
+            'AdminText' => 'max: 1000'
         ]);
 
         $user = User::findOrFail(\Auth::user()->id);

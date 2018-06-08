@@ -20,7 +20,13 @@
             </div>
 
             <h2>{{ $diary->DiaryTitle }}</h2>
+            <div>
+                <form>
+                    <button class="delete" type="button"></button>
+                </form>
             <span>{{$diary->created_at}}</span>
+
+            </div>
         </div>
 
         <div class="workout_entry_box">

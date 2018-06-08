@@ -236,15 +236,38 @@
                 <button class="white_button">Change</button>
             </form>
         </div>
-        <div>
-            <form class="edit_profile_form" method="post" action="/deleteAccount">
+
+        @if(Auth::user()->isAdmin === 1)
+
+                <h2>Admin Form</h2>
+
+            <div class="isadmin_form_profile">
+            <form class="edit_profile_form" method="post" action="/edit">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <label>Delete My Account</label><br>
-                <button class="login_button delete_account">DELETE ACCOUNT</button>
+                <label>BloggerBio</label>
+                <input type="text" name="BloggerBio" placeholder="Please add your bio...">
+                <button class="white_button">Update</button>
+                <string>This Text will show up after your Blog! Please write in 3rd person!</string>
             </form>
-        </div>
+            <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <label>AdminText</label>
+                <input type="text" name="AdminText" placeholder="Say hello!">
+                <button class="white_button">Update</button>
+                <string>This Text will show up in the Footer at <a class="tandc" href="{{'aboutus'}}">About Us</a>.</string>
+            </form>
+            </div>
+            @endif
+
+
     </div>
 
-
+    <div class="delete_account_section">
+        <form class="edit_profile_form" method="post" action="/deleteAccount">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <label>Delete My Account</label><br>
+            <button class="login_button delete_account">DELETE ACCOUNT</button>
+        </form>
+    </div>
 
 @endsection
