@@ -19,6 +19,11 @@
                             <a class="box_link"
                                href="{{url('diary/' . $diary->id)}}">
                                 {{$diary->DiaryTitle}}  </a>
+                            <div class="admin_blog_interaction">
+                                <form>
+                                    <button class="delete"></button>
+                                </form>
+                            </div>
                         </div>
                         @endforeach
                 </div>

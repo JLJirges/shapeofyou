@@ -19,6 +19,12 @@
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">
                                 {{$workout->WorkoutTitle}}  </a>
+                            <div class="admin_blog_interaction">
+                                <form>
+                                    <a>Edit</a>
+                                    <button class="delete"></button>
+                                </form>
+                            </div>
                         </div>
                         @endforeach
                 </div>

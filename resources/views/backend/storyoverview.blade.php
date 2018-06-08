@@ -15,6 +15,11 @@
                     <a class="box_link"
                        href="{{url('beforeafter/' . $story->id)}}">
                         {{$story->BeforeAfterStoryTitle}}  </a>
+                    <div class="admin_blog_interaction">
+                        <form>
+                            <button class="delete"></button>
+                        </form>
+                    </div>
                 </div>
                 @endforeach
     </div>
