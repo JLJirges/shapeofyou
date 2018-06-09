@@ -29,7 +29,7 @@
         <div class="workout_entry_box">
 
             <div>
-                <img src="{{asset('/images/uploads/' . $bas->BeforeAfterStoryImageTwo)}}" alt="diary image">
+                <img src="{{asset('/images/bas/' . $bas->BeforeAfterStoryImageOne)}}" alt="diary image">
 
                 <div class="workout_entry_text">
 
@@ -37,6 +37,7 @@
 
 
                 </div>
+                <img src="{{asset('/images/bas/' . $bas->BeforeAfterStoryImageTwo)}}" alt="diary image">
             </div>
         </div>
     </div>

@@ -206,7 +206,12 @@ Route::get('termsandconditions', function () {
 });
 
 Route::get('faq', function () {
-    return view('footer/faq');
+
+    $data= [
+      'faqs' => \DB::table('faq')->get()
+    ];
+
+    return view('footer/faq')->with($data);
 });
 
 Route::get('aboutus', function () {
@@ -491,6 +496,17 @@ Route::get('/backend/blogoverview', function () {
     ];
     return view('backend/blogoverview')->with($data);
 });
+
+Route::get('/backend/adminoverview', function () {
+    return view('backend/adminoverview');
+});
+
+Route::get('/backend/admin_faqs', function () {
+    return view('backend/admin_faqs');
+});
+
+Route::post('add_faq', 'FAQController@store');
+Route::get('add_faq', 'FAQController@create');
 
 Route::get('/backend/create', function () {
 

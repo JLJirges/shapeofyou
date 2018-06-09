@@ -21,7 +21,7 @@ class BeforeAfterStoryController extends Controller
 
         $this->validate(request(), [
             'BeforeAfterStoryTitle' => 'required|string|max:20',
-            'BeforeAfterStoryContent' => 'required|string|max:500',
+            'BeforeAfterStoryContent' => 'required|string|max:2000',
             'StoryOneToUpload' => 'required',
             'StoryTwoToUpload' => 'required'
 
@@ -55,7 +55,7 @@ class BeforeAfterStoryController extends Controller
                 ->update(['BeforeAfterStoryImageOne' => $filename]);
 
             // Save  Image locally
-            $request->StoryOneToUpload->move(public_path('images/uploads/'), $filename);
+            $request->StoryOneToUpload->move(public_path('images/bas/'), $filename);
         }
 
     }
@@ -76,7 +76,7 @@ class BeforeAfterStoryController extends Controller
                 ->update(['BeforeAfterStoryImageTwo' => $filename]);
 
             // Save  Image locally
-            $request->StoryTwoToUpload->move(public_path('images/uploads/'), $filename);
+            $request->StoryTwoToUpload->move(public_path('images/bas/'), $filename);
         }
         return redirect()->to('/beforeafterprofile');
     }

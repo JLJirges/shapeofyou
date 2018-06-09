@@ -111,7 +111,7 @@
             @if(($user->id === Auth::user()->id) && ($bas->where('BeforeAfterStoryUserId', Auth::user()->id)->count() > 0))
                 <div class="square_box_section">
                     @foreach($bas->where('BeforeAfterStoryUserId', Auth::user()->id) as $entry)
-                        <div style="background-image:url({{asset('images/uploads/' . $entry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+                        <div style="background-image:url({{asset('images/bas/' . $entry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
 
 
                             <a class="box_link"
@@ -125,7 +125,7 @@
                         <div class="square_box_section">
                             @foreach($bas->where('BeforeAfterStoryUserId', $user->id) as $basentry)
 
-                                <div style="background-image:url({{asset('images/uploads/' . $basentry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+                                <div style="background-image:url({{asset('images/bas/' . $basentry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
 
                                     <a class="box_link"
                                        href="{{url('beforeafter/' . $basentry->id)}}">
