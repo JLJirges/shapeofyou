@@ -57,21 +57,18 @@
         @endif
         @if($user->username === Auth::user()->username)
             <div class="profile_diary_section">
-                <p class="explain_fav_blogs_p">THIS OVERVIEW IS GOING TO BE AN OVERVIEW OF THE WORKOUT BUDDIES. SINCE
-                    DATABASE DOES NOT EXIST YET THERE ARE NO BUDDIES TO SHOW.</p>
+                <p class="explain_fav_blogs_p">Attention, attention, Ladies and Gents! If you ever feel like you are
+                    alone with your struggles, the pain, the workouts, and the progress that you are not able to see,
+                    but everybody else does and you think they are just being nice or totally crazy, because you are way
+                    critical to yourself than nedded:</p>
                 <p class="explain_fav_blogs_p">Have you ever noticed this strange Icon and wondered what it might do?
-                    No need to be afraid, you won*t lose your heart to a person, who gives it back after a second. This
-                    Icon
-                    is meant for real love -
-                    Nutrition Love! Do you have Blogs you'd like to remember? Simply click the item and...</p>
-                <p class="explain_fav_blogs_p">...it will turn into this wonderful, heartwarming image, to remind you to
-                    have a favorite! BUT... Yes, it could be,
-                    that Blogs you faved might disappear from your list. Not because we are mean and like to see your
-                    reaction in the hidden camera that turns on, after your first sign up
-                    at SHAPE OF YOU. (Please notice, that this was a joke!) No. The reason is, that sometimes Trends or
-                    even
-                    experts change their mind and
-                    we only want our Blogs to be up-to-date!</p>
+                    Just scroll down and we have a surprise for you:</p>
+                <p class="explain_fav_blogs_p">We do not like people who feel alone in our community! So if you are
+                    interested in how other people with exactly the same conditions as yours do, have a look at your
+                    Workout Buddies! See their diaries, favorite Blogs, Workouts, their struggles and achievements!
+                    Motivate yourself, comment on their entries, show them they are not alone! And if you want to see
+                    how other people do, go to the Community Section, decide who you want to visit or scroll down to the
+                    bottom and let us introduce you to the whole Community of SHAPE OF YOU!</p>
             </div>
 
         @else
