@@ -2179,14 +2179,6 @@ form > input {
   margin-bottom: 50px;
 }
 
-/* JOBS */
-.jobs_content > p {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  display: flex;
-  justify-content: center;
-}
-
 /* TERMS AND CONDITIONS */
 .termsandconditions {
   text-align: left;
@@ -2218,6 +2210,28 @@ form > input {
 .faq > li > .question {
   font-weight: bold;
   font-size: 16pt;
+}
+
+
+/*JOBS*/
+.jobs {
+  border-top: double 4px lightgrey;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+flex-direction: column;
+  font-size: 16pt;
+}
+
+.jobs > string {
+  padding: 10px;
+  max-width: 70%;
+}
+
+.jobtitle {
+  font-weight: bold;
 }
 
 /* ABOUT US */
@@ -2371,6 +2385,16 @@ form > input {
   margin: 2% 20% 2% 20%;
 
   text-align: justify;
+}
+
+.box_jobs {
+  background: url("../images/A.png") center;
+  background-size: cover;
+}
+
+.box_faqs {
+  background: url("../images/A.png") center;
+  background-size: cover;
 }
 
 /* FOOTER */

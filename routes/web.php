@@ -198,7 +198,10 @@ Route::get('contact', function () {
 });
 
 Route::get('jobs', function () {
-    return view('footer/jobs');
+    $data = [
+        'jobs' => \DB::table('jobs')->get()
+    ];
+    return view('footer/jobs')->with($data);
 });
 
 Route::get('termsandconditions', function () {
@@ -501,12 +504,24 @@ Route::get('/backend/adminoverview', function () {
     return view('backend/adminoverview');
 });
 
+
+Route::post('add_faq', 'FAQController@store');
+Route::get('add_faq', 'FAQController@create');
+
 Route::get('/backend/admin_faqs', function () {
     return view('backend/admin_faqs');
 });
 
-Route::post('add_faq', 'FAQController@store');
-Route::get('add_faq', 'FAQController@create');
+
+Route::post('add_job', 'JOBController@store');
+Route::get('add_job', 'JOBController@create');
+Route::get('/backend/admin_jobs', function () {
+
+    return view('backend/admin_jobs');
+});
+
+
+
 
 Route::get('/backend/create', function () {
 

@@ -10,16 +10,10 @@
     </div>
 
     <div class="square_box_section">
-        <div class="box_users">
+        <div class="box_jobs">
             <a class="box_link" href="{{url('/backend/admin_jobs')}}">JOBS</a>
         </div>
-        <div class="box_backend_blogs">
-            <a class="box_link" href="{{url('/backend/admin_contact')}}">CONTACT</a>
-        </div>
-        <div class="box_stretch">
-            <a class="box_link" href="{{url('/backend/admin_tac')}}">TERMS & CONDITIONS</a>
-        </div>
-        <div class="community_box_diaries">
+        <div class="box_faqs">
             <a class="box_link" href="{{url('/backend/admin_faqs')}}">FAQ's</a>
         </div>
     </div>

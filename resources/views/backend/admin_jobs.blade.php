@@ -10,12 +10,12 @@
     </div>
 
     <div class="title_bg">
-        <h2>Add FAQ</h2>
+        <h2>Add Job</h2>
     </div>
 
-    @if(\Session::has('faq_error_message'))
+    @if(\Session::has('job_error_message'))
         <div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
-            {{ \Session::get('faq_error_message') }}
+            {{ \Session::get('job_error_message') }}
         </div>
     @endif
     @if($errors->any())
@@ -26,13 +26,17 @@
         </div>
     @endif
 
-    <form class="register_form" method="POST" action="/add_faq">
+    <form class="register_form" method="POST" action="/add_job">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <label>Question</label>
-        <input type="text" name="Question" placeholder="Question">
-        <label>Answer</label>
-        <input type="text" name="Answer" placeholder="Answer">
-        <button class="white_button" type="submit">Add FAQ</button>
+        <label>Job Title</label>
+        <input type="text" name="JobTitle" placeholder="Job Title">
+        <label>Job Description</label>
+        <input type="text" name="JobDescription" placeholder="Job Description">
+        <label>Your Skills</label>
+        <input type="text" name="YourSkills" placeholder="Your Skills">
+        <label>Contact:</label>
+        <input type="text" name="ContactUs" placeholder="Contact Data">
+        <button class="white_button" type="submit">Add Job</button>
     </form>
 
 @endsection
