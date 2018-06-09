@@ -82,9 +82,11 @@
         </select>
         <label>Blogger</label><br>
         <select type="text" name="BloggerId">
-            <option value="1">Lea</option>
-            <option value="2">Mira</option>
-            <option value="3">Corinna</option>
+            @foreach($admin_users as $admin_user)
+                <option value="{{$admin_user->id}}">
+                    {{$admin_user->id}}
+                </option>
+            @endforeach
         </select>
 
         <button class="white_button" type="submit">Create Blog</button>

@@ -492,7 +492,11 @@ Route::get('/backend/blogoverview', function () {
 
 Route::get('/backend/create', function () {
 
-    return view('/backend/create');
+    $data = [
+      'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
+    ];
+
+    return view('/backend/create')->with($data);
 });
 
 Route::get('add_new_workout', 'WorkoutsController@add_new_workout');

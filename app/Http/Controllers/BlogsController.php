@@ -31,7 +31,7 @@ class BlogsController extends Controller
         Blogs::create([
             'BlogTitle' => request('BlogTitle'),
             'BlogCategory' => request('BlogCategory'),
-            'BloggerId' => '',
+            'BloggerId' => request('BloggerId'),
             'BlogContentOne' => request('BlogContentOne'),
             'BlogContentTwo' => request('BlogContentTwo'),
             'created_at' => '',

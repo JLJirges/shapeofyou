@@ -21,7 +21,6 @@
                 </div>
             @endforeach
         </div>
-
     @endif
 
 
