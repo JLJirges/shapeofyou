@@ -2464,6 +2464,17 @@ footer {
 }
 
 /* BACKEND */
+
+.events {
+  border: solid lightgrey 2px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.events:hover {
+  box-shadow: grey 0 5px 10px;
+}
+
 .username_backend_overview {
   font-weight: bold;
   border: 1px double lightgrey;

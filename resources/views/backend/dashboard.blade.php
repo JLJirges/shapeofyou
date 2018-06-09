@@ -26,7 +26,7 @@
                 <a class="box_link" href="{{url('/backend/storyoverview')}}">BEFORE/AFTER STORIES</a>
             </div>
             <div class="community_box_meetups">
-                <a class="box_link" href="{{url ('overview')}}">EVENTS</a>
+                <a class="box_link" href="{{url ('backend/eventoverview')}}">EVENTS</a>
             </div>
             <div class="box_admininfos">
                 <a class="box_link" href="{{url('/backend/adminoverview')}}">ADMIN INFOS</a>

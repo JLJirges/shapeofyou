@@ -512,6 +512,16 @@ Route::get('/backend/adminoverview', function () {
     return view('backend/adminoverview');
 });
 
+Route::get('/backend/eventoverview', function () {
+
+    $data = [
+        'upcoming_events' => \DB::table('events')->where('Upcoming', NULL)->get(),
+        'former_events' => \DB::table('events')->where('Upcoming', 1)->get(),
+    ];
+
+    return view('backend/eventoverview')->with($data);
+});
+
 
 Route::post('add_faq', 'FAQController@store');
 Route::get('add_faq', 'FAQController@create');
