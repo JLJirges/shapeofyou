@@ -2943,8 +2943,6 @@ footer {
     align-self: center;
     flex-direction: column;
     width: 90%;
-    background: url("../images/blogs/responsive_author_bg.png") no-repeat fixed;
-    background-size: cover;
   }
 
   .blog_abouttheauthor_content {
@@ -2952,7 +2950,7 @@ footer {
     justify-content: center;
     align-self: center;
     flex-direction: column;
-    width: 100%;
+    width: auto;
   }
 
   .comments_section {

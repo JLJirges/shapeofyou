@@ -3056,14 +3056,6 @@ footer {
           box-shadow: 10px 10px 10px  lightgrey;
 }
 
-.admin_user_interaction {
-  background: white;
-  font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 @media only screen and (max-width: 768px) {
   .h1_bg {
     height: auto;
@@ -3607,8 +3599,6 @@ footer {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 90%;
-    background: url("../images/blogs/responsive_author_bg.png") no-repeat fixed;
-    background-size: cover;
   }
   .blog_abouttheauthor_content {
     display: -webkit-box;
@@ -3623,7 +3613,7 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 100%;
+    width: auto;
   }
   .comments_section {
     width: 100%;

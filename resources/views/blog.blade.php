@@ -30,7 +30,7 @@
 
             <div>
 
-                <img src="{{ asset('images/superfood/blogs/' . $blog->BlogHeroImage) }}" alt="blog hero image">
+                <img src="{{ asset('images/blogs/' . $blog->BlogHeroImage) }}" alt="blog hero image">
 
                 <div class="blog_text">
 
@@ -52,7 +52,7 @@
     </div>
 
     <div class="blog_author_section">
-        <div class="blog_abouttheauthor">
+        <div class="blog_abouttheauthor" style="background-image:{{asset('images/blogs/author_bg.png')}};background-size: cover; background-position: center">
             <h4>About the author</h4>
             <div class="blog_abouttheauthor_content">
                 <div>

@@ -22,8 +22,8 @@ class WorkoutsController extends Controller
             'WorkoutTitle' => 'required|string|max:50',
             'WorkoutCategory' => 'required',
             'BloggerId' => '',
-            'WorkoutContentOne' => 'required|string|max:300',
-            'WorkoutContentTwo' => 'required|string|max:300',
+            'WorkoutContentOne' => 'required|string|max:3000',
+            'WorkoutContentTwo' => 'required|string|max:3000',
             'created_at' => '',
             'updated_at' => ''
 

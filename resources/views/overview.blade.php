@@ -13,7 +13,7 @@
     @if($workouts->where('WorkoutCategory', $workout_category)->count() > 0)
         <div class="square_box_section">
             @foreach($workouts->where('WorkoutCategory', $workout_category)->get() as $workout)
-                <div style="background-image:url({{'images/' . $workout->WorkoutBoxImage}});background-size:cover; background-position:center;">
+                <div style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
 
                     <a class="box_link"
                        href="{{url('detail/' . $workout->id)}}">

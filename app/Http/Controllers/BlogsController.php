@@ -22,8 +22,8 @@ class BlogsController extends Controller
             'BlogTitle' => 'required|string|max:50',
             'BlogCategory' => 'required',
             'BloggerId' => '',
-            'BlogContentOne' => 'required|string|max:300',
-            'BlogContentTwo' => 'required|string|max:300',
+            'BlogContentOne' => 'required|string|max:3000',
+            'BlogContentTwo' => 'required|string|max:3000',
             'created_at' => '',
             'updated_at' => ''
 

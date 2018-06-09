@@ -79,13 +79,15 @@
     </div>
 
     @if($blogs->where('BlogCategory', 4)->count() > 0)
+        <div class="title_bg">
+            <h2>Workout and Training Blogs</h2>
+        </div>
     <div class="workout_blog_bg">
 
-        <div class="title_bg"><h2>Workout and Training Blogs</h2>
-        </div>
+
         <div class="square_box_section">
             @foreach($blogs->where('BlogCategory', 4) as $blog)
-                <div style="background-image:url({{'images/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
+                <div style="background-image:url({{'images/blogs/' . $blog->BlogBoxImage}});background-size:cover; background-position:center;">
                     <a class="box_link"
                        href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
                         {{$blog->BlogTitle}}  </a>

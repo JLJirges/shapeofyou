@@ -41,10 +41,19 @@
                 <img src="{{('../images/workout/' . $workout->WorkoutHeroImage)}}" alt="workout image">
 
                 <div class="workout_entry_text">
+                    <p>
 
                     {{ $workout->WorkoutContentOne }}
 
+                    </p>
+                </div>
+                <img src="{{('../images/workout/' . $workout->WorkoutImage)}}" alt="workout image">
+                <div class="workout_entry_text">
+                    <p>
 
+                        {{ $workout->WorkoutContentTwo }}
+
+                    </p>
                 </div>
             </div>
         </div>

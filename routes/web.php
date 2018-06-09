@@ -179,12 +179,14 @@ Route::get('buddiesprofile', function () {
 
 Route::get('buddiesprofile/{username}', function ($username) {
 
+    $this_user = \DB::table('users')->where('username', $username)->get();
+
     $data = [
         'user' => \DB::table('users')->where('username', $username)->first(),
         'users' => \DB::table('users')->where('username', '!=', $username)->where(
-            ['UserDiet' => Auth::user()->UserDiet,
-                'UserGoal' => Auth::user()->UserGoal,
-                'UserShape' => Auth::user()->UserShape])->get(),
+            ['UserDiet' => $this_user->first()->UserDiet,
+                'UserGoal' => $this_user->first()->UserGoal,
+                'UserShape' => $this_user->first()->UserShape])->get(),
     ];
 
 
