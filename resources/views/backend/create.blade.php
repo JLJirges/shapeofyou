@@ -84,7 +84,7 @@
         <select type="text" name="BloggerId">
             @foreach($admin_users as $admin_user)
                 <option value="{{$admin_user->id}}">
-                    {{$admin_user->id}}
+                    {{$admin_user->username}}
                 </option>
             @endforeach
         </select>
@@ -132,9 +132,11 @@
         </select>
         <label>Author</label><br>
         <select type="text" name="BloggerId">
-            <option value="1">João</option>
-            <option value="2">Remus</option>
-            <option value="3">Corinna</option>
+            @foreach($admin_users as $admin_user)
+                <option value="{{$admin_user->id}}">
+                    {{$admin_user->username}}
+                </option>
+            @endforeach
         </select>
 
         <button class="white_button" type="submit">Upload Workout</button>

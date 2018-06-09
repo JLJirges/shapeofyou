@@ -21,7 +21,7 @@ class WorkoutsController extends Controller
         $this->validate(request(), [
             'WorkoutTitle' => 'required|string|max:50',
             'WorkoutCategory' => 'required',
-            'BloggerId' => 'required',
+            'BloggerId' => '',
             'WorkoutContentOne' => 'required|string|max:300',
             'WorkoutContentTwo' => 'required|string|max:300',
             'created_at' => '',
@@ -31,7 +31,7 @@ class WorkoutsController extends Controller
         Workouts::create([
             'WorkoutTitle' => request('WorkoutTitle'),
             'WorkoutCategory' => request('WorkoutCategory'),
-            'BloggerId' => \request('BloggerId'),
+            'BloggerId' => request('BloggerId'),
             'WorkoutContentOne' => request('WorkoutContentOne'),
             'WorkoutContentTwo' => request('WorkoutContentTwo'),
             'created_at' => '',
