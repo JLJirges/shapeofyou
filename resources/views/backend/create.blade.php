@@ -143,4 +143,43 @@
 
     </form>
 
+    <div class="title_bg">
+        <h2>Add upcoming Event</h2>
+    </div>
+
+    @if(\Session::has('event_error_message'))
+        <div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
+            {{ \Session::get('event_error_message') }}
+        </div>
+    @endif
+    @if($errors->any())
+        <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
+            @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
+
+    <form class="register_form" method="POST" action="/add_upcoming_event">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <label>Event Title</label>
+        <input type="text" name="EventTitle" placeholder="CAPITAL LETTERS">
+        <label>Available Tickets</label>
+        <input type="number" name="TicketsTotal">
+        <label>When?</label>
+        <input type="date" name="EventWhen">
+        <label>Where?</label>
+        <input name="EventWhere" placeholder="Where does the event take place?">
+        <label>Google Maps</label>
+        <input name="Maps" placeholder="Insert Google Maps Link">
+        <label>What?</label>
+        <input name="EventWhat" placeholder="What is this event about?">
+        <label>Costs per Ticket</label>
+        <input type="number" name="Costs">
+
+
+        <button class="white_button" type="submit">Add Event</button>
+
+    </form>
+
 @endsection

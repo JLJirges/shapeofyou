@@ -15,6 +15,55 @@
     <div class="meetups_section">
 
         <div class="upcoming_meetups">
+@foreach($upcoming_events as $upcoming_event)
+                    <div class="event">
+                        <div>
+                            <div class="event_available_info">
+                                <span>Total: {{$upcoming_event->TicketsTotal}}</span>
+                                <span>Sold: {{$upcoming_event->TicketsSold}}</span>
+                            </div>
+
+                            <div class="event_box">
+                                <h3>{{$upcoming_event->EventTitle}}</h3>
+                                <div class="event_box_details">
+                                    <div class="event_details">
+                                        <div class="event_date_and_time">
+                                            <div class="event_date_and_time_info event_date_and_time_info_1">
+                                                <p>WHEN:</p>
+                                                <p>WHERE:</p>
+                                            </div>
+                                            <div class="event_date_and_time_info">
+                                                <p>{{$upcoming_event->EventWhen}}</p>
+                                                <p>{{$upcoming_event->EventWhere}}</p>
+                                            </div>
+                                        </div>
+
+                                        <iframe src="{{$upcoming_event->Maps}}"
+                                                width="600" height="450" frameborder="0" style="border:0"
+                                                allowfullscreen class="meetup_event_googlemaps"></iframe>
+                                    </div>
+                                    <div class="event_details">
+                                        <p class="event_W">WHAT:</p>
+                                        <p>{{$upcoming_event->EventWhat}}</p>
+                                        <!--
+                                        <p>5km, 10km or 15km run</p>
+                                        <p>Food, drinks and live music</p>
+                                        <p>Open Air</p>
+                                        <p>Special guests</p>
+                                        <p>3 stages</p>-->
+                                        <p>Per Ticket: {{$upcoming_event->Costs}},-€</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <form>
+                                <button type="button" class="ticket_button">Get your ticket</button>
+                            </form>
+                        </div>
+                    </div>
+@endforeach
+
+
+        <!--
             <div class="event">
                 <div>
                     <div class="event_available_info">
@@ -152,17 +201,25 @@
                     </form>
                 </div>
             </div>
+            -->
         </div>
 
         <h2 class="h2_mobile_view">Former Events</h2>
         <div class="former_event_section">
-
             <p>
                 Those events already happened. You are not able to buy any tickets for expired meetups.
                 You can view the gallery, to get an overview about our programms and we hope to see you at one of
                 our upcoming events!
             </p>
-
+            @foreach($former_events as $former_event)
+                <div class="former_event former_event_box">
+                    <h4>{{$former_event->EventTitle}}</h4>
+                    <p>{{$former_event->EventWhere}}</p>
+                    <p>{{$former_event->EventWhen}}</p>
+                    <span class="white_button">Show gallery</span>
+                </div>
+        @endforeach
+        <!--
             <div class="former_event former_event_box">
                 <h4>WOMEN POWER</h4>
                 <p>Vienna|Donauinsel</p>
@@ -181,6 +238,8 @@
                 <p>1st, February 2018</p>
                 <span class="white_button">Show gallery</span>
             </div>
+
+            -->
         </div>
     </div>
 

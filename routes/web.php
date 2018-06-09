@@ -30,7 +30,15 @@ Route::get('superfood', function () {
 });
 
 Route::get('meetups', function () {
-    return view('meetups');
+
+    $data = [
+      'upcoming_events' => \DB::table('events')->where('Upcoming', NULL)->get(),
+        'former_events' => \DB::table('events')->where('Upcoming', 1)->get(),
+    ];
+
+
+
+    return view('meetups')->with($data);
 });
 
 Route::get('workout', function () {
@@ -531,6 +539,9 @@ Route::get('/backend/create', function () {
 
     return view('/backend/create')->with($data);
 });
+
+Route::get('add_upcoming_event', 'EventsController@add_new_workout');
+Route::post('add_upcoming_event', 'EventsController@store');
 
 Route::get('add_new_workout', 'WorkoutsController@add_new_workout');
 Route::post('add_new_workout', 'WorkoutsController@store');
