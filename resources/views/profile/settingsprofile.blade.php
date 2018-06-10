@@ -263,7 +263,7 @@
     </div>
 
     <div class="delete_account_section">
-        <form class="edit_profile_form" method="post" action="/deleteAccount">
+        <form class="edit_profile_form" method="post" action="/deleteAccount/{{Auth::user()->id}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label>Delete My Account</label><br>
             <button class="login_button delete_account">DELETE ACCOUNT</button>

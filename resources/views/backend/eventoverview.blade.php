@@ -12,39 +12,40 @@
     <div class="title_bg">
         <h2>Upcoming Events</h2>
     </div>
-    @foreach($upcoming_events as $upcoming_event)
-        <div class="events">
 
-            <div>
-                <a href="{{url('meetups')}}"><h3>{{$upcoming_event->EventTitle}}</h3></a>
-                <div>
-                    <span>edit</span>
-                    <form>
-                        <button class="delete"></button>
-                    </form>
+    <div class="square_box_section">
+        @foreach($upcoming_events as $upcoming_event)
+                        <div>
+                            <a class="box_link"
+                               href="{{url('detail/' . $upcoming_event->id)}}">
+                                {{$upcoming_event->EventTitle}}  </a>
+                            <div class="admin_blog_interaction">
+                                <form>
+                                    <a href="{{url('backend/admin_edit/' . $upcoming_event->id)}}">Edit</a>
+                                    <button class="delete"></button>
+                                </form>
+                            </div>
+                        </div>
+                        @endforeach
                 </div>
-            </div>
-
-        </div>
-    @endforeach
 
     <div class="title_bg">
         <h2>Former Events</h2>
     </div>
 
-    @foreach($former_events as $former_event)
-        <div class="events">
-
+    <div class="square_box_section">
+        @foreach($former_events as $former_event)
             <div>
-                <a href="{{url('meetups')}}"><h3>{{$former_event->EventTitle}}</h3></a>
-                <div>
-                    <span>edit</span>
+                <a class="box_link"
+                   href="{{url('detail/' . $former_event->id)}}">
+                    {{$former_event->EventTitle}}  </a>
+                <div class="admin_blog_interaction">
                     <form>
+                        <a>Edit</a>
                         <button class="delete"></button>
                     </form>
                 </div>
             </div>
-
-        </div>
-    @endforeach
+        @endforeach
+    </div>
 @endsection

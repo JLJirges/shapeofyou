@@ -277,7 +277,7 @@ Route::get('blog/{blog_id}', function ($blog_id) {
     return view('blog')->with($data);
 });
 
-Route::post('deleteAccount', 'User@deleteAccount');
+Route::post('deleteAccount/{id}', 'SessionsController@deleteAccount');
 
 Route::post('/favorite_workout/{action}/{workout_id}/{user_id}', 'SessionsController@favorite_workout');
 
@@ -522,6 +522,24 @@ Route::get('/backend/eventoverview', function () {
     return view('backend/eventoverview')->with($data);
 });
 
+Route::get('/backend/admin_edit', function () {
+
+    $data = [
+        'events' => \DB::table('events')->get(),
+    ];
+
+    return view('backend/admin_edit')->with($data);
+});
+
+Route::get('/backend/admin_edit/{event_id}', function ($event_id) {
+
+    $data =[
+      'event' => \DB::table('events')->where('id', $event_id)->first(),
+        'event_id' => $event_id
+    ];
+
+    return view('backend/admin_edit')->with($data);
+});
 
 Route::post('add_faq', 'FAQController@store');
 Route::get('add_faq', 'FAQController@create');
@@ -550,8 +568,10 @@ Route::get('/backend/create', function () {
     return view('/backend/create')->with($data);
 });
 
-Route::get('add_upcoming_event', 'EventsController@add_new_workout');
+Route::get('add_upcoming_event', 'EventsController@create');
 Route::post('add_upcoming_event', 'EventsController@store');
+Route::post('update_event/{id}', 'EventsController@edit');
+
 
 Route::get('add_new_workout', 'WorkoutsController@add_new_workout');
 Route::post('add_new_workout', 'WorkoutsController@store');

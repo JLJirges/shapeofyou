@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Diary;
 use App\Events;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\User;
 
 class EventsController extends Controller
 {
 
     public function create()
     {
-        return view('/backend/create');
+        return view('/backend/eventoverview');
     }
 
     public function store()
@@ -39,30 +37,32 @@ class EventsController extends Controller
             'Costs' =>request('Costs')
         ]);
 
-        \Session::flash('event_message', 'Diary upload successful!');
+        \Session::flash('event_message', 'Event upload successful!');
         return redirect()->to('/backend/create');
     }
 
 
-    public function upload_photo(Request $request)
+    public function edit(Request $request, $id)
     {
 
-        if ($request->hasFile('DiaryToUpload')) {
-            // Read image
-            $image = $request->file('DiaryToUpload');
+        $this->validate(request(), [
+            'EventTitle' => '',
+            'TicketsTotal' => '',
+            'EventWhen' => '',
+            'EventWhere' => '',
+            'EventWhat' => '',
+            'Maps' => '',
+            'Costs' => '',
+            'Upcoming' => ''
+        ]);
 
-            // Get filename
-            $filename = $image->getClientOriginalName();
 
-            // Insert filename in database
-            \DB::table('diaries')
-                ->where('DiaryUserId', \Auth::user()->id)
-                ->update(['DiaryHeroImage' => $filename]);
+        $event = Events::findOrFail($id);
 
-            // Save  Image locally
-            $request->DiaryToUpload->move(public_path('images/uploads/'), $filename);
-        }
-        return redirect()->to('/profile');
+        $event->update(array_filter($request->all()));
+
+        \Session::flash('event_message', 'Update successful!');
+        return redirect()->to('/backend/admin_edit/' . $id);
     }
 
 }

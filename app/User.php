@@ -36,17 +36,7 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
-    public function deleteAccount()
-    {
-        $user = User::find(id);
 
-        $user->delete();
-
-
-        return redirect()->to('register')->with('global', 'We are sorry to see you go... You will be missed!');
-
-
-    }
 
 
 }
