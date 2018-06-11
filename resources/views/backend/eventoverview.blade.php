@@ -20,10 +20,12 @@
                                href="{{url('detail/' . $upcoming_event->id)}}">
                                 {{$upcoming_event->EventTitle}}  </a>
                             <div class="admin_blog_interaction">
-                                <form>
-                                    <a href="{{url('backend/admin_edit/' . $upcoming_event->id)}}">Edit</a>
-                                    <button class="delete"></button>
+                                <div class="admin_delete_edit">
+                                <a href="{{url('backend/event_edit/' . $upcoming_event->id)}}">Edit</a>
+                                <form method="post" action="/delete_event/{{$upcoming_event->id}}">
+                                    <button type="submit" class="delete"></button>
                                 </form>
+                                </div>
                             </div>
                         </div>
                         @endforeach
@@ -40,10 +42,12 @@
                    href="{{url('detail/' . $former_event->id)}}">
                     {{$former_event->EventTitle}}  </a>
                 <div class="admin_blog_interaction">
-                    <form>
-                        <a>Edit</a>
-                        <button class="delete"></button>
-                    </form>
+                    <div class="admin_delete_edit">
+                        <a href="{{url('backend/event_edit/' . $former_event->id)}}">Edit</a>
+                        <form method="post" action="/delete_event/{{$former_event->id}}">
+                            <button type="submit" class="delete"></button>
+                        </form>
+                    </div>
                 </div>
             </div>
         @endforeach

@@ -34,7 +34,7 @@ class EventsController extends Controller
             'EventWhere' => request('EventWhere'),
             'EventWhat' => request('EventWhat'),
             'Maps' => request('Maps'),
-            'Costs' =>request('Costs')
+            'Costs' => request('Costs')
         ]);
 
         \Session::flash('event_message', 'Event upload successful!');
@@ -62,7 +62,21 @@ class EventsController extends Controller
         $event->update(array_filter($request->all()));
 
         \Session::flash('event_message', 'Update successful!');
-        return redirect()->to('/backend/admin_edit/' . $id);
+        return redirect()->to('/backend/event_edit/' . $id);
+    }
+
+
+    public function deleteEvent($id)
+    {
+        $event = \DB::table('events')->where('id', $id);
+
+        return ($event);
+        $event->delete();
+
+        \Session::flash('event_message', 'Delete successful!');
+        return redirect()->to('/backend/eventoverview');
+
+
     }
 
 }

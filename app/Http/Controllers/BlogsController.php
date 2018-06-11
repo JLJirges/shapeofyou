@@ -43,27 +43,27 @@ class BlogsController extends Controller
 
     }
 
-    /*  public function edit(Request $request)
-      {
-          $this->validate(request(), [
-              'BlogTitle' => 'string|max:50',
-              'BlogCategory' => 'required',
-              'BlogAuthorName' => 'string|max:50',
-              'BlogAuthorBio' => 'string|max:200',
-              'BlogAuthorBirthdate' => '',
-              'BlogAuthorImage' => '',
-              'BlogAuthorOrigin' => 'string|max:50',
-              'BlogHeroImage' => '',
-              'BlogImage' => '',
-              'BlogContentOne' => 'string|max:300',
-              'BlogContentTwo' => 'string|max:300'
-          ]);
+    public function edit(Request $request, $id)
+    {
+        $this->validate(request(), [
+            'BlogTitle' => '',
+            'BlogCategory' => '',
+            'BlogAuthorName' => '',
+            'BlogAuthorBio' => '',
+            'BlogAuthorBirthdate' => '',
+            'BlogAuthorImage' => '',
+            'BlogAuthorOrigin' => '',
+            'BlogHeroImage' => '',
+            'BlogImage' => '',
+            'BlogContentOne' => '',
+            'BlogContentTwo' => ''
+        ]);
 
 
-
-          $blogs = Blogs::findOrFail(\Auth::blogs() -> id);
-          $blogs->update($request->all());
-          return redirect()->to('/backend/dashboard');
-      }*/
+        $blog = Blogs::findOrFail($id);
+        $blog->update(array_filter($request->all()));
+        \Session::flash('blog_message', 'Update successful!');
+        return redirect()->to('/backend/blog_edit/' . $blog->id);
+    }
 
 }

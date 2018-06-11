@@ -20,7 +20,7 @@ class Events extends Model
 
 
     protected $fillable = [
-        'EventTitle', 'TicketsTotal', 'TicketsSold', 'EventWhen', 'EventWhat', 'EventWhere', 'Maps', 'Costs', 'Upcoming'
+        'EventTitle', 'TicketsTotal', 'TicketsSold', 'EventWhen', 'EventWhat', 'EventWhere', 'Maps', 'Costs', 'Upcoming', 'created_at', 'updated_at'
     ];
 
 

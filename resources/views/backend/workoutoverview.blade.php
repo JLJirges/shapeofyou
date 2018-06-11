@@ -12,7 +12,7 @@
     <div class="square_box_section">
         @foreach($workouts as $workout)
             @if($workout->WorkoutBoxImage)
-                <div style="background-image:url({{asset('images/workout' . $workout->WorkoutHeroImage)}});background-size:cover; background-position:center;">
+                <div style="background-image:url({{asset('images/workout' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                     @else
                         <div class="community_box_diaries">
                             @endif
@@ -21,7 +21,7 @@
                                 {{$workout->WorkoutTitle}}  </a>
                             <div class="admin_blog_interaction">
                                 <form>
-                                    <a>Edit</a>
+                                    <a href="{{url('backend/workout_edit/' . $workout->id)}}">Edit</a>
                                     <button class="delete"></button>
                                 </form>
                             </div>

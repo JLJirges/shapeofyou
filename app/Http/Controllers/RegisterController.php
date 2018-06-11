@@ -90,12 +90,38 @@ class RegisterController extends Controller
         return redirect()->to('/settingsprofile');
     }
 
+    public function edit_user(Request $request, $id)
+    {
+        $this->validate(request(), [
+            'firstname' => '',
+            'lastname' => '',
+            'username' => '',
+            'email' => '',
+            'password' => 'confirmed',
+            'mq' => '',
+            'profilepic' => '',
+            'birthdate' => '',
+            'origin' => '',
+            'UserDiet' => '',
+            'UserGoal' => '',
+            'UserShape' => '',
+            'BloggerBio' => '',
+            'AdminText' => ''
+        ]);
+
+        $user = User::findOrFail($id);
+        $user->update(array_filter($request->all()));
+        return redirect()->to('/backend/user_edit/' . $user->id);
+    }
+
     public function upload_photo(Request $request)
     {
 
         if ($request->hasFile('ProfileToUpload')) {
             // Read image
             $image = $request->file('ProfileToUpload');
+
+
 
             // Get filename
             $filename = $image->getClientOriginalName();
@@ -108,7 +134,7 @@ class RegisterController extends Controller
             // Save  Image locally
             $request->ProfileToUpload->move(public_path('images/uploads/'), $filename);
         }
-        return redirect()->to('/settingsprofile');
+        return redirect()->to('/backend/dashboard');
     }
 
 

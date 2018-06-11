@@ -24,7 +24,7 @@
                                 {{$blog->BlogTitle}}  </a>
                             <div class="admin_blog_interaction">
                                 <form>
-                                    <a>Edit</a>
+                                    <a href="{{'blog_edit/' . $blog->id}}">Edit</a>
                                     <button class="delete"></button>
                                 </form>
                             </div>

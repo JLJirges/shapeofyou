@@ -169,7 +169,7 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Profile Picture</label><br>
                 <input type="file" name="ProfileToUpload" id="ProfileToUpload">
-                <button class="white_button">Change Profile Picture</button>
+                <button type="submit" class="white_button">Change Profile Picture</button>
             </form>
             <form class="edit_profile_form" method="post" action="/edit">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

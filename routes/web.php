@@ -53,12 +53,28 @@ Route::get('workout', function () {
 
 Route::get('register_new_user', 'RegisterController@create_new_user');
 Route::post('register_new_user', 'RegisterController@store_new_user');
+Route::post('edit_user/{id}', 'RegisterController@edit_user');
+Route::post('delete_user/{id}', 'RegisterController@deleteUser');
 
+Route::get('/backend/user_edit', function () {
+    return view('backend/user_edit');
+});
 
+Route::get('/backend/user_edit/{user_id}', function ($user_id) {
+
+    $data =[
+        'user' => \DB::table('users')->where('id', $user_id)->first(),
+        'user_id' => $user_id
+    ];
+
+    return view('backend/user_edit')->with($data);
+});
+
+Route::post('/upload_photo', 'RegisterController@upload_photo');
 Route::get('register', 'RegisterController@create');
 Route::post('register', 'RegisterController@store');
 Route::post('edit', 'RegisterController@edit');
-Route::post('upload_photo', 'RegisterController@upload_photo');
+
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/login', ['as' => 'login', 'uses' => 'SessionsController@login']);
@@ -167,6 +183,7 @@ Route::get('workoutprofile/{username}', function ($username) {
 });
 
 Route::get('settingsprofile', function () {
+
     return view('profile/settingsprofile');
 });
 
@@ -522,24 +539,26 @@ Route::get('/backend/eventoverview', function () {
     return view('backend/eventoverview')->with($data);
 });
 
-Route::get('/backend/admin_edit', function () {
+Route::get('/backend/event_edit', function () {
 
     $data = [
         'events' => \DB::table('events')->get(),
     ];
 
-    return view('backend/admin_edit')->with($data);
+    return view('backend/event_edit')->with($data);
 });
 
-Route::get('/backend/admin_edit/{event_id}', function ($event_id) {
+Route::get('/backend/event_edit/{event_id}', function ($event_id) {
 
     $data =[
       'event' => \DB::table('events')->where('id', $event_id)->first(),
         'event_id' => $event_id
     ];
 
-    return view('backend/admin_edit')->with($data);
+    return view('backend/event_edit')->with($data);
 });
+
+
 
 Route::post('add_faq', 'FAQController@store');
 Route::get('add_faq', 'FAQController@create');
@@ -571,16 +590,21 @@ Route::get('/backend/create', function () {
 Route::get('add_upcoming_event', 'EventsController@create');
 Route::post('add_upcoming_event', 'EventsController@store');
 Route::post('update_event/{id}', 'EventsController@edit');
+Route::post('delete_event/{id}', 'EventsController@deleteEvent');
 
 
 Route::get('add_new_workout', 'WorkoutsController@add_new_workout');
 Route::post('add_new_workout', 'WorkoutsController@store');
+Route::post('edit_workout/{id}', 'WorkoutsController@edit');
+Route::post('delete_workout/{id}', 'WorkoutsController@deleteWorkout');
 
 Route::get('create', 'BlogsController@create');
 Route::post('create', 'BlogsController@store');
 Route::post('upload__blogboxphoto', 'BlogsController@upload_blogboxphoto');
 Route::post('upload__blogherophoto', 'BlogsController@upload_blogherophoto');
 Route::post('upload__blogphoto', 'BlogsController@upload_blogphoto');
+Route::post('edit_blog/{id}', 'BlogsController@edit');
+Route::post('delete_blog/{id}', 'BlogsController@deleteBlog');
 
 
 Route::get('/backend/storyoverview', function () {
@@ -595,4 +619,34 @@ Route::get('/backend/workoutoverview', function () {
         'workouts' => \DB::table('workouts')->get()
     ];
     return view('backend/workoutoverview')->with($data);
+});
+
+Route::get('/backend/workout_edit', function () {
+    return view('backend/workout_edit');
+});
+
+Route::get('/backend/workout_edit/{workout_id}', function ($workout_id) {
+
+    $data =[
+        'workout' => \DB::table('workouts')->where('id', $workout_id)->first(),
+        'workout_id' => $workout_id,
+        'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
+    ];
+
+    return view('backend/workout_edit')->with($data);
+});
+
+Route::get('/backend/blog_edit', function () {
+    return view('backend/blog_edit');
+});
+
+Route::get('/backend/blog_edit/{blog_id}', function ($blog_id) {
+
+    $data =[
+        'blog' => \DB::table('blogs')->where('id', $blog_id)->first(),
+        'blog_id' => $blog_id,
+        'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
+    ];
+
+    return view('backend/blog_edit')->with($data);
 });

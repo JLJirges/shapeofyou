@@ -43,27 +43,23 @@ class WorkoutsController extends Controller
 
     }
 
-    /*  public function edit(Request $request)
-      {
-          $this->validate(request(), [
-              'BlogTitle' => 'string|max:50',
-              'BlogCategory' => 'required',
-              'BlogAuthorName' => 'string|max:50',
-              'BlogAuthorBio' => 'string|max:200',
-              'BlogAuthorBirthdate' => '',
-              'BlogAuthorImage' => '',
-              'BlogAuthorOrigin' => 'string|max:50',
-              'BlogHeroImage' => '',
-              'BlogImage' => '',
-              'BlogContentOne' => 'string|max:300',
-              'BlogContentTwo' => 'string|max:300'
-          ]);
+    public function edit(Request $request, $id)
+    {
+        $this->validate(request(), [
+            'WorkoutTitle' => '',
+            'WorkoutCategory' => '',
+            'BloggerId' => '',
+            'WorkoutContentOne' => '',
+            'WorkoutContentTwo' => '',
+            'created_at' => '',
+            'updated_at' => ''
+        ]);
 
+        $workout = Workouts::findOrFail($id);
+        $workout->update(array_filter($request->all()));
 
-
-          $blogs = Blogs::findOrFail(\Auth::blogs() -> id);
-          $blogs->update($request->all());
-          return redirect()->to('/backend/dashboard');
-      }*/
+        \Session::flash('workout_message', 'Update successful!');
+        return redirect()->to('/backend/workout_edit/' . $workout->id);
+    }
 
 }
