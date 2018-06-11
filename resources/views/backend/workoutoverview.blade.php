@@ -21,7 +21,7 @@
                                 {{$workout->WorkoutTitle}}  </a>
                             <div class="admin_blog_interaction">
                                 <form>
-                                    <a href="{{url('backend/workout_edit/' . $workout->id)}}">Edit</a>
+                                    <a class="edit" href="{{url('backend/workout_edit/' . $workout->id)}}">Edit</a>
                                     <button class="delete"></button>
                                 </form>
                             </div>

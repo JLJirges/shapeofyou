@@ -32,7 +32,7 @@ Route::get('superfood', function () {
 Route::get('meetups', function () {
 
     $data = [
-      'upcoming_events' => \DB::table('events')->where('Upcoming', NULL)->get(),
+      'upcoming_events' => \DB::table('events')->where('Upcoming', 0)->get(),
         'former_events' => \DB::table('events')->where('Upcoming', 1)->get(),
     ];
 
@@ -532,7 +532,7 @@ Route::get('/backend/adminoverview', function () {
 Route::get('/backend/eventoverview', function () {
 
     $data = [
-        'upcoming_events' => \DB::table('events')->where('Upcoming', NULL)->get(),
+        'upcoming_events' => \DB::table('events')->where('Upcoming', 0)->get(),
         'former_events' => \DB::table('events')->where('Upcoming', 1)->get(),
     ];
 
@@ -562,19 +562,51 @@ Route::get('/backend/event_edit/{event_id}', function ($event_id) {
 
 Route::post('add_faq', 'FAQController@store');
 Route::get('add_faq', 'FAQController@create');
+Route::post('edit_faq/{id}', 'FAQController@edit_faq');
 
 Route::get('/backend/admin_faqs', function () {
     return view('backend/admin_faqs');
 });
 
 
+Route::get('/backend/faq_edit', function () {
+
+    $data = [
+        'faqs' => \DB::table('faq')->get(),
+    ];
+
+    return view('backend/faq_edit')->with($data);
+});
+
+Route::get('/backend/faq_edit/{faq_id}', function ($faq_id) {
+
+    $data =[
+        'faq' => \DB::table('faq')->where('id', $faq_id)->first(),
+        'faq_id' => $faq_id
+    ];
+
+    return view('backend/faq_edit')->with($data);
+});
+
+
 Route::post('add_job', 'JOBController@store');
 Route::get('add_job', 'JOBController@create');
+Route::post('edit_job/{id}', 'JOBController@edit_job');
 Route::get('/backend/admin_jobs', function () {
 
     return view('backend/admin_jobs');
 });
 
+
+Route::get('/backend/job_edit/{job_id}', function ($job_id) {
+
+    $data =[
+        'job' => \DB::table('jobs')->where('id', $job_id)->first(),
+        'job_id' => $job_id
+    ];
+
+    return view('backend/job_edit')->with($data);
+});
 
 
 
@@ -649,4 +681,13 @@ Route::get('/backend/blog_edit/{blog_id}', function ($blog_id) {
     ];
 
     return view('backend/blog_edit')->with($data);
+});
+
+Route::get('/backend/jobs_faq_overview', function () {
+
+    $data = [
+      'jobs' => \DB::table('jobs')->get(),
+        'faqs' => \DB::table('faq')->get()
+    ];
+    return view('backend/jobs_faq_overview')->with($data);
 });

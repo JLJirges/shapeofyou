@@ -22,7 +22,7 @@
                                 {{$user->username}}  </a>
                             <div class="admin_blog_interaction">
                                 <form>
-                                    <a href="{{url('backend/user_edit/' . $user->id)}}">Edit</a>
+                                    <a class="edit" href="{{url('backend/user_edit/' . $user->id)}}">Edit</a>
                                     <button class="delete"></button>
                                 </form>
                             </div>

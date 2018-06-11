@@ -43,7 +43,7 @@
                     {{$former_event->EventTitle}}  </a>
                 <div class="admin_blog_interaction">
                     <div class="admin_delete_edit">
-                        <a href="{{url('backend/event_edit/' . $former_event->id)}}">Edit</a>
+                        <a class="edit" href="{{url('backend/event_edit/' . $former_event->id)}}">Edit</a>
                         <form method="post" action="/delete_event/{{$former_event->id}}">
                             <button type="submit" class="delete"></button>
                         </form>

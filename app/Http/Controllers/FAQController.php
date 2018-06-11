@@ -34,27 +34,18 @@ class FAQController extends Controller
 
     }
 
-    /*  public function edit(Request $request)
+      public function edit_faq(Request $request, $id)
       {
           $this->validate(request(), [
-              'BlogTitle' => 'string|max:50',
-              'BlogCategory' => 'required',
-              'BlogAuthorName' => 'string|max:50',
-              'BlogAuthorBio' => 'string|max:200',
-              'BlogAuthorBirthdate' => '',
-              'BlogAuthorImage' => '',
-              'BlogAuthorOrigin' => 'string|max:50',
-              'BlogHeroImage' => '',
-              'BlogImage' => '',
-              'BlogContentOne' => 'string|max:300',
-              'BlogContentTwo' => 'string|max:300'
+              'Question' => '',
+              'Answer' => ''
           ]);
 
+          $faq = FAQs::findOrFail($id);
+          $faq->update(array_filter($request->all()));
 
-
-          $blogs = Blogs::findOrFail(\Auth::blogs() -> id);
-          $blogs->update($request->all());
-          return redirect()->to('/backend/dashboard');
-      }*/
+          \Session::flash('workout_message', 'Update successful!');
+          return redirect()->to('/backend/faq_edit/' . $faq->id);
+      }
 
 }

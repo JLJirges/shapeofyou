@@ -11,10 +11,7 @@
 
     <div class="square_box_section">
         <div class="box_jobs">
-            <a class="box_link" href="{{url('/backend/admin_jobs')}}">JOBS</a>
-        </div>
-        <div class="box_faqs">
-            <a class="box_link" href="{{url('/backend/admin_faqs')}}">FAQ's</a>
+            <a class="box_link" href="{{url('/backend/jobs_faq_overview')}}">JOBS & FAQs</a>
         </div>
     </div>
 @endsection

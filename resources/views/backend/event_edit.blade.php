@@ -27,7 +27,7 @@
         <input type="number" name="Costs" placeholder="{{$event->Costs}}">
         <label>Status</label>
         <select type="number" name="Upcoming">
-            <option value="NULL">Upcoming Event</option>
+            <option value="0">Upcoming Event</option>
             <option value="1">Former Event</option>
         </select>
 
