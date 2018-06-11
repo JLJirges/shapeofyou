@@ -110,7 +110,7 @@
                         <li class="page_warmup"
                             style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
+                               href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -130,7 +130,7 @@
                         <li class="page_warmup"
                             style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
+                               href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -152,7 +152,7 @@
                         <li class="page_stretch"
                             style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
+                               href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -172,7 +172,7 @@
                         <li class="page_stretch"
                             style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
+                               href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -195,7 +195,7 @@
                         <li class="page_mainworkout"
                             style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
+                               href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -215,7 +215,7 @@
                         <li class="page_mainworkout"
                             style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
+                               href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -238,7 +238,7 @@
                         <li class="page_cooldown"
                             style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
+                               href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -258,7 +258,7 @@
                         <li class="page_cooldown"
                             style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
-                               href="@if( (auth()->check())){{url('detail/' . $workout->id)}}@else{{url('register')}}@endif">{{$workout->WorkoutTitle}}</a>
+                               href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
                     @endforeach
                 </ul>

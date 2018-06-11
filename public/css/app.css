@@ -2397,7 +2397,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.9);
   line-height: 30px;
   text-align: center;
   border-radius: 3px;
@@ -2411,7 +2411,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.9);
   line-height: 30px;
   text-align: center;
   border-radius: 3px;
@@ -2419,12 +2419,21 @@ form > input {
   z-index: 2;
 }
 
-.prev_mainworkout :hover {
-  color: white;
+.prev_mainworkout:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
-.next_mainworkout :hover {
-  color: white;
+.next_mainworkout:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.workout_link {
+  text-shadow: darkgrey 0 5px 5px;
+}
+
+.workout_link:hover {
+  text-shadow: white 0 5px 5px;
+  color: black;
 }
 
 .slide_list_mainworkout {
