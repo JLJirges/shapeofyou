@@ -54,7 +54,7 @@ Route::get('workout', function () {
 Route::get('register_new_user', 'RegisterController@create_new_user');
 Route::post('register_new_user', 'RegisterController@store_new_user');
 Route::post('edit_user/{id}', 'RegisterController@edit_user');
-Route::post('delete_user/{id}', 'RegisterController@deleteUser');
+Route::post('delete_communitymember/{id}', 'RegisterController@deleteCommunitymember');
 
 Route::get('/backend/user_edit', function () {
     return view('backend/user_edit');

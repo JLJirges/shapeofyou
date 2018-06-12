@@ -137,6 +137,26 @@ class RegisterController extends Controller
         return redirect()->to('/backend/dashboard');
     }
 
+    public function deleteCommunitymember($id)
+    {
+        $user = \DB::table('users')->where('id', $id);
+
+        $user->delete();
+        \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', $id)->delete();
+        \DB::table('diaries')->where('DiaryUserId', $id)->delete();
+        \DB::table('bascomment')->where('UserId', $id)->delete();
+        \DB::table('blogcomment')->where('UserId', $id)->delete();
+        \DB::table('diarycomment')->where('UserId', $id)->delete();
+        \DB::table('workoutcomment')->where('UserId', $id)->delete();
+        \DB::table('user_favorites')->where('UserId', $id)->delete();
+        \DB::table('workouts')->where('BloggerId', $id)->delete();
+        \DB::table('blogs')->where('BloggerId', $id)->delete();
+
+
+        return redirect()->to('/backend/useroverview')->with('global', 'Community member deleted...');
+
+    }
+
 
 
 

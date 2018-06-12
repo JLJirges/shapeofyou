@@ -138,6 +138,5 @@ class SessionsController extends Controller
 
         return redirect()->to('register')->with('global', 'We are sorry to see you go... You will be missed!');
 
-
     }
 }

@@ -26,7 +26,7 @@
                     {{$job->JobTitle}}  </a>
                 <div>
                     <div class="admin_delete_edit">
-                        <a class="edit" class="edit" href="{{url('backend/job_edit/' . $job->id)}}">Edit</a>
+                        <a class="edit" href="{{url('backend/job_edit/' . $job->id)}}">Edit</a>
                         <form action="/delete_job/{{$job->id}}" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <button type="submit" class="delete"></button>
