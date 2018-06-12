@@ -117,6 +117,7 @@ Route::get('BeforeAfterStory', 'BeforeAfterStoryController@create');
 Route::post('upload_photo_one', 'BeforeAfterStoryController@upload_photo_one');
 Route::post('upload_photo_two', 'BeforeAfterStoryController@upload_photo_two');
 Route::post('delete_bas_comment/{bas_id}/{bas_comment_id}', 'BeforeAfterStoryController@deleteBasComment');
+Route::post('delete_bas_entry/{bas_id}', 'BeforeAfterStoryController@deleteBasEntry');
 
 Route::get('beforeafterprofile', function () {
     $data = [
