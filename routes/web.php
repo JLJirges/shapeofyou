@@ -637,7 +637,7 @@ Route::post('upload__blogherophoto', 'BlogsController@upload_blogherophoto');
 Route::post('upload__blogphoto', 'BlogsController@upload_blogphoto');
 Route::post('edit_blog/{id}', 'BlogsController@edit');
 Route::post('delete_blog/{id}', 'BlogsController@deleteBlog');
-
+Route::post('delete_blog_comment/{blog_id}/{blog_comment_id}', 'BlogsController@deleteBlogComment');
 
 Route::get('/backend/storyoverview', function () {
     $data = [

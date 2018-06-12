@@ -66,4 +66,35 @@ class BlogsController extends Controller
         return redirect()->to('/backend/blog_edit/' . $blog->id);
     }
 
+    public function deleteBlogComment($blog_id, $blog_comment_id)
+    {
+
+        \DB::table('blogs')->where('id', $blog_id);
+        $blog_comment = \DB::table('blogcomment')->where([
+            'id'=> $blog_comment_id,
+            'BlogId' => $blog_id
+            ]);
+
+        $blog_comment->delete();
+
+        /*
+        $user->delete();
+        \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', $id)->delete();
+        \DB::table('diaries')->where('DiaryUserId', $id)->delete();
+        \DB::table('bascomment')->where('UserId', $id)->delete();
+        \DB::table('blogcomment')->where('UserId', $id)->delete();
+        \DB::table('diarycomment')->where('UserId', $id)->delete();
+        \DB::table('workoutcomment')->where('UserId', $id)->delete();
+        \DB::table('user_favorites')->where('UserId', $id)->delete();
+        \DB::table('workouts')->where('BloggerId', $id)->delete();
+        \DB::table('blogs')->where('BloggerId', $id)->delete();*/
+
+
+        return redirect()->to('blog/' . $blog_id);
+
+
+    }
+
+
+
 }

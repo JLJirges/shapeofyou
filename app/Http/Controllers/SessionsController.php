@@ -12,18 +12,20 @@ class SessionsController extends Controller
         return view('login');
     }
 
-    public function handlelogin(Request $request){
+    public function handlelogin(Request $request)
+    {
         $credentials = array('username' => $request->username, 'password' => $request->password);
         if (\Auth::attempt($credentials, true)) {
             return redirect()->to('/profile');
-        }else{
+        } else {
             return back()->withErrors([
                 'message' => 'Username/Password do not match'
             ]);
         }
     }
 
-    public function logout(){
+    public function logout()
+    {
         \Auth::logout();
         return redirect()->route('login');
     }
@@ -31,28 +33,32 @@ class SessionsController extends Controller
     public function write_comments($type, $id, $user_id)
     {
         $this->validate(request(), [
-            'comment' => 'required|string|max:500'
+            'comment' => 'required|string|max:500',
+            'created_at' => '',
+            'updated_at' => ''
         ]);
 
-        if ($type == 'blog'){
+        if ($type == 'blog') {
             \App\BlogComments::create([
                 'BlogId' => $id,
                 'UserId' => $user_id,
-                'BlogCommentContent' => request('comment')
+                'BlogCommentContent' => request('comment'),
+                'created_at' => '',
+                'updated_at' => ''
             ]);
-        }else if ($type == 'detail'){
+        } else if ($type == 'detail') {
             \App\WorkoutComments::create([
                 'WorkoutId' => $id,
                 'UserId' => $user_id,
                 'WorkoutCommentContent' => request('comment')
             ]);
-        }else if ($type == 'diary'){
+        } else if ($type == 'diary') {
             \App\DiaryComments::create([
                 'DiaryId' => $id,
                 'UserId' => $user_id,
                 'DiaryCommentContent' => request('comment')
             ]);
-        }else{
+        } else {
             \App\BeforeAfterComments::create([
                 'BASId' => $id,
                 'UserId' => $user_id,
@@ -66,8 +72,9 @@ class SessionsController extends Controller
 
     }
 
-    public function favorite_blog($action, $blog_id, $user_id){
-        if ($action == 'insert'){
+    public function favorite_blog($action, $blog_id, $user_id)
+    {
+        if ($action == 'insert') {
             \DB::table('user_favorites')->insert(
                 [
                     'UserId' => $user_id,
@@ -75,7 +82,7 @@ class SessionsController extends Controller
                     'type_id' => $blog_id
                 ]
             );
-        }else{
+        } else {
             // action == delete
             \DB::table('user_favorites')->where(
                 [
@@ -88,8 +95,9 @@ class SessionsController extends Controller
         return redirect()->to('blog' . '/' . $blog_id);
     }
 
-    public function favorite_workout($action, $workout_id, $user_id){
-        if ($action == 'insert'){
+    public function favorite_workout($action, $workout_id, $user_id)
+    {
+        if ($action == 'insert') {
             \DB::table('user_favorites')->insert(
                 [
                     'UserId' => $user_id,
@@ -97,7 +105,7 @@ class SessionsController extends Controller
                     'type_id' => $workout_id
                 ]
             );
-        }else{
+        } else {
             // action == delete
             \DB::table('user_favorites')->where(
                 [
@@ -109,6 +117,7 @@ class SessionsController extends Controller
         }
         return redirect()->to('detail' . '/' . $workout_id);
     }
+
     public function deleteAccount($id)
     {
         $user = \DB::table('users')->where('id', $id);

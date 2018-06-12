@@ -9,7 +9,7 @@ class BlogComments extends Model
 {
 
     protected $table = 'blogcomment';
-    public $timestamps = false; // added for 10** error
+    public $timestamps = true; // added for 10** error
     public $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.
@@ -20,7 +20,7 @@ class BlogComments extends Model
 
 
     protected $fillable = [
-        'BlogId', 'UserId', 'BlogCommentDate', 'BlogCommentContent'
+        'BlogId', 'UserId', 'BlogCommentDate', 'BlogCommentContent', 'created_at', 'deleted_at'
     ];
 
 }
