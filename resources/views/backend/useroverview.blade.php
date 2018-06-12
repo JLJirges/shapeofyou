@@ -21,7 +21,8 @@
                                href="{{url('profile/' . $user->id)}}">
                                 {{$user->username}}  </a>
                             <div class="admin_blog_interaction">
-                                <form>
+                                <form action="/delete_communitymember/{{$user->id}}" method="post">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <a class="edit" href="{{url('backend/user_edit/' . $user->id)}}">Edit</a>
                                     <button class="delete"></button>
                                 </form>
