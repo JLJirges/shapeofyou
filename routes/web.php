@@ -565,6 +565,7 @@ Route::get('/backend/event_edit/{event_id}', function ($event_id) {
 Route::post('add_faq', 'FAQController@store');
 Route::get('add_faq', 'FAQController@create');
 Route::post('edit_faq/{id}', 'FAQController@edit_faq');
+Route::post('delete_faq/{id}', 'FAQController@delete_faq');
 
 Route::get('/backend/admin_faqs', function () {
     return view('backend/admin_faqs');
@@ -594,6 +595,7 @@ Route::get('/backend/faq_edit/{faq_id}', function ($faq_id) {
 Route::post('add_job', 'JOBController@store');
 Route::get('add_job', 'JOBController@create');
 Route::post('edit_job/{id}', 'JOBController@edit_job');
+Route::post('delete_job/{id}', 'JOBController@delete_job');
 Route::get('/backend/admin_jobs', function () {
 
     return view('backend/admin_jobs');

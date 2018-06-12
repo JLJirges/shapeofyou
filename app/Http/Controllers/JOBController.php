@@ -55,4 +55,13 @@ class JOBController extends Controller
         return redirect()->to('/backend/job_edit/' . $job->id);
     }
 
+    public function delete_job($job_id)
+    {
+
+       $job = \DB::table('jobs')->where('id', $job_id);
+        $job->delete();
+
+        return redirect()->to('/backend/jobs_faq_overview');
+    }
+
 }

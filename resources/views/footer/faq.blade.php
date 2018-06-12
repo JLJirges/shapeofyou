@@ -9,7 +9,7 @@
         <h1>FAQ</h1>
     </div>
 
-        <ul class="faq">
+        <ol class="faq">
             @foreach($faqs as $faq)
             <li>
 
@@ -20,7 +20,7 @@
             </li>
             @endforeach
 
-        </ul>
+        </ol>
 
 
 

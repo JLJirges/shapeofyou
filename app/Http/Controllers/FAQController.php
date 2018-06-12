@@ -48,4 +48,13 @@ class FAQController extends Controller
           return redirect()->to('/backend/faq_edit/' . $faq->id);
       }
 
+    public function delete_faq($faq_id)
+    {
+
+        $faq = \DB::table('faq')->where('id', $faq_id);
+        $faq->delete();
+
+        return redirect()->to('/backend/jobs_faq_overview');
+    }
+
 }
