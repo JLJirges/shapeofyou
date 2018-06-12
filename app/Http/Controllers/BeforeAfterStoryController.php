@@ -107,6 +107,17 @@ class BeforeAfterStoryController extends Controller
         return redirect()->to('beforeafteroverview/beforeafterstories/');
     }
 
+    public function deleteBasFromBackend($bas_id)
+    {
+
+        $bas_entry = \DB::table('beforeafterstories')->where('id', $bas_id);
+        $bas_comments = \DB::table('bascomment')->where('BASId', $bas_id);
+
+        $bas_entry->delete();
+
+        return redirect()->to('backend/storyoverview');
+    }
+
 
 
 }

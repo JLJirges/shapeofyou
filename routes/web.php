@@ -90,6 +90,7 @@ Route::get('profile/', 'ProfileDiaryController@create');
 Route::post('profile/', 'ProfileDiaryController@store');
 Route::post('delete_diary_comment/{diary_id}/{diary_comment_id}', 'ProfileDiaryController@deleteDiaryComment');
 Route::post('delete_diary_entry/{diary_id}', 'ProfileDiaryController@deleteDiaryEntry');
+Route::post('delete_diary_frombackend/{diary_id}', 'ProfileDiaryController@deleteDiaryFromBackend');
 Route::post('upload_photo', 'ProfileDiaryController@upload_photo');
 Route::get('profile/', function () {
     $data = [
@@ -118,6 +119,7 @@ Route::post('upload_photo_one', 'BeforeAfterStoryController@upload_photo_one');
 Route::post('upload_photo_two', 'BeforeAfterStoryController@upload_photo_two');
 Route::post('delete_bas_comment/{bas_id}/{bas_comment_id}', 'BeforeAfterStoryController@deleteBasComment');
 Route::post('delete_bas_entry/{bas_id}', 'BeforeAfterStoryController@deleteBasEntry');
+Route::post('delete_bas_frombackend/{bas_id}', 'BeforeAfterStoryController@deleteBasFromBackend');
 
 Route::get('beforeafterprofile', function () {
     $data = [
@@ -629,6 +631,7 @@ Route::get('add_upcoming_event', 'EventsController@create');
 Route::post('add_upcoming_event', 'EventsController@store');
 Route::post('update_event/{id}', 'EventsController@edit');
 Route::post('delete_event/{id}', 'EventsController@deleteEvent');
+
 
 
 Route::get('add_new_workout', 'WorkoutsController@add_new_workout');

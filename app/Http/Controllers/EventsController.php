@@ -70,10 +70,8 @@ class EventsController extends Controller
     {
         $event = \DB::table('events')->where('id', $id);
 
-        return ($event);
         $event->delete();
-
-        \Session::flash('event_message', 'Delete successful!');
+        
         return redirect()->to('/backend/eventoverview');
 
 

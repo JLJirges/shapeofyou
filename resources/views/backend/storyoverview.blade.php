@@ -16,7 +16,8 @@
                        href="{{url('beforeafter/' . $story->id)}}">
                         {{$story->BeforeAfterStoryTitle}}  </a>
                     <div class="admin_blog_interaction">
-                        <form>
+                        <form action="/delete_bas_frombackend/{{$story->id}}" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <button class="delete"></button>
                         </form>
                     </div>

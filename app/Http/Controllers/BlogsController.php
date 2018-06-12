@@ -80,6 +80,16 @@ class BlogsController extends Controller
         return redirect()->to('blog/' . $blog_id);
     }
 
+    public function deleteBlog($blog_id)
+    {
+
+        $blog = \DB::table('blogs')->where('id', $blog_id);
+
+        $blog->delete();
+
+        return redirect()->to('/backend/blogoverview');
+    }
+
 
 
 }

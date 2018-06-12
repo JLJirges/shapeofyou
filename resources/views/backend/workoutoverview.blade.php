@@ -20,8 +20,10 @@
                                href="{{url('detail/' . $workout->id)}}">
                                 {{$workout->WorkoutTitle}}  </a>
                             <div class="admin_blog_interaction">
-                                <form>
+
+                                <form action="/delete_workout/{{$workout->id}}" method="post">
                                     <a class="edit" href="{{url('backend/workout_edit/' . $workout->id)}}">Edit</a>
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <button class="delete"></button>
                                 </form>
                             </div>

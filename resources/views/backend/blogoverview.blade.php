@@ -23,8 +23,9 @@
                                href="{{url('blog/' . $blog->id)}}">
                                 {{$blog->BlogTitle}}  </a>
                             <div class="admin_blog_interaction">
-                                <form>
+                                <form action="/delete_blog/{{$blog->id}}" method="post">
                                     <a class="edit" href="{{'blog_edit/' . $blog->id}}">Edit</a>
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <button class="delete"></button>
                                 </form>
                             </div>

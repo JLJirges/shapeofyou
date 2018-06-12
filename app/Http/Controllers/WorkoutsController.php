@@ -76,4 +76,14 @@ class WorkoutsController extends Controller
         return redirect()->to('detail/' . $workout_id);
     }
 
+    public function deleteWorkout($workout_id)
+    {
+
+        $workout = \DB::table('workouts')->where('id', $workout_id);
+
+        $workout->delete();
+
+        return redirect()->to('/backend/workoutoverview');
+    }
+
 }
