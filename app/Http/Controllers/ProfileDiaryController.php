@@ -71,4 +71,15 @@ class ProfileDiaryController extends Controller
         return redirect()->to('diary/' . $diary_id);
     }
 
+    public function deleteDiaryEntry($diary_id)
+    {
+
+        $diary_entry = \DB::table('diaries')->where('id', $diary_id);
+        $diary_comments = \DB::table('diarycomment')->where('DiaryId', $diary_id);
+
+        $diary_entry->delete();
+
+        return redirect()->to('usertalkoverview/diaries/');
+    }
+
 }

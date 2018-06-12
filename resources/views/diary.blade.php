@@ -21,9 +21,14 @@
 
             <h2>{{ $diary->DiaryTitle }}</h2>
             <div>
-                <form>
-                    <button class="delete" type="button"></button>
-                </form>
+                @if( ((Auth::user()->isAdmin === 1)) || ((Auth::user()->id === $diary->DiaryUserId)))
+                    <div class="comments_details_edit">
+                        <form action="/delete_diary_entry/{{$diary->id}}" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="delete"></button>
+                        </form>
+                    </div>
+                @endif
             <span>{{$diary->created_at}}</span>
 
             </div>

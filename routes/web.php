@@ -89,6 +89,7 @@ Route::get('/community', function () {
 Route::get('profile/', 'ProfileDiaryController@create');
 Route::post('profile/', 'ProfileDiaryController@store');
 Route::post('delete_diary_comment/{diary_id}/{diary_comment_id}', 'ProfileDiaryController@deleteDiaryComment');
+Route::post('delete_diary_entry/{diary_id}', 'ProfileDiaryController@deleteDiaryEntry');
 Route::post('upload_photo', 'ProfileDiaryController@upload_photo');
 Route::get('profile/', function () {
     $data = [
