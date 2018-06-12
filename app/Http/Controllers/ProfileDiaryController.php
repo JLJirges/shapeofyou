@@ -57,4 +57,18 @@ class ProfileDiaryController extends Controller
         return redirect()->to('/profile');
     }
 
+    public function deleteDiaryComment($diary_id, $diary_comment_id)
+    {
+
+        \DB::table('diaries')->where('id', $diary_id);
+        $diary_comment = \DB::table('diarycomment')->where([
+            'id'=> $diary_comment_id,
+            'DiaryId' => $diary_id
+        ]);
+
+        $diary_comment->delete();
+
+        return redirect()->to('diary/' . $diary_id);
+    }
+
 }

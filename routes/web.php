@@ -88,6 +88,7 @@ Route::get('/community', function () {
 
 Route::get('profile/', 'ProfileDiaryController@create');
 Route::post('profile/', 'ProfileDiaryController@store');
+Route::post('delete_diary_comment/{diary_id}/{diary_comment_id}', 'ProfileDiaryController@deleteDiaryComment');
 Route::post('upload_photo', 'ProfileDiaryController@upload_photo');
 Route::get('profile/', function () {
     $data = [
@@ -114,6 +115,7 @@ Route::post('BeforeAfterStory', 'BeforeAfterStoryController@store');
 Route::get('BeforeAfterStory', 'BeforeAfterStoryController@create');
 Route::post('upload_photo_one', 'BeforeAfterStoryController@upload_photo_one');
 Route::post('upload_photo_two', 'BeforeAfterStoryController@upload_photo_two');
+Route::post('delete_bas_comment/{bas_id}/{bas_comment_id}', 'BeforeAfterStoryController@deleteBasComment');
 
 Route::get('beforeafterprofile', function () {
     $data = [
@@ -629,6 +631,8 @@ Route::get('add_new_workout', 'WorkoutsController@add_new_workout');
 Route::post('add_new_workout', 'WorkoutsController@store');
 Route::post('edit_workout/{id}', 'WorkoutsController@edit');
 Route::post('delete_workout/{id}', 'WorkoutsController@deleteWorkout');
+Route::post('delete_workout_comment/{workout_id}/{id}', 'WorkoutsController@deleteWorkoutComment');
+
 
 Route::get('create', 'BlogsController@create');
 Route::post('create', 'BlogsController@store');

@@ -72,10 +72,12 @@
                             </div>
                         </a>
                         <span>{{ $diary_comment->DiaryCommentDate}}</span>
-                        @if( (auth()->check()) && (Auth::user()->isAdmin === 1) )
+                        @if( ((auth()->check()) && (Auth::user()->isAdmin === 1)) || ((Auth::user()->id === $diary_comment->UserId)))
                             <div class="comments_details_edit">
-                                <span class="delete"></span>
-                                <span class="report"></span>
+                                <form action="/delete_diary_comment/{{$diary->id}}/{{$diary_comment->id}}" method="post">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <button type="submit" class="delete"></button>
+                                </form>
                             </div>
                         @else
                             <div class="comments_details_edit">

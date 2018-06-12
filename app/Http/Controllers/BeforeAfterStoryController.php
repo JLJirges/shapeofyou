@@ -82,7 +82,19 @@ class BeforeAfterStoryController extends Controller
     }
 
 
+    public function deleteBasComment($bas_id, $bas_comment_id)
+    {
 
+        \DB::table('beforeafterestories')->where('id', $bas_id);
+        $bas_comment = \DB::table('bascomment')->where([
+            'id'=> $bas_comment_id,
+            'BASId' => $bas_id
+        ]);
+
+        $bas_comment->delete();
+
+        return redirect()->to('beforeafter/' . $bas_id);
+    }
 
 
 

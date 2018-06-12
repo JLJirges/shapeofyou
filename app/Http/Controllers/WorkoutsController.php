@@ -62,4 +62,18 @@ class WorkoutsController extends Controller
         return redirect()->to('/backend/workout_edit/' . $workout->id);
     }
 
+    public function deleteWorkoutComment($workout_id, $workout_comment_id)
+    {
+
+        \DB::table('workouts')->where('id', $workout_id);
+        $workout_comment = \DB::table('workoutcomment')->where([
+            'id'=> $workout_comment_id,
+            'WorkoutId' => $workout_id
+        ]);
+
+        $workout_comment->delete();
+
+        return redirect()->to('detail/' . $workout_id);
+    }
+
 }
