@@ -108,7 +108,7 @@
                 <ul class="slide_list_warmup square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 1)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_warmup"
-                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
+                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
@@ -128,7 +128,7 @@
                 <ul class="slide_list_warmup square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 1)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_warmup"
-                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
+                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
@@ -150,7 +150,7 @@
                 <ul class="slide_list_stretch square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 2)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_stretch"
-                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
+                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
@@ -170,7 +170,7 @@
                 <ul class="slide_list_stretch square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 2)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_stretch"
-                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
+                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
@@ -193,7 +193,7 @@
                 <ul class="slide_list_mainworkout square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 3)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_mainworkout"
-                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
+                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
@@ -213,7 +213,7 @@
                 <ul class="slide_list_mainworkout square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 3)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_mainworkout"
-                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
+                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
@@ -236,7 +236,7 @@
                 <ul class="slide_list_cooldown square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 2)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_cooldown"
-                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
+                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>
@@ -256,7 +256,7 @@
                 <ul class="slide_list_cooldown square_box_section">
                     @foreach($workouts->where('WorkoutCategory', 2)->whereIn('id', $fave_workout_ids) as $workout)
                         <li class="page_cooldown"
-                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
+                            style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">{{$workout->WorkoutTitle}}</a>
                         </li>

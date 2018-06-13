@@ -14,8 +14,6 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label>Workout Title</label>
         <input type="text" name="WorkoutTitle" placeholder="{{$workout->WorkoutTitle}}">
-        <label>Workout Box Image</label>
-        <input type="file" name="WorkoutBoxImage">
         <label>Insert Hero Image</label>
         <input type="file" name="WorkoutHeroImage">
         <label>Workout Content One</label>

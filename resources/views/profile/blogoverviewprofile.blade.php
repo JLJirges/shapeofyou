@@ -111,7 +111,7 @@
 
         <div class="square_box_section">
             @foreach($blogs-> whereIn('id', $fave_blog_ids) as $fave_blog)
-                <div style="background-image:url({{asset('images/blogs/' . $fave_blog->BlogBoxImage)}});background-size:cover; background-position:center;">
+                <div style="background-image:url({{asset('images/blogs/' . $fave_blog->BlogHeroImage)}});background-size:cover; background-position:center;">
 
                     <a class="box_link"
                        href="{{url('blog/' . $fave_blog->id)}}">
@@ -122,7 +122,7 @@
     @elseif(($user->username !== \Auth::user()->username)&&($fave_blog_ids))
         <div class="square_box_section">
             @foreach($blogs-> whereIn('id', $fave_blog_ids) as $fave_blog)
-                <div style="background-image:url({{asset('images/blogs/' . $fave_blog->BlogBoxImage)}});background-size:cover; background-position:center;">
+                <div style="background-image:url({{asset('images/blogs/' . $fave_blog->BlogHeroImage)}});background-size:cover; background-position:center;">
 
                     <a class="box_link"
                        href="{{url('blog/' . $fave_blog->id)}}">

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class RegisterController extends Controller
 {
@@ -68,26 +71,35 @@ class RegisterController extends Controller
 
     public function edit(Request $request)
     {
-        $this->validate(request(), [
-            'firstname' => 'string|max:50',
-            'lastname' => 'string|max:50',
-            'username' => 'string|max:50',
-            'email' => 'email',
-            'password' => 'min:4|confirmed',
-            'mq' => 'string',
-            'profilepic' => '',
-            'birthdate' => 'date',
-            'origin' => 'string|max:50',
-            'UserDiet' => '',
-            'UserGoal' => '',
-            'UserShape' => '',
-            'BloggerBio' => 'max: 1000',
-            'AdminText' => 'max: 1000'
-        ]);
+
+            $this->validate(request(), [
+                'firstname' => 'string|max:50',
+                'lastname' => 'string|max:50',
+                'username' => 'string|max:50',
+                'email' => 'email',
+                'password' => 'min:4|confirmed',
+                'mq' => 'string',
+                'profilepic' => '',
+                'birthdate' => 'date',
+                'origin' => 'string|max:50',
+                'UserDiet' => '',
+                'UserGoal' => '',
+                'UserShape' => '',
+                'BloggerBio' => 'max: 1000',
+                'AdminText' => 'max: 1000'
+            ]);
+      /*  if ($request->hasFile('profilepic')) {
+
+            $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
+
+            $filename = $request->file('profilepic')->getClientOriginalName();
+*/
+
 
         $user = User::findOrFail(\Auth::user()->id);
         $user->update($request->all());
         return redirect()->to('/settingsprofile');
+       /* } */
     }
 
     public function edit_user(Request $request, $id)
@@ -112,29 +124,6 @@ class RegisterController extends Controller
         $user = User::findOrFail($id);
         $user->update(array_filter($request->all()));
         return redirect()->to('/backend/user_edit/' . $user->id);
-    }
-
-    public function upload_photo(Request $request)
-    {
-
-        if ($request->hasFile('ProfileToUpload')) {
-            // Read image
-            $image = $request->file('ProfileToUpload');
-
-
-
-            // Get filename
-            $filename = $image->getClientOriginalName();
-
-            // Insert filename in database
-            \DB::table('users')
-                ->where('id', \Auth::user()->id)
-                ->update(['profilepic' => $filename]);
-
-            // Save  Image locally
-            $request->ProfileToUpload->move(public_path('images/uploads/'), $filename);
-        }
-        return redirect()->to('/backend/dashboard');
     }
 
     public function deleteCommunitymember($id)

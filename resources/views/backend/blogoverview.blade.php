@@ -15,7 +15,7 @@
 
 
             @if($blog->BlogBoxImage)
-                <div style="background-image:url({{asset('images/blogs/' . $blog->BlogBoxImage)}});background-size:cover; background-position:center;">
+                <div style="background-image:url({{asset('images/blogs/' . $blog->BlogHeroImage)}});background-size:cover; background-position:center;">
                     @else
                         <div style="background-image:url({{asset('images/blogs/' . $blog->BlogHeroImage)}});background-size:cover; background-position:center;">
                             @endif

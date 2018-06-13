@@ -11,11 +11,7 @@
 
     <div class="square_box_section">
         @foreach($workouts as $workout)
-            @if($workout->WorkoutBoxImage)
-                <div style="background-image:url({{asset('images/workout' . $workout->WorkoutBoxImage)}});background-size:cover; background-position:center;">
-                    @else
-                        <div class="community_box_diaries">
-                            @endif
+                <div style="background-image:url({{asset('images/workout/' . $workout->WorkoutImage)}});background-size:cover; background-position:center;">
                             <a class="box_link"
                                href="{{url('detail/' . $workout->id)}}">
                                 {{$workout->WorkoutTitle}}  </a>

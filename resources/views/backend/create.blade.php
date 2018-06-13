@@ -59,12 +59,10 @@
         </div>
     @endif
 
-    <form class="register_form" method="POST" action="/create">
+    <form class="register_form" method="POST" action="/create" files="true" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label>Blog Title</label>
         <input type="text" name="BlogTitle" placeholder="CAPITAL LETTERS">
-        <label>Insert Box Image</label>
-        <input type="file" name="BlogBoxImage">
         <label>Insert Hero Image</label>
         <input type="file" name="BlogHeroImage">
         <label>Blog Content One</label>
@@ -110,12 +108,10 @@
         </div>
     @endif
 
-    <form class="register_form" method="POST" action="/add_new_workout">
+    <form class="register_form" method="POST" action="/add_new_workout" files="true" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label>Workout Title</label>
         <input type="text" name="WorkoutTitle" placeholder="CAPITAL LETTERS">
-        <label>Workout Box Image</label>
-        <input type="file" name="WorkoutBoxImage">
         <label>Insert Hero Image</label>
         <input type="file" name="WorkoutHeroImage">
         <label>Workout Content One</label>

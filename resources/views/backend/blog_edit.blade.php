@@ -13,8 +13,6 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label>Blog Title</label>
         <input type="text" name="BlogTitle" placeholder="{{$blog->BlogTitle}}">
-        <label>Insert Box Image</label>
-        <input type="file" name="BlogBoxImage">
         <label>Insert Hero Image</label>
         <input type="file" name="BlogHeroImage">
         <label>Blog Content One</label>

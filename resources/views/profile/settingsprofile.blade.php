@@ -165,10 +165,10 @@
 
         </div>
         <div>
-            <form class="edit_profile_form" method="post" action="/upload_photo" enctype="multipart/form-data">
+            <form class="edit_profile_form" method="post" action="/upload_profilepic" files="true" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Profile Picture</label><br>
-                <input type="file" name="ProfileToUpload" id="ProfileToUpload">
+                <input type="file" name="profilepic" id="profilepic">
                 <button type="submit" class="white_button">Change Profile Picture</button>
             </form>
             <form class="edit_profile_form" method="post" action="/edit">

@@ -60,16 +60,16 @@
             <div class="profile_diary_section">
 
                 <h3>Write a new Before/After Story</h3>
-                <form class="diary_form" method="post" action="/BeforeAfterStory">
+                <form class="diary_form" method="post" action="/BeforeAfterStory" files="true" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <label>Write a title</label>
                     <input type="text" name="BeforeAfterStoryTitle" placeholder="I am the Title"><br>
                     <label>Write your entry</label>
                     <input type="text" name="BeforeAfterStoryContent" placeholder="Time to tell a story...">
                     <label>Upload BEFORE Image</label><br>
-                    <input type="file" name="StoryOneToUpload" id="StoryOneToUpload">
+                    <input type="file" name="BeforeAfterStoryImageOne" id="BeforeAfterStoryImageOne">
                     <label>Upload AFTER Image</label><br>
-                    <input type="file" name="StoryTwoToUpload" id="StoryTwoToUpload">
+                    <input type="file" name="BeforeAfterStoryImageTwo" id="BeforeAfterStoryImageTwo">
                     <button type="submit" value="Post Story" name="BeforeAfterStory" class="white_button">Post Story
                     </button>
                 </form>
@@ -111,7 +111,7 @@
             @if(($user->id === Auth::user()->id) && ($bas->where('BeforeAfterStoryUserId', Auth::user()->id)->count() > 0))
                 <div class="square_box_section">
                     @foreach($bas->where('BeforeAfterStoryUserId', Auth::user()->id) as $entry)
-                        <div style="background-image:url({{asset('images/bas/' . $entry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+                        <div style="background-image:url({{asset('images/uploads_stories/' . $entry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
 
 
                             <a class="box_link"
@@ -125,7 +125,7 @@
                         <div class="square_box_section">
                             @foreach($bas->where('BeforeAfterStoryUserId', $user->id) as $basentry)
 
-                                <div style="background-image:url({{asset('images/bas/' . $basentry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+                                <div style="background-image:url({{asset('images/uploads_stories/' . $basentry->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
 
                                     <a class="box_link"
                                        href="{{url('beforeafter/' . $basentry->id)}}">

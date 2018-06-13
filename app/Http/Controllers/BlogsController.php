@@ -6,6 +6,10 @@ use App\Blogs;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Controller;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+
 
 class BlogsController extends Controller
 {
@@ -15,7 +19,7 @@ class BlogsController extends Controller
         return view('/backend/create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
 
         $this->validate(request(), [
@@ -24,19 +28,34 @@ class BlogsController extends Controller
             'BloggerId' => '',
             'BlogContentOne' => 'required|string|max:3000',
             'BlogContentTwo' => 'required|string|max:3000',
+            'BlogHeroImage' => 'required',
+            'BlogImage' => '',
             'created_at' => '',
             'updated_at' => ''
+        ]);
 
-        ]);
-        Blogs::create([
-            'BlogTitle' => request('BlogTitle'),
-            'BlogCategory' => request('BlogCategory'),
-            'BloggerId' => request('BloggerId'),
-            'BlogContentOne' => request('BlogContentOne'),
-            'BlogContentTwo' => request('BlogContentTwo'),
-            'created_at' => '',
-            'updated_at' => ''
-        ]);
+        if (($request->hasFile('BlogHeroImage')) && ($request->hasFile('BlogImage'))) {
+
+            $request->file('BlogHeroImage')->move(("images\\blogs\\"), $request->file('BlogHeroImage')->getClientOriginalName());
+            $filename_bloghero = $request->file('BlogHeroImage')->getClientOriginalName();
+            $request->file('BlogImage')->move(("images\\blogs\\"), $request->file('BlogImage')->getClientOriginalName());
+            $filename_blogimage = $request->file('BlogImage')->getClientOriginalName();
+
+
+            Blogs::create([
+                'BlogTitle' => request('BlogTitle'),
+                'BlogCategory' => request('BlogCategory'),
+                'BloggerId' => request('BloggerId'),
+                'BlogContentOne' => request('BlogContentOne'),
+                'BlogContentTwo' => request('BlogContentTwo'),
+                'BlogBoxImage' => $filename_bloghero,
+                'BlogHeroImage' => $filename_bloghero,
+                'BlogImage' => $filename_blogimage,
+                'created_at' => '',
+                'updated_at' => ''
+            ]);
+
+        }
         \Session::flash('newblog_error_message', 'Blog upload successful!');
 
         return redirect()->to('/backend/create');

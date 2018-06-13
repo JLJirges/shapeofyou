@@ -38,7 +38,7 @@
         <div class="workout_entry_box">
 
             <div>
-                <img src="{{asset('/images/uploads/' . $diary->DiaryHeroImage)}}" alt="diary image">
+                <img src="{{asset('/images/uploads_diaries/' . $diary->DiaryHeroImage)}}" alt="diary image">
 
                 <div class="workout_entry_text">
 

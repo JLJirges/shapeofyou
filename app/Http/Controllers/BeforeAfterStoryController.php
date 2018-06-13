@@ -6,6 +6,9 @@ use App\BeforeAfterStory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class BeforeAfterStoryController extends Controller
 {
@@ -16,70 +19,39 @@ class BeforeAfterStoryController extends Controller
         return view('/beforeafterprofile');
     }
 
-    public function store()
+    public function store(request $request)
     {
 
         $this->validate(request(), [
             'BeforeAfterStoryTitle' => 'required|string|max:20',
             'BeforeAfterStoryContent' => 'required|string|max:2000',
-            'StoryOneToUpload' => 'required',
-            'StoryTwoToUpload' => 'required'
-
+            'BeforeAfterStoryImageOne' => 'required',
+            'BeforeAfterStoryImageTwo' => 'required'
 
         ]);
-        BeforeAfterStory::create([
-            'BeforeAfterStoryTitle' => request('BeforeAfterStoryTitle'),
-            'BeforeAfterStoryContent' => request('BeforeAfterStoryContent'),
-            'BeforeAfterStoryImageOne' => request('StoryOneToUpload'),
-            'BeforeAfterStoryImageTwo' => request('StoryTwoToUpload'),
-            'BeforeAfterStoryUserId' => Auth::id()
-        ]);
+
+        if (($request->hasFile('BeforeAfterStoryImageOne')) && ($request->hasFile('BeforeAfterStoryImageTwo'))) {
+
+            $request->file('BeforeAfterStoryImageOne')->move(("images\\uploads_stories\\"), $request->file('BeforeAfterStoryImageOne')->getClientOriginalName());
+            $filename_one = $request->file('BeforeAfterStoryImageOne')->getClientOriginalName();
+            $request->file('BeforeAfterStoryImageTwo')->move(("images\\uploads_stories\\"), $request->file('BeforeAfterStoryImageTwo')->getClientOriginalName());
+            $filename_two = $request->file('BeforeAfterStoryImageTwo')->getClientOriginalName();
+
+            BeforeAfterStory::create([
+                'BeforeAfterStoryTitle' => request('BeforeAfterStoryTitle'),
+                'BeforeAfterStoryContent' => request('BeforeAfterStoryContent'),
+                'BeforeAfterStoryImageOne' => $filename_one,
+                'BeforeAfterStoryImageTwo' => $filename_two,
+                'BeforeAfterStoryUserId' => Auth::id()
+            ]);
+
+        }
 
         \Session::flash('flash_message', 'Story upload successful!');
         return redirect()->to('/beforeafterprofile');
     }
 
-    public function upload_photo_one(Request $request)
-    {
 
-        if ($request->hasFile('StoryOneToUpload')) {
-            // Read image
-            $image = $request->file('StoryOneToUpload');
-
-            // Get filename
-            $filename = $image->getClientOriginalName();
-
-            // Insert filename in database
-            \DB::table('beforeafterstories')
-                ->where('BeforeAfterStoryUserId', \Auth::user()->id)
-                ->update(['BeforeAfterStoryImageOne' => $filename]);
-
-            // Save  Image locally
-            $request->StoryOneToUpload->move(public_path('images/bas/'), $filename);
-        }
-
-    }
-
-    public function upload_photo_two(Request $request)
-    {
-
-        if ($request->hasFile('StoryTwoToUpload')) {
-            // Read image
-            $image = $request->file('StoryTwoToUpload');
-
-            // Get filename
-            $filename = $image->getClientOriginalName();
-
-            // Insert filename in database
-            \DB::table('beforeafterstories')
-                ->where('BeforeAfterStoryUserId', \Auth::user()->id)
-                ->update(['BeforeAfterStoryImageTwo' => $filename]);
-
-            // Save  Image locally
-            $request->StoryTwoToUpload->move(public_path('images/bas/'), $filename);
-        }
-        return redirect()->to('/beforeafterprofile');
-    }
 
 
     public function deleteBasComment($bas_id, $bas_comment_id)

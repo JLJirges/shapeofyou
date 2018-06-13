@@ -70,9 +70,10 @@ Route::get('/backend/user_edit/{user_id}', function ($user_id) {
     return view('backend/user_edit')->with($data);
 });
 
-Route::post('/upload_photo', 'RegisterController@upload_photo');
+
 Route::get('register', 'RegisterController@create');
 Route::post('register', 'RegisterController@store');
+Route::post('/upload_profilepic', 'RegisterController@edit');
 Route::post('edit', 'RegisterController@edit');
 
 
@@ -114,10 +115,11 @@ Route::get('profile/{username}', function ($username) {
     return view('profile/profile')->with($data);
 });
 
+Route::post('BeforeAfterStoryImageOne', 'BeforeAfterStoryController@store');
+Route::post('BeforeAfterStoryImageTwo', 'BeforeAfterStoryController@store');
 Route::post('BeforeAfterStory', 'BeforeAfterStoryController@store');
 Route::get('BeforeAfterStory', 'BeforeAfterStoryController@create');
-Route::post('upload_photo_one', 'BeforeAfterStoryController@upload_photo_one');
-Route::post('upload_photo_two', 'BeforeAfterStoryController@upload_photo_two');
+
 Route::post('delete_bas_comment/{bas_id}/{bas_comment_id}', 'BeforeAfterStoryController@deleteBasComment');
 Route::post('delete_bas_entry/{bas_id}', 'BeforeAfterStoryController@deleteBasEntry');
 Route::post('delete_bas_frombackend/{bas_id}', 'BeforeAfterStoryController@deleteBasFromBackend');
@@ -635,18 +637,19 @@ Route::post('delete_event/{id}', 'EventsController@deleteEvent');
 
 
 
-Route::get('add_new_workout', 'WorkoutsController@add_new_workout');
+Route::post('WorkoutHeroImage', 'WorkoutsController@store');
+Route::post('WorkoutImage', 'WorkoutsController@store');
 Route::post('add_new_workout', 'WorkoutsController@store');
 Route::post('edit_workout/{id}', 'WorkoutsController@edit');
 Route::post('delete_workout/{id}', 'WorkoutsController@deleteWorkout');
 Route::post('delete_workout_comment/{workout_id}/{id}', 'WorkoutsController@deleteWorkoutComment');
 
 
-Route::get('create', 'BlogsController@create');
+Route::post('BlogHeroImage', 'BlogsController@store');
+Route::post('BlogImage', 'BlogsController@store');
 Route::post('create', 'BlogsController@store');
-Route::post('upload__blogboxphoto', 'BlogsController@upload_blogboxphoto');
-Route::post('upload__blogherophoto', 'BlogsController@upload_blogherophoto');
-Route::post('upload__blogphoto', 'BlogsController@upload_blogphoto');
+Route::get('create', 'BlogsController@create');
+
 Route::post('edit_blog/{id}', 'BlogsController@edit');
 Route::post('delete_blog/{id}', 'BlogsController@deleteBlog');
 Route::post('delete_blog_comment/{blog_id}/{blog_comment_id}', 'BlogsController@deleteBlogComment');

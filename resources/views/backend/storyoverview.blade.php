@@ -11,7 +11,7 @@
 
     <div class="square_box_section">
         @foreach($stories as $story)
-                <div style="background-image:url({{asset('images/uploads/' . $story->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+                <div style="background-image:url({{asset('images/uploads_stories/' . $story->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
                     <a class="box_link"
                        href="{{url('beforeafter/' . $story->id)}}">
                         {{$story->BeforeAfterStoryTitle}}  </a>
