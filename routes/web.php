@@ -86,12 +86,13 @@ Route::get('/community', function () {
     return view('community');
 });
 
-Route::get('profile/', 'ProfileDiaryController@create');
 Route::post('profile/', 'ProfileDiaryController@store');
+Route::post('DiaryHeroImage/{request}', 'ProfileDiaryController@store');
+Route::get('profile/', 'ProfileDiaryController@create');
+
 Route::post('delete_diary_comment/{diary_id}/{diary_comment_id}', 'ProfileDiaryController@deleteDiaryComment');
 Route::post('delete_diary_entry/{diary_id}', 'ProfileDiaryController@deleteDiaryEntry');
 Route::post('delete_diary_frombackend/{diary_id}', 'ProfileDiaryController@deleteDiaryFromBackend');
-Route::post('upload_photo', 'ProfileDiaryController@upload_photo');
 Route::get('profile/', function () {
     $data = [
         'user' => Auth::user(),

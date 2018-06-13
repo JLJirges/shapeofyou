@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <div class="h1_bg">
         <h1>{{$diary_author->username}}'s Diary</h1>
     </div>

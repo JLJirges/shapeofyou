@@ -6,6 +6,7 @@ use App\Diary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ProfileDiaryController extends Controller
 {
@@ -15,19 +16,25 @@ class ProfileDiaryController extends Controller
         return view('/profile');
     }
 
-    public function store()
+
+    public function store(Request $request)
     {
+        if($request->hasFile('DiaryHeroImage')){
+             $request->file('DiaryHeroImage')->move("D:\\test\\", $request->file('DiaryHeroImage')->getClientOriginalName());
+
+        }
+
 
         $this->validate(request(), [
             'DiaryTitle' => 'required|string|max:20',
             'DiaryContent' => 'required|string|max:5000',
-            'DiaryHeroImage' => ''
+            'DiaryHeroImage' => 'required'
 
         ]);
         Diary::create([
             'DiaryTitle' => request('DiaryTitle'),
             'DiaryContent' => request('DiaryContent'),
-            'DiaryHeroImage' => '',
+            'DiaryHeroImage' => request('DiaryHeroImage'),
             'DiaryUserId' => Auth::id()
         ]);
 
@@ -36,26 +43,7 @@ class ProfileDiaryController extends Controller
     }
 
 
-    public function upload_photo(Request $request)
-    {
 
-        if ($request->hasFile('DiaryToUpload')) {
-            // Read image
-            $image = $request->file('DiaryToUpload');
-
-            // Get filename
-            $filename = $image->getClientOriginalName();
-
-            // Insert filename in database
-            \DB::table('diaries')
-                ->where('DiaryUserId', \Auth::user()->id)
-                ->update(['DiaryHeroImage' => $filename]);
-
-            // Save  Image locally
-            $request->DiaryToUpload->move(public_path('images/uploads/'), $filename);
-        }
-        return redirect()->to('/profile');
-    }
 
     public function deleteDiaryComment($diary_id, $diary_comment_id)
     {

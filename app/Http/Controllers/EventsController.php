@@ -71,7 +71,7 @@ class EventsController extends Controller
         $event = \DB::table('events')->where('id', $id);
 
         $event->delete();
-        
+
         return redirect()->to('/backend/eventoverview');
 
 

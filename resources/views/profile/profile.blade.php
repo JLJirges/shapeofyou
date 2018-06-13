@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <div class="h1_bg">
         <h1>MY PROFILE</h1>
     </div>
@@ -122,14 +123,9 @@
 
                 <div class="profile_info_section_personal_details">
                     <div>
-                        <!--    <p>NAME:</p>
-                        <p>AGE:</p>-->
                         <p>ORIGIN:</p>
                     </div>
                     <div>
-                    <!--    <p> {{ $user->username }} </p>
-                       <p> @if($user->birthdate){{ $user->birthdate }} @else no birth date
-                            defined @endif </p>-->
                         <p> @if($user->origin){{ $user->origin }} @else no origin defined @endif</p>
                     </div>
                 </div>
@@ -143,7 +139,7 @@
             <div class="profile_diary_section">
 
                 <h3>Write a new Diary Entry</h3>
-                <form class="diary_form" method="POST" action="/profile">
+                <form class="diary_form" method="POST" action="/profile" files="true" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="DiaryUserId" value="{{Auth::user()->id}}">
                     <label>Write a title</label>
@@ -151,7 +147,7 @@
                     <label>Write your entry</label>
                     <input type="text" name="DiaryContent" placeholder="Time to write a diary...">
                     <label>Upload Image</label><br>
-                    <input type="file" name="DiaryToUpload" id="DiaryToUpload">
+                    <input type="file" name="DiaryHeroImage" id="DiaryHeroImage">
                     <button type="submit" value="Write Diary" name="Diary" class="white_button">Write in my Diary
                     </button>
                 </form>
@@ -170,6 +166,7 @@
             <div class="square_box_section">
                 @foreach($diary->where('DiaryUserId', Auth::user()->id) as $entry)
                     @if($entry->DiaryHeroImage)
+
                         <div style="background-image:url({{asset('images/uploads/' . $entry->DiaryHeroImage)}});background-size:cover; background-position:center;">
                             @else
                                 <div class="community_box_diaries">
@@ -180,7 +177,7 @@
                                         {{$entry->DiaryTitle}}  </a>
                                 </div>
                                 @endforeach
-                        </div>
+                            </div>
 
                     @else
                         <div class="square_box_section">

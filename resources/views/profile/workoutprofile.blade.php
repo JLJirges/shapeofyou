@@ -181,9 +181,9 @@
         </div>
     @endif
 
-
     <!-- my profile -->
     @if(($user->username === Auth::user()->username) && ($fave_workout_ids) && ($workouts->where('WorkoutCategory', 3)->whereIn('id', $fave_workout_ids)->count() >0))
+
         <div class="profile_section_workout">
             <div class="title_bg">
                 <h2>Main Workout</h2>
