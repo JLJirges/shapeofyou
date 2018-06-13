@@ -883,8 +883,6 @@ ul.tabs li.current {
 .workout_blog_bg {
   background: url("../images/workout/workout_bg.png") fixed;
   background-size: cover;
-  margin: 0;
-  height: auto;
 }
 
 .box_whatequipment {
