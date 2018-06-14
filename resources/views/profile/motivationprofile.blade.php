@@ -39,12 +39,20 @@
 
         <div class="profile_diary_section">
 
-            <h2>Write a motivational Letter</h2>
+            <h2>Write a motivational Letter...</h2>
+            <p>...and decide when to receive it! We all have some troubles to stay focused or lack motivation sometimes.
+                And who knows better to motivate oneself than oneself? Exactly this is what this Letter is about! Write
+                down why you don't want you future self to give up! Remind your future self why you started! You know
+                best if you need one motivation per week, month or from time to time. Whenever you feel like it: write
+                and motivate yourself! You will receive the letter per email but it will also show up here, if you
+                scroll down. This letter is private and won't be sharable with other members!</p>
             <form class="diary_form" method="post" enctype="multipart/form-data">
                 <label>Write a title</label>
                 <input type="text" name="title" placeholder="I am the Title"><br>
                 <label>Write your entry</label>
-                <input type="text" name="diarytext" placeholder="Remeber why you started...">
+                <input type="text" name="title" placeholder="I am the Title"><br>
+                <label>When to receive?</label>
+                <input type="date" name="ReceiveLetter">
                 <label>Upload Image</label><br>
                 <input type="file" name="DiaryfileToUpload" id="DiaryfileToUpload">
                 <button type="submit" value="Send Letter" name="sendletter" class="profile_button">Send Letter</button>

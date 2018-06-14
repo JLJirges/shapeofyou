@@ -60,7 +60,12 @@
             <div class="profile_diary_section">
 
                 <h3>Write a new Before/After Story</h3>
-                <form class="diary_form" method="post" action="/BeforeAfterStory" files="true" enctype="multipart/form-data">
+                <p>Write your Before/After-Story and share your progress with the community. It's a good opportunity to
+                    motivate other and/or to get some more tips from other members and our professionals! Every little
+                    progress is an awesome progress! Share it! (This Before/After-Story will be public to community
+                    members)</p>
+                <form class="diary_form" method="post" action="/BeforeAfterStory" files="true"
+                      enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <label>Write a title</label>
                     <input type="text" name="BeforeAfterStoryTitle" placeholder="I am the Title"><br>
@@ -131,9 +136,9 @@
                                        href="{{url('beforeafter/' . $basentry->id)}}">
                                         {{$basentry->BeforeAfterStoryTitle}}  </a>
                                 </div>
-                                    @endforeach
+                            @endforeach
 
-                                @endif
+                            @endif
                         </div>
                 </div>
     </div>

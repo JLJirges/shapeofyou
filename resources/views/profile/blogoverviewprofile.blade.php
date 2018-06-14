@@ -65,8 +65,8 @@
                     Blogs could
                     disappear.</p>
                 <img src="{{ asset ('images/unclicked_fav_icon.png')}}" alt="unclicked fav icon" width="80" height="80">
-                <p class="explain_fav_blogs_p">Have you ever noticed this strange Icon and wondered what it might do?
-                    No need to be afraid, you won*t lose your heart to a person, who gives it back after a second. This
+                <p class="explain_fav_blogs_p">Have you ever noticed this strange Icon next or above a blog entry in Superfoods or Workouts and wondered what it might do?
+                    No need to be afraid, you won't lose your heart to a person, who gives it back after a second. This
                     Icon is meant for real love -
                     Nutrition Love! Do you have Blogs you'd like to remember? Simply click the item and...</p>
                 <img src="{{ asset ('images/fav_icon.png')}}" alt="fav icon" width="80" height="80">

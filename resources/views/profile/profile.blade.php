@@ -135,10 +135,13 @@
 
     <div class="profile_section profile_section_2">
         @if($user->username === Auth::user()->username)
-
             <div class="profile_diary_section">
 
                 <h3>Write a new Diary Entry</h3>
+                <p>Write in your Diary to share your experience today! Either if it's about food & recipes, your workout,
+                    (lack of) motivation or your new sports experience with your big brother, who did not as well as you -
+                    whatever it is: Share your thoughts! (This Diary will be public to community
+                    members)</p>
                 <form class="diary_form" method="POST" action="/profile" files="true" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="DiaryUserId" value="{{Auth::user()->id}}">
@@ -167,7 +170,7 @@
                 @foreach($diary->where('DiaryUserId', Auth::user()->id) as $entry)
                     @if($entry->DiaryHeroImage)
 
-                        <div style="background-image:url({{asset('images/uploads/' . $entry->DiaryHeroImage)}});background-size:cover; background-position:center;">
+                        <div style="background-image:url({{asset('images/uploads_diaries/' . $entry->DiaryHeroImage)}});background-size:cover; background-position:center;">
                             @else
                                 <div class="community_box_diaries">
                                     @endif
@@ -177,13 +180,13 @@
                                         {{$entry->DiaryTitle}}  </a>
                                 </div>
                                 @endforeach
-                            </div>
+                        </div>
 
                     @else
                         <div class="square_box_section">
                             @foreach($diary->where('DiaryUserId', $user->id) as $diaryentry)
                                 @if($diaryentry->DiaryHeroImage)
-                                    <div style="background-image:url({{asset('images/uploads/' . $diaryentry->DiaryHeroImage)}});background-size:cover; background-position:center;">
+                                    <div style="background-image:url({{asset('images/uploads_diaries/' . $diaryentry->DiaryHeroImage)}});background-size:cover; background-position:center;">
                                         @else
                                             <div class="community_box_diaries">
                                                 @endif

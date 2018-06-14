@@ -57,14 +57,8 @@
         @endif
         @if($user->username === Auth::user()->username)
             <div class="profile_diary_section">
-                <p class="explain_fav_blogs_p">Attention, attention, Ladies and Gents! If you ever feel like you are
-                    alone with your struggles, the pain, the workouts, and the progress that you are not able to see,
-                    but everybody else does and you think they are just being nice or totally crazy, because you are way
-                    critical to yourself than nedded:</p>
-                <p class="explain_fav_blogs_p">Have you ever noticed this strange Icon and wondered what it might do?
-                    Just scroll down and we have a surprise for you:</p>
                 <p class="explain_fav_blogs_p">We do not like people who feel alone in our community! So if you are
-                    interested in how other people with exactly the same conditions as yours do, have a look at your
+                    interested in how other people with exactly the same conditions as yours do, scroll down and have a look at your
                     Workout Buddies! See their diaries, favorite Blogs, Workouts, their struggles and achievements!
                     Motivate yourself, comment on their entries, show them they are not alone! And if you want to see
                     how other people do, go to the Community Section, decide who you want to visit or scroll down to the

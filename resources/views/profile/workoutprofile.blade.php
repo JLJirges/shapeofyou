@@ -62,14 +62,14 @@
                     go to Workouts and chose with what you'd like to start. The Workouts will be added automatically to
                     either 'Warm up', 'Stretch', 'Main Workout' or 'Cool Down'. But how?</p>
                 <img src="{{ asset ('images/addworkout_icon.png')}}" alt="add workout icon" width="80" height="80">
-                <p class="explain_fav_blogs_p">This nice Mr. Muscle is waiting to drag the heavy workout to your
+                <p class="explain_fav_blogs_p">This nice Mr. Muscle shows up next to every Workout Title. If it has a green + Symbol next to it, then its waiting to drag the heavy workout to your
                     profile.
-                    Just click it and he does the work for you. At least the first step.. See? First step is done. </p>
+                    Just click it and he does the work for you. At least the first step.. See? First step is already done. And it was so easy!</p>
                 <img src="{{ asset ('images/addedworkout_icon.png')}}" alt="added workout icon" width="80" height="80">
                 <p class="explain_fav_blogs_p">In case you are overwhelmed by all of our awesome workouts and you are
                     losing
                     track of what workout you've already added to your daily program or not - Mr. Muscle shows, if he
-                    already put a workout to your profile or not. So there is only one thing to do - get your ass up and
+                    already put a workout to your profile or not. So there is only one thing to do - Go to workouts -> chose your exercises -> come back here -> and get your ass up and
                     work! </p>
             </div>
     </div>
