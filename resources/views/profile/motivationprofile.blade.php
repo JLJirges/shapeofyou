@@ -36,6 +36,25 @@
                 <a href="{{ url('logout') }}">Logout</a>
             </div>
         </div>
+        <div class="responsive-profile-nav">
+            <div>
+                <a>
+                    <img id="profileicon" class="burgericon" width="80" height="80"
+                         src="{{ asset('images/headerfooter/burger_icon.png') }}" alt="burger icon">
+                </a>
+            </div>
+                <ul id="responsive-profile-nav">
+
+                    <li><a href="{{ url('profile') }}">My Profile</a></li>
+                    <li><a href="{{ url('beforeafterprofile') }}">Stories</a></li>
+                    <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
+                    <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
+                    <li><a href="{{ url('workoutprofile') }}">Workout</a></li>
+                    <li><a href="{{ url('buddiesprofile') }}">Buddies</a></li>
+                    <li><a href="{{ url('settingsprofile') }}">Settings</a></li>
+                    <li><a href="{{ url('logout') }}">Logout</a></li>
+                </ul>
+        </div>
 
         <div class="profile_diary_section">
 

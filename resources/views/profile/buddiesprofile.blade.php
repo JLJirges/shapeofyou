@@ -55,6 +55,36 @@
                 </div>
             </div>
         @endif
+            <div class="responsive-profile-nav">
+                <div>
+                    <a>
+                        <img id="profileicon" class="burgericon" width="80" height="80"
+                             src="{{ asset('images/headerfooter/burger_icon.png') }}" alt="burger icon">
+                    </a>
+                </div>
+                @if($user->username === Auth::user()->username)
+
+                    <ul id="responsive-profile-nav">
+
+                        <li><a href="{{ url('profile') }}">My Profile</a></li>
+                        <li><a href="{{ url('beforeafterprofile') }}">Stories</a></li>
+                        <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
+                        <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
+                        <li><a href="{{ url('workoutprofile') }}">Workout</a></li>
+                        <li><a href="{{ url('buddiesprofile') }}">Buddies</a></li>
+                        <li><a href="{{ url('settingsprofile') }}">Settings</a></li>
+                        <li><a href="{{ url('logout') }}">Logout</a></li>
+                    </ul>
+                @else
+                    <ul id="responsive-profile-nav">
+                        <li><a href="{{ url('profile/' . $user->username) }}">Profile</a></li>
+                        <li><a href="{{ url('beforeafterprofile/' . $user->username) }}">Stories</a></li>
+                        <li><a href="{{ url ('blogoverviewprofile/' . $user->username) }}">Blogs</a></li>
+                        <li><a href="{{ url('workoutprofile/' . $user->username) }}">Workout</a></li>
+                        <li><a href="{{ url('buddiesprofile/' . $user->username) }}">Buddies</a></li>
+                    </ul>
+                @endif
+            </div>
         @if($user->username === Auth::user()->username)
             <div class="profile_diary_section">
                 <p class="explain_fav_blogs_p">We do not like people who feel alone in our community! So if you are

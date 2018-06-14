@@ -118,6 +118,10 @@ h3 {
   display: none;
 }
 
+.responsive-profile-nav {
+  display: none;
+}
+
 .delete {
   width: 30px;
   height: 30px;
@@ -3099,10 +3103,6 @@ footer {
     padding: 0;
   }
 
-  #responsive_nav {
-    display: none;
-  }
-
   .responsive-nav > ul > li {
     width: 100%;
     border-top: 1px solid lightgrey;
@@ -3118,6 +3118,68 @@ footer {
     padding-bottom: 10px;
     color: white;
   }
+
+.profile_navigation {
+  display: none;
+}
+  #responsive_nav {
+    display: none;
+  }
+
+  #responsive-profile-nav {
+    display: none;
+  }
+
+    .responsive-profile-nav {
+      height: 90px;
+      width: 25%;
+      margin: 10px;
+display: block;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 50px;
+    }
+
+
+    .responsive-profile-nav > div {
+      padding-top: 5px;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+    }
+
+
+    .responsive-profile-nav > ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.7);
+      height: auto;
+      margin-top: 10px;
+      padding: 0;
+      position: relative;
+      width: 350px;
+    }
+
+    .responsive-profile-nav > ul > li {
+      width: 100%;
+      border-top: 1px solid lightgrey;
+      margin: 0;
+    }
+
+  .responsive-profile-nav > ul >li:hover {
+    font-weight: bold;
+  }
+
+    .responsive-profile-nav > ul > li > a {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: white;
+    }
 
 }
 

@@ -56,6 +56,38 @@
                 </div>
             </div>
         @endif
+
+        <div class="responsive-profile-nav">
+            <div>
+                <a>
+                    <img id="profileicon" class="burgericon" width="80" height="80"
+                         src="{{ asset('images/headerfooter/burger_icon.png') }}" alt="burger icon">
+                </a>
+            </div>
+            @if($user->username === Auth::user()->username)
+
+                <ul id="responsive-profile-nav">
+
+                    <li><a href="{{ url('profile') }}">My Profile</a></li>
+                    <li><a href="{{ url('beforeafterprofile') }}">Stories</a></li>
+                    <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
+                    <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
+                        <li><a href="{{ url('workoutprofile') }}">Workout</a></li>
+                        <li><a href="{{ url('buddiesprofile') }}">Buddies</a></li>
+                    <li><a href="{{ url('settingsprofile') }}">Settings</a></li>
+                    <li><a href="{{ url('logout') }}">Logout</a></li>
+                </ul>
+            @else
+                <ul id="responsive-profile-nav">
+                    <li><a href="{{ url('profile/' . $user->username) }}">Profile</a></li>
+                    <li><a href="{{ url('beforeafterprofile/' . $user->username) }}">Stories</a></li>
+                    <li><a href="{{ url ('blogoverviewprofile/' . $user->username) }}">Blogs</a></li>
+                    <li><a href="{{ url('workoutprofile/' . $user->username) }}">Workout</a></li>
+                    <li><a href="{{ url('buddiesprofile/' . $user->username) }}">Buddies</a></li>
+                </ul>
+            @endif
+        </div>
+
         <div class="profile_info_section">
             <div class="profile_info_section_images">
                 @if($user->profilepic)
@@ -138,8 +170,10 @@
             <div class="profile_diary_section">
 
                 <h3>Write a new Diary Entry</h3>
-                <p>Write in your Diary to share your experience today! Either if it's about food & recipes, your workout,
-                    (lack of) motivation or your new sports experience with your big brother, who did not as well as you -
+                <p>Write in your Diary to share your experience today! Either if it's about food & recipes, your
+                    workout,
+                    (lack of) motivation or your new sports experience with your big brother, who did not as well as you
+                    -
                     whatever it is: Share your thoughts! (This Diary will be public to community
                     members)</p>
                 <form class="diary_form" method="POST" action="/profile" files="true" enctype="multipart/form-data">

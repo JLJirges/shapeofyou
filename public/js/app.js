@@ -13717,6 +13717,12 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $("#profileicon").click(function () {
+        $("#responsive-profile-nav").slideToggle("2000");
+    });
+});
+
 (function ($, undefined) {
     $(document).ready(function () {
 
