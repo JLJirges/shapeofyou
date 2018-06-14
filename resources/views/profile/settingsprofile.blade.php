@@ -177,6 +177,7 @@
                 <button class="white_button">Update Email</button>
             </form>
             <form class="edit_profile_form" method="post" action="/edit">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Username</label>
                 <input type="text" name="username" placeholder="Username">
                 <button class="white_button">Change Username</button>
@@ -212,10 +213,10 @@
             </form>
 
         </div>
-
-        <div>
-            <form class="edit_profile_form" method="post" action="/edit">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <form class="edit_profile_form" method="post" action="/edit">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div>
+                <div>
                 <label>Body Shape</label><br>
                 <select type="text" name="UserShape">
                     <option value="0">Secret</option>
@@ -224,12 +225,8 @@
                     <option value="3">Hour Glass</option>
                     <option value="4">Straight</option>
                 </select>
-
-                <button class="white_button">Change</button>
-            </form>
-
-            <form class="edit_profile_form" method="post" action="/edit">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </div>
+                <div>
                 <label>Change Diet</label><br>
                 <select type="text" name="UserDiet">
                     <option value="0">Secret</option>
@@ -238,11 +235,8 @@
                     <option value="3">Vegan</option>
                     <option value="4">Vegetarian</option>
                 </select>
-                <button class="white_button">Change</button>
-            </form>
-
-            <form class="edit_profile_form" method="post" action="/edit">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </div>
+                <div>
                 <label>Change Goal</label><br>
                 <select type="text" name="UserGoal">
                     <option value="0">Secret</option>
@@ -251,9 +245,16 @@
                     <option value="3">Build muscles</option>
                     <option value="4">Stay/Become healthy</option>
                 </select>
+                </div>
 
-                <button class="white_button">Change</button>
-            </form>
+            </div>
+            <div>
+                <button class="white_button goal_button">Change</button>
+            </div>
+
+        </form>
+        <div>
+
         </div>
 
         @if(Auth::user()->isAdmin === 1)
@@ -265,15 +266,17 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>BloggerBio</label>
                 <input type="text" name="BloggerBio" placeholder="Please add your bio...">
-                <button class="white_button">Update</button>
-                <string>This Text will show up after your Blog! Please write in 3rd person!</string>
+                <string>*This Text will show up after your Blog in 'About the Author - section'! Please write in 3rd person!</string>
+                <button class="white_button">Update*</button>
+
             </form>
             <form class="edit_profile_form" method="post" action="/edit">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>AdminText</label>
                 <input type="text" name="AdminText" placeholder="Say hello!">
-                <button class="white_button">Update</button>
-                <string>This Text will show up in the Footer at <a class="tandc" href="{{'aboutus'}}">About Us</a>.</string>
+                <string>*This Text will show up in the Footer at <a class="tandc" href="{{'aboutus'}}">About Us</a>.</string>
+                <button class="white_button">Update*</button>
+
             </form>
             </div>
             @endif

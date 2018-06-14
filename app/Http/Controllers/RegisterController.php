@@ -71,11 +71,7 @@ class RegisterController extends Controller
 
     public function edit(Request $request)
     {
-        if ($request->hasFile('profilepic')) {
 
-            $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
-
-            $filename = $request->file('profilepic')->getClientOriginalName();
 
 
             $this->validate(request(), [
@@ -95,13 +91,20 @@ class RegisterController extends Controller
                 'AdminText' => 'max: 1000'
             ]);
 
+        if ($request->hasFile('profilepic')) {
 
+            $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
 
-            $user = User::findOrFail(\Auth::user()->id);
-            $user->update($request->all());
-
-            return redirect()->to('/settingsprofile');
+            $filename = $request->file('profilepic')->getClientOriginalName();
         }
+
+
+
+        $user = User::findOrFail(\Auth::user()->id);
+            $user->update(array_filter($request->all()));
+
+
+        return redirect()->to('/settingsprofile');
     }
 
     public function edit_user(Request $request, $id)

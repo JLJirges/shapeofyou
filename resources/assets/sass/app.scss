@@ -1759,6 +1759,14 @@ form > input {
 
 /*profile settings*/
 
+.edit_profile_form > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
 .profile_setting_section {
   display: flex;
   justify-content: center;
@@ -2975,31 +2983,6 @@ footer {
 
   /* SETTINGS */
 
-  .profile_setting_section {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-self: center;
-    max-width: 90%;
-    height: auto;
-    padding: 2%;
-    margin-top: 10px;
-  }
-
-  .profile_setting_section > div {
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    flex-direction: column;
-  }
-
-  .profile_setting_section > div > form {
-    padding: 10px;
-  }
-
-  .profile_setting_section > div > form > button {
-    width: auto;
-  }
 
   /* BLOGS */
   .blog_entry {

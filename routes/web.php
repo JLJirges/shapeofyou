@@ -70,11 +70,12 @@ Route::get('/backend/user_edit/{user_id}', function ($user_id) {
     return view('backend/user_edit')->with($data);
 });
 
-
+Route::post('/upload_profilepic', 'RegisterController@edit');
+Route::post('/edit', 'RegisterController@edit');
 Route::get('register', 'RegisterController@create');
 Route::post('register', 'RegisterController@store');
 Route::post('/upload_profilepic', 'RegisterController@edit');
-Route::post('edit', 'RegisterController@edit');
+Route::post('/edit', 'RegisterController@edit');
 
 
 Route::group(['middleware' => ['web']], function () {
