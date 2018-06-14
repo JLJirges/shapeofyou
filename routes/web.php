@@ -632,6 +632,7 @@ Route::get('/backend/create', function () {
 
 Route::get('add_upcoming_event', 'EventsController@create');
 Route::post('add_upcoming_event', 'EventsController@store');
+Route::post('edit_event/{id}', 'EventsController@buy_ticket');
 Route::post('update_event/{id}', 'EventsController@edit');
 Route::post('delete_event/{id}', 'EventsController@deleteEvent');
 

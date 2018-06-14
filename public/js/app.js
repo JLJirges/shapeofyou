@@ -13817,6 +13817,23 @@ $(document).ready(function () {
     });
 })(jQuery);
 
+/*
+(function($, undefined){
+    $(document).ready(function(){
+            $('#increase_ticketnumber').click(function(){
+                $('.tickets_sold').html(function(){
+                    var $this = $(this),
+                        count = $this.data('count') + ('.buy_tickets');
+
+                    $this.data('count', count);
+                    return count;
+                });
+            });
+        });
+
+})(jQuery);
+*/
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {

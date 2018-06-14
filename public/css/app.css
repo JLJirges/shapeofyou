@@ -883,6 +883,8 @@ ul.tabs li.current {
 .workout_blog_bg {
   background: url("../images/workout/workout_bg.png") fixed;
   background-size: cover;
+  width: 100%;
+  margin: 0;
 }
 
 .box_whatequipment {
@@ -1331,18 +1333,6 @@ ul.tabs li.current {
   height: auto;
 }
 
-.event_box_details > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 50%;
-  text-align: left;
-}
-
 .event_what {
   border-left: 1px solid lightgrey;
   padding-left: 20px;
@@ -1356,6 +1346,12 @@ ul.tabs li.current {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.event_descritpion {
+  width: 95%;
+  text-align: justify;
+  margin-right: 5px;
 }
 
 .event_details > div {
@@ -1464,6 +1460,13 @@ ul.tabs li.current {
   padding: 8px;
   color: black;
   font-weight: bold;
+}
+
+.event_sold_out {
+  background: radial-gradient(ellipse at center, #dc4009 0%, #6b0505 100%);
+  width: 98%;
+  padding: 8px;
+  color: floralwhite;
 }
 
 /* REGISTER */
@@ -3423,8 +3426,16 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .event_what {
+  .event_w {
     border: none;
+  }
+  .event_details {
+    width: 100%;
+  }
+  .event_descritpion {
+    width: 100%;
+    text-align: justify;
+    margin: 0;
   }
   .meetup_event_googlemaps {
     width: 280px;

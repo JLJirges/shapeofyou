@@ -75,8 +75,8 @@ class RegisterController extends Controller
             $this->validate(request(), [
                 'firstname' => 'string|max:50',
                 'lastname' => 'string|max:50',
-                'username' => 'string|max:50',
-                'email' => 'email',
+                'username' => 'unique:users|string|max:50',
+                'email' => 'unique:users|email',
                 'password' => 'min:4|confirmed',
                 'mq' => 'string',
                 'profilepic' => '',
@@ -88,18 +88,19 @@ class RegisterController extends Controller
                 'BloggerBio' => 'max: 1000',
                 'AdminText' => 'max: 1000'
             ]);
-      /*  if ($request->hasFile('profilepic')) {
+       if ($request->hasFile('profilepic')) {
 
             $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
 
             $filename = $request->file('profilepic')->getClientOriginalName();
-*/
+
 
 
         $user = User::findOrFail(\Auth::user()->id);
         $user->update($request->all());
+        $user->update('profilepic', $filename);
         return redirect()->to('/settingsprofile');
-       /* } */
+        }
     }
 
     public function edit_user(Request $request, $id)

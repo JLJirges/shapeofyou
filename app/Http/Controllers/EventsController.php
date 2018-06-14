@@ -41,6 +41,22 @@ class EventsController extends Controller
         return redirect()->to('/backend/create');
     }
 
+    public function buy_ticket(Request $request, $id)
+    {
+
+        $this->validate(request(), [
+            'TicketsSold' => \request('SoldTickets')
+        ]);
+
+
+        ;
+
+        $event = Events::findOrFail($id);
+        $event->increment('TicketsSold');
+
+        \Session::flash('event_message', 'Successfully bought! Please check your Emails!');
+        return redirect()->to('meetups');
+    }
 
     public function edit(Request $request, $id)
     {
@@ -48,6 +64,7 @@ class EventsController extends Controller
         $this->validate(request(), [
             'EventTitle' => '',
             'TicketsTotal' => '',
+            'TicketsSold' => '',
             'EventWhen' => '',
             'EventWhere' => '',
             'EventWhat' => '',
@@ -58,7 +75,7 @@ class EventsController extends Controller
 
 
         $event = Events::findOrFail($id);
-
+       /* $event->update('SoldTickets')->addClick();*/
         $event->update(array_filter($request->all()));
 
         \Session::flash('event_message', 'Update successful!');

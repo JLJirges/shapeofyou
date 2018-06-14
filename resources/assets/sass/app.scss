@@ -1136,12 +1136,6 @@ ul.tabs li.current {
   height: auto;
 }
 
-.event_box_details > div {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  text-align: left;
-}
 
 .event_what {
   border-left: 1px solid lightgrey;
@@ -1151,6 +1145,13 @@ ul.tabs li.current {
 .event_details {
   display: flex;
   flex-direction: column;
+
+}
+
+.event_descritpion {
+  width: 95%;
+  text-align: justify;
+  margin-right: 5px;
 
 }
 
@@ -1236,6 +1237,16 @@ ul.tabs li.current {
 
   color: black;
   font-weight: bold;
+}
+
+.event_sold_out {
+  background: radial-gradient(ellipse at center, rgba(220, 64, 9, 1) 0%, rgba(107, 5, 5, 1) 100%);
+
+  width: 98%;
+  padding: 8px;
+
+  color: floralwhite;
+
 }
 
 /* REGISTER */
@@ -2820,8 +2831,18 @@ footer {
 
   }
 
-  .event_what {
+  .event_w {
     border: none;
+  }
+
+  .event_details {
+    width: 100%;
+  }
+
+  .event_descritpion {
+    width: 100%;
+    text-align: justify;
+    margin: 0;
   }
 
   .meetup_event_googlemaps {

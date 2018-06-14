@@ -1,21 +1,4 @@
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows : true,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-        },
-    });
-</script>
+
 <footer>
     <div class="footer_content footer_content_1">
         <div class="footer_options">
@@ -35,8 +18,8 @@
             <span>Follow us on</span>
         </div>
         <div class="footer_follow footer_follow_images">
-            <a href="#"><img alt="share instagram" src="{{ asset('images/headerfooter/share_instagram.png') }}"></a>
-            <a href="#"><img alt="share instagram" src="{{ asset('images/headerfooter/share_facebook.png') }}"></a>
+            <a href="https://www.instagram.com/jsjournalcomics/"><img alt="share instagram" src="{{ asset('images/headerfooter/share_instagram.png') }}"></a>
+            <a href="https://www.facebook.com/pages/Vienna/230335846992726"><img alt="share instagram" src="{{ asset('images/headerfooter/share_facebook.png') }}"></a>
         </div>
         <div class="follow_footer">
                 <span>
