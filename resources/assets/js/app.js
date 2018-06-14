@@ -153,3 +153,9 @@ $(document).ready(function(){
 
 })(jQuery);
 */
+
+(function($, undefined){
+    $(document).ready(function(){
+        $('.slide_screen').SlideScreen();
+});
+})(jQuery);

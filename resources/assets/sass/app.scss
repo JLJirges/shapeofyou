@@ -192,7 +192,7 @@ h3 {
 }
 
 .fav_icon {
-  margin-top: 60px;
+  margin-top: 80px;
   width: 50px;
   height: 50px;
   background: url("../images/unclicked_fav_icon.png") no-repeat;
@@ -201,6 +201,7 @@ h3 {
 }
 
 .clicked_fav_icon {
+  margin-top: 80px;
   width: 50px;
   height: 50px;
   background: url("../images/fav_icon.png") no-repeat;
@@ -2579,6 +2580,10 @@ footer {
     margin-bottom: 10px;
   }
 
+  .blog_h1 {
+    margin-top: 10px;
+  }
+
   h2 {
     font-size: 25pt;
     width: 100%;
@@ -2957,10 +2962,10 @@ footer {
   }
 
   .comments_section {
-    width: 90%;
+    width: 100%;
     margin: 5px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
 
@@ -3037,13 +3042,12 @@ footer {
     width: auto;
   }
 
-  .comments_section {
-    width: 100%;
-  }
-
   .comments_details_user {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    padding: 2px;
+    align-items: center;
   }
 
   .comments_details_profilepicture {
@@ -3052,7 +3056,7 @@ footer {
   }
 
   .comments_details_profilepicture > img {
-    margin: 10px;
+    margin: 2px;
   }
 
   .nav {

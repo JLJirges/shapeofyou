@@ -41,7 +41,7 @@ class RegisterController extends Controller
         $credentials = array('username' => request('username'), 'password' => request('password'));
         if (\Auth::attempt($credentials, true)) {
             return redirect()->to('/profile');
-        }else{
+        } else {
             return back()->withErrors([
                 'message' => 'Username/Password do not match'
             ]);
@@ -71,6 +71,12 @@ class RegisterController extends Controller
 
     public function edit(Request $request)
     {
+        if ($request->hasFile('profilepic')) {
+
+            $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
+
+            $filename = $request->file('profilepic')->getClientOriginalName();
+
 
             $this->validate(request(), [
                 'firstname' => 'string|max:50',
@@ -88,18 +94,13 @@ class RegisterController extends Controller
                 'BloggerBio' => 'max: 1000',
                 'AdminText' => 'max: 1000'
             ]);
-       if ($request->hasFile('profilepic')) {
-
-            $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
-
-            $filename = $request->file('profilepic')->getClientOriginalName();
 
 
 
-        $user = User::findOrFail(\Auth::user()->id);
-        $user->update($request->all());
-        $user->update('profilepic', $filename);
-        return redirect()->to('/settingsprofile');
+            $user = User::findOrFail(\Auth::user()->id);
+            $user->update($request->all());
+
+            return redirect()->to('/settingsprofile');
         }
     }
 
@@ -146,8 +147,6 @@ class RegisterController extends Controller
         return redirect()->to('/backend/useroverview')->with('global', 'Community member deleted...');
 
     }
-
-
 
 
 }

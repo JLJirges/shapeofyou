@@ -13834,6 +13834,12 @@ $(document).ready(function () {
 })(jQuery);
 */
 
+(function ($, undefined) {
+    $(document).ready(function () {
+        $('.slide_screen').SlideScreen();
+    });
+})(jQuery);
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {

@@ -25,7 +25,7 @@
                         </button>
                     </form>
                 @endif
-                <h1>{{ $blog->BlogTitle }}</h1>
+                <h1 class="blog_h1">{{ $blog->BlogTitle }}</h1>
             </div>
 
             <div>

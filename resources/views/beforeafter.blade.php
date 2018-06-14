@@ -37,17 +37,17 @@
 
         <div class="workout_entry_box">
 
-            <div>
+            <div class="slide_screen">
                 <img src="{{asset('/images/uploads_stories/' . $bas->BeforeAfterStoryImageOne)}}" alt="diary image">
-
+                <img src="{{asset('/images/uploads_stories/' . $bas->BeforeAfterStoryImageTwo)}}" alt="diary image">
+            </div>
                 <div class="workout_entry_text">
 
                     {{ $bas->BeforeAfterStoryContent }}
 
 
                 </div>
-                <img src="{{asset('/images/uploads_stories/' . $bas->BeforeAfterStoryImageTwo)}}" alt="diary image">
-            </div>
+
         </div>
     </div>
 
