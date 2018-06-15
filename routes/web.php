@@ -29,13 +29,37 @@ Route::get('superfood', function () {
 
 });
 
+Route::get('gallery/{former_event_id}', function($former_event_id){
+
+    $data = [
+        'former_event_id' => $former_event_id,
+        'former_events' => \DB::table('events')->where('id', $former_event_id)->get(),
+        'event_images' =>\DB::table('galleries')->where('EventId', $former_event_id)->get()
+    ];
+    return view('gallery')->with($data);
+});
+Route::post('gallery/{former_event_id}', function($former_event_id){
+    $data = [
+        'former_event_id' => $former_event_id,
+        'former_events' => \DB::table('events')->where('id', $former_event_id)->get(),
+        'event_images' =>\DB::table('galleries')->where('EventId', $former_event_id)->get()
+    ];
+    return view('gallery')->with($data);
+});
+
+Route::post('meetups', function(){
+    return view('meetups');
+});
+
+
+
 Route::get('meetups', function () {
 
     $data = [
-      'upcoming_events' => \DB::table('events')->where('Upcoming', 0)->get(),
+        'upcoming_events' => \DB::table('events')->where('Upcoming', 0)->get(),
         'former_events' => \DB::table('events')->where('Upcoming', 1)->get(),
+        'event_images' =>\DB::table('galleries')->get()
     ];
-
 
 
     return view('meetups')->with($data);
@@ -62,7 +86,7 @@ Route::get('/backend/user_edit', function () {
 
 Route::get('/backend/user_edit/{user_id}', function ($user_id) {
 
-    $data =[
+    $data = [
         'user' => \DB::table('users')->where('id', $user_id)->first(),
         'user_id' => $user_id
     ];
@@ -96,6 +120,7 @@ Route::post('delete_diary_comment/{diary_id}/{diary_comment_id}', 'ProfileDiaryC
 Route::post('delete_diary_entry/{diary_id}', 'ProfileDiaryController@deleteDiaryEntry');
 Route::post('delete_diary_frombackend/{diary_id}', 'ProfileDiaryController@deleteDiaryFromBackend');
 Route::get('profile/', function () {
+
     $data = [
         'user' => Auth::user(),
         'diary' => \DB::table('diaries')->where('DiaryUserId', Auth::user()->id)->orderBy('created_at', 'desc')->get()
@@ -245,15 +270,14 @@ Route::get('termsandconditions', function () {
 
 Route::get('faq', function () {
 
-    $data= [
-      'faqs' => \DB::table('faq')->get()
+    $data = [
+        'faqs' => \DB::table('faq')->get()
     ];
 
     return view('footer/faq')->with($data);
 });
 
 Route::get('aboutus', function () {
-
 
 
     $data = [
@@ -560,14 +584,13 @@ Route::get('/backend/event_edit', function () {
 
 Route::get('/backend/event_edit/{event_id}', function ($event_id) {
 
-    $data =[
-      'event' => \DB::table('events')->where('id', $event_id)->first(),
+    $data = [
+        'event' => \DB::table('events')->where('id', $event_id)->first(),
         'event_id' => $event_id
     ];
 
     return view('backend/event_edit')->with($data);
 });
-
 
 
 Route::post('add_faq', 'FAQController@store');
@@ -591,7 +614,7 @@ Route::get('/backend/faq_edit', function () {
 
 Route::get('/backend/faq_edit/{faq_id}', function ($faq_id) {
 
-    $data =[
+    $data = [
         'faq' => \DB::table('faq')->where('id', $faq_id)->first(),
         'faq_id' => $faq_id
     ];
@@ -612,7 +635,7 @@ Route::get('/backend/admin_jobs', function () {
 
 Route::get('/backend/job_edit/{job_id}', function ($job_id) {
 
-    $data =[
+    $data = [
         'job' => \DB::table('jobs')->where('id', $job_id)->first(),
         'job_id' => $job_id
     ];
@@ -621,11 +644,10 @@ Route::get('/backend/job_edit/{job_id}', function ($job_id) {
 });
 
 
-
 Route::get('/backend/create', function () {
 
     $data = [
-      'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
+        'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
     ];
 
     return view('/backend/create')->with($data);
@@ -636,7 +658,6 @@ Route::post('add_upcoming_event', 'EventsController@store');
 Route::post('edit_event/{id}', 'EventsController@buy_ticket');
 Route::post('update_event/{id}', 'EventsController@edit');
 Route::post('delete_event/{id}', 'EventsController@deleteEvent');
-
 
 
 Route::post('WorkoutHeroImage', 'WorkoutsController@store');
@@ -676,7 +697,7 @@ Route::get('/backend/workout_edit', function () {
 
 Route::get('/backend/workout_edit/{workout_id}', function ($workout_id) {
 
-    $data =[
+    $data = [
         'workout' => \DB::table('workouts')->where('id', $workout_id)->first(),
         'workout_id' => $workout_id,
         'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
@@ -691,7 +712,7 @@ Route::get('/backend/blog_edit', function () {
 
 Route::get('/backend/blog_edit/{blog_id}', function ($blog_id) {
 
-    $data =[
+    $data = [
         'blog' => \DB::table('blogs')->where('id', $blog_id)->first(),
         'blog_id' => $blog_id,
         'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
@@ -703,7 +724,7 @@ Route::get('/backend/blog_edit/{blog_id}', function ($blog_id) {
 Route::get('/backend/jobs_faq_overview', function () {
 
     $data = [
-      'jobs' => \DB::table('jobs')->get(),
+        'jobs' => \DB::table('jobs')->get(),
         'faqs' => \DB::table('faq')->get()
     ];
     return view('backend/jobs_faq_overview')->with($data);

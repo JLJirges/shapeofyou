@@ -13716,12 +13716,49 @@ $(document).ready(function () {
         $("#responsive_nav").slideToggle("2000");
     });
 });
+/*
+$(document).ready(function(){
+    $("#event_gallery_button").click(function(){
+        $("#gallery_overlay_background").fadeIn("2000");
+    });
+});
+
+$(document).ready(function(){
+    $("#closeicon").click(function(){
+        $("#gallery_overlay_background").fadeOut("2000");
+    });
+});*/
 
 $(document).ready(function () {
     $("#profileicon").click(function () {
         $("#responsive-profile-nav").slideToggle("2000");
     });
 });
+
+(function ($, undefined) {
+    $(document).ready(function () {
+
+        $('.slide_box_gallery').width($('.page_gallery').width());
+        $('.slide_list_gallery').width($('.page_gallery').width() * $('.page_gallery').length);
+
+        $('.next_gallery').on('click', function () {
+            $('.slide_list_gallery').animate({
+                left: $('.page_gallery').width() * -1
+            }, function () {
+                $('.page_gallery').last().after($('.page_gallery').first());
+                $('.slide_list_gallery').css('left', 0);
+            });
+        });
+
+        $('.prev_gallery').on('click', function () {
+            $('.page_gallery').first().before($('.page_gallery').last());
+            $('.slide_list_gallery').css('left', $('.page_gallery').width() * -1);
+            $('.slide_list_gallery').animate({
+                left: 0
+            });
+        });
+    });
+})(jQuery);
 
 (function ($, undefined) {
     $(document).ready(function () {

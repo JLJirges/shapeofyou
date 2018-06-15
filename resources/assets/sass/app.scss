@@ -1068,6 +1068,91 @@ ul.tabs li.current {
 }
 
 /* MEETUPS */
+/*
+.gallery_overlay_background {
+position: absolute;
+  display: none;
+}*/
+
+.gallery_overlay_background {
+  background-color: rgba(000, 000, 000, 0.9);
+  height: auto;
+  width: 100%;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10%;
+}
+
+.prev_gallery {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: 5%;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.next_gallery {
+  position: absolute;
+  top: calc(50% - 15px);
+  right: 5%;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slide_box_gallery {
+
+  overflow: hidden;
+  margin: 10px 0 0 0;
+  position: static;
+}
+
+.slide_box_gallery > ul {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.slide_list_gallery {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  height: auto;
+  border: none;
+  width: auto;
+}
+
+.page_gallery {
+  float: left;
+  min-width: 600px;
+  max-width: 600px;
+  min-height: 600px;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  border: none;
+}
+
+.gallery_image_description {
+  border-top: solid 1px lightgrey;
+  font-weight: bold;
+  color: floralwhite;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 50%;
+}
 
 .h2_mobile_view {
   display: none;
@@ -1140,7 +1225,6 @@ ul.tabs li.current {
   width: 100%;
   height: auto;
 }
-
 
 .event_what {
   border-left: 1px solid lightgrey;
@@ -1636,6 +1720,10 @@ form > input {
   flex-direction: column;
 }
 
+.white_button:hover {
+  cursor: pointer;
+}
+
 .white_button {
   background: inherit;
   border: double 4px lightgrey;
@@ -1765,8 +1853,6 @@ form > input {
   align-items: center;
 }
 
-
-
 .profile_setting_section {
   display: flex;
   justify-content: center;
@@ -1803,7 +1889,7 @@ form > input {
   width: 50%;
 }
 
-.delete_account_section > form{
+.delete_account_section > form {
   width: 100%;
   border-top: solid darkred 2px;
   display: flex;
@@ -1811,7 +1897,6 @@ form > input {
   align-self: center;
   flex-direction: column;
 }
-
 
 /* WORKOUT DETAILS */
 
@@ -2245,7 +2330,6 @@ form > input {
   font-size: 16pt;
 }
 
-
 /*JOBS*/
 .jobs {
   border-top: double 4px lightgrey;
@@ -2254,7 +2338,7 @@ form > input {
   justify-content: center;
   align-items: center;
   padding-top: 20px;
-flex-direction: column;
+  flex-direction: column;
   font-size: 16pt;
 }
 
@@ -2557,7 +2641,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 10px 10px 10px  lightgrey;
+  box-shadow: 10px 10px 10px lightgrey;
 }
 
 .admin_delete_edit {
@@ -2578,7 +2662,6 @@ footer {
   font-weight: bold;
   text-decoration: underline;
 }
-
 
 @media only screen and (max-width: 768px) {
 
@@ -2618,6 +2701,50 @@ footer {
 
   .white_button {
     border: double 3px lightgrey;
+  }
+
+  .prev_gallery {
+    width: 30px;
+    height: 30px;
+
+    left: 5%;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+
+  }
+
+  .next_gallery {
+    width: 30px;
+    height: 30px;
+    right: 5%;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+
+  }
+
+  .page_gallery {
+    float: left;
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 600px;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: white;
+    font-size: 24px;
+    border: none;
+    margin-top: 100px;
+  }
+  .slide_list_gallery {
+    position: static;
+    display: block;
+    white-space: nowrap;
+    height: auto;
+    border: none;
+    width: auto;
   }
 
   /* HOME */
@@ -2983,7 +3110,6 @@ footer {
 
   /* SETTINGS */
 
-
   /* BLOGS */
   .blog_entry {
     width: 90%;
@@ -2994,7 +3120,7 @@ footer {
   .blog_box {
     width: 100%;
   }
-;
+
 
   .blog_box > div > img {
     width: 100%;
@@ -3102,9 +3228,9 @@ footer {
     color: white;
   }
 
-.profile_navigation {
-  display: none;
-}
+  .profile_navigation {
+    display: none;
+  }
   #responsive_nav {
     display: none;
   }
@@ -3113,56 +3239,56 @@ footer {
     display: none;
   }
 
-    .responsive-profile-nav {
-      height: 90px;
-      width: 25%;
-      margin: 10px;
-display: block;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 50px;
-    }
+  .responsive-profile-nav {
+    height: 90px;
+    width: 25%;
+    margin: 10px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50px;
+  }
 
+  .responsive-profile-nav > div {
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
 
-    .responsive-profile-nav > div {
-      padding-top: 5px;
-      display: flex;
-      justify-content: center;
-      align-self: center;
-    }
+  .responsive-profile-nav > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: auto;
+    margin-top: 10px;
+    padding: 0;
+    position: relative;
+    width: 350px;
+  }
 
+  .responsive-profile-nav > ul > li {
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    margin: 0;
+  }
 
-    .responsive-profile-nav > ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.7);
-      height: auto;
-      margin-top: 10px;
-      padding: 0;
-      position: relative;
-      width: 350px;
-    }
-
-    .responsive-profile-nav > ul > li {
-      width: 100%;
-      border-top: 1px solid lightgrey;
-      margin: 0;
-    }
-
-  .responsive-profile-nav > ul >li:hover {
+  .responsive-profile-nav > ul > li:hover {
     font-weight: bold;
   }
 
-    .responsive-profile-nav > ul > li > a {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-self: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      color: white;
-    }
+  .responsive-profile-nav > ul > li > a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+  }
+
+
 
 }
 
