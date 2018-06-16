@@ -1,0 +1,1 @@
+{{$futureLetter->LetterContent}}

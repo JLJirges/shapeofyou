@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,6 +28,11 @@ return [
     | the Mailgun mail service which will provide reliable deliveries.
     |
     */
+
+    'mailgun' => [
+        'domain' => 'mg.web-refresher.com',
+        'secret' => '47317c98-6deec039',
+    ],
 
     'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
@@ -56,8 +61,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'office@shapeofyou.web-refresher.com'),
+        'name' => env('MAIL_FROM_NAME', 'Shape Of You'),
     ],
 
     /*

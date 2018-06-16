@@ -66,14 +66,33 @@ class WorkoutsController extends Controller
             'WorkoutTitle' => '',
             'WorkoutCategory' => '',
             'BloggerId' => '',
+            'WorkoutHeroImage' =>'',
+            'WorkoutImage' => '',
             'WorkoutContentOne' => '',
             'WorkoutContentTwo' => '',
             'created_at' => '',
             'updated_at' => ''
         ]);
 
+        $toUpdate = array_filter($request->all());
+
+        if ($request->hasFile('WorkoutHeroImage')) {
+
+            $request->file('WorkoutHeroImage')->move(("images\\workouts\\"), $request->file('WorkoutHeroImage')->getClientOriginalName());
+
+            $filename = $request->file('WorkoutHeroImage')->getClientOriginalName();
+            $toUpdate['WorkoutHeroImage']=$filename;
+        }
+        if ($request->hasFile('WorkoutImage')) {
+
+            $request->file('WorkoutImage')->move(("images\\workouts\\"), $request->file('WorkoutImage')->getClientOriginalName());
+
+            $filename = $request->file('WorkoutImage')->getClientOriginalName();
+            $toUpdate['WorkoutImage']=$filename;
+        }
+
         $workout = Workouts::findOrFail($id);
-        $workout->update(array_filter($request->all()));
+        $workout->update($toUpdate);
 
         \Session::flash('workout_message', 'Update successful!');
         return redirect()->to('/backend/workout_edit/' . $workout->id);

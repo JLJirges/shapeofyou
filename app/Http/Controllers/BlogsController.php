@@ -77,10 +77,27 @@ class BlogsController extends Controller
             'BlogContentOne' => '',
             'BlogContentTwo' => ''
         ]);
+        $toUpdate = array_filter($request->all());
 
+        if ($request->hasFile('BlogHeroImage')) {
+
+            $request->file('BlogHeroImage')->move(("images\\blogs\\"), $request->file('BlogsHeroImage')->getClientOriginalName());
+
+            $filename = $request->file('BlogHeroImage')->getClientOriginalName();
+            $toUpdate['BlogHeroImage']=$filename;
+        }
+        if ($request->hasFile('BlogImage')) {
+
+            $request->file('BlogImage')->move(("images\\blogs\\"), $request->file('BlogImage')->getClientOriginalName());
+
+            $filename = $request->file('WorkoutImage')->getClientOriginalName();
+            $toUpdate['BlogImage']=$filename;
+        }
 
         $blog = Blogs::findOrFail($id);
-        $blog->update(array_filter($request->all()));
+
+        $blog->update($toUpdate);
+        
         \Session::flash('blog_message', 'Update successful!');
         return redirect()->to('/backend/blog_edit/' . $blog->id);
     }

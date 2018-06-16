@@ -72,8 +72,6 @@ class RegisterController extends Controller
     public function edit(Request $request)
     {
 
-
-
             $this->validate(request(), [
                 'firstname' => 'string|max:50',
                 'lastname' => 'string|max:50',
@@ -91,17 +89,19 @@ class RegisterController extends Controller
                 'AdminText' => 'max: 1000'
             ]);
 
+        $toUpdate = array_filter($request->all());
+
         if ($request->hasFile('profilepic')) {
 
             $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
 
             $filename = $request->file('profilepic')->getClientOriginalName();
+            $toUpdate['profilepic']=$filename;
         }
 
 
-
         $user = User::findOrFail(\Auth::user()->id);
-            $user->update(array_filter($request->all()));
+            $user->update($toUpdate);
 
 
         return redirect()->to('/settingsprofile');

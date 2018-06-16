@@ -65,15 +65,13 @@
                 best if you need one motivation per week, month or from time to time. Whenever you feel like it: write
                 and motivate yourself! You will receive the letter per email but it will also show up here, if you
                 scroll down. This letter is private and won't be sharable with other members!</p>
-            <form class="diary_form" method="post" enctype="multipart/form-data">
+            <form class="diary_form" method="post" enctype="multipart/form-data" action="/futureletter/{{Auth::user()->id}}">
                 <label>Write a title</label>
                 <input type="text" name="title" placeholder="I am the Title"><br>
                 <label>Write your entry</label>
                 <input type="text" name="title" placeholder="I am the Title"><br>
                 <label>When to receive?</label>
                 <input type="date" name="ReceiveLetter">
-                <label>Upload Image</label><br>
-                <input type="file" name="DiaryfileToUpload" id="DiaryfileToUpload">
                 <button type="submit" value="Send Letter" name="sendletter" class="profile_button">Send Letter</button>
             </form>
 
