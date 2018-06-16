@@ -97,7 +97,7 @@ class BlogsController extends Controller
         $blog = Blogs::findOrFail($id);
 
         $blog->update($toUpdate);
-        
+
         \Session::flash('blog_message', 'Update successful!');
         return redirect()->to('/backend/blog_edit/' . $blog->id);
     }
