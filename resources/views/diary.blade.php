@@ -17,7 +17,7 @@
 
                 <div style="background-image: url({{asset('images/uploads/' . $diary_author->profilepic )}});background-size: cover; background-position: center"
                      class="workout_author"></div>
-                <span>{{$diary_author->username}}</span>
+                <span @if($diary_author->isAdmin === 1) style="color: darkorange;" @endif>{{$diary_author->username}}</span>
             </div>
 
             <h2>{{ $diary->DiaryTitle }}</h2>
@@ -73,7 +73,7 @@
                                     <img src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
                                          alt="user profile picture">
                                 @endif
-                                <span>{{ $users->where('id', $diary_comment->UserId)->first()->username}}</span>
+                                <span @if($users->where('id', $diary_comment->UserId)->first()->isAdmin === 1) style="color: darkorange;" @endif>{{ $users->where('id', $diary_comment->UserId)->first()->username}}</span>
 
                             </div>
                         </a>
@@ -87,7 +87,7 @@
                             </div>
                         @else
                             <div class="comments_details_edit">
-                                <span class="report"></span>
+
                             </div>
                         @endif
                     </div>

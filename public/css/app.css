@@ -98,6 +98,7 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 999;
 }
 
 .logo_header {
@@ -2341,10 +2342,30 @@ form > input {
 }
 
 /* WORKOUT DETAILS */
+.exercise_title {
+  font-family: 'AR DARLING', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  color: floralwhite;
+  text-shadow: black 0 0 10px;
+  font-size: 18pt;
+}
+
+.exercise_title:hover {
+  color: black;
+  text-shadow: white 0 0 10px;
+}
+
 .slide_box_stretch {
   border: 1px solid #ccc;
   overflow: hidden;
-  margin: 10px 0 0 0;
+  margin: 10px 0 10px 0;
   position: relative;
 }
 
@@ -2362,10 +2383,9 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   line-height: 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
   z-index: 2;
 }
@@ -2376,20 +2396,19 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   line-height: 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
   z-index: 2;
 }
 
 .prev_stretch :hover {
-  color: white;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .next_stretch :hover {
-  color: white;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .slide_list_stretch {
@@ -2416,15 +2435,10 @@ form > input {
   font-size: 24px;
 }
 
-.page_stretch > a {
-  color: white;
-  font-family: "AR DARLING", sans-serif;
-}
-
 .slide_box_warmup {
   border: 1px solid #ccc;
   overflow: hidden;
-  margin: 10px 0 0 0;
+  margin: 10px 0 10px 0;
   position: relative;
 }
 
@@ -2442,10 +2456,9 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   line-height: 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
   z-index: 2;
 }
@@ -2456,20 +2469,18 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   line-height: 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
-  z-index: 2;
 }
 
-.prev_warmup :hover {
-  color: white;
+.prev_warmup:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
-.next_warmup :hover {
-  color: white;
+.next_warmup:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .slide_list_warmup {
@@ -2496,16 +2507,12 @@ form > input {
   font-size: 24px;
 }
 
-.page_warmup > a {
-  color: white;
-  font-family: "AR DARLING", sans-serif;
-}
-
 .slide_box_mainworkout {
   border: 1px solid #ccc;
   overflow: hidden;
-  margin: 10px 0 0 0;
+  margin: 10px 0 10px 0;
   position: relative;
+  z-index: 0;
 }
 
 .slide_box_mainworkout > ul {
@@ -2522,10 +2529,9 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   line-height: 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
   z-index: 2;
 }
@@ -2536,12 +2542,10 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.9);
   line-height: 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
-  z-index: 2;
 }
 
 .prev_mainworkout:hover {
@@ -2566,6 +2570,7 @@ form > input {
   display: block;
   white-space: nowrap;
   height: 100%;
+  z-index: 0;
 }
 
 .page_mainworkout {
@@ -2583,17 +2588,13 @@ form > input {
           align-items: center;
   color: white;
   font-size: 24px;
-}
-
-.page_mainworkout > a {
-  color: white;
-  font-family: "AR DARLING", sans-serif;
+  z-index: 0;
 }
 
 .slide_box_cooldown {
   border: 1px solid #ccc;
   overflow: hidden;
-  margin: 10px 0 0 0;
+  margin: 10px 0 10px 0;
   position: relative;
 }
 
@@ -2611,10 +2612,9 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   line-height: 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
   z-index: 2;
 }
@@ -2625,20 +2625,19 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   line-height: 30px;
   text-align: center;
-  border-radius: 3px;
   cursor: pointer;
   z-index: 2;
 }
 
 .prev_cooldown:hover {
-  color: white;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .next_cooldown:hover {
-  color: white;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .slide_list_cooldown {
@@ -2663,11 +2662,6 @@ form > input {
           align-items: center;
   color: white;
   font-size: 24px;
-}
-
-.page_cooldown > a {
-  color: white;
-  font-family: "AR DARLING", sans-serif;
 }
 
 .workout_entry {
@@ -3859,6 +3853,7 @@ footer {
     height: 100px;
     width: 100%;
     margin: 0;
+    z-index: 999;
   }
   .responsive-nav > div {
     display: -webkit-box;

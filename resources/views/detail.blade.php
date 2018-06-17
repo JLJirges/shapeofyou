@@ -15,7 +15,7 @@
                 <div style="background-image: url({{asset('images/uploads/' . $workout_author->profilepic )}});background-size: cover; background-position: center"
                      class="workout_author"></div>
 
-                <span>{{$workout_author->username}}</span>
+                <span @if($workout_author->isAdmin === 1) style=" color: darkorange;" @endif>{{$workout_author->username}}</span>
             </div>
             <h2>{{ $workout->WorkoutTitle }}</h2>
             @if($user_likes_workout)
@@ -38,21 +38,26 @@
         <div class="workout_entry_box">
 
             <div>
-                <img src="{{('../images/workout/' . $workout->WorkoutHeroImage)}}" alt="workout image">
-
+                @if($workout->WorkoutHeroImage)
+                    <img src="{{('../images/workout/' . $workout->WorkoutHeroImage)}}" alt="workout image">
+                @endif
                 <div class="workout_entry_text">
                     <p>
 
-                    {{ $workout->WorkoutContentOne }}
+                        {{ $workout->WorkoutContentOne }}
 
                     </p>
                 </div>
+                    @if($workout->WorkoutImage)
                 <img src="{{('../images/workout/' . $workout->WorkoutImage)}}" alt="workout image">
+                    @endif
                 <div class="workout_entry_text">
                     <p>
+                        @if($workout->WorkoutContentTwo)
 
                         {{ $workout->WorkoutContentTwo }}
 
+                            @endif
                     </p>
                 </div>
             </div>
@@ -81,21 +86,22 @@
                                     <img src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
                                          alt="user profile picture">
                                 @endif
-                                <span>{{ $users->where('id', $workout_comment->UserId)->first()->username}}</span>
+                                <span @if($users->where('id', $workout_comment->UserId)->first()->isAdmin === 1) style=" color: darkorange;" @endif>{{ $users->where('id', $workout_comment->UserId)->first()->username}}</span>
 
                             </div>
                         </a>
                         <span>{{ $workout_comments->where('WorkoutCommentDate', $workout_comment->WorkoutCommentDate)->first()->WorkoutCommentDate}}</span>
                         @if( ((auth()->check()) && (Auth::user()->isAdmin === 1)) || ((Auth::user()->id === $workout_comment->UserId)))
                             <div class="comments_details_edit">
-                                <form action="/delete_workout_comment/{{$workout->id}}/{{$workout_comment->id}}" method="post">
+                                <form action="/delete_workout_comment/{{$workout->id}}/{{$workout_comment->id}}"
+                                      method="post">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <button type="submit" class="delete"></button>
                                 </form>
                             </div>
                         @else
                             <div class="comments_details_edit">
-                                <span class="report"></span>
+
                             </div>
                         @endif
                     </div>

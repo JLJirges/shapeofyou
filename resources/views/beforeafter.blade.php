@@ -15,11 +15,11 @@
 
                 @if($bas_author->profilepic )
                     <a href="{{url('profile/' . $bas_author->username)}}" style="background-image:url({{asset('images/uploads/' . $bas_author->profilepic)}});background-size:cover; background-position:center;"
-                       class="backend_profile_picture_overview"><span class="username_backend_overview">{{$bas_author->username}}</span></a>
+                       class="backend_profile_picture_overview"><span @if($bas_author->isAdmin === 1) style=" color: darkorange;" @endif class="username_backend_overview">{{$bas_author->username}}</span></a>
                 @else
                     <a href="{{url('profile/' . $bas_author->username)}}"
                        style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
-                       class="backend_profile_picture_overview"><span class="username_backend_overview">{{$bas_author->username}}</span>
+                       class="backend_profile_picture_overview"><span @if($bas_author->isAdmin === 1) style=" color: darkorange;" @endif class="username_backend_overview">{{$bas_author->username}}</span>
                 </a>
                 @endif
                     <span>{{$bas->created_at}}</span>
@@ -72,7 +72,7 @@
                                     <img src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
                                          alt="user profile picture">
                                 @endif
-                                <span>{{ $users->where('id', $bas_comment->UserId)->first()->username}}</span>
+                                <span @if($users->where('id', $bas_comment->UserId)->first()->isAdmin === 1) style=" color: darkorange;" @endif>{{ $users->where('id', $bas_comment->UserId)->first()->username}}</span>
 
                             </div>
                         </a>
@@ -86,7 +86,7 @@
                             </div>
                         @else
                             <div class="comments_details_edit">
-                                <span class="report"></span>
+                                
                             </div>
                         @endif
                     </div>

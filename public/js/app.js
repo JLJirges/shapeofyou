@@ -13883,6 +13883,34 @@ $(document).ready(function () {
     });
 })(jQuery);
 
+// PROFILE WORKOUTS
+
+// Main Workouts
+(function ($, undefined) {
+    $(document).ready(function () {
+
+        $('#slidebox_workout_main').width($('#workout_main_content').width());
+        $('#workout_main_list').width($('#workout_main_content').width() * $('#workout_main_content').length);
+
+        $('#workout_main_next').on('click', function () {
+            $('#workout_main_list').animate({
+                left: $('#workout_main_content').width() * -1
+            }, function () {
+                $('#workout_main_content').last().after($('#workout_main_content').first());
+                $('#workout_main_list').css('left', 0);
+            });
+        });
+
+        $('#workout_main_prev').on('click', function () {
+            $('#workout_main_content').first().before($('#workout_main_content').last());
+            $('#workout_main_list').css('left', $('#workout_main_content').width() * -1);
+            $('#workout_main_list').animate({
+                left: 0
+            });
+        });
+    });
+})(jQuery);
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {

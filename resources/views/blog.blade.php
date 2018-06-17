@@ -105,7 +105,7 @@
                                     <img src="{{ asset ('images/profile/default_profile_pic_v1.png')}}"
                                          alt="user profile picture">
                                 @endif
-                                <span>{{ $users->where('id', $blog_comment->UserId)->first()->username}}</span>
+                                <span @if( $users->where('id', $blog_comment->UserId)->first()->username) style=" color: darkorange;" @endif>{{ $users->where('id', $blog_comment->UserId)->first()->username}}</span>
                             </div>
                         </a>
                         <span>{{ $blog_comments->where('BlogCommentDate', $blog_comment->BlogCommentDate)->first()->BlogCommentDate}}</span>
@@ -115,11 +115,10 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <button type="submit" class="delete"></button>
                                 </form>
-                                <span class="report"></span>
+
                             </div>
                         @else
                             <div class="comments_details_edit">
-                                <span class="report"></span>
                             </div>
                         @endif
                     </div>

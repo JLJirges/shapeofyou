@@ -17,7 +17,7 @@
                     @else
                         <div style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;">
                             @endif
-                            <a class="box_link"
+                            <a @if($user->isAdmin === 1) style="color: darkorange;" @endif class="box_link"
                                href="{{url('profile/' . $user->id)}}">
                                 {{$user->username}}  </a>
                             <div class="admin_blog_interaction">

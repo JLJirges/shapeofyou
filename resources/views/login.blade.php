@@ -25,7 +25,6 @@
         <input type="password" name="password" placeholder="Your password">
 
         <button class="login_button">Login</button>
-        <span>Forgot Password</span>
     </form>
 
 
