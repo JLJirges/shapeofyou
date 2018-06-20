@@ -10,7 +10,18 @@
     <div class="h1_bg">
         <h1>REGISTER</h1>
     </div>
-
+    @if(\Session::has('flash_message'))
+        <div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
+            {{ \Session::get('flash_message') }}
+        </div>
+    @endif
+    @if($errors->any())
+        <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
+            @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
     <form class="register_form" method="POST" action="/register">
         <h2>New Community Member</h2>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -24,6 +35,9 @@
         <input type="email" name="email" placeholder="Email">
         <label>Password</label>
         <input type="password" name="password" placeholder="Your password">
+        <label>Confirm Password</label>
+        <input type="password" name="password_confirmation" placeholder="Repeat password"
+               id="password_confirmation">
        <!-- <div>
             <input type="checkbox" name="agb">
             <label>I have read and agree to the <a href=" {{ url('termsandconditions')}}">Terms and
@@ -36,18 +50,7 @@
 
     </form>
 
-    @if(\Session::has('flash_message'))
-        <div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
-            {{ \Session::get('flash_message') }}
-        </div>
-    @endif
-    @if($errors->any())
-        <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
-            @foreach($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-        </div>
-    @endif
+
 
 
 @endsection
