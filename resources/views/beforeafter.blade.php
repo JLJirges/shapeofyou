@@ -86,7 +86,7 @@
                             </div>
                         @else
                             <div class="comments_details_edit">
-                                
+
                             </div>
                         @endif
                     </div>
