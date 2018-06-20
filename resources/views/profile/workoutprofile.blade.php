@@ -58,8 +58,8 @@
         <div class="responsive-profile-nav">
             <div>
                 <a>
-                    <img id="profileicon" class="burgericon" width="80" height="80"
-                         src="{{ asset('images/headerfooter/burger_icon.png') }}" alt="burger icon">
+                    <img id="profileicon" class="burgericon" width="60" height="60"
+                         src="{{ asset('images/user_icon.png') }}" alt="burger icon">
                 </a>
             </div>
             @if($user->username === Auth::user()->username)

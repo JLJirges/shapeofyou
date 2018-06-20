@@ -24,7 +24,7 @@
             <img width="100" height="100" src="{{ asset('images/headerfooter/Logo_2.png') }}" alt="mobile logo">
         </a>
         <a>
-            <img id="burgericon" class="burgericon" width="100" height="100"
+            <img id="burgericon" class="burgericon" width="80" height="80"
                  src="{{ asset('images/headerfooter/burger_icon.png') }}" alt="burger icon">
         </a>
     </div>

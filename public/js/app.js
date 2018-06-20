@@ -13713,7 +13713,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $("#burgericon").click(function () {
-        $("#responsive_nav").slideToggle("2000");
+        $("#responsive_nav").slideToggle('400');
     });
 });
 /*
@@ -13731,7 +13731,7 @@ $(document).ready(function(){
 
 $(document).ready(function () {
     $("#profileicon").click(function () {
-        $("#responsive-profile-nav").slideToggle("2000");
+        $("#responsive-profile-nav").slideToggle('200');
     });
 });
 
