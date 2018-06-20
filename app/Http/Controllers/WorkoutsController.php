@@ -18,6 +18,58 @@ class WorkoutsController extends Controller
         return view('/backend/create');
     }
 
+    public function workout_view()
+    {
+        $data = [
+            'blogs' => \DB::table('blogs')->get(),
+            'workout' => \DB::table('workouts')->get(),
+        ];
+
+        return view('workout')->with($data);
+    }
+
+    public function detail_view($workout_id)
+    {
+        // Get blog comments of blog with the BlogId=$id
+        // blog_comments is an array of entries of the table 'blogcomment'
+        $workout_comments = \DB::table('workoutcomment')
+            ->where('WorkoutId', $workout_id);
+
+        // Get UserIds that are in the blog_comments
+        // user_ids is an array of UserIds (e.g., [1,2,3])
+        $user_ids = $workout_comments->pluck('UserId')->toArray();
+
+        // Get BloggerId
+        $blogger_id = \DB::table('workouts')->where('id', $workout_id)->first()->BloggerId;
+
+        // Get all the data needed to pass to the blade view
+        $data = [
+            // blog_id is in the url
+            'workout_id' => $workout_id,
+
+            // I need the blog entry from the 'blogs' table.
+            // Go to the Blogs and find the entry where 'id'=$id
+            'workout' => \DB::table('workouts')->where('id', $workout_id)->first(),
+
+            'workout_author' => \DB::table('users')->where('id', $blogger_id)->first(),
+
+            // get blog comments ordered by their date
+            'workout_comments' => $workout_comments->orderBy('WorkoutCommentDate', 'desc')->get(),
+
+            // get users associated with blog comments
+            'users' => \DB::table('users')
+                ->whereIn('id', $user_ids)->get(),
+
+            // get authenticated user
+            'user_id' => Auth::user()->id,
+
+            // Boolean variable: true if user likes blog, false otherwise
+            'user_likes_workout' => \DB::table('user_favorites')
+                    ->where(['UserId' => Auth::user()->id, 'type' => 'detail', 'type_id' => $workout_id])->count() > 0
+        ];
+        return view('detail')->with($data);
+    }
+
     public function store(Request $request)
     {
 

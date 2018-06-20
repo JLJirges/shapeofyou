@@ -18,6 +18,67 @@ class ProfileDiaryController extends Controller
         return view('/profile');
     }
 
+    public function my_profile_view()
+    {
+        $data = [
+            'user' => Auth::user(),
+            'diary' => \DB::table('diaries')->where('DiaryUserId', Auth::user()->id)->orderBy('created_at', 'desc')->get()
+        ];
+
+
+        return view('profile/profile')->with($data);
+    }
+
+    public function other_profile_view($username)
+    {
+        $user_id = \DB::table('users')->where('username', $username)->first()->id;
+        $data = [
+            'user' => \DB::table('users')->where('username', $username)->first(),
+            'diary' => \DB::table('diaries')->where('DiaryUserId', $user_id)->orderBy('created_at', 'desc')->get()
+        ];
+        return view('profile/profile')->with($data);
+    }
+
+    public function detail_diary_view($diary_id)
+    {
+        // Get blog comments of blog with the BlogId=$id
+        // blog_comments is an array of entries of the table 'blogcomment'
+        $diary_comments = \DB::table('diarycomment')
+            ->where('DiaryId', $diary_id);
+
+        // Get UserIds that are in the blog_comments
+        // user_ids is an array of UserIds (e.g., [1,2,3])
+        $user_ids = $diary_comments->pluck('UserId')->toArray();
+
+        // Get BloggerId
+        $blogger_id = \DB::table('diaries')->where('id', $diary_id)->first()->DiaryUserId;
+
+        // Get all the data needed to pass to the blade view
+        $data = [
+            // blog_id is in the url
+            'diary_id' => $diary_id,
+
+            // I need the blog entry from the 'blogs' table.
+            // Go to the Blogs and find the entry where 'id'=$id
+            'diary' => \DB::table('diaries')->where('id', $diary_id)->first(),
+
+            'diary_author' => \DB::table('users')->where('id', $blogger_id)->first(),
+
+            // get blog comments ordered by their date
+            'diary_comments' => $diary_comments->orderBy('DiaryCommentDate', 'desc')->get(),
+
+            // get users associated with blog comments
+            'users' => \DB::table('users')
+                ->whereIn('id', $user_ids)->get(),
+
+            // get authenticated user
+            'user_id' => Auth::user()->id,
+
+        ];
+        return view('diary')->with($data);
+    }
+
+
 
     public function store(Request $request)
     {

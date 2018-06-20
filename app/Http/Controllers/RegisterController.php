@@ -14,7 +14,11 @@ class RegisterController extends Controller
 
     public function create()
     {
-        return view('register');
+        if (Auth()->check()) {
+            return redirect()->to('profile');
+        } else {
+            return view('register');
+        }
     }
 
     public function store()
@@ -50,6 +54,7 @@ class RegisterController extends Controller
 
     public function store_new_user()
     {
+
         $this->validate(request(), [
             'firstname' => 'required|string|max:50',
             'lastname' => 'required|string|max:50',
@@ -67,27 +72,33 @@ class RegisterController extends Controller
         \Session::flash('newuser_error_message', 'User registration successful!');
 
         return view('backend/create');
+
+    }
+
+    public function settings_view()
+    {
+        return view('profile/settingsprofile');
     }
 
     public function edit(Request $request)
     {
 
-            $this->validate(request(), [
-                'firstname' => 'string|max:50',
-                'lastname' => 'string|max:50',
-                'username' => 'unique:users|string|max:50',
-                'email' => 'unique:users|email',
-                'password' => 'min:4|confirmed',
-                'mq' => 'string',
-                'profilepic' => '',
-                'birthdate' => 'date',
-                'origin' => 'string|max:50',
-                'UserDiet' => '',
-                'UserGoal' => '',
-                'UserShape' => '',
-                'BloggerBio' => 'max: 1000',
-                'AdminText' => 'max: 1000'
-            ]);
+        $this->validate(request(), [
+            'firstname' => 'string|max:50',
+            'lastname' => 'string|max:50',
+            'username' => 'unique:users|string|max:50',
+            'email' => 'unique:users|email',
+            'password' => 'min:4|confirmed',
+            'mq' => 'string',
+            'profilepic' => '',
+            'birthdate' => 'date',
+            'origin' => 'string|max:50',
+            'UserDiet' => '',
+            'UserGoal' => '',
+            'UserShape' => '',
+            'BloggerBio' => 'max: 1000',
+            'AdminText' => 'max: 1000'
+        ]);
 
         $toUpdate = array_filter($request->all());
 
@@ -96,12 +107,12 @@ class RegisterController extends Controller
             $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
 
             $filename = $request->file('profilepic')->getClientOriginalName();
-            $toUpdate['profilepic']=$filename;
+            $toUpdate['profilepic'] = $filename;
         }
 
 
         $user = User::findOrFail(\Auth::user()->id);
-            $user->update($toUpdate);
+        $user->update($toUpdate);
 
 
         return redirect()->to('/settingsprofile');

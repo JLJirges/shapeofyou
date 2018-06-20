@@ -14,10 +14,10 @@
         @foreach($blogs as $blog)
 
 
-            @if($blog->BlogBoxImage)
+            @if($blog->BlogHeroImage)
                 <div style="background-image:url({{asset('images/blogs/' . $blog->BlogHeroImage)}});background-size:cover; background-position:center;">
                     @else
-                        <div style="background-image:url({{asset('images/blogs/' . $blog->BlogHeroImage)}});background-size:cover; background-position:center;">
+                        <div style="background-image:url({{asset('images/blogs/' . $blog->BlogImage)}});background-size:cover; background-position:center;">
                             @endif
                             <a class="box_link"
                                href="{{url('blog/' . $blog->id)}}">

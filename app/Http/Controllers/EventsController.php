@@ -14,6 +14,29 @@ class EventsController extends Controller
         return view('/backend/eventoverview');
     }
 
+    public function meetups_view()
+    {
+
+        $data = [
+            'upcoming_events' => \DB::table('events')->where('Upcoming', 0)->get(),
+            'former_events' => \DB::table('events')->where('Upcoming', 1)->get(),
+            'event_images' =>\DB::table('galleries')->get()
+        ];
+
+        return view('meetups')->with($data);
+    }
+
+    public function gallery_view($former_event_id)
+    {
+        $data = [
+            'former_event_id' => $former_event_id,
+            'former_events' => \DB::table('events')->where('id', $former_event_id)->get(),
+            'event_images' =>\DB::table('galleries')->where('EventId', $former_event_id)->get()
+        ];
+        return view('gallery')->with($data);
+    }
+
+
     public function store()
     {
 

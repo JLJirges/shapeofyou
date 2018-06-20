@@ -60,11 +60,10 @@
 
             <h2>Write a motivational Letter...</h2>
             <p>...and decide when to receive it! We all have some troubles to stay focused or lack motivation sometimes.
-                And who knows better to motivate oneself than oneself? Exactly this is what this Letter is about! Write
+                And who knows better how to motivate oneself than oneself? Exactly this is what this Letter is about! Write
                 down why you don't want you future self to give up! Remind your future self why you started! You know
-                best if you need one motivation per week, month or from time to time. Whenever you feel like it: write
-                and motivate yourself! You will receive the letter per email but it will also show up here, if you
-                scroll down. This letter is private and won't be sharable with other members!</p>
+                best if you need motivation per week, month or from time to time. Whenever you feel like it: write
+                and motivate yourself! You will receive the letter per email so this letter is private and won't be sharable with other members!</p>
             <form class="diary_form" method="post" enctype="multipart/form-data" action="/futureletter/{{Auth::user()->id}}">
                 <label>Write a title</label>
                 <input type="text" name="title" placeholder="I am the Title"><br>

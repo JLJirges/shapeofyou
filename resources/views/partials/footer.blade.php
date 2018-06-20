@@ -18,8 +18,8 @@
             <span>Follow us on</span>
         </div>
         <div class="footer_follow footer_follow_images">
-            <a href="https://www.instagram.com/jsjournalcomics/"><img alt="share instagram" src="{{ asset('images/headerfooter/share_instagram.png') }}"></a>
-            <a href="https://www.facebook.com/pages/Vienna/230335846992726"><img alt="share instagram" src="{{ asset('images/headerfooter/share_facebook.png') }}"></a>
+            <a target="socials" href="https://www.instagram.com/jsjournalcomics/"><img alt="share instagram" src="{{ asset('images/headerfooter/share_instagram.png') }}"></a>
+            <a target="socials" href="https://www.facebook.com/pages/Vienna/230335846992726"><img alt="share instagram" src="{{ asset('images/headerfooter/share_facebook.png') }}"></a>
         </div>
         <div class="follow_footer">
                 <span>

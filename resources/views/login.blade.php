@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-
     <div class="h1_bg">
         <h1>LOG IN</h1>
     </div>

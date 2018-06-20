@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-    <div class="h1_bg">
-        <h1>DASHBOARD</h1>
-    </div>
+        <div class="h1_bg">
+            <h1>DASHBOARD</h1>
+        </div>
 
         <div class="square_box_section">
             <div class="box_users">
@@ -35,6 +35,5 @@
                 <a class="box_link" href="{{url('/backend/create')}}">NEW/ADD/CREATE</a>
             </div>
         </div>
-
 
 @endsection
