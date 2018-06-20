@@ -15,8 +15,16 @@ class BlogsController extends Controller
 {
 
     public function create()
-    {
+    {if (!Auth()->check()) {
+        return redirect()->to('/');
+    } elseif (Auth::user()->isAdmin !== 1) {
+        Auth::logout();
+        Session:
+        flush();
+        return redirect()->to('/');
+    } else {
         return view('/backend/create');
+    }
     }
 
     public function superfood_view()
@@ -30,44 +38,48 @@ class BlogsController extends Controller
 
     public function blogdetail_view($blog_id)
     {
-        // Get blog comments of blog with the BlogId=$id
-        // blog_comments is an array of entries of the table 'blogcomment'
-        $blog_comments = \DB::table('blogcomment')
-            ->where('BlogId', $blog_id);
+        if (!Auth()->check()) {
+            return redirect()->to('register');
+        } else {
+            // Get blog comments of blog with the BlogId=$id
+            // blog_comments is an array of entries of the table 'blogcomment'
+            $blog_comments = \DB::table('blogcomment')
+                ->where('BlogId', $blog_id);
 
-        // Get UserIds that are in the blog_comments
-        // user_ids is an array of UserIds (e.g., [1,2,3])
-        $user_ids = $blog_comments->pluck('UserId')->toArray();
+            // Get UserIds that are in the blog_comments
+            // user_ids is an array of UserIds (e.g., [1,2,3])
+            $user_ids = $blog_comments->pluck('UserId')->toArray();
 
-        // Get BloggerId
-        $blogger_id = \DB::table('blogs')->where('id', $blog_id)->first()->BloggerId;
+            // Get BloggerId
+            $blogger_id = \DB::table('blogs')->where('id', $blog_id)->first()->BloggerId;
 
-        // Get all the data needed to pass to the blade view
-        $data = [
-            // blog_id is in the url
-            'blog_id' => $blog_id,
+            // Get all the data needed to pass to the blade view
+            $data = [
+                // blog_id is in the url
+                'blog_id' => $blog_id,
 
-            // I need the blog entry from the 'blogs' table.
-            // Go to the Blogs and find the entry where 'id'=$id
-            'blog' => \DB::table('blogs')->where('id', $blog_id)->first(),
+                // I need the blog entry from the 'blogs' table.
+                // Go to the Blogs and find the entry where 'id'=$id
+                'blog' => \DB::table('blogs')->where('id', $blog_id)->first(),
 
-            'blog_author' => \DB::table('users')->where('id', $blogger_id)->first(),
+                'blog_author' => \DB::table('users')->where('id', $blogger_id)->first(),
 
-            // get blog comments ordered by their date
-            'blog_comments' => $blog_comments->orderBy('BlogCommentDate', 'desc')->get(),
+                // get blog comments ordered by their date
+                'blog_comments' => $blog_comments->orderBy('BlogCommentDate', 'desc')->get(),
 
-            // get users associated with blog comments
-            'users' => \DB::table('users')
-                ->whereIn('id', $user_ids)->get(),
+                // get users associated with blog comments
+                'users' => \DB::table('users')
+                    ->whereIn('id', $user_ids)->get(),
 
-            // get authenticated user
-            'user_id' => Auth::user()->id,
+                // get authenticated user
+                'user_id' => Auth::user()->id,
 
-            // Boolean variable: true if user likes blog, false otherwise
-            'user_likes_blog' => \DB::table('user_favorites')
-                    ->where(['UserId' => Auth::user()->id, 'type' => 'blog', 'type_id' => $blog_id])->count() > 0
-        ];
-        return view('blog')->with($data);
+                // Boolean variable: true if user likes blog, false otherwise
+                'user_likes_blog' => \DB::table('user_favorites')
+                        ->where(['UserId' => Auth::user()->id, 'type' => 'blog', 'type_id' => $blog_id])->count() > 0
+            ];
+            return view('blog')->with($data);
+        }
     }
 
     public function store(Request $request)

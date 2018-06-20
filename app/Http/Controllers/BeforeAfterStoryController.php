@@ -15,21 +15,29 @@ class BeforeAfterStoryController extends Controller
 
     public function create()
     {
-
-        return view('/beforeafterprofile');
+        if (!Auth()->check()) {
+            return redirect()->to('login');
+        } else {
+            return view('/beforeafterprofile');
+        }
     }
 
     public function my_bas_view()
-    {
+    {if (!Auth()->check()) {
+        return redirect()->to('login');
+    } else {
         $data = [
             'user' => Auth::user(),
             'bas' => \DB::table('beforeafterstories')->where('BeforeAfterStoryUserId', Auth::user()->id)->orderBy('created_at', 'desc')->get()
         ];
         return view('profile/beforeafterprofile')->with($data);
     }
+    }
 
     public function other_bas_view($username)
-    {
+    {if (!Auth()->check()) {
+        return redirect()->to('login');
+    } else {
         $user_id = \DB::table('users')->where('username', $username)->first()->id;
         $data = [
             'user' => \DB::table('users')->where('username', $username)->first(),
@@ -37,9 +45,12 @@ class BeforeAfterStoryController extends Controller
         ];
         return view('profile/beforeafterprofile')->with($data);
     }
+    }
 
     public function detail_bas_view($bas_id)
-    {
+    {if (!Auth()->check()) {
+        return redirect()->to('register');
+    } else {
         // Get blog comments of blog with the BlogId=$id
         // blog_comments is an array of entries of the table 'blogcomment'
         $bas_comments = \DB::table('bascomment')
@@ -75,6 +86,7 @@ class BeforeAfterStoryController extends Controller
 
         ];
         return view('beforeafter')->with($data);
+    }
     }
 
 

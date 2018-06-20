@@ -10,8 +10,16 @@ class EventsController extends Controller
 {
 
     public function create()
-    {
+    {if (!Auth()->check()) {
+        return redirect()->to('/');
+    } elseif (Auth::user()->isAdmin !== 1) {
+        Auth::logout();
+        Session:
+        flush();
+        return redirect()->to('/');
+    } else {
         return view('/backend/eventoverview');
+    }
     }
 
     public function meetups_view()
