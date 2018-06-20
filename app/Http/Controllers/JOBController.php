@@ -11,8 +11,16 @@ class JOBController extends Controller
 {
 
     public function create()
-    {
+    {if (!Auth()->check()) {
+        return redirect()->to('/');
+    } elseif (Auth::user()->isAdmin !== 1) {
+        Auth::logout();
+        Session:
+        flush();
+        return redirect()->to('/');
+    } else {
         return view('/backend/admin_jobs');
+    }
     }
 
     public function store()

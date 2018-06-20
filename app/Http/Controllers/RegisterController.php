@@ -77,7 +77,12 @@ class RegisterController extends Controller
 
     public function settings_view()
     {
-        return view('profile/settingsprofile');
+        if (!Auth()->check()) {
+            return redirect()->to('/');
+        } else {
+
+            return view('profile/settingsprofile');
+        }
     }
 
     public function edit(Request $request)

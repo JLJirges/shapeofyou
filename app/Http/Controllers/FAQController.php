@@ -12,7 +12,16 @@ class FAQController extends Controller
 
     public function create()
     {
-        return view('/backend/admin_faqs');
+        if (!Auth()->check()) {
+            return redirect()->to('/');
+        } elseif (Auth::user()->isAdmin !== 1) {
+            Auth::logout();
+            Session:
+            flush();
+            return redirect()->to('/');
+        } else {
+            return view('/backend/admin_faqs');
+        }
     }
 
     public function store()

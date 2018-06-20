@@ -15,7 +15,11 @@ class MotivationController extends Controller
 
     public function view()
     {
-        return view('profile/motivationprofile');
+        if (!Auth()->check()) {
+            return redirect()->to('login');
+        } else {
+            return view('profile/motivationprofile');
+        }
     }
 
 }

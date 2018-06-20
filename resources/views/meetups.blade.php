@@ -67,7 +67,9 @@
                                 </div>
                             </div>
                         </div>
-                        @if($upcoming_event->TicketsSold < $upcoming_event->TicketsTotal)
+                            @if(!Auth()->check())
+                                <a href="{{url('register')}}" class="white_button">Join Event!</a>
+                        @elseif($upcoming_event->TicketsSold < $upcoming_event->TicketsTotal)
                             <form method="POST" action="/edit_event/{{$upcoming_event->id}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

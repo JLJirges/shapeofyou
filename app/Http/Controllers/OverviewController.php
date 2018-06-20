@@ -15,18 +15,24 @@ class OverviewController extends Controller
 
     public function diary_overview($type)
     {
-        $data = [
-            'users' => \DB::table('users')->where('id', '!=', Auth::user()->id),
-            'diaries' => \DB::table('diaries')->get(),
-            'beforeafterstories' => \DB::table('beforeafterstories'),
-            'type' => $type,
-        ];
+        if (!Auth()->check()) {
+            return redirect()->to('register');
+        } else {
+            $data = [
+                'users' => \DB::table('users')->where('id', '!=', Auth::user()->id),
+                'diaries' => \DB::table('diaries')->get(),
+                'beforeafterstories' => \DB::table('beforeafterstories'),
+                'type' => $type,
+            ];
 
-        return view('usertalkoverview')->with($data);
+            return view('usertalkoverview')->with($data);
+        }
     }
 
     public function bas_overview($type)
-    {
+    {if (!Auth()->check()) {
+        return redirect()->to('register');
+    } else {
         $data = [
             'user' => Auth::user(),
             'diaries' => \DB::table('diaries')->get(),
@@ -37,51 +43,68 @@ class OverviewController extends Controller
 
         return view('beforeafteroverview')->with($data);
     }
+    }
 
     public function workout_overview($workout_category)
     {
-        $data = [
-            'workouts' => \DB::table('workouts'),
-            'workout_category' => $workout_category
-        ];
+        if (!Auth()->check()) {
+            return redirect()->to('register');
+        } else {
+            $data = [
+                'workouts' => \DB::table('workouts'),
+                'workout_category' => $workout_category
+            ];
 
-        return view('overview')->with($data);
+            return view('overview')->with($data);
+        }
     }
 
     public function user_overview($type, $type_id)
     {
-        $data = [
-            'user' => Auth::user(),
-            'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where($type, $type_id)->get(),
-            'type' => $type,
-            'type_id' => $type_id
-        ];
+        if (!Auth()->check()) {
+            return redirect()->to('register');
+        } else {
+            $data = [
+                'user' => Auth::user(),
+                'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where($type, $type_id)->get(),
+                'type' => $type,
+                'type_id' => $type_id
+            ];
 
-        return view('useroverview')->with($data);
+            return view('useroverview')->with($data);
+        }
     }
 
     public function allusers_overview()
     {
-        $data = [
-            'user' => Auth::user(),
-            'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->get()
-        ];
+        if (!Auth()->check()) {
+            return redirect()->to('register');
+        } else {
+            $data = [
+                'user' => Auth::user(),
+                'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->get()
+            ];
 
-        return view('useroverview')->with($data);
+            return view('useroverview')->with($data);
+        }
     }
 
     public function buddy_overview()
     {
-        $data = [
-            'user' => Auth::user(),
-            'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where(
-                ['UserDiet' => Auth::user()->UserDiet,
-                    'UserGoal' => Auth::user()->UserGoal,
-                    'UserShape' => Auth::user()->UserShape])->get(),
+        if (!Auth()->check()) {
+            return redirect()->to('register');
+        } else {
+            $data = [
+                'user' => Auth::user(),
+                'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where(
+                    ['UserDiet' => Auth::user()->UserDiet,
+                        'UserGoal' => Auth::user()->UserGoal,
+                        'UserShape' => Auth::user()->UserShape])->get(),
 
-        ];
+            ];
 
-        return view('useroverview')->with($data);
+            return view('useroverview')->with($data);
+        }
     }
 
 }

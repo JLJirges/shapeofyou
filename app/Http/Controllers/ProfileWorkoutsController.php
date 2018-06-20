@@ -15,26 +15,34 @@ class ProfileWorkoutsController extends Controller
 
     public function my_workout_view()
     {
-        $data = [
-            'user' => Auth::user(),
-            'workouts' => \DB::table('workouts')->get(),
-            'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', Auth::user()->id)->pluck('type_id')->toArray()
-        ];
+        if (!Auth()->check()) {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'user' => Auth::user(),
+                'workouts' => \DB::table('workouts')->get(),
+                'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', Auth::user()->id)->pluck('type_id')->toArray()
+            ];
 
-        return view('profile/workoutprofile')->with($data);
+            return view('profile/workoutprofile')->with($data);
+        }
     }
 
     public function other_workout_view($username)
     {
-        $user_id = \DB::table('users')->where('username', $username)->first()->id;
+        if (!Auth()->check()) {
+            return redirect()->to('/');
+        } else {
+            $user_id = \DB::table('users')->where('username', $username)->first()->id;
 
-        $data = [
-            'user' => \DB::table('users')->where('username', $username)->first(),
-            'workouts' => \DB::table('workouts')->get(),
-            'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()
-        ];
+            $data = [
+                'user' => \DB::table('users')->where('username', $username)->first(),
+                'workouts' => \DB::table('workouts')->get(),
+                'fave_workout_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()
+            ];
 
-        return view('profile/workoutprofile')->with($data);
+            return view('profile/workoutprofile')->with($data);
+        }
     }
 
 }

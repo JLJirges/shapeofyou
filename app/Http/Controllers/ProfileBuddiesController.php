@@ -14,32 +14,39 @@ class ProfileBuddiesController extends Controller
 {
     public function my_buddies_view()
     {
-        $data = [
-            'user' => Auth::user(),
-            'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where(
-                ['UserDiet' => Auth::user()->UserDiet,
-                    'UserGoal' => Auth::user()->UserGoal,
-                    'UserShape' => Auth::user()->UserShape])->get(),
+        if (!Auth()->check()) {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'user' => Auth::user(),
+                'users' => \DB::table('users')->where('id', '!=', Auth::user()->id)->where(
+                    ['UserDiet' => Auth::user()->UserDiet,
+                        'UserGoal' => Auth::user()->UserGoal,
+                        'UserShape' => Auth::user()->UserShape])->get(),
 
-        ];
+            ];
 
-
-        return view('profile/buddiesprofile')->with($data);
+            return view('profile/buddiesprofile')->with($data);
+        }
     }
 
     public function other_buddies_view($username)
     {
-        $this_user = \DB::table('users')->where('username', $username)->get();
+        if (!Auth()->check()) {
+            return redirect()->to('/');
+        } else {
+            $this_user = \DB::table('users')->where('username', $username)->get();
 
-        $data = [
-            'user' => \DB::table('users')->where('username', $username)->first(),
-            'users' => \DB::table('users')->where('username', '!=', $username)->where(
-                ['UserDiet' => $this_user->first()->UserDiet,
-                    'UserGoal' => $this_user->first()->UserGoal,
-                    'UserShape' => $this_user->first()->UserShape])->get(),
-        ];
+            $data = [
+                'user' => \DB::table('users')->where('username', $username)->first(),
+                'users' => \DB::table('users')->where('username', '!=', $username)->where(
+                    ['UserDiet' => $this_user->first()->UserDiet,
+                        'UserGoal' => $this_user->first()->UserGoal,
+                        'UserShape' => $this_user->first()->UserShape])->get(),
+            ];
 
 
-        return view('profile/buddiesprofile')->with($data);
+            return view('profile/buddiesprofile')->with($data);
+        }
     }
 }

@@ -15,24 +15,33 @@ class ProfileBlogsController extends Controller
 
     public function my_blogs_view()
     {
-        $data = [
-            'user' => Auth::user(),
-            'blogs' => \DB::table('blogs')->get(),
-            'fave_blog_ids' => \DB::table('user_favorites')->where('UserId', Auth::user()->id)->pluck('type_id')->toArray()
-        ];
+        if (!Auth()->check()) {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'user' => Auth::user(),
+                'blogs' => \DB::table('blogs')->get(),
+                'fave_blog_ids' => \DB::table('user_favorites')->where('UserId', Auth::user()->id)->pluck('type_id')->toArray()
+            ];
 
-        return view('profile/blogoverviewprofile')->with($data);
+            return view('profile/blogoverviewprofile')->with($data);
+        }
     }
 
     public function other_blogs_view($username)
     {
-        $user_id = \DB::table('users')->where('username', $username)->first()->id;
-        $data = [
-            'user' => \DB::table('users')->where('username', $username)->first(),
-            'users' => \DB::table('users')->get(),
-            'blogs' => \DB::table('blogs')->get(),
-            'fave_blog_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()];
-        return view('profile/blogoverviewprofile')->with($data);
+        if (!Auth()->check()) {
+            return redirect()->to('/');
+        } else {
+            $user_id = \DB::table('users')->where('username', $username)->first()->id;
+            $data = [
+                'user' => \DB::table('users')->where('username', $username)->first(),
+                'users' => \DB::table('users')->get(),
+                'blogs' => \DB::table('blogs')->get(),
+                'fave_blog_ids' => \DB::table('user_favorites')->where('UserId', $user_id)->pluck('type_id')->toArray()
+            ];
+            return view('profile/blogoverviewprofile')->with($data);
+        }
     }
 
 }
