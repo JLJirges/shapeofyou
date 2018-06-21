@@ -36,6 +36,13 @@ class EventsController extends Controller
 
     public function gallery_view($former_event_id)
     {
+        $former_event_exists = \DB::table('events')
+                ->where('id', $former_event_id)->count() > 0;
+
+        if (!$former_event_exists) {
+            return redirect()->to('meetups');
+        }
+
         $data = [
             'former_event_id' => $former_event_id,
             'former_events' => \DB::table('events')->where('id', $former_event_id)->get(),

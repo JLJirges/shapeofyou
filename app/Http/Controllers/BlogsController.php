@@ -40,9 +40,20 @@ class BlogsController extends Controller
 
     public function blogdetail_view($blog_id)
     {
+
+        $blog_exists = \DB::table('blogs')
+            ->where('id', $blog_id)->count() > 0;
+
+        if (!$blog_exists) {
+            return redirect()->to('superfood');
+        }
         if (!Auth()->check()) {
             return redirect()->to('register');
-        } else {
+        }
+
+
+
+
             // Get blog comments of blog with the BlogId=$id
             // blog_comments is an array of entries of the table 'blogcomment'
             $blog_comments = \DB::table('blogcomment')
@@ -81,7 +92,7 @@ class BlogsController extends Controller
                         ->where(['UserId' => Auth::user()->id, 'type' => 'blog', 'type_id' => $blog_id])->count() > 0
             ];
             return view('blog')->with($data);
-        }
+
     }
 
     public function store(Request $request)

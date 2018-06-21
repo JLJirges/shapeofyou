@@ -16,6 +16,7 @@ class OverviewController extends Controller
 
     public function diary_overview($type)
     {
+
         if (!Auth()->check()) {
             return redirect()->to('register');
         } else {
@@ -31,7 +32,8 @@ class OverviewController extends Controller
     }
 
     public function bas_overview($type)
-    {if (!Auth()->check()) {
+    {
+        if (!Auth()->check()) {
         return redirect()->to('register');
     } else {
         $data = [
@@ -48,6 +50,13 @@ class OverviewController extends Controller
 
     public function workout_overview($workout_category)
     {
+        $category_exists = \DB::table('workouts')
+                ->where('WorkoutCategory', $workout_category)->count() > 0;
+
+        if (!$category_exists) {
+            return redirect()->to('workouts');
+        }
+
         if (!Auth()->check()) {
             return redirect()->to('register');
         } else {

@@ -36,7 +36,8 @@ class BeforeAfterStoryController extends Controller
     }
 
     public function other_bas_view($username)
-    {if (!Auth()->check()) {
+    {
+        if (!Auth()->check()) {
         return redirect()->to('login');
     } else {
         $user_id = \DB::table('users')->where('username', $username)->first()->id;
@@ -49,7 +50,16 @@ class BeforeAfterStoryController extends Controller
     }
 
     public function detail_bas_view($bas_id)
-    {if (!Auth()->check()) {
+    {
+
+        $bas_exists = \DB::table('beforeafterstories')
+                ->where('id', $bas_id)->count() > 0;
+
+        if (!$bas_exists) {
+            return redirect()->to('community');
+        }
+
+        if (!Auth()->check()) {
         return redirect()->to('register');
     } else {
         // Get blog comments of blog with the BlogId=$id

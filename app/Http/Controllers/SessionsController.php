@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cache;
+use Symfony\Component\Console\Helper\Helper;
 
 class SessionsController extends Controller
 {
@@ -33,6 +35,8 @@ class SessionsController extends Controller
     public function logout()
     {
         Auth::logout();
+        //Session::flush();
+        //   Cache::flush();
         Session::flush();
         return redirect()->route('login');
         //return redirect()->route('login');

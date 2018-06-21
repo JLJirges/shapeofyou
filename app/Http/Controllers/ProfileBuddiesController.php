@@ -32,6 +32,13 @@ class ProfileBuddiesController extends Controller
 
     public function other_buddies_view($username)
     {
+        $user_exists = \DB::table('users')
+                ->where('username', $username)->count() > 0;
+
+        if (!$user_exists) {
+            return redirect()->to('community');
+        }
+
         if (!Auth()->check()) {
             return redirect()->to('/');
         } else {

@@ -37,6 +37,13 @@ class ProfileDiaryController extends Controller
 
     public function other_profile_view($username)
     {
+        $user_exists = \DB::table('users')
+                ->where('username', $username)->count() > 0;
+
+        if (!$user_exists) {
+            return redirect()->to('community');
+        }
+
         if (!Auth()->check()) {
             return redirect()->to('/');
         } else {
@@ -51,6 +58,13 @@ class ProfileDiaryController extends Controller
 
     public function detail_diary_view($diary_id)
     {
+        $diary_exists = \DB::table('diaries')
+                ->where('id', $diary_id)->count() > 0;
+
+        if (!$diary_exists) {
+            return redirect()->to('community');
+        }
+
         if (!Auth()->check()) {
             return redirect()->to('/');
         } else {

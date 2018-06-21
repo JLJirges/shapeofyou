@@ -42,6 +42,13 @@ class WorkoutsController extends Controller
 
     public function detail_view($workout_id)
     {
+        $workout_exists = \DB::table('workouts')
+                ->where('id', $workout_id)->count() > 0;
+
+        if (!$workout_exists) {
+            return redirect()->to('workout');
+        }
+
         if (!Auth()->check()) {
             return redirect()->to('/');
         } else {
