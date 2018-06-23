@@ -53,7 +53,7 @@
 
     <div class="blog_author_section">
         <div class="blog_abouttheauthor"
-             style="background-image:{{asset('images/blogs/responsive_author_bg.png')}};background-size: cover; background-position: center">
+             style="background-image:url({{asset('images/blogs/responsive_author_bg.png')}});background-size: cover; background-position: center;">
             <h4>About the author</h4>
             <div class="blog_abouttheauthor_content">
                 <div>

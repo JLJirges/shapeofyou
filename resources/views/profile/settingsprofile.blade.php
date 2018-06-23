@@ -185,7 +185,7 @@
 
         </div>
         <div>
-            <form class="edit_profile_form" method="post" action="/upload_profilepic" files="true" enctype="multipart/form-data">
+            <form class="edit_profile_form" method="post" action="/upload_profilepic" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Change Profile Picture</label><br>
                 <input type="file" name="profilepic" id="profilepic">
@@ -218,7 +218,7 @@
             <div>
                 <div>
                 <label>Body Shape</label><br>
-                <select type="text" name="UserShape">
+                <select name="UserShape">
                     <option value="0">Secret</option>
                     <option value="1">Pear</option>
                     <option value="2">Apple</option>
@@ -228,7 +228,7 @@
                 </div>
                 <div>
                 <label>Change Diet</label><br>
-                <select type="text" name="UserDiet">
+                <select name="UserDiet">
                     <option value="0">Secret</option>
                     <option value="1">No diet</option>
                     <option value="2">Pescetarian</option>
@@ -238,7 +238,7 @@
                 </div>
                 <div>
                 <label>Change Goal</label><br>
-                <select type="text" name="UserGoal">
+                <select name="UserGoal">
                     <option value="0">Secret</option>
                     <option value="1">Lose weight</option>
                     <option value="2">Stay/Become fit</option>
@@ -266,7 +266,7 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>BloggerBio</label>
                 <input type="text" name="BloggerBio" placeholder="Please add your bio...">
-                <string>*This Text will show up after your Blog in 'About the Author - section'! Please write in 3rd person!</string>
+                <p>*This Text will show up after your Blog in 'About the Author - section'! Please write in 3rd person!</p>
                 <button class="white_button">Update*</button>
 
             </form>
@@ -274,7 +274,7 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>AdminText</label>
                 <input type="text" name="AdminText" placeholder="Say hello!">
-                <string>*This Text will show up in the Footer at <a class="tandc" href="{{'aboutus'}}">About Us</a>.</string>
+                <p>*This Text will show up in the Footer at <a class="tandc" href="{{'aboutus'}}">About Us</a>.</p>
                 <button class="white_button">Update*</button>
 
             </form>

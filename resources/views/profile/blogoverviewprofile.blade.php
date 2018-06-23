@@ -107,7 +107,7 @@
                     at SHAPE OF YOU. (Please notice, that this was a joke!) No. The reason is, that sometimes Trends or
                     even experts change their mind and
                     we only want our Blogs to be up-to-date!</p>
-            </div>
+
 
         @else
             <div class="profile_info_section">

@@ -16,7 +16,7 @@
         <label>Available Tickets</label>
         <input type="number" name="TicketsTotal" placeholder="{{$event->TicketsTotal}}">
         <label>When?</label>
-        <input type="date" name="EventWhen" placeholder="{{$event->EventWhen}}">
+        <input type="date" name="EventWhen">
         <label>Where?</label>
         <input name="EventWhere" placeholder="{{$event->EventWhere}}">
         <label>Google Maps</label>
@@ -26,7 +26,7 @@
         <label>Costs per Ticket</label>
         <input type="number" name="Costs" placeholder="{{$event->Costs}}">
         <label>Status</label>
-        <select type="number" name="Upcoming">
+        <select name="Upcoming">
             <option value="0">Upcoming Event</option>
             <option value="1">Former Event</option>
         </select>

@@ -179,7 +179,7 @@
                         -
                         whatever it is: Share your thoughts! (This Diary will be public to community
                         members)</p>
-                    <form class="diary_form" method="POST" action="/profile" files="true" enctype="multipart/form-data">
+                    <form class="diary_form" method="POST" action="/profile" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" name="DiaryUserId" value="{{Auth::user()->id}}">
                         <label>Write a title</label>
@@ -237,10 +237,8 @@
 
                                     @endif
 
-
                             </div>
-                </div>
-        </div>
+
     @endif
 @endsection
 

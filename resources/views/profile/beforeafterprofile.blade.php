@@ -93,7 +93,7 @@
                     motivate other and/or to get some more tips from other members and our professionals! Every little
                     progress is an awesome progress! Share it! (This Before/After-Story will be public to community
                     members)</p>
-                <form class="diary_form" method="post" action="/BeforeAfterStory" files="true"
+                <form class="diary_form" method="post" action="/BeforeAfterStory"
                       enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <label>Write a title</label>
@@ -166,9 +166,8 @@
                                         {{$basentry->BeforeAfterStoryTitle}}  </a>
                                 </div>
                             @endforeach
-
+                        </div>
                             @endif
                         </div>
-                </div>
-    </div>
+
 @endsection

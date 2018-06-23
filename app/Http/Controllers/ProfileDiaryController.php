@@ -123,12 +123,20 @@ class ProfileDiaryController extends Controller
             $request->file('DiaryHeroImage')->move(("images\\uploads_diaries\\"), $request->file('DiaryHeroImage')->getClientOriginalName());
 
             $filename = $request->file('DiaryHeroImage')->getClientOriginalName();
+            $toUpdate['DiaryHeroImage'] = $filename;
 
 
-            Diary::create([
+
+        Diary::create([
                 'DiaryTitle' => request('DiaryTitle'),
                 'DiaryContent' => request('DiaryContent'),
                 'DiaryHeroImage' => $filename,
+                'DiaryUserId' => Auth::id()
+            ]);
+        }else{
+            Diary::create([
+                'DiaryTitle' => request('DiaryTitle'),
+                'DiaryContent' => request('DiaryContent'),
                 'DiaryUserId' => Auth::id()
             ]);
         }

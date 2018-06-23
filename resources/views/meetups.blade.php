@@ -50,9 +50,7 @@
                                         </div>
                                     </div>
 
-                                    <iframe src="{{$upcoming_event->Maps}}"
-                                            width="600" height="450" frameborder="0" style="border:0"
-                                            allowfullscreen class="meetup_event_googlemaps"></iframe>
+                                    <iframe src="{{$upcoming_event->Maps}}" allowfullscreen class="meetup_event_googlemaps"></iframe>
                                 </div>
                                 <div>
                                     <p class="event_W">WHAT:</p>
@@ -73,7 +71,7 @@
                             <form method="POST" action="/edit_event/{{$upcoming_event->id}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                                <input type="hidden" value="1" name="SoldTickets" placeholder="0" class="buy_tickets"
+                                <input type="hidden" value="1" name="SoldTickets" class="buy_tickets"
                                        id="bought_ticket">
                                 <button type="submit" class="ticket_button" id="increase_ticketnumber">Buy one Ticket!
                                 </button>

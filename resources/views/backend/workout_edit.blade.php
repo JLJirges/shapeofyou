@@ -23,13 +23,13 @@
         <label>Workout Content Two</label>
         <input name="WorkoutContentTwo" placeholder="content">
         <label>Workout Category</label><br>
-        <select type="text" name="WorkoutCategory">
+        <select name="WorkoutCategory">
             <option value="1" @if($workout->WorkoutCategory === 1)selected="selected" @endif >Warm Up</option>
             <option value="2" @if($workout->WorkoutCategory === 2)selected="selected" @endif >Stretching</option>
             <option value="3" @if($workout->WorkoutCategory === 3) selected="selected"@endif>Main Workout</option>
         </select>
         <label>Author</label><br>
-        <select type="text" name="BloggerId">
+        <select name="BloggerId">
             @foreach($admin_users as $admin_user)
                 <option value="{{$admin_user->id}}">
                     {{$admin_user->username}}

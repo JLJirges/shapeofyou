@@ -22,7 +22,7 @@
         </div>
     @endif
 
-    <form class="register_form" method="POST" action="/edit_faq/ {{$faq->id}}">
+    <form class="register_form" method="POST" action="/edit_faq/{{$faq->id}}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label>Question</label>
         <input type="text" name="Question" placeholder="{{$faq->Question}}">

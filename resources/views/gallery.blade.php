@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="gallery_overlay_background">
-        <img class="prev_gallery" src="{{asset('images/prev_icon.png')}}" width="70" height="70">
+        <img class="prev_gallery" src="{{asset('images/prev_icon.png')}}" width="70" height="70" alt="previous">
         <div class="slide_box_gallery">
 
             <ul class="slide_list_gallery">
@@ -18,7 +18,7 @@
             </ul>
 
         </div>
-        <img class="next_gallery" src="{{asset('images/next_icon.png')}}" width="70" height="70">
+        <img class="next_gallery" src="{{asset('images/next_icon.png')}}" width="70" height="70" alt="next">
 
     </div>
 

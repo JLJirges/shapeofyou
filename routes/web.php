@@ -57,9 +57,12 @@ Route::post('deleteAccount/{id}', 'SessionsController@deleteAccount');
 // Profiles
 
 // User Diaries
-Route::post('profile/', 'ProfileDiaryController@store');
-Route::post('DiaryHeroImage/{request}', 'ProfileDiaryController@store');
-Route::get('profile/', 'ProfileDiaryController@create');
+Route::post('DiaryHeroImage', 'ProfileDiaryController@store');
+Route::post('profile', 'ProfileDiaryController@store');
+Route::get('profile', 'ProfileDiaryController@create');
+
+
+
 
 Route::post('delete_diary_comment/{diary_id}/{diary_comment_id}', 'ProfileDiaryController@deleteDiaryComment');
 Route::post('delete_diary_entry/{diary_id}', 'ProfileDiaryController@deleteDiaryEntry');
@@ -132,10 +135,10 @@ Route::get('diary/{diary_id}', 'ProfileDiaryController@detail_diary_view');
 
 //Footer
 Route::get('contact', 'FooterController@contact_view');
-Route::get('contact', 'FooterController@jobs_view');
-Route::get('contact', 'FooterController@tac_view');
-Route::get('contact', 'FooterController@faq_view');
-Route::get('contact', 'FooterController@about_view');
+Route::get('jobs', 'FooterController@jobs_view');
+Route::get('termsandconditions', 'FooterController@tac_view');
+Route::get('faq', 'FooterController@faq_view');
+Route::get('aboutus', 'FooterController@about_view');
 
 
 //Inetractions
@@ -224,6 +227,6 @@ Route::post('delete_blog_comment/{blog_id}/{blog_comment_id}', 'BlogsController@
 Route::get('/backend/workout_edit', 'BackendController@workout_edit_view');
 Route::get('/backend/workout_edit/{workout_id}', 'BackendController@workout_edit');
 
-Route::get('/backend/blog_edit', 'BackendController@workout_edit_view');
-Route::get('/backend/blog_edit/{blog_id}', 'BackendController@workout_edit');
+Route::get('/backend/blog_edit', 'BackendController@blog_edit_view');
+Route::get('/backend/blog_edit/{blog_id}', 'BackendController@blog_edit');
 

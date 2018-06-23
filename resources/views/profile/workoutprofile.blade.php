@@ -85,6 +85,7 @@
                 </ul>
             @endif
         </div>
+
         @if($user->username === Auth::user()->username)
             <div class="profile_diary_section">
                 <p class="explain_fav_blogs_p">Are you ready for your workout today? If your workout section is empty -
@@ -106,6 +107,7 @@
                     work! </p>
             </div>
     </div>
+
     @else
         <div class="profile_info_section">
             <div class="profile_info_section_images">
@@ -121,13 +123,14 @@
                            class="backend_profile_picture_overview"><span class="show_username_profile">{{$user->username}}
                 </span></a>
                     @endif
-
+                </div>
                 </div>
 
                 <p class="profile_section_personal_motivation_quote">@if($user->mq){{ $user->mq }} @else
                         'No motivational quote defined...' @endif</p>
             </div>
         </div>
+
     @endif
 
     <!-- my profile -->
@@ -301,7 +304,4 @@
             </div>
         </div>
     @endif
-
-
-
 @endsection

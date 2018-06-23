@@ -59,7 +59,7 @@
         </div>
     @endif
 
-    <form class="register_form" method="POST" action="/create" files="true" enctype="multipart/form-data">
+    <form class="register_form" method="POST" action="/create" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label>Blog Title</label>
         <input type="text" name="BlogTitle" placeholder="CAPITAL LETTERS">
@@ -72,14 +72,14 @@
         <label>Blog Content Two</label>
         <input type="text" name="BlogContentTwo" placeholder="Blog Content">
         <label>Blog Category</label><br>
-        <select type="text" name="BlogCategory">
+        <select name="BlogCategory">
             <option value="1">Occassional Blog</option>
             <option value="2">Diet Blog</option>
             <option value="3">Current Exciter</option>
             <option value="4">Workout Blog</option>
         </select>
         <label>Blogger</label><br>
-        <select type="text" name="BloggerId">
+        <select name="BloggerId">
             @foreach($admin_users as $admin_user)
                 <option value="{{$admin_user->id}}">
                     {{$admin_user->username}}
@@ -108,7 +108,7 @@
         </div>
     @endif
 
-    <form class="register_form" method="POST" action="/add_new_workout" files="true" enctype="multipart/form-data">
+    <form class="register_form" method="POST" action="/add_new_workout" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label>Workout Title</label>
         <input type="text" name="WorkoutTitle" placeholder="CAPITAL LETTERS">
@@ -121,13 +121,13 @@
         <label>Workout Content Two</label>
         <input name="WorkoutContentTwo" placeholder="Workout Content">
         <label>Workout Category</label><br>
-        <select type="text" name="WorkoutCategory">
+        <select name="WorkoutCategory">
             <option value="1">Warm Up</option>
             <option value="2">Stretching</option>
             <option value="3">Main Workout</option>
         </select>
         <label>Author</label><br>
-        <select type="text" name="BloggerId">
+        <select name="BloggerId">
             @foreach($admin_users as $admin_user)
                 <option value="{{$admin_user->id}}">
                     {{$admin_user->username}}

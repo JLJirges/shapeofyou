@@ -8,21 +8,24 @@
     <div class="h1_bg">
         <h1>Jobs</h1>
     </div>
+
+    <h2>You would like to work for SHAPE OF YOU?</h2>
     @if($jobs)
+        <h3>We're hiring!</h3>
         @foreach($jobs as $job)
             <div class="jobs">
 
-                   <string class="jobtitle">We are looking for:</string>
-                    <string> {{$job->JobTitle}}</string>
+                   <h4 class="jobtitle">We are looking for:</h4>
+                    <p> {{$job->JobTitle}}</p>
 
-                    <string class="jobtitle">Your Tasks:</string>
-                    <string> {{$job->JobDescription}}</string>
+                    <h4 class="jobtitle">Your Tasks:</h4>
+                    <p> {{$job->JobDescription}}</p>
 
-                    <string class="jobtitle">Your Skills:</string>
-                    <string> {{$job->YourSkills}}</string>
+                    <h4 class="jobtitle">Your Skills:</h4>
+                    <p> {{$job->YourSkills}}</p>
 
-                    <string class="jobtitle">Please contact:</string>
-                    <string> {{$job->ContactUs}}</string>
+                    <h4 class="jobtitle">Please contact:</h4>
+                    <p> {{$job->ContactUs}}</p>
 
             </div>
 

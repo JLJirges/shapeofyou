@@ -10,6 +10,7 @@
     </div>
     <div class="contact_info">
 
+        <h2>SHAPE OF YOU</h2>
         <h3>Contact us!</h3>
 
         <div>

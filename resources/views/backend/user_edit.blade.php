@@ -30,11 +30,11 @@
             <label>Motivational Quote</label>
             <input type="text" name="mq" placeholder="{{$user->mq}}">
             <label>Birthdate</label><br>
-            <input type="date" name="birthdate" placeholder="{{$user->birthdate}}">
+            <input type="date" name="birthdate">
             <label>Origin</label><br>
             <input type="Text" name="origin" placeholder="{{$user->origin}}">
             <label>Body Shape</label><br>
-            <select type="text" name="UserShape">
+            <select name="UserShape">
                 <option value="0" @if($user->UserShape === 0) selected="selected" @endif>Secret</option>
                 <option value="1" @if($user->UserShape === 1) selected="selected" @endif>Pear</option>
                 <option value="2" @if($user->UserShape === 2) selected="selected" @endif>Apple</option>
@@ -42,7 +42,7 @@
                 <option value="4" @if($user->UserShape === 4) selected="selected" @endif>Straight</option>
             </select>
             <label>Change Diet</label><br>
-            <select type="text" name="UserDiet">
+            <select name="UserDiet">
                 <option value="0" @if($user->UserDiet === 0) selected="selected" @endif>Secret</option>
                 <option value="1" @if($user->UserDiet === 1) selected="selected" @endif>No diet</option>
                 <option value="2" @if($user->UserDiet === 2) selected="selected" @endif>Pescetarian</option>
@@ -50,7 +50,7 @@
                 <option value="4" @if($user->UserDiet === 4) selected="selected" @endif>Vegetarian</option>
             </select>
             <label>Change Goal</label><br>
-            <select type="text" name="UserGoal">
+            <select name="UserGoal">
                 <option value="0" @if($user->UserGoal === 0) selected="selected" @endif>Secret</option>
                 <option value="1" @if($user->UserGoal === 1) selected="selected" @endif>Lose weight</option>
                 <option value="2" @if($user->UserGoal === 2) selected="selected" @endif>Stay/Become fit</option>
