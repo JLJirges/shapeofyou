@@ -7,7 +7,9 @@
 @section('content')
     <div class="h1_bg">
         <h1> SHAPE OF YOU</h1>
+
     </div>
+
     <div class="home_section goal_bg">
         <div>
             <h2>Choose your goal!</h2>
@@ -17,6 +19,11 @@
                 It is your desicion, your goal, your achievements -
                 SHAPE OF YOU!
             </div>
+
+
+
+
+
 
             <ul class="tabs home_section_goals">
                 <li class="tab-link current_tab" data-tab="goal-tab-1">

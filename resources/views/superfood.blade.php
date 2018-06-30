@@ -25,10 +25,10 @@
                 <div class="square_box_section">
                     @foreach($blogs->where('BlogCategory', 1) as $blog)
                         <div style="background-image:url({{'images/blogs/' . $blog->BlogHeroImage}});background-size:cover; background-position:center;">
-
                             <a class="box_link"
                                href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
-                                {{$blog->BlogTitle}}  </a>
+                                {{$blog->BlogTitle}}
+                            </a>
                         </div>
                     @endforeach
                 </div>

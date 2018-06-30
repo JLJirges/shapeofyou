@@ -33,6 +33,7 @@ h1 {
 .h1_bg {
   background: url("../images/background_colour.png") no-repeat;
   width: 100%;
+  height: auto;
 }
 
 h2 {
@@ -41,6 +42,20 @@ h2 {
 
 h3 {
   font-size: 20pt;
+}
+
+text {
+  font-size: 10px;
+  -webkit-transition: font-size .4s ease-out;
+  transition: font-size .4s ease-out;
+  font-weight: 800;
+  font-family: "AR DARLING", sans-serif;
+}
+
+svg:hover text {
+  -webkit-transition: font-size .6s ease-in;
+  transition: font-size .6s ease-in;
+  font-size: 300px;
 }
 
 .tandc {
@@ -171,22 +186,6 @@ h3 {
   background-size: cover;
   cursor: pointer;
   border: none;
-}
-
-.report {
-  width: 30px;
-  height: 30px;
-  background: url("../images/report_icon.png") no-repeat;
-  background-size: cover;
-  cursor: pointer;
-}
-
-.report:hover {
-  width: 30px;
-  height: 30px;
-  background: url("../images/open_report_icon.png") no-repeat;
-  background-size: cover;
-  cursor: pointer;
 }
 
 .addworkout_button {
@@ -430,12 +429,6 @@ ul.tabs li.current {
   margin: 20px;
 }
 
-.home_body_shape_img > img:hover {
-  /* background: rgba(254, 161, 0, 0.9);*/
-  -webkit-box-shadow: #fea100 0 0 10px 0;
-          box-shadow: #fea100 0 0 10px 0;
-}
-
 /* RECIPES */
 .superfood_text {
   width: 50%;
@@ -447,24 +440,6 @@ ul.tabs li.current {
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
-}
-
-.recipe_section {
-  width: auto;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: 1%;
-  margin-right: 1%;
 }
 
 .diet_section {
@@ -621,51 +596,6 @@ ul.tabs li.current {
   background-size: cover;
 }
 
-.recipe_section_choose {
-  width: 15%;
-  height: auto;
-  padding: 50px;
-  border-left: solid 1px lightgrey;
-  margin-left: 2%;
-}
-
-.recipe_section_filter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 115px;
-  padding: 5px;
-}
-
-.recipe_section_ignore_filter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-bottom: 70px;
-  padding-top: 40px;
-  border-top: lightgrey solid 1px;
-}
-
-.recipe_button {
-  background: radial-gradient(ellipse at center, #d1e802 0%, #688000 100%);
-  width: 150px;
-  padding: 8px;
-  -webkit-box-shadow: black 0 0 10px 0;
-          box-shadow: black 0 0 10px 0;
-  color: black;
-  font-weight: bold;
-}
-
 /* SUPERFOOD BLOGS */
 .superfood_blog_bg {
   background: url("../images/superfood/superfood_bg.png") fixed;
@@ -712,61 +642,6 @@ ul.tabs li.current {
 .superfood_blog_section {
   margin-top: 2%;
   margin-bottom: 2%;
-}
-
-.superfood_box_goodcarbsbadcarbs {
-  background: url("../images/superfood/goodcarbsbadcarbs.png") center;
-  background-size: cover;
-}
-
-.superfood_box_thepowerofchia {
-  background: url("../images/superfood/thepowerofchia.png") center;
-  background-size: cover;
-}
-
-.superfood_box_proteinpowder {
-  background: url("../images/superfood/proteinpowder.png") center;
-  background-size: cover;
-}
-
-.superfood_box_superfood {
-  background: url("../images/superfood/superfood.png") center;
-  background-size: cover;
-}
-
-.superfood_box_underthesea {
-  background: url("../images/superfood/underthesea.png") center;
-  background-size: cover;
-}
-
-.superfood_box_whatdoineed {
-  background: url("../images/superfood/whatdoineed.png") center;
-  background-size: cover;
-}
-
-.superfood_box_gowiththeseason {
-  background: url("../images/superfood/gowiththeseason.png") center;
-  background-size: cover;
-}
-
-.superfood_box_vegan {
-  background: url("../images/community/vegan.png") center;
-  background-size: cover;
-}
-
-.superfood_box_vegetarian {
-  background: url("../images/community/vegetarian.png") center;
-  background-size: cover;
-}
-
-.superfood_box_pescetarian {
-  background: url("../images/community/pescetarian.png") center;
-  background-size: cover;
-}
-
-.superfood_box_nospecialdiet {
-  background: url("../images/community/nospecialdiet.png") center;
-  background-size: cover;
 }
 
 /* WORKOUT */
@@ -1064,6 +939,11 @@ ul.tabs li.current {
 .community_box_diaries {
   background: url("../images/community/diaries.png") center;
   background-size: cover;
+}
+
+.community_box_diaries:hover {
+  -webkit-box-shadow: darkgrey 0 0 10px 0;
+          box-shadow: darkgrey 0 0 10px 0;
 }
 
 .community_box_meetups {
@@ -3481,6 +3361,10 @@ footer {
             align-items: center;
     width: 100%;
     padding: 0;
+  }
+  svg {
+    height: 212px;
+    width: 285px;
   }
   .community_text_section {
     display: -webkit-box;
