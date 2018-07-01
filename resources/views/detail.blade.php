@@ -9,6 +9,7 @@
         <h1>WORKOUT</h1>
     </div>
 
+
     <div class="workout_entry">
         <div class="workout_entry_setting">
             <div class="workout_details_profilepicture">

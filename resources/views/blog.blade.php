@@ -41,7 +41,6 @@
                     <img src="{{ asset('images/blogs/' . $blog->BlogImage) }}" alt="second blog image"
                          class="second_blog_image">
                     <p>
-
                         {{ $blog->BlogContentTwo }}
                     </p>
                 </div>
