@@ -24,7 +24,7 @@
 
         <div class="square_box_section">
             @if($workout->where('WorkoutCategory', 1)->count() > 0)
-                <div class="box_indoor">
+                <div class="box_outdoor">
                     <a class="box_link"
                        href="@if( (auth()->check())){{url('overview/1')}}@else{{ url ('register') }}@endif">WARM UP</a>
                 </div>
@@ -36,7 +36,7 @@
                     </div>
                 @endif
                 @if($workout->where('WorkoutCategory', 3)->count() > 0)
-                <div class="box_partnerworkout">
+                <div class="box_indoor">
                     <a class="box_link"
                        href="@if( (auth()->check())){{url('overview/3')}}@else{{ url ('register') }}@endif">MAIN WORKOUT</a>
                 </div>
