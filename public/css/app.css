@@ -2609,11 +2609,12 @@ form > input {
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
+  padding: 15px;
 }
 
 .workout_entry_text {
   text-align: left;
-  margin-top: 50px;
+  margin: 50px;
   line-height: 25px;
   font-size: 14pt;
 }
@@ -2621,6 +2622,7 @@ form > input {
 .workout_entry_text > p {
   font-size: 14pt;
   text-align: justify;
+  padding: 15px;
 }
 
 .workout_details_profilepicture {
@@ -2838,10 +2840,14 @@ form > input {
 }
 
 .blog_text > p {
+  margin: 0 40px 0 40px;
   font-size: 14pt;
   font-weight: lighter;
   margin-top: 40px;
   margin-bottom: 40px;
+  line-height: 34px;
+  line-break: strict;
+  padding: 15px;
 }
 
 .blog_text > img {

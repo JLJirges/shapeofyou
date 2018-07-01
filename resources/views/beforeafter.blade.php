@@ -14,15 +14,20 @@
             <div class="workout_details_profilepicture">
 
                 @if($bas_author->profilepic )
-                    <a href="{{url('profile/' . $bas_author->username)}}" style="background-image:url({{asset('images/uploads/' . $bas_author->profilepic)}});background-size:cover; background-position:center;"
-                       class="backend_profile_picture_overview"><span @if($bas_author->isAdmin === 1) style=" color: darkorange;" @endif class="username_backend_overview">{{$bas_author->username}}</span></a>
+                    <a href="{{url('profile/' . $bas_author->username)}}"
+                       style="background-image:url({{asset('images/uploads/' . $bas_author->profilepic)}});background-size:cover; background-position:center;"
+                       class="backend_profile_picture_overview"><span
+                                @if($bas_author->isAdmin === 1) style=" color: darkorange;"
+                                @endif class="username_backend_overview">{{$bas_author->username}}</span></a>
                 @else
                     <a href="{{url('profile/' . $bas_author->username)}}"
                        style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
-                       class="backend_profile_picture_overview"><span @if($bas_author->isAdmin === 1) style=" color: darkorange;" @endif class="username_backend_overview">{{$bas_author->username}}</span>
-                </a>
+                       class="backend_profile_picture_overview"><span
+                                @if($bas_author->isAdmin === 1) style=" color: darkorange;"
+                                @endif class="username_backend_overview">{{$bas_author->username}}</span>
+                    </a>
                 @endif
-                    <span>{{$bas->created_at}}</span>
+                <span>{{$bas->created_at}}</span>
             </div>
             <h2>{{ $bas->BeforeAfterStoryTitle }}</h2>
             @if( ((Auth::user()->isAdmin === 1)) || ((Auth::user()->id === $bas->BeforeAfterStoryUserId)))
@@ -36,8 +41,10 @@
         </div>
 
         <div class="workout_entry_box">
+            <div>
 
-                <img src="{{asset('/images/uploads_stories/' . $bas->BeforeAfterStoryImageOne)}}" alt="before after image one">
+                <img src="{{asset('/images/uploads_stories/' . $bas->BeforeAfterStoryImageOne)}}"
+                     alt="before after image one">
 
 
                 <div class="workout_entry_text">
@@ -47,7 +54,9 @@
 
                 </div>
 
-            <img src="{{asset('/images/uploads_stories/' . $bas->BeforeAfterStoryImageTwo)}}" alt="before after image two">
+                <img src="{{asset('/images/uploads_stories/' . $bas->BeforeAfterStoryImageTwo)}}"
+                     alt="before after image two">
+            </div>
 
         </div>
     </div>
