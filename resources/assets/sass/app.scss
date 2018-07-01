@@ -2484,6 +2484,14 @@ footer {
   box-shadow: gray 5px 5px 10px 0;
 }
 
+.help_ol {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  max-width: 70%;
+  flex-direction: column;
+}
+
 /* BACKEND */
 
 .events {

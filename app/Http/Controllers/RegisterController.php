@@ -44,7 +44,7 @@ class RegisterController extends Controller
         // Authenticate/Login right away
         $credentials = array('username' => request('username'), 'password' => request('password'));
         if (\Auth::attempt($credentials, true)) {
-            return redirect()->to('/profile');
+            return redirect()->to('/helpprofile');
         } else {
             return back()->withErrors([
                 'message' => 'Username/Password do not match'

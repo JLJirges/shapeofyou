@@ -95,6 +95,9 @@ Route::get('motivationprofile', 'MotivationController@view');
 //My Blogs
 Route::get('blogoverviewprofile', 'ProfileBlogsController@my_blogs_view');
 
+//Help
+Route::get('helpprofile', 'ProfileHelpController@help_view');
+
 //Other User's Blogs
 Route::get('blogoverviewprofile/{username}', 'ProfileBlogsController@other_blogs_view');
 
