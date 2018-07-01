@@ -17,14 +17,14 @@
             <h4>Email us:</h4>
             <span>contact@shapeofyou.com</span>
         </div>
-        <div>
+      <!--  <div>
             <h4>Write us:</h4>
             <span>Grinzingerstraße 147/3/16, 1190 Vienna</span>
         </div>
         <div>
             <h4>Call us:</h4>
             <span>+43 699 11 33 94 73</span>
-        </div>
+        </div>-->
 
 
     </div>
