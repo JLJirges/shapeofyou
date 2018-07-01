@@ -58,44 +58,52 @@
                 </div>
             </div>
         @endif
-            <div class="responsive-profile-nav">
-                <div>
-                    <a>
-                        <img id="profileicon" class="burgericon" width="60" height="60"
-                             src="{{ asset('images/user_icon.png') }}" alt="burger icon">
-                    </a>
-                </div>
-                @if($user->username === Auth::user()->username)
-
-                    <ul id="responsive-profile-nav">
-
-                        <li><a href="{{ url('profile') }}">My Profile</a></li>
-                        <li><a href="{{ url('beforeafterprofile') }}">Stories</a></li>
-                        <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
-                        <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
-                        <li><a href="{{ url('workoutprofile') }}">Workout</a></li>
-                        <li><a href="{{ url('buddiesprofile') }}">Buddies</a></li>
-                        <li><a href="{{ url('settingsprofile') }}">Settings</a></li>
-                        <li><a href="{{ url('logout') }}">Logout</a></li>
-                    </ul>
-                @else
-                    <ul id="responsive-profile-nav">
-                        <li><a href="{{ url('profile/' . $user->username) }}">Profile</a></li>
-                        <li><a href="{{ url('beforeafterprofile/' . $user->username) }}">Stories</a></li>
-                        <li><a href="{{ url ('blogoverviewprofile/' . $user->username) }}">Blogs</a></li>
-                        <li><a href="{{ url('workoutprofile/' . $user->username) }}">Workout</a></li>
-                        <li><a href="{{ url('buddiesprofile/' . $user->username) }}">Buddies</a></li>
-                    </ul>
-                @endif
+        <div class="responsive-profile-nav">
+            <div>
+                <a>
+                    <img id="profileicon" class="burgericon" width="60" height="60"
+                         src="{{ asset('images/user_icon.png') }}" alt="burger icon">
+                </a>
             </div>
+            @if($user->username === Auth::user()->username)
+
+                <ul id="responsive-profile-nav">
+
+                    <li><a href="{{ url('profile') }}">My Profile</a></li>
+                    <li><a href="{{ url('beforeafterprofile') }}">Stories</a></li>
+                    <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
+                    <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
+                    <li><a href="{{ url('workoutprofile') }}">Workout</a></li>
+                    <li><a href="{{ url('buddiesprofile') }}">Buddies</a></li>
+                    <li><a href="{{ url('settingsprofile') }}">Settings</a></li>
+                    <li><a href="{{ url('logout') }}">Logout</a></li>
+                </ul>
+            @else
+                <ul id="responsive-profile-nav">
+                    <li><a href="{{ url('profile/' . $user->username) }}">Profile</a></li>
+                    <li><a href="{{ url('beforeafterprofile/' . $user->username) }}">Stories</a></li>
+                    <li><a href="{{ url ('blogoverviewprofile/' . $user->username) }}">Blogs</a></li>
+                    <li><a href="{{ url('workoutprofile/' . $user->username) }}">Workout</a></li>
+                    <li><a href="{{ url('buddiesprofile/' . $user->username) }}">Buddies</a></li>
+                </ul>
+            @endif
+        </div>
         @if($user->username === Auth::user()->username)
             <div class="profile_diary_section">
                 <p class="explain_fav_blogs_p">We do not like people who feel alone in our community! So if you are
-                    interested in how other people with exactly the same conditions as yours do, scroll down and have a look at your
+                    interested in how other people with exactly the same conditions as yours do, scroll down and have a
+                    look at your
                     Workout Buddies! See their diaries, favorite Blogs, Workouts, their struggles and achievements!
                     Motivate yourself, comment on their entries, show them they are not alone! And if you want to see
                     how other people do, go to the Community Section, decide who you want to visit or scroll down to the
                     bottom and let us introduce you to the whole Community of SHAPE OF YOU!</p>
+                <p class="explain_fav_blogs_p">
+                    If no users show up in this section, then we have to tell you, that you are one of a kind! Exactly -
+                    you are special! This basically means, that you are the only one with the Body Shape, Goal and Diet
+                    combination in our whole community! So what to do now? If you don't want to be without Buddies,
+                    either invite some friends to join SHAPE OF YOU or go to Settings in your Profile and change either
+                    your Goal or Diet.
+                </p>
             </div>
 
         @else

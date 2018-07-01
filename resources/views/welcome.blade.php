@@ -42,7 +42,7 @@
 
             <div id="goal-tab-1" class="tab-content current_tab">
                 If you want to lose weight, we are going to help! You'll find a lot of interesting Blogs about
-                Nutrition and Workout, so you are going to feel as awesome as possible with the SHAPE OF YOU!
+                Nutrition and Workout, so you are going to feel as awesome as possible with SHAPE OF YOU!
             </div>
             <div id="goal-tab-2" class="tab-content">
                 Are you thinking about running a Marathon or just noticed you'd like to be able to take the stairs

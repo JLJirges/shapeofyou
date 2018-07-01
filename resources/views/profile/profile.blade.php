@@ -155,7 +155,7 @@
                     <div>
                         <p>MOTIVATION QUOTE</p>
                         <p class="profile_section_personal_motivation_quote">@if($user->mq){{ $user->mq }} @else
-                                'No motivational quote defined...' @endif</p>
+                                'No motivational quote in Profile Settings defined...' @endif</p>
                     </div>
 
                     <div class="profile_info_section_personal_details">

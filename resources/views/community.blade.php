@@ -49,7 +49,7 @@
 
             <div class="community_box_beforeafter">
                 <a href="@if( (auth()->check())){{url('beforeafteroverview/beforeafterstories')}}@else{{url('register')}}@endif">
-                    <svg viewbox="0 0 50 35">
+                    <svg viewbox="0 -1 50 37">
                         <defs>
                             <mask class="mask" id="beforeafter_mask" x="0" y="0" width="220" height="205">
                                 <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
@@ -88,7 +88,7 @@
 
             <div class="community_box_workoutbuddies">
                 <a href="@if( (auth()->check())){{url('buddyoverview/')}}@else{{url('register')}}@endif">
-                    <svg viewbox="0 0 50 35">
+                    <svg viewbox="0 -1 50 37">
                         <defs>
                             <mask class="mask" id="buddy_mask" x="0" y="0" width="220" height="205">
                                 <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
@@ -116,7 +116,7 @@
 
             <div class="community_box_diaries">
                 <a href="@if( (auth()->check())){{url('usertalkoverview/diaries/')}}@else{{url('register')}}@endif">
-                    <svg viewbox="0 0 50 35">
+                    <svg viewbox="0 -1 50 37">
                         <defs>
                             <mask id="diary_mask" x="0" y="0" width="220" height="205">
                                 <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
@@ -152,7 +152,7 @@
             </div>-->
                <div class="community_box_meetups">
                    <a href="@if( (auth()->check())){{url('meetups')}}@else{{url('register')}}@endif">
-                       <svg viewbox="0 0 50 35">
+                       <svg viewbox="0 -1 50 37">
                            <defs>
                                <mask id="meetups_mask" x="0" y="0" width="220" height="205">
                                    <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
