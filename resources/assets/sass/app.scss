@@ -1,6 +1,6 @@
 html, body {
   background-color: #fff;
-  font-family: 'Laila', sans-serif;
+  font-family: 'Railway', sans-serif;
 //font-family: 'Century Schoolbook', sans-serif;
   height: auto;
   margin: 0;
@@ -1301,7 +1301,7 @@ form > input {
 
   width: 150px;
   padding: 8px;
-
+margin: 10px;
   color: black;
   font-weight: bold;
 }
@@ -1340,18 +1340,20 @@ form > input {
 }
 
 .profile_navigation {
-  width: 10%;
+  width: 7%;
   height: auto;
   padding: 50px;
   border: solid 1px lightgrey;
-  margin-left: 2%;
-
+  margin-left: -87%;
+  margin-top: -10%;
+position: fixed;
   font-size: 10pt;
-
   display: flex;
-  flex-direction: column;
 
-  box-shadow: grey 0 0 4px 0;
+  flex-direction: column;
+background-color: white;
+  box-shadow: grey 0 0 8px 0;
+  z-index: 100;
 }
 
 .profile_navigation > div {
@@ -2489,7 +2491,8 @@ footer {
   text-align: left;
   display: flex;
   justify-content: center;
-  max-width: 70%;
+  max-width: 40%;
+  line-height: 24pt;
   flex-direction: column;
 }
 
@@ -2957,6 +2960,7 @@ footer {
     border-right: none;
     border-left: none;
     border-top: none;
+
   }
 
   .profile_section_personal {
