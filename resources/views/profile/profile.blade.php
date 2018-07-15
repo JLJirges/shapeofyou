@@ -9,13 +9,13 @@
     <?php    return redirect()->to('login'); ?>
     @else
         <div class="h1_bg">
-            <h1>MY PROFILE</h1>
+            <h1>MY DIARY</h1>
         </div>
         <div class="profile_section">
             @if($user->username === Auth::user()->username)
                 <div class="profile_navigation">
                     <div class="profile_navigation_sections profile_navigation__section_box">
-                        <a href="{{ url ('profile')}}">My Profile</a>
+                        <a href="{{ url ('profile')}}">My Diary</a>
                     </div>
                     <div class="profile_navigation_sections profile_navigation__section_box">
                         <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
@@ -45,7 +45,7 @@
             @else
                 <div class="profile_navigation">
                     <div class="profile_navigation_sections profile_navigation__section_box">
-                        <a href="{{ url ('profile/' . $user->username)}}">Profile</a>
+                        <a href="{{ url ('profile/' . $user->username)}}">Diary</a>
                     </div>
                     <div class="profile_navigation_sections profile_navigation__section_box">
                         <a href="{{ url ('beforeafterprofile/' . $user->username)}}">Stories</a>

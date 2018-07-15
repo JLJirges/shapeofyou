@@ -1,5 +1,5 @@
 <div class="nav nav-links">
-    <a href="{{ url('superfood') }}">Blogs</a>
+    <a href="{{ url('superfood') }}">Our Blogs</a>
     <a href="{{ url('workout') }}">Workout</a>
     <a href="{{ url('community') }}">Community</a>
     <a href="{{ url('') }}">
@@ -29,7 +29,7 @@
         </a>
     </div>
     <ul id="responsive_nav">
-        <li><a href="{{ url('superfood') }}">Blogs</a></li>
+        <li><a href="{{ url('superfood') }}">Our Blogs</a></li>
         <li><a href="{{ url('workout') }}">Workout</a></li>
         <li><a href="{{ url('community') }}">Community</a></li>
         <li><a href="{{ url ('meetups') }}">Meetups</a></li>

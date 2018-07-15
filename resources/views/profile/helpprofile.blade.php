@@ -12,7 +12,7 @@
         <div class="profile_navigation">
 
             <div class="profile_navigation_sections profile_navigation__section_box">
-                <a href="{{ url ('profile')}}">My Profile</a>
+                <a href="{{ url ('profile')}}">My Diary</a>
             </div>
             <div class="profile_navigation_sections profile_navigation__section_box">
                 <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
@@ -48,7 +48,7 @@
             </div>
             <ul id="responsive-profile-nav">
 
-                <li><a href="{{ url('profile') }}">My Profile</a></li>
+                <li><a href="{{ url('profile') }}">My Diary</a></li>
                 <li><a href="{{ url('beforeafterprofile') }}">Stories</a></li>
                 <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
                 <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
@@ -134,8 +134,8 @@
     <h3>Now to SHAPE OF YOU!</h3>
     <ol class="help_ol">
         <li>
-            <h4>Superfood</h4>
-            <p>In here you will find some interesting Blogs about Nutrition and Diets.</p>
+            <h4>Blogs</h4>
+            <p>In here you will find some interesting Blogs about Workout, Nutrition and Diets.</p>
         </li>
         <li>
             <h4>Workouts</h4>

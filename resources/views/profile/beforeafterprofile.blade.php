@@ -12,7 +12,7 @@
         @if($user->username === Auth::user()->username)
             <div class="profile_navigation">
                 <div class="profile_navigation_sections profile_navigation__section_box">
-                    <a href="{{ url ('profile')}}">My Profile</a>
+                    <a href="{{ url ('profile')}}">My Diary</a>
                 </div>
                 <div class="profile_navigation_sections profile_navigation__section_box">
                     <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
@@ -42,7 +42,7 @@
         @else
             <div class="profile_navigation">
                 <div class="profile_navigation_sections profile_navigation__section_box">
-                    <a href="{{ url ('profile/' . $user->username)}}">Profile</a>
+                    <a href="{{ url ('profile/' . $user->username)}}">Diary</a>
                 </div>
                 <div class="profile_navigation_sections profile_navigation__section_box">
                     <a href="{{ url ('beforeafterprofile/' . $user->username)}}">Stories</a>
@@ -69,7 +69,7 @@
 
                     <ul id="responsive-profile-nav">
 
-                        <li><a href="{{ url('profile') }}">My Profile</a></li>
+                        <li><a href="{{ url('profile') }}">My Diary</a></li>
                         <li><a href="{{ url('beforeafterprofile') }}">Stories</a></li>
                         <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
                         <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
@@ -80,7 +80,7 @@
                     </ul>
                 @else
                     <ul id="responsive-profile-nav">
-                        <li><a href="{{ url('profile/' . $user->username) }}">Profile</a></li>
+                        <li><a href="{{ url('profile/' . $user->username) }}">Diary</a></li>
                         <li><a href="{{ url('beforeafterprofile/' . $user->username) }}">Stories</a></li>
                         <li><a href="{{ url ('blogoverviewprofile/' . $user->username) }}">Blogs</a></li>
                         <li><a href="{{ url('workoutprofile/' . $user->username) }}">Workout</a></li>

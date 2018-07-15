@@ -12,7 +12,7 @@
         @if($user->username === Auth::user()->username)
             <div class="profile_navigation">
                 <div class="profile_navigation_sections profile_navigation__section_box">
-                    <a href="{{ url ('profile')}}">My Profile</a>
+                    <a href="{{ url ('profile')}}">My Diary</a>
                 </div>
                 <div class="profile_navigation_sections profile_navigation__section_box">
                     <a href="{{ url ('beforeafterprofile')}}">Before/After</a>
@@ -42,7 +42,7 @@
         @else
             <div class="profile_navigation">
                 <div class="profile_navigation_sections profile_navigation__section_box">
-                    <a href="{{ url ('profile/' . $user->username)}}">Profile</a>
+                    <a href="{{ url ('profile/' . $user->username)}}">Diary</a>
                 </div>
                 <div class="profile_navigation_sections profile_navigation__section_box">
                     <a href="{{ url ('beforeafterprofile/' . $user->username)}}">Stories</a>
@@ -69,7 +69,7 @@
 
                     <ul id="responsive-profile-nav">
 
-                        <li><a href="{{ url('profile') }}">My Profile</a></li>
+                        <li><a href="{{ url('profile') }}">My Diary</a></li>
                         <li><a href="{{ url('beforeafterprofile') }}">Stories</a></li>
                         <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
                         <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
@@ -80,7 +80,7 @@
                     </ul>
                 @else
                     <ul id="responsive-profile-nav">
-                        <li><a href="{{ url('profile/' . $user->username) }}">Profile</a></li>
+                        <li><a href="{{ url('profile/' . $user->username) }}">Diary</a></li>
                         <li><a href="{{ url('beforeafterprofile/' . $user->username) }}">Stories</a></li>
                         <li><a href="{{ url ('blogoverviewprofile/' . $user->username) }}">Blogs</a></li>
                         <li><a href="{{ url('workoutprofile/' . $user->username) }}">Workout</a></li>
@@ -92,13 +92,13 @@
             <div class="profile_diary_section">
                 <p class="explain_fav_blogs_p">Is there anything you would like to remember? Do not fear - your
                     favourites are here! Every Blog you liked, every
-                    article you were or still are interested in it - as long as you klicked on the heart, it will show
+                    article you were or still are interested in it - as long as you clicked on the heart which you can find next to the article title, it will show
                     up here. But
                     be aware that if we update our Blogs - because fitness and nutrition has to go with time too - your
                     Blogs could
                     disappear.</p>
                 <img src="{{ asset ('images/unclicked_fav_icon.png')}}" alt="unclicked fav icon" width="80" height="80">
-                <p class="explain_fav_blogs_p">Have you ever noticed this strange Icon next or above a blog entry in Superfoods or Workouts and wondered what it might do?
+                <p class="explain_fav_blogs_p">Have you ever noticed this strange Icon next to the title of an article (Blogs) and wondered what it might do?
                     No need to be afraid, you won't lose your heart to a person, who gives it back after a second. This
                     Icon is meant for real love -
                     Nutrition Love! Do you have Blogs you'd like to remember? Simply click the item and...</p>
