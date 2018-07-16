@@ -380,8 +380,89 @@ ul.tabs li.current {
 }
 
 .slogan {
-  margin-top: 10%;
-  margin-left: 20%;
+  margin-top: 5%;
+  margin-left: 30%;
+}
+
+.slogan_row_two {
+  margin-left: 80%;
+  width: 300px;
+}
+
+.mobile_slogan {
+  display: none;
+}
+
+/*Vertical Flip*/
+.verticalFlip {
+  display: inline;
+  text-indent: 8px;
+  font-family: "AR DARLING", sans-serif;
+}
+
+.verticalFlip > span {
+  animation: vertical 14s linear infinite 0s;
+  -ms-animation: vertical 14s linear infinite 0s;
+  -webkit-animation: vertical 14s linear infinite 0s;
+  color: #122b40;
+  text-shadow: darkorange 10px 5px 10px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.verticalFlip span:nth-child(2) {
+  animation-delay: 2.5s;
+  -ms-animation-delay: 2.5s;
+  -webkit-animation-delay: 2.5s;
+}
+
+.verticalFlip span:nth-child(3) {
+  animation-delay: 5s;
+  -ms-animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+}
+
+.verticalFlip span:nth-child(4) {
+  animation-delay: 7.5s;
+  -ms-animation-delay: 7.5s;
+  -webkit-animation-delay: 7.5s;
+}
+
+.verticalFlip span:nth-child(5) {
+  animation-delay: 10s;
+  -ms-animation-delay: 10s;
+  -webkit-animation-delay: 10s;
+}
+
+/*Vertical Flip Animation*/
+
+@-webkit-keyframes vertical {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    -webkit-transform: rotateX(180deg);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    -webkit-transform: translateY(0px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .home_section > div > p {
@@ -400,14 +481,14 @@ ul.tabs li.current {
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
-  width: 45%;
+  width: 40%;
   height: 700px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: white;
-  padding: 10px 40px 40px 40px;
+  padding: 5px 40px 40px 40px;
   margin-bottom: 0;
 }
 
@@ -3998,5 +4079,13 @@ footer {
             flex-direction: column;
     background-color: white;
     margin-bottom: 0;
+  }
+  .slogan {
+    display: none;
+  }
+  .mobile_slogan {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }

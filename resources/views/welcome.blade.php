@@ -11,7 +11,33 @@
     </div>
 
     <div class="home_section goal_bg">
-        <h2 class="slogan">WE HELP YOU SHAPE YOUR BODY</h2>
+        <h2 class="slogan slogan_animation">
+
+            WE HELP YOU
+
+            <div class="verticalFlip">
+                <span>SHAPE</span>
+                <span>FIND</span>
+                <span>REACH</span>
+                <span>IMPROVE</span>
+                <span>LOVE</span>
+            </div>
+            <br>
+            <div class="slogan_row_two">
+             YOUR
+            <div class="verticalFlip">
+                <span>BODY!</span>
+                <span>POWER!</span>
+                <span>GOAL!</span>
+                <span>WILL!</span>
+                <span>SELF!</span>
+            </div>
+
+            </div>
+        </h2>
+
+        <h2 class="mobile_slogan"> WE HELP YOU SHAPE YOUR BODY</h2>
+
         <div class="home_section_goals_content">
             <h2>Choose your goal!</h2>
             <div class="shown_tab">Whatever your personal goal might be - we are here to help
