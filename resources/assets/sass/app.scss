@@ -289,30 +289,39 @@ ul.tabs li.current {
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 50px;
+
 }
 
 .home_section_goals > li > img {
-  box-shadow: lightgrey 0 0 20px 0;
-  background: rgba(000, 000, 000, 0.1);
+  //box-shadow: lightgrey 0 0 20px 0;
+  //background: rgba(000, 000, 000, 0.1);
   border-radius: 100px;
 }
 
 .home_section_goals > li > img:hover {
-  background: rgba(255, 255, 255, 0.6);
+  //background: rgba(255, 255, 255, 0.6);
+  box-shadow: darkorange 0 5px 10px;
 }
 
 .goal_bg {
   background: url("../images/welcome/hero_bg.png") fixed;
   background-size: cover;
-  height: auto;
-  margin-top: -3%;
+  height: 1000px;
+  margin-top: 0;
+
 }
 
 .shape_bg {
   background: url("../images/welcome/shape_bg.png") fixed;
   background-size: cover;
 }
+
+.welcome_shape_content {
+  max-width: 650px;
+  padding-left: 28%;
+}
+
+
 
 .home_section > div {
   display: flex;
@@ -324,10 +333,28 @@ ul.tabs li.current {
   align-items: center;
 }
 
+.slogan {
+  margin-top: 10%;
+}
+
 .home_section > div > p {
   text-align: justify;
-  font-size: 14pt;
+  font-size: 12pt;
   text-shadow: #0b2e13;
+  margin-top: -2%;
+}
+
+.home_section_goals_content {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 45%;
+  height: 700px;
+  flex-direction: column;
+  //box-shadow: darkgray 0 -5px 10px;
+  background-color: white;
+  padding: 40px;
+  margin-bottom: 0;
 }
 
 .home_section_community {
@@ -757,6 +784,7 @@ ul.tabs li.current {
   background: url("../images/community/background.png") fixed;
   background-size: cover;
   margin: 0;
+  width: 100%;
   height: auto;
 }
 
@@ -2421,7 +2449,7 @@ background-color: white;
 }
 
 .blog_abouttheauthor {
-  width: 40%;
+  width: auto;
   box-shadow: 0 1px 5px 0 lightgrey;
   border-radius: 5px;
   height: auto;
@@ -2715,11 +2743,14 @@ footer {
 
   /* HOME */
 
-  // VERSUCH ENDE
 
   .home_section {
     width: 100%;
-    margin: 0;
+    margin-top: 0;
+}
+
+  .home_section > div > a {
+    margin-bottom: 10px;
   }
 
   .goal_info {
@@ -3260,6 +3291,23 @@ footer {
     padding-top: 10px;
     padding-bottom: 10px;
     color: white;
+  }
+
+  .goal_bg {
+    height: auto;
+  }
+
+  .home_section_goals_content {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 45%;
+    height: auto;
+    flex-direction: column;
+    //box-shadow: darkgray 0 -5px 10px;
+    background-color: white;
+
+    margin-bottom: 0;
   }
 
 }

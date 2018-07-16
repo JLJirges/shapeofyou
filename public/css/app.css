@@ -331,30 +331,32 @@ ul.tabs li.current {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-bottom: 50px;
 }
 
 .home_section_goals > li > img {
-  -webkit-box-shadow: lightgrey 0 0 20px 0;
-          box-shadow: lightgrey 0 0 20px 0;
-  background: rgba(0, 0, 0, 0.1);
   border-radius: 100px;
 }
 
 .home_section_goals > li > img:hover {
-  background: rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: darkorange 0 5px 10px;
+          box-shadow: darkorange 0 5px 10px;
 }
 
 .goal_bg {
   background: url("../images/welcome/hero_bg.png") fixed;
   background-size: cover;
-  height: auto;
-  margin-top: -3%;
+  height: 1000px;
+  margin-top: 0;
 }
 
 .shape_bg {
   background: url("../images/welcome/shape_bg.png") fixed;
   background-size: cover;
+}
+
+.welcome_shape_content {
+  max-width: 650px;
+  padding-left: 28%;
 }
 
 .home_section > div {
@@ -377,10 +379,35 @@ ul.tabs li.current {
           align-items: center;
 }
 
+.slogan {
+  margin-top: 10%;
+}
+
 .home_section > div > p {
   text-align: justify;
-  font-size: 14pt;
+  font-size: 12pt;
   text-shadow: #0b2e13;
+  margin-top: -2%;
+}
+
+.home_section_goals_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 45%;
+  height: 700px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  padding: 40px;
+  margin-bottom: 0;
 }
 
 .home_section_community {
@@ -861,6 +888,7 @@ ul.tabs li.current {
   background: url("../images/community/background.png") fixed;
   background-size: cover;
   margin: 0;
+  width: 100%;
   height: auto;
 }
 
@@ -2932,7 +2960,7 @@ form > input {
 }
 
 .blog_abouttheauthor {
-  width: 40%;
+  width: auto;
   -webkit-box-shadow: 0 1px 5px 0 lightgrey;
           box-shadow: 0 1px 5px 0 lightgrey;
   border-radius: 5px;
@@ -3280,7 +3308,10 @@ footer {
   /* HOME */
   .home_section {
     width: 100%;
-    margin: 0;
+    margin-top: 0;
+  }
+  .home_section > div > a {
+    margin-bottom: 10px;
   }
   .goal_info {
     width: 90%;
@@ -3945,5 +3976,26 @@ footer {
     padding-top: 10px;
     padding-bottom: 10px;
     color: white;
+  }
+  .goal_bg {
+    height: auto;
+  }
+  .home_section_goals_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    width: 45%;
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: white;
+    margin-bottom: 0;
   }
 }
