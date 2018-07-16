@@ -38,8 +38,6 @@
             </div>
         </div>
 
-        <h2 class="mobile_slogan"> WE HELP YOU SHAPE YOUR BODY</h2>
-
         <div class="home_section_goals_content">
             <h2>Choose your goal!</h2>
             <div class="shown_tab">Whatever your personal goal might be - we are here to help

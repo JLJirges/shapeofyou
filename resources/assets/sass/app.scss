@@ -3434,12 +3434,21 @@ footer {
     display: flex;
     justify-content: center;
     align-self: center;
-    width: 45%;
+    width: 80%;
     height: auto;
     flex-direction: column;
     //box-shadow: darkgray 0 -5px 10px;
     background-color: white;
     margin-bottom: 0;
+  }
+
+  .home_section_goals_content > div {
+    padding: 0;
+    width: 100%;
+  }
+
+  .home_section_goals_content > h2 {
+    margin-top: 50px;
   }
 
   .slogan {
@@ -3450,6 +3459,14 @@ footer {
     display: flex;
   }
 
+  .verticalFlip > .h2 {
+    margin-top: -30px;
+
+  }
+
+  .verticalFlip_2 {
+    margin-left: -110px;
+  }
 
 }
 

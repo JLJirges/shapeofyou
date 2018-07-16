@@ -4084,7 +4084,7 @@ footer {
             justify-content: center;
     -ms-flex-item-align: center;
         align-self: center;
-    width: 45%;
+    width: 80%;
     height: auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -4093,6 +4093,13 @@ footer {
     background-color: white;
     margin-bottom: 0;
   }
+  .home_section_goals_content > div {
+    padding: 0;
+    width: 100%;
+  }
+  .home_section_goals_content > h2 {
+    margin-top: 50px;
+  }
   .slogan {
     display: none;
   }
@@ -4100,5 +4107,11 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .verticalFlip > .h2 {
+    margin-top: -30px;
+  }
+  .verticalFlip_2 {
+    margin-left: -110px;
   }
 }
