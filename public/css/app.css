@@ -381,6 +381,7 @@ ul.tabs li.current {
 
 .slogan {
   margin-top: 10%;
+  margin-left: 20%;
 }
 
 .home_section > div > p {
@@ -406,7 +407,7 @@ ul.tabs li.current {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: white;
-  padding: 40px;
+  padding: 10px 40px 40px 40px;
   margin-bottom: 0;
 }
 
