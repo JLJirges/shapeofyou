@@ -11,30 +11,32 @@
     </div>
 
     <div class="home_section goal_bg">
-        <h2 class="slogan slogan_animation">
+        <div class="slogan">
 
-            WE HELP YOU
+          <h2>  WE HELP YOU </h2>
 
             <div class="verticalFlip">
-                <span>SHAPE</span>
-                <span>FIND</span>
-                <span>REACH</span>
-                <span>IMPROVE</span>
-                <span>LOVE</span>
+
+                <span class="h2">SHAPE</span>
+                <span class="h2">FIND</span>
+                <span class="h2">REACH</span>
+                <span class="h2">IMPROVE</span>
+                <span class="h2">LOVE</span>
+
             </div>
             <br>
             <div class="slogan_row_two">
-             YOUR
-            <div class="verticalFlip">
-                <span>BODY!</span>
-                <span>POWER!</span>
-                <span>GOAL!</span>
-                <span>WILL!</span>
-                <span>SELF!</span>
+            <h2>YOUR</h2>
+            <div class="verticalFlip verticalFlip_2">
+                <span class="h2">BODY!</span>
+                <span class="h2">POWER!</span>
+                <span class="h2">GOAL!</span>
+                <span class="h2">WILL!</span>
+                <span class="h2">APPEARANCE!</span>
             </div>
 
             </div>
-        </h2>
+        </div>
 
         <h2 class="mobile_slogan"> WE HELP YOU SHAPE YOUR BODY</h2>
 

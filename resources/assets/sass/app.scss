@@ -329,14 +329,12 @@ ul.tabs li.current {
   align-items: center;
 }
 
-.slogan {
-  margin-top: 5%;
-  margin-left: 30%;
+.slogan > h2 {
+  margin-left: -35%;
 }
 
-.slogan_row_two {
-  margin-left: 80%;
-  width: 300px;
+.slogan > .h2 {
+margin-top: -20px;
 }
 
 .mobile_slogan {
@@ -350,7 +348,7 @@ ul.tabs li.current {
   font-family: "AR DARLING", sans-serif;
 }
 
-.verticalFlip > span {
+.verticalFlip > .h2 {
   animation: vertical 14s linear infinite 0s;
   -ms-animation: vertical 14s linear infinite 0s;
   -webkit-animation: vertical 14s linear infinite 0s;
@@ -359,6 +357,14 @@ ul.tabs li.current {
   opacity: 0;
   overflow: hidden;
   position: absolute;
+  font-size: 30pt;
+  margin-top: -80px;
+  margin-left: -50px;
+}
+
+.verticalFlip_2 {
+  margin-left: 270px;
+  margin-top: -10px;
 }
 
 .verticalFlip span:nth-child(2) {
@@ -482,12 +488,19 @@ ul.tabs li.current {
   justify-content: center;
   align-self: center;
   width: 40%;
-  height: 700px;
+  height: 750px;
   flex-direction: column;
   //box-shadow: darkgray 0 -5px 10px;
   background-color: white;
   padding: 5px 40px 40px 40px;
-  margin-bottom: 0;
+}
+
+.home_section_goals_content > h2 {
+  margin-top: -15%;
+}
+
+.home_section_goals_content > div {
+  width: 50%;
 }
 
 .home_section_community {
