@@ -38,6 +38,11 @@
         <input type="email" name="email" placeholder="Email">
         <label>Password</label>
         <input type="password" name="password" placeholder="Your password">
+        <label>Admin</label>
+        <select name="isAdmin" type="number">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
         <button class="white_button" type="submit">Add User</button>
 
     </form>

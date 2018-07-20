@@ -10,14 +10,14 @@
         <h1>EDIT/UPDATE</h1>
     </div>
 
-        <form class="register_form" method="post" action="/edit_user/{{$user->id}}">
+        <form class="register_form" method="POST" action="/edit_user/{{$user->id}}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label>First Name</label>
             <input type="text" name="firstname" placeholder="{{$user->firstname}}">
-            <label>Last Name</label>
+           <label>Last Name</label>
             <input type="text" name="lastname" placeholder="{{$user->lastname}}">
             <label>Password</label>
-            <input type="password" name="password" placeholder="Your password">
+            <input type="password" name="password">
             <label>Repeat Password</label>
             <input type="password" name="password_confirmation" placeholder="Repeat password"
                    id="password_confirmation">
@@ -26,7 +26,7 @@
             <label>Username</label>
             <input type="text" name="username" placeholder="{{$user->username}}">
             <label>Change Profile Picture</label><br>
-            <input type="file" name="ProfileToUpload" id="ProfileToUpload">
+            <input type="file" name="profilepic" id="PicUpdate">
             <label>Motivational Quote</label>
             <input type="text" name="mq" placeholder="{{$user->mq}}">
             <label>Birthdate</label><br>
@@ -56,6 +56,11 @@
                 <option value="2" @if($user->UserGoal === 2) selected="selected" @endif>Stay/Become fit</option>
                 <option value="3" @if($user->UserGoal === 3) selected="selected" @endif>Build muscles</option>
                 <option value="4" @if($user->UserGoal === 4) selected="selected" @endif>Stay/Become healthy</option>
+            </select>
+            <label>Is Admin</label>
+            <select name="isAdmin">
+                <option value="0" @if(($user->isAdmin === 0) || ($user->isAdmin === NULL)) selected="selected" @endif>No Admin</option>
+                <option value="1" @if($user->isAdmin === 1) selected="selected" @endif>Admin</option>
             </select>
             @if($user->isAdmin === 1)
                 <label>BloggerBio</label>

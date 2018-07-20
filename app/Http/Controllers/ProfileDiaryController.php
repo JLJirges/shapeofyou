@@ -120,7 +120,7 @@ class ProfileDiaryController extends Controller
 
 
         if ($request->hasFile('DiaryHeroImage')) {
-            $request->file('DiaryHeroImage')->move(("images\\uploads_diaries\\"), $request->file('DiaryHeroImage')->getClientOriginalName());
+            $request->file('DiaryHeroImage')->move(("images" . DIRECTORY_SEPARATOR . "uploads_diaries" . DIRECTORY_SEPARATOR), $request->file('DiaryHeroImage')->getClientOriginalName());
 
             $filename = $request->file('DiaryHeroImage')->getClientOriginalName();
             $toUpdate['DiaryHeroImage'] = $filename;

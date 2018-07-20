@@ -53,7 +53,7 @@
                     <li><a href="{{ url('motivationprofile') }}">Motivation</a></li>
                     <li><a href="{{ url ('blogoverviewprofile') }}">My Blogs</a></li>
                     <li><a href="{{ url('workoutprofile') }}">Workout</a></li>
-                    <li><a href="{{ url('buddiesprofile') }}">Start now</a></li>
+                    <li><a href="{{ url('buddiesprofile') }}">Buddies</a></li>
                     <li><a href="{{ url('settingsprofile') }}">Settings</a></li>
                     <li><a href="{{ url('logout') }}">Logout</a></li>
                 </ul>

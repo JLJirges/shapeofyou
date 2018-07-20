@@ -68,6 +68,7 @@
                 best if you need motivation per week, month or from time to time. Whenever you feel like it: write
                 and motivate yourself! You will receive the letter per email so this letter is private and won't be sharable with other members!</p>
             <form class="diary_form" method="post" enctype="multipart/form-data" action="/futureletter/{{Auth::user()->id}}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <label>Write a Title</label>
                 <input type="text" name="title" placeholder="I am the Title"><br>
                 <label>Write your Entry</label>

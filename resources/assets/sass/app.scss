@@ -18,7 +18,7 @@ a {
 }
 
 h1 {
-  font-family: 'AR DARLING', sans-serif;
+  font-family: 'AR DARLING', 'Fredericka the Great', sans-serif;
   font-size: 40pt;
 
   padding-top: 5%;
@@ -47,7 +47,7 @@ text {
   font-size: 10px;
   transition: font-size .4s ease-out;
   font-weight: 800;
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
 }
 
 svg:hover text {
@@ -345,7 +345,7 @@ margin-top: -20px;
 .verticalFlip {
   display: inline;
   text-indent: 8px;
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
 }
 
 .verticalFlip > .h2 {
@@ -533,7 +533,7 @@ margin-top: -20px;
 
   box-shadow: black 0 0 3px 0;
   color: black;
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
 }
 
 .home_body_shape_img > img {
@@ -643,7 +643,7 @@ margin-top: -20px;
 }
 
 .box_link {
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
   font-size: 20pt;
   color: white;
   text-shadow: 2px 2px 4px #000000;
@@ -999,7 +999,7 @@ margin-top: -20px;
 }
 
 .community_box_link {
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
   font-size: 20pt;
   color: white;
   text-shadow: 2px 2px 4px #000000;
@@ -2019,7 +2019,7 @@ form > input {
 /* WORKOUT DETAILS */
 
 .exercise_title {
-  font-family: 'AR DARLING', sans-serif;
+  font-family: 'AR DARLING', 'Fredericka the Great', sans-serif;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -2877,6 +2877,32 @@ footer {
 
   /* HOME */
 
+
+
+  .welcome_shape_content > ul{
+    display: flex;
+    max-width: 200px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .welcome_shape_content > ul > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .welcome_shape_content > ul > li > img {
+   width: 90px;
+    height: 90px;
+  }
+
+
+
+
+
   .home_section {
     width: 100%;
     margin-top: 0;
@@ -2884,6 +2910,18 @@ footer {
 
   .home_section > div > a {
     margin-bottom: 10px;
+  }
+
+  .welcome_shape_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 250px;
+    height: auto;
+
+    padding: 0;
+    margin-right: 10%;
   }
 
   .goal_info {
@@ -2923,6 +2961,8 @@ footer {
     background: url("../images/welcome/responsive_goal_bg.png") no-repeat fixed;
     background-size: cover;
   }
+
+
 
   /* SUPERFOOD */
   .superfood_text {
@@ -3158,6 +3198,33 @@ footer {
   }
 
   /* PROFILE */
+
+  .profile_setting_section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: -70px;
+  }
+
+  .profile_setting_section > div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: -65px;
+  }
+
+  .profile_setting_section > div > form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .isadmin_form_profile > form {
+    margin-left: -130px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 
   .profile_section {
     width: 100%;

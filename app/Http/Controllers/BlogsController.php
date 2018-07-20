@@ -98,6 +98,7 @@ class BlogsController extends Controller
     public function store(Request $request)
     {
 
+
         $this->validate(request(), [
             'BlogTitle' => 'required|string|max:50',
             'BlogCategory' => 'required',
@@ -134,7 +135,11 @@ class BlogsController extends Controller
         }
         \Session::flash('newblog_error_message', 'Blog upload successful!');
 
-        return redirect()->to('/backend/create');
+        $data = [
+            'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
+        ];
+
+        return redirect()->to('/backend/create')->with($data);
 
     }
 

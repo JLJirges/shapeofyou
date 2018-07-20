@@ -61,6 +61,7 @@ class RegisterController extends Controller
             'username' => 'unique:users|required|string|max:50',
             'email' => 'unique:users|required|email',
             'password' => 'required',
+            'isAdmin' => ''
         ]);
         User::create([
             'firstname' => request('firstname'),
@@ -68,6 +69,7 @@ class RegisterController extends Controller
             'username' => request('username'),
             'email' => request('email'),
             'password' => request('password'),
+            'isAdmin' => request('isAdmin')
         ]);
         \Session::flash('newuser_error_message', 'User registration successful!');
 
@@ -109,7 +111,7 @@ class RegisterController extends Controller
 
         if ($request->hasFile('profilepic')) {
 
-            $request->file('profilepic')->move(("images\\uploads\\"), $request->file('profilepic')->getClientOriginalName());
+            $request->file('profilepic')->move(("images" . DIRECTORY_SEPARATOR .  "uploads" . DIRECTORY_SEPARATOR), $request->file('profilepic')->getClientOriginalName());
 
             $filename = $request->file('profilepic')->getClientOriginalName();
             $toUpdate['profilepic'] = $filename;
@@ -125,26 +127,41 @@ class RegisterController extends Controller
 
     public function edit_user(Request $request, $id)
     {
+
         $this->validate(request(), [
-            'firstname' => '',
-            'lastname' => '',
-            'username' => '',
-            'email' => '',
-            'password' => 'confirmed',
-            'mq' => '',
+
+            'firstname' => 'string|max:50',
+            'lastname' => 'string|max:50',
+            'username' => 'unique:users|string|max:50',
+            'email' => 'unique:users|email',
+            'password' => 'min:4|confirmed',
+            'mq' => 'string',
             'profilepic' => '',
-            'birthdate' => '',
-            'origin' => '',
+            'birthdate' => 'date',
+            'origin' => 'string|max:50',
             'UserDiet' => '',
             'UserGoal' => '',
             'UserShape' => '',
-            'BloggerBio' => '',
-            'AdminText' => ''
+            'BloggerBio' => 'max: 1000',
+            'isAdmin' => '',
+            'AdminText' => 'max: 1000'
         ]);
 
+        $toUpdate = array_filter($request->all());
+
+        if ($request->hasFile('profilepic')) {
+
+            $request->file('profilepic')->move(("images" . DIRECTORY_SEPARATOR .  "uploads" . DIRECTORY_SEPARATOR), $request->file('profilepic')->getClientOriginalName());
+
+            $filename = $request->file('profilepic')->getClientOriginalName();
+            $toUpdate['profilepic'] = $filename;
+        }
+
         $user = User::findOrFail($id);
-        $user->update(array_filter($request->all()));
-        return redirect()->to('/backend/user_edit/' . $user->id);
+        $user->update($toUpdate);
+     //   $user->update(array_filter($request->all()));
+       // return redirect()->to('/backend/user_edit/' . $user->id);
+        return redirect()->to('/backend/useroverview');
     }
 
     public function deleteCommunitymember($id)

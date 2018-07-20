@@ -89,6 +89,7 @@ Route::get('beforeafterprofile', 'BeforeAfterStoryController@my_bas_view');
 Route::get('beforeafterprofile/{username}', 'BeforeAfterStoryController@other_bas_view');
 
 //Motivational Letter
+Route::post('/futureletter/{id}', 'MotivationController@FutureLetter');
 Route::get('motivationprofile', 'MotivationController@view');
 
 //Blogoverview
@@ -157,10 +158,10 @@ Route::get('dashboard', 'BackendController@dashboard_view');
 
 
 //Users
+Route::post('edit_user/{id}', 'RegisterController@edit');
 Route::get('/backend/useroverview', 'BackendController@useroverview_view');
-Route::get('/backend/user_edit', 'BackendController@useredit_view');
 Route::get('/backend/user_edit/{user_id}', 'BackendController@user_edit_view');
-Route::post('edit_user/{id}', 'RegisterController@edit_user');
+Route::get('/backend/user_edit', 'BackendController@useredit_view');
 Route::post('delete_communitymember/{id}', 'RegisterController@deleteCommunitymember');
 
 //Blogs
@@ -174,7 +175,6 @@ Route::get('/backend/diaryoverview', 'BackendController@diaryoverview_view');
 
 //BAS
 Route::get('/backend/storyoverview', 'BackendController@storyoverview_view');
-
 //Events
 Route::get('/backend/eventoverview', 'BackendController@eventoverview_view');
 
@@ -185,7 +185,7 @@ Route::get('/backend/admin_faqs', 'BackendController@admin_faqs_view');
 Route::get('/backend/admin_jobs', 'BackendController@admin_jobs_view');
 
 //Create
-Route::get('register_new_user', 'RegisterController@create_new_user');
+Route::get('register_new_user', 'RegisterController@store_new_user');
 Route::post('register_new_user', 'RegisterController@store_new_user');
 Route::post('add_faq', 'FAQController@store');
 Route::get('add_faq', 'FAQController@create');
@@ -220,8 +220,9 @@ Route::post('delete_workout_comment/{workout_id}/{id}', 'WorkoutsController@dele
 
 Route::post('BlogHeroImage', 'BlogsController@store');
 Route::post('BlogImage', 'BlogsController@store');
-Route::post('create', 'BlogsController@store');
 Route::get('create', 'BlogsController@create');
+Route::post('create', 'BlogsController@store');
+
 
 Route::post('edit_blog/{id}', 'BlogsController@edit');
 Route::post('delete_blog/{id}', 'BlogsController@deleteBlog');

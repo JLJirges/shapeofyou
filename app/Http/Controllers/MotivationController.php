@@ -22,4 +22,24 @@ class MotivationController extends Controller
         }
     }
 
+    public function FutureLetter() {
+
+
+        $this->validate(request(), [
+            'LetterTitle' => 'required|max:50',
+            'LetterContent' => 'required|string',
+            'created_at' => '',
+            'ReceiveLetter' => ''
+        ]);
+        futureletters::create([
+            'LetterTitle' => request ('LetterTitle'),
+            'LetterContent' => request ('LetterContent'),
+            'created_at' => '',
+            'ReceiveLetter' => ('received_at'),
+            'UserId' => Auth::id()
+        ]);
+        \Session::flash('flash_message', 'Motivation sent!');
+
+    }
+
 }

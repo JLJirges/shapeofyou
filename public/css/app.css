@@ -16,7 +16,7 @@ a {
 }
 
 h1 {
-  font-family: 'AR DARLING', sans-serif;
+  font-family: 'AR DARLING', 'Fredericka the Great', sans-serif;
   font-size: 40pt;
   padding-top: 5%;
   padding-bottom: 1%;
@@ -49,7 +49,7 @@ text {
   -webkit-transition: font-size .4s ease-out;
   transition: font-size .4s ease-out;
   font-weight: 800;
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
 }
 
 svg:hover text {
@@ -395,7 +395,7 @@ ul.tabs li.current {
 .verticalFlip {
   display: inline;
   text-indent: 8px;
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
 }
 
 .verticalFlip > .h2 {
@@ -538,7 +538,7 @@ ul.tabs li.current {
   -webkit-box-shadow: black 0 0 3px 0;
           box-shadow: black 0 0 3px 0;
   color: black;
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
 }
 
 .home_body_shape_img > img {
@@ -670,7 +670,7 @@ ul.tabs li.current {
 }
 
 .box_link {
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
   font-size: 20pt;
   color: white;
   text-shadow: 2px 2px 4px #000000;
@@ -1079,7 +1079,7 @@ ul.tabs li.current {
 }
 
 .community_box_link {
-  font-family: "AR DARLING", sans-serif;
+  font-family: "AR DARLING", 'Fredericka the Great', sans-serif;
   font-size: 20pt;
   color: white;
   text-shadow: 2px 2px 4px #000000;
@@ -2400,7 +2400,7 @@ form > input {
 
 /* WORKOUT DETAILS */
 .exercise_title {
-  font-family: 'AR DARLING', sans-serif;
+  font-family: 'AR DARLING', 'Fredericka the Great', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3401,12 +3401,60 @@ footer {
     width: auto;
   }
   /* HOME */
+  .welcome_shape_content > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 200px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .welcome_shape_content > ul > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .welcome_shape_content > ul > li > img {
+    width: 90px;
+    height: 90px;
+  }
   .home_section {
     width: 100%;
     margin-top: 0;
   }
   .home_section > div > a {
     margin-bottom: 10px;
+  }
+  .welcome_shape_content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    max-width: 250px;
+    height: auto;
+    padding: 0;
+    margin-right: 10%;
   }
   .goal_info {
     width: 90%;
@@ -3725,6 +3773,53 @@ footer {
     padding: 5px;
   }
   /* PROFILE */
+  .profile_setting_section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: -70px;
+  }
+  .profile_setting_section > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: -65px;
+  }
+  .profile_setting_section > div > form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .isadmin_form_profile > form {
+    margin-left: -130px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .profile_section {
     width: 100%;
     margin: 10px 0 0 0;

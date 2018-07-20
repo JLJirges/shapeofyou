@@ -122,7 +122,7 @@
                     </div>
                     <div class="profile_personal_section">
                         <p>Diet</p>
-                        @if(($user->UserDiet === 0) || ($user->UserDiet === NULL))
+                        @if((($user->UserDiet === 0) || ($user->UserDiet === NULL)) && $user->Username === Auth::user()->username)
                             <img alt="diet" src="{{asset('images/profile/default_secret.png')}}">
                         @elseif($user->UserDiet === 1)
                             <img alt="diet" src="{{asset('images/community/nospecialdiet.png')}}">
