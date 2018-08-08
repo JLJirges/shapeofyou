@@ -12,7 +12,7 @@
     <div class="square_box_section">
         @foreach($diaries as $diary)
             @if($diary->DiaryHeroImage)
-                <div style="background-image:url({{asset('images/uploads_diaries/' . $diary->DiaryHeroImage)}});background-size:cover; background-position:center;">
+                <div style="background-image:url('{{asset('images/uploads_diaries/' . $diary->DiaryHeroImage)}}');background-size:cover; background-position:center;">
                     @else
                         <div class="community_box_diaries">
                             @endif

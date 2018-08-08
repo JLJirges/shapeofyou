@@ -61,7 +61,7 @@
             <div class="responsive-profile-nav">
                 <div>
                     <a>
-                        <img id="profileicon" class="burgericon" width="60" height="60"
+                        <img id="profileicon" class="burgericon" width="40" height="40"
                              src="{{ asset('images/user_icon.png') }}" alt="burger icon">
                     </a>
                 </div>

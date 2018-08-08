@@ -49,9 +49,9 @@
 
             <div class="community_box_beforeafter">
                 <a href="@if( (auth()->check())){{url('beforeafteroverview/beforeafterstories')}}@else{{url('register')}}@endif">
-                    <svg viewbox="0 -1 50 37">
+                    <svg viewbox="0 -1.5 50 37" width="298" height="205.5">
                         <defs>
-                            <mask class="mask" id="beforeafter_mask" x="0" y="0" width="220" height="205">
+                            <mask class="mask" id="beforeafter_mask" x="0" y="0" >
                                 <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
                                 <text x="7" text-anchor="middle" y="10" dy="0">B</text>
                                 <text x="13" text-anchor="middle" y="10" dy="0">E</text>
@@ -88,9 +88,9 @@
 
             <div class="community_box_workoutbuddies">
                 <a href="@if( (auth()->check())){{url('buddyoverview/')}}@else{{url('register')}}@endif">
-                    <svg viewbox="0 -1 50 37">
+                    <svg viewbox="0 -1.5 50 37" width="298" height="205.5">
                         <defs>
-                            <mask class="mask" id="buddy_mask" x="0" y="0" width="220" height="205">
+                            <mask class="mask" id="buddy_mask" x="0" y="0" >
                                 <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
                                 <text x="6" text-anchor="middle" y="25" dy="0">W</text>
                                 <text x="14" text-anchor="middle" y="25" dy="0">O</text>
@@ -116,9 +116,9 @@
 
             <div class="community_box_diaries">
                 <a href="@if( (auth()->check())){{url('usertalkoverview/diaries/')}}@else{{url('register')}}@endif">
-                    <svg viewbox="0 -1 50 37">
+                    <svg viewbox="0 -1.5 50 37" width="298" height="205.5">
                         <defs>
-                            <mask id="diary_mask" x="0" y="0" width="220" height="205">
+                            <mask id="diary_mask" x="0" y="0">
                                 <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
                                 <text x="6" text-anchor="middle" y="25" dy="0">W</text>
                                 <text x="14" text-anchor="middle" y="25" dy="0">O</text>
@@ -152,9 +152,9 @@
             </div>-->
                <div class="community_box_meetups">
                    <a href="@if( (auth()->check())){{url('meetups')}}@else{{url('register')}}@endif">
-                       <svg viewbox="0 -1 50 37">
+                       <svg viewbox="0 -1.5 50 37" width="298" height="205.5">
                            <defs>
-                               <mask id="meetups_mask" x="0" y="0" width="220" height="205">
+                               <mask id="meetups_mask" x="0" y="0">
                                    <rect x="0.5" y="0.5" width="49" height="49" fill="#fff"/>
                                    <text x="6" text-anchor="middle" y="22" dy="0">M</text>
                                    <text x="14" text-anchor="middle" y="22" dy="0">E</text>

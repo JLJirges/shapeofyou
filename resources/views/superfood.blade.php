@@ -67,7 +67,7 @@
 
             <div class="square_box_section">
                 @foreach($blogs->where('BlogCategory', 4) as $blog)
-                    <div style="background-image:url({{'images/blogs/' . $blog->BlogHeroImage}});background-size:cover; background-position:center;">
+                    <div style="background-image:url({{asset('images/blogs/' . $blog->BlogHeroImage)}});background-size:cover; background-position:center;">
                         <a class="box_link"
                            href="@if( (auth()->check())){{url('blog/' . $blog->id)}}@else{{ url ('register') }}@endif">
                             {{$blog->BlogTitle}}  </a>

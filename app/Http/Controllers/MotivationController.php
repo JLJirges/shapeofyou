@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Diary;
+use App\FutureLetter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -29,17 +30,24 @@ class MotivationController extends Controller
             'LetterTitle' => 'required|max:50',
             'LetterContent' => 'required|string',
             'created_at' => '',
-            'ReceiveLetter' => ''
+            'received_at' => 'required'
         ]);
-        futureletters::create([
+        FutureLetter::create([
             'LetterTitle' => request ('LetterTitle'),
             'LetterContent' => request ('LetterContent'),
             'created_at' => '',
-            'ReceiveLetter' => ('received_at'),
+            'received_at' => request ('received_at'),
             'UserId' => Auth::id()
         ]);
-        \Session::flash('flash_message', 'Motivation sent!');
+
+
+       \Session::flash('letter_message', 'Motivation sent!');
+
+
+        return redirect()->to('/motivationprofile')->with('global', 'Motivation Letter sent!');
 
     }
+
+
 
 }

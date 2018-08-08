@@ -158,7 +158,7 @@ Route::get('dashboard', 'BackendController@dashboard_view');
 
 
 //Users
-Route::post('edit_user/{id}', 'RegisterController@edit');
+Route::post('edit_user/{id}', 'RegisterController@edit_user');
 Route::get('/backend/useroverview', 'BackendController@useroverview_view');
 Route::get('/backend/user_edit/{user_id}', 'BackendController@user_edit_view');
 Route::get('/backend/user_edit', 'BackendController@useredit_view');

@@ -1,4 +1,5 @@
 html, body {
+  min-width: 1000px;
   background-color: #fff;
   font-family: 'Vesper Libre', serif;
   height: auto;
@@ -674,18 +675,28 @@ ul.tabs li.current {
   font-size: 20pt;
   color: white;
   text-shadow: 2px 2px 4px #000000;
-  width: 98%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  /* width: 98%;
   padding-top: 50%;
-  height: 98px;
+  height: 98px;*/
 }
 
 .box_link:hover {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 2px;
   color: black;
   width: 98%;
   text-shadow: none;
   vertical-align: middle;
+}
+
+.dontshow {
+  font-size: 1px;
 }
 
 .box_appetizers {
@@ -807,6 +818,11 @@ ul.tabs li.current {
   -webkit-box-shadow: dimgrey 0 0 2px 0;
           box-shadow: dimgrey 0 0 2px 0;
   margin: 10px;
+}
+
+.square_box_section > div:hover {
+  -webkit-box-shadow: lightgrey 0 0 10px 1px;
+          box-shadow: lightgrey 0 0 10px 1px;
 }
 
 .superfood_blog_section {
@@ -1738,6 +1754,7 @@ form > input {
           justify-content: center;
   -ms-flex-item-align: center;
       align-self: center;
+  text-shadow: darkorange 1px 3px 5px;
 }
 
 .profile_section_2 {
@@ -1753,13 +1770,12 @@ form > input {
 }
 
 .profile_navigation {
-  width: 7%;
+  width: 9%;
   height: auto;
   padding: 50px;
   border: solid 1px lightgrey;
-  margin-left: -87%;
   margin-top: -13%;
-  position: fixed;
+  position: relative;
   font-size: 10pt;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1771,7 +1787,6 @@ form > input {
   background-color: white;
   -webkit-box-shadow: grey 0 0 8px 0;
           box-shadow: grey 0 0 8px 0;
-  z-index: 100;
 }
 
 .profile_navigation > div {
@@ -1782,6 +1797,7 @@ form > input {
 .profile_navigation_two > div {
   padding-top: 25px;
   padding-bottom: 25px;
+  height: auto;
 }
 
 .profile_navigation__section_box:hover {
@@ -1816,6 +1832,7 @@ form > input {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: auto;
   border-bottom: lightgrey solid 1px;
   border-top: lightgrey solid 1px;
 }
@@ -2137,6 +2154,8 @@ form > input {
 
 .white_button:hover {
   cursor: pointer;
+  -webkit-box-shadow: lightgrey 0 0 10px 0;
+          box-shadow: lightgrey 0 0 10px 0;
 }
 
 .white_button {
@@ -2440,7 +2459,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
   line-height: 30px;
   text-align: center;
   cursor: pointer;
@@ -2453,18 +2472,17 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
   line-height: 30px;
   text-align: center;
   cursor: pointer;
-  z-index: 2;
 }
 
-.prev_stretch :hover {
+.prev_stretch:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.next_stretch :hover {
+.next_stretch:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -2513,7 +2531,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
   line-height: 30px;
   text-align: center;
   cursor: pointer;
@@ -2526,7 +2544,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
   line-height: 30px;
   text-align: center;
   cursor: pointer;
@@ -2586,7 +2604,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
   line-height: 30px;
   text-align: center;
   cursor: pointer;
@@ -2599,7 +2617,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
   line-height: 30px;
   text-align: center;
   cursor: pointer;
@@ -2669,7 +2687,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   left: 4px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
   line-height: 30px;
   text-align: center;
   cursor: pointer;
@@ -2682,7 +2700,7 @@ form > input {
   height: 30px;
   top: calc(50% - 15px);
   right: 4px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.2);
   line-height: 30px;
   text-align: center;
   cursor: pointer;
@@ -3783,7 +3801,6 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-left: -70px;
   }
   .profile_setting_section > div {
     display: -webkit-box;
@@ -3795,7 +3812,6 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-left: -65px;
   }
   .profile_setting_section > div > form {
     display: -webkit-box;
@@ -3809,7 +3825,6 @@ footer {
             flex-direction: column;
   }
   .isadmin_form_profile > form {
-    margin-left: -130px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4047,6 +4062,10 @@ footer {
         -ms-flex-align: center;
             align-items: center;
   }
+  .burgericon {
+    height: 65px;
+    width: 70px;
+  }
   .burgericon:hover {
     cursor: pointer;
   }
@@ -4106,12 +4125,16 @@ footer {
     display: none;
   }
   .responsive-profile-nav {
-    height: 90px;
-    width: 25%;
+    height: 50px;
+    width: 14%;
     margin: 10px;
     display: block;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 50px;
+  }
+  #profileicon {
+    width: 40px;
+    height: 35px;
   }
   .responsive-profile-nav > div {
     padding-top: 5px;

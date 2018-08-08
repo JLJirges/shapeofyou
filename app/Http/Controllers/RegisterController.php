@@ -29,6 +29,7 @@ class RegisterController extends Controller
             'username' => 'unique:users|required|string|max:50',
             'email' => 'unique:users|required|email',
             'password' => 'required|min:4|confirmed',
+            'isAdmin' => '',
             'BloggerBio' => 'max: 1000',
             'AdminText' => 'max: 1000'
         ]);
@@ -73,7 +74,11 @@ class RegisterController extends Controller
         ]);
         \Session::flash('newuser_error_message', 'User registration successful!');
 
-        return view('backend/create');
+        $data = [
+            'admin_users' => \DB::table('users')->where('isAdmin', 1)->get()
+        ];
+
+        return view('backend/create')->with($data);
 
     }
 
@@ -128,26 +133,30 @@ class RegisterController extends Controller
     public function edit_user(Request $request, $id)
     {
 
+
+        $toUpdate = array_filter($request->all());
+
+
         $this->validate(request(), [
 
-            'firstname' => 'string|max:50',
-            'lastname' => 'string|max:50',
-            'username' => 'unique:users|string|max:50',
-            'email' => 'unique:users|email',
-            'password' => 'min:4|confirmed',
-            'mq' => 'string',
-            'profilepic' => '',
-            'birthdate' => 'date',
-            'origin' => 'string|max:50',
+            'firstname' => 'string|max:50|nullable',
+            'lastname' => 'string|max:50|nullable',
+            'username' => 'unique:users|string|max:50|nullable',
+            'email' => 'unique:users|email|nullable',
+            'password' => 'min:4|confirmed|nullable',
+            'mq' => 'string|nullable',
+            'profilepic' => 'nullable',
+            'birthdate' => 'date|nullable',
+            'origin' => 'string|max:50|nullable',
             'UserDiet' => '',
             'UserGoal' => '',
             'UserShape' => '',
-            'BloggerBio' => 'max: 1000',
             'isAdmin' => '',
-            'AdminText' => 'max: 1000'
+            'BloggerBio' => 'max: 1000|nullable',
+            'AdminText' => 'max: 1000|nullable'
         ]);
 
-        $toUpdate = array_filter($request->all());
+
 
         if ($request->hasFile('profilepic')) {
 

@@ -101,10 +101,10 @@
                 </span>
                         </div>
                     @else
-                        <a href="{{url('profile/' . $user->username)}}"
+                        <div href="{{url('profile/' . $user->username)}}"
                            style="background-image:url({{ asset ('images/profile/default_profile_pic_v1.png')}});background-size:cover; background-position:center;"
                            class="backend_profile_picture_overview"><span class="show_username_profile">{{$user->username}}
-                </span></a>
+                </span></div>
                     @endif
                     <div class="profile_personal_section">
                         <p>Body Shape</p>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="profile_personal_section">
                         <p>Diet</p>
-                        @if((($user->UserDiet === 0) || ($user->UserDiet === NULL)) && $user->Username === Auth::user()->username)
+                        @if(($user->UserDiet === 0) || ($user->UserDiet === NULL))
                             <img alt="diet" src="{{asset('images/profile/default_secret.png')}}">
                         @elseif($user->UserDiet === 1)
                             <img alt="diet" src="{{asset('images/community/nospecialdiet.png')}}">
@@ -210,14 +210,16 @@
                     @foreach($diary->where('DiaryUserId', Auth::user()->id) as $entry)
                         @if($entry->DiaryHeroImage)
 
-                            <div style="background-image:url({{asset('images/uploads_diaries/' . $entry->DiaryHeroImage)}});background-size:cover; background-position:center;">
+                            <div style="background-image:url('{{asset('images/uploads_diaries/' . $entry->DiaryHeroImage)}}');background-size:cover; background-position:center;">
                                 @else
                                     <div class="community_box_diaries">
+
                                         @endif
 
                                         <a class="box_link"
                                            href="{{url('diary/' . $entry->id)}}">
                                             {{$entry->DiaryTitle}}  </a>
+
                                     </div>
                                     @endforeach
                             </div>
@@ -241,7 +243,8 @@
                                     @endif
 
                             </div>
-
+                </div>
     @endif
+        </div>
 @endsection
 

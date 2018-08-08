@@ -24,11 +24,13 @@
 
         <div class="square_box_section">
             @if($workout->where('WorkoutCategory', 1)->count() > 0)
+
+
                 <div class="box_outdoor">
-                    <a href="@if( (auth()->check())){{url('overview/1')}}@else{{ url ('register') }}@endif">
-                        <svg viewbox="0 -3 45 45.5">
+                    <a href="@if( (auth()->check())){{url('overview/1')}}@else{{ url ('register') }}@endif" class="box_link">
+                      <svg viewbox="0 -2 45 45.5"  width="220" height="215">
                             <defs>
-                                <mask class="mask" id="warmup_mask" x="0" y="0" width="220" height="215">
+                                <mask class="mask" id="warmup_mask" x="0" y="0">
                                     <rect x="0.5" y="0.5" width="44" height="41" fill="#fff"/>
                                     <text x="11" text-anchor="middle" y="25" dy="0">W</text>
                                     <text x="18" text-anchor="middle" y="25" dy="0">A</text>
@@ -42,15 +44,17 @@
                             <rect x="0.5" y="0.5" width="220" height="215" mask="url(#warmup_mask)" fill-opacity="1"
                                   fill="rgba(255, 255, 255, 0.9)"/>
                         </svg>
-                    </a>
+
+                </a>
                 </div>
+
             @endif
             @if($workout->where('WorkoutCategory', 2)->count() > 0)
                 <div class="box_stretch">
                     <a href="@if( (auth()->check())){{url('overview/2')}}@else{{ url ('register') }}@endif">
-                        <svg viewbox="0 -3 45 45.5">
+                        <svg viewbox="0 -3 45 45.5" width="220" height="215">
                             <defs>
-                                <mask class="mask" id="stretch_mask" x="0" y="0" width="220" height="215">
+                                <mask class="mask" id="stretch_mask" x="0" y="0" >
                                     <rect x="0.5" y="0.5" width="44" height="41" fill="#fff"/>
                                     <text x="4" text-anchor="middle" y="30" dy="0">S</text>
                                     <text x="10" text-anchor="middle" y="30" dy="0">T</text>
@@ -70,9 +74,9 @@
             @if($workout->where('WorkoutCategory', 3)->count() > 0)
                 <div class="box_indoor">
                     <a href="@if( (auth()->check())){{url('overview/3')}}@else{{ url ('register') }}@endif">
-                        <svg viewbox="0 -3 45 45.5">
+                        <svg viewbox="0 -3 45 45.5" width="222" height="210">
                             <defs>
-                                <mask id="mainworkout_mask" x="0" y="0" width="220" height="205">
+                                <mask id="mainworkout_mask" x="0" y="0" >
                                     <rect x="0.5" y="0.5" width="44" height="41" fill="#fff"/>
                                     <text x="15" text-anchor="middle" y="24" dy="0">M</text>
                                     <text x="23" text-anchor="middle" y="24" dy="0">A</text>

@@ -145,6 +145,7 @@ class BlogsController extends Controller
 
     public function edit(Request $request, $id)
     {
+
         $this->validate(request(), [
             'BlogTitle' => '',
             'BlogCategory' => '',

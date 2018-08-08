@@ -114,9 +114,9 @@ class BeforeAfterStoryController extends Controller
 
         if (($request->hasFile('BeforeAfterStoryImageOne')) && ($request->hasFile('BeforeAfterStoryImageTwo'))) {
 
-            $request->file('BeforeAfterStoryImageOne')->move(("images\\uploads_stories\\"), $request->file('BeforeAfterStoryImageOne')->getClientOriginalName());
+            $request->file('BeforeAfterStoryImageOne')->move(("images" . DIRECTORY_SEPARATOR . "uploads_stories" . DIRECTORY_SEPARATOR), $request->file('BeforeAfterStoryImageOne')->getClientOriginalName());
             $filename_one = $request->file('BeforeAfterStoryImageOne')->getClientOriginalName();
-            $request->file('BeforeAfterStoryImageTwo')->move(("images\\uploads_stories\\"), $request->file('BeforeAfterStoryImageTwo')->getClientOriginalName());
+            $request->file('BeforeAfterStoryImageTwo')->move(("images" . DIRECTORY_SEPARATOR . "uploads_stories" . DIRECTORY_SEPARATOR), $request->file('BeforeAfterStoryImageTwo')->getClientOriginalName());
             $filename_two = $request->file('BeforeAfterStoryImageTwo')->getClientOriginalName();
 
             BeforeAfterStory::create([
