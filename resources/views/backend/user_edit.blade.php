@@ -70,11 +70,6 @@
                 <option value="3" @if($user->UserGoal === 3) selected="selected" @endif>Build muscles</option>
                 <option value="4" @if($user->UserGoal === 4) selected="selected" @endif>Stay/Become healthy</option>
             </select>
-            <label>Is Admin</label>
-            <select name="isAdmin">
-                <option value="0" @if(($user->isAdmin === 0) || ($user->isAdmin === NULL)) selected="selected" @endif>No Admin</option>
-                <option value="1" @if($user->isAdmin === 1) selected="selected" @endif>Admin</option>
-            </select>
             @if($user->isAdmin === 1)
                 <label>BloggerBio</label>
                 <input type="text" name="BloggerBio" placeholder="Please add your bio...">
