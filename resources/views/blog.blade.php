@@ -2,40 +2,38 @@
 
 @section('title')
     <title>SHAPE OF YOU | Blog</title>
+    <meta name="description"
+          content="Every Blog has its own benefits and interesting topics. Food, Workout and occasional situations - try it out!">
 @endsection
 
 @section('content')
 
     <div class="blog_entry">
-
         <div class="blog_box">
-            <div class="workout_entry_setting">
+            <div class="blog_like">
+
+                <!-- Possibility to like/dislike Blog -->
+
                 @if($user_likes_blog)
                     <form method="POST" action="{{ '/favorite_blog/remove/' . $blog_id . '/' . $user_id }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                        <button class="clicked_fav_icon fav_icon_button">
-                        </button>
+                        <button class="clicked_fav_icon fav_icon_button"></button>
                     </form>
                 @else
                     <form method="POST" action="{{ '/favorite_blog/insert/' . $blog_id . '/' . $user_id }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                        <button class="fav_icon fav_icon_button">
-                        </button>
+                        <button class="fav_icon fav_icon_button"></button>
                     </form>
-                @endif
+            @endif
+
+            <!-- Blog -->
+
                 <h1 class="blog_h1">{{ $blog->BlogTitle }}</h1>
             </div>
-
             <div>
-
                 <img src="{{ asset('images/blogs/' . $blog->BlogHeroImage) }}" alt="blog hero image">
-
                 <div class="blog_text">
-
                     <p>
-
                         {{ $blog->BlogContentOne }}
                     </p>
                     <img src="{{ asset('images/blogs/' . $blog->BlogImage) }}" alt="second blog image"
@@ -46,17 +44,16 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
+    <!-- Blog Author Information -->
+
     <div class="blog_author_section">
-        <div class="blog_abouttheauthor"
-             style="background-image:url({{asset('images/blogs/responsive_author_bg.png')}});background-size: cover; background-position: center;">
+        <div class="blog_abouttheauthor">
+
             <h4>About the author</h4>
             <div class="blog_abouttheauthor_content">
                 <div>
-
                     <div style="background-image: url({{asset('images/uploads/' . $blog_author->profilepic )}});background-size: cover; background-position: center"
                          class="profile_picture"></div>
                 </div>
@@ -82,7 +79,7 @@
         </div>
     </div>
 
-
+    <!-- Comments options-->
     <div class="comments_section">
         <ul class="comments_section_interaction tabs">
             <li class="tab-link shown_tab" data-tab="comment-tab-1"><h5>Read Comments</h5></li>
@@ -90,7 +87,7 @@
             <li class="tab-link" data-tab="comment-tab-3"><h5>Hide Comments</h5></li>
         </ul>
 
-
+        <!-- Comments -->
         <div class="tab-content shown_tab" id="comment-tab-1">
             @foreach($blog_comments as $blog_comment)
                 <div class="comments_details">
@@ -123,14 +120,10 @@
                     </div>
                     <p>{{ $blog_comment->BlogCommentContent}}</p>
                 </div>
-
-
-
-
             @endforeach
-
-
         </div>
+
+        <!-- Comments option -->
         <div class="tab-content" id="comment-tab-2">
             <form class="comment_form" method="post"
                   action="{{'/write_comment/blog/' . $blog_id . '/' . $user_id}}">

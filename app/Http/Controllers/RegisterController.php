@@ -87,8 +87,10 @@ class RegisterController extends Controller
         if (!Auth()->check()) {
             return redirect()->to('/');
         } else {
-
-            return view('profile/settingsprofile');
+            $data = [
+                'user' => Auth::user()
+            ];
+            return view('profile/settingsprofile')->with($data);
         }
     }
 

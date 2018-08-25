@@ -19,7 +19,10 @@ class MotivationController extends Controller
         if (!Auth()->check()) {
             return redirect()->to('login');
         } else {
-            return view('profile/motivationprofile');
+            $data =[
+                'user' => Auth::user()
+            ];
+            return view('profile/motivationprofile')->with($data);
         }
     }
 

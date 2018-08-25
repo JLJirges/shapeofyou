@@ -10,6 +10,19 @@
         <h1>EDIT/UPDATE</h1>
     </div>
 
+    @if(\Session::has('flash_message'))
+        <div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
+            {{ \Session::get('flash_message') }}
+        </div>
+    @endif
+    @if($errors->any())
+        <div style="color:red; border:1px solid #aaa; padding:4px; margin-top:10px">
+            @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
+
         <form class="register_form" method="POST" action="/edit_user/{{$user->id}}" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label>First Name</label>

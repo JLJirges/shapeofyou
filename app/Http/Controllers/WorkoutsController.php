@@ -111,9 +111,9 @@ class WorkoutsController extends Controller
 
         if (($request->hasFile('WorkoutHeroImage')) && ($request->hasFile('WorkoutImage'))) {
 
-            $request->file('WorkoutHeroImage')->move(("images\\workout\\"), $request->file('WorkoutHeroImage')->getClientOriginalName());
+            $request->file('WorkoutHeroImage')->move(("images" . DIRECTORY_SEPARATOR . "workout" . DIRECTORY_SEPARATOR), $request->file('WorkoutHeroImage')->getClientOriginalName());
             $filename_workouthero = $request->file('WorkoutHeroImage')->getClientOriginalName();
-            $request->file('WorkoutImage')->move(("images\\workout\\"), $request->file('WorkoutImage')->getClientOriginalName());
+            $request->file('WorkoutImage')->move(("images" . DIRECTORY_SEPARATOR . "workout" . DIRECTORY_SEPARATOR), $request->file('WorkoutImage')->getClientOriginalName());
             $filename_workoutimage = $request->file('WorkoutImage')->getClientOriginalName();
 
             Workouts::create([
@@ -135,16 +135,21 @@ class WorkoutsController extends Controller
 
     }
 
+
+
+
     public function edit(Request $request, $id)
     {
+
+
         $this->validate(request(), [
-            'WorkoutTitle' => '',
+            'WorkoutTitle' => 'max:50',
             'WorkoutCategory' => '',
             'BloggerId' => '',
             'WorkoutHeroImage' => '',
             'WorkoutImage' => '',
-            'WorkoutContentOne' => '',
-            'WorkoutContentTwo' => '',
+            'WorkoutContentOne' => 'max:3000',
+            'WorkoutContentTwo' => 'max:3000',
             'created_at' => '',
             'updated_at' => ''
         ]);
@@ -153,25 +158,32 @@ class WorkoutsController extends Controller
 
         if ($request->hasFile('WorkoutHeroImage')) {
 
-            $request->file('WorkoutHeroImage')->move(("images\\workouts\\"), $request->file('WorkoutHeroImage')->getClientOriginalName());
+            $request->file('WorkoutHeroImage')->move(("images" . DIRECTORY_SEPARATOR . "workout" . DIRECTORY_SEPARATOR), $request->file('WorkoutHeroImage')->getClientOriginalName());
 
             $filename = $request->file('WorkoutHeroImage')->getClientOriginalName();
             $toUpdate['WorkoutHeroImage'] = $filename;
         }
-        if ($request->hasFile('WorkoutImage')) {
 
-            $request->file('WorkoutImage')->move(("images\\workouts\\"), $request->file('WorkoutImage')->getClientOriginalName());
+               if ($request->hasFile('WorkoutImage')) {
 
-            $filename = $request->file('WorkoutImage')->getClientOriginalName();
-            $toUpdate['WorkoutImage'] = $filename;
-        }
+                    $request->file('WorkoutImage')->move(("images" . DIRECTORY_SEPARATOR . "workout" . DIRECTORY_SEPARATOR), $request->file('WorkoutImage')->getClientOriginalName());
+
+                    $filename = $request->file('WorkoutImage')->getClientOriginalName();
+                    $toUpdate['WorkoutImage'] = $filename;
+                }
+
+
 
         $workout = Workouts::findOrFail($id);
         $workout->update($toUpdate);
 
         \Session::flash('workout_message', 'Update successful!');
-        return redirect()->to('/backend/workout_edit/' . $workout->id);
+        return redirect()->to('/backend/workoutoverview');
     }
+
+
+
+
 
     public function deleteWorkoutComment($workout_id, $workout_comment_id)
     {

@@ -21,7 +21,7 @@
         @foreach($jobs as $job)
             <div class="faqs">
             <div>
-                <a
+                <a class="job-title"
                    href="{{url('backend/job_edit/' . $job->id)}}">
                     {{$job->JobTitle}}  </a>
                 <div>

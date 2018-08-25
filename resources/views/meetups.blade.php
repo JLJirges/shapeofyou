@@ -1,23 +1,23 @@
 @extends('layouts.master')
 
 @section('title')
-    <title>SHAPE OF YOU | Meetups</title>
+    <title>SHAPE OF YOU | Events</title>
+    <meta name="description"
+          content="Would you like to join some of the most awesome events ever? No problem - we invite you to become part of Austria's biggest Nutrition Events!">
 @endsection
 
 @section('content')
-    <div class="h1_bg">
-        <h1>MEETUPS</h1>
-    </div>
+        <h1>EVENTS</h1>
     <div class="meetups_title">
         <h2>Upcoming Events</h2>
         <h2 class="h2_desktop_view">Former Events</h2>
     </div>
-    <div class="meetups_section">
 
+    <!-- Upcoming Events -->
+    <div class="meetups_section">
         <div class="upcoming_meetups">
             @foreach($upcoming_events as $upcoming_event)
                 <div class="event">
-
                     <div>
                         @if($upcoming_event->TicketsSold < $upcoming_event->TicketsTotal)
                             <div class="event_available_info">
@@ -30,67 +30,42 @@
                                 <span>Sold: <span class="tickets_sold">{{$upcoming_event->TicketsSold}}</span></span>
                             </div>
                         @endif
-                        @if(\Session::has('event_message'))
-                            <div style="color:green; border:1px solid #aaa; padding:4px; margin-top:10px">
-                                {{ \Session::get('event_message') }}
-                            </div>
-                        @endif
                         <div class="event_box">
                             <h3>{{$upcoming_event->EventTitle}}</h3>
                             <div class="event_box_details">
                                 <div class="event_details">
                                     <div class="event_date_and_time">
                                         <div class="event_date_and_time_info event_date_and_time_info_1">
-                                            <p>WHEN:</p>
-                                            <p>WHERE:</p>
+                                            <h4>WHEN:</h4>
+                                            <h4>WHERE:</h4>
                                         </div>
                                         <div class="event_date_and_time_info">
                                             <p>{{$upcoming_event->EventWhen}}</p>
                                             <p>{{$upcoming_event->EventWhere}}</p>
                                         </div>
                                     </div>
-
-                                    <iframe src="{{$upcoming_event->Maps}}" allowfullscreen class="meetup_event_googlemaps"></iframe>
+                                    <iframe src="{{$upcoming_event->Maps}}" allowfullscreen
+                                            class="meetup_event_googlemaps"></iframe>
                                 </div>
                                 <div>
-                                    <p class="event_W">WHAT:</p>
+                                    <h4>WHAT:</h4>
                                     <p class="event_descritpion">{{$upcoming_event->EventWhat}}</p>
-                                    <!--
-                                    <p>5km, 10km or 15km run</p>
-                                    <p>Food, drinks and live music</p>
-                                    <p>Open Air</p>
-                                    <p>Special guests</p>
-                                    <p>3 stages</p>-->
                                     <p>Per Ticket: {{$upcoming_event->Costs}},-€</p>
                                 </div>
                             </div>
                         </div>
-                            @if(!Auth()->check())
-                                <a href="{{url('register')}}" class="white_button">Join Event!</a>
-                        @elseif($upcoming_event->TicketsSold < $upcoming_event->TicketsTotal)
-                            <form method="POST" action="/edit_event/{{$upcoming_event->id}}">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                                <input type="hidden" value="1" name="SoldTickets" class="buy_tickets"
-                                       id="bought_ticket">
-                                <button type="submit" class="ticket_button" id="increase_ticketnumber">Buy one Ticket!
-                                </button>
-                                <span>*</span>
-                            </form>
-
-                            <p>*Since this is a student project for university, you won't be redirected to Paypall or
-                                other payment methods. You will receive an Email with your Ticket Confirmation. You
-                                won't be charged for anything! Please note that there will be no Event! </p>
+                        @if(!Auth()->check())
+                            <a href="{{url('register')}}" class="white_button">Join Event!</a>
                         @else
-                            <div class="sold_out">Sold Out!</div>
+                            <a href="{{url('https://www.facebook.com/events/1999281326999686/')}}" class="white_button">More
+                                info</a>
                         @endif
-
                     </div>
                 </div>
             @endforeach
-
         </div>
 
+        <!-- Former Events -->
         <h2 class="h2_mobile_view">Former Events</h2>
         <div class="former_event_section">
             <p>

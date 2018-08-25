@@ -9,29 +9,39 @@
         <h1>Blog Overview</h1>
     </div>
 
-    <div class="square_box_section">
 
+    <div class="backend-box-section">
         @foreach($blogs as $blog)
+            <div class="backend-users">
+                @if($blog->BlogHeroImage)
+                    <a href="{{url('blog/' . $blog->id)}}" class="backend_profile_picture_overview"
+                       style="background-image:url({{asset('images/blogs/' . $blog->BlogHeroImage)}});background-size:cover; background-position:center;">
+                    <span class="username_backend_overview">
+                        {{$blog->BlogTitle}}
+                    </span>
+
+                        <form class="backend-user-action" action="/delete_blog/{{$blog->id}}" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <a class="edit" href="{{'blog_edit/' . $blog->id}}">Edit</a>
+                            <button class="delete"></button>
+                        </form>
+
+                    </a>
+                @else
+                    <a href="{{url('blog/' . $blog->id)}}" class="backend_profile_picture_overview"
+                       style="background-image:url({{asset('images/blogs/' . $blog->BlogImage)}});background-size:cover; background-position:center;">
+                    <span class="username_backend_overview">
+                        {{$blog->BlogTitle}}
+                    </span>
+
+                    </a>
+
+                @endif
+            </div>
+        @endforeach
+    </div>
 
 
-            @if($blog->BlogHeroImage)
-                <div style="background-image:url({{asset('images/blogs/' . $blog->BlogHeroImage)}});background-size:cover; background-position:center;">
-                    @else
-                        <div style="background-image:url({{asset('images/blogs/' . $blog->BlogImage)}});background-size:cover; background-position:center;">
-                            @endif
-                            <a class="box_link"
-                               href="{{url('blog/' . $blog->id)}}">
-                                {{$blog->BlogTitle}}  </a>
-                            <div class="admin_blog_interaction">
-                                <form action="/delete_blog/{{$blog->id}}" method="post">
-                                    <a class="edit" href="{{'blog_edit/' . $blog->id}}">Edit</a>
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <button class="delete"></button>
-                                </form>
-                            </div>
-                        </div>
 
-                        @endforeach
 
-                </div>
 @endsection

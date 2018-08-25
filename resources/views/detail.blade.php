@@ -2,23 +2,25 @@
 
 @section('title')
     <title>SHAPE OF YOU | Workout-Details</title>
+    <meta name="description"
+          content="Every Workout helps you achieve a different goal! Muscle work, cardio, whatever it is - we are here with you! Start now!">
 @endsection
 
 @section('content')
     <div class="h1_bg">
         <h1>WORKOUT</h1>
     </div>
-
-
     <div class="workout_entry">
         <div class="workout_entry_setting">
+            <!-- Workout Author -->
             <div class="workout_details_profilepicture">
                 <div style="background-image: url({{asset('images/uploads/' . $workout_author->profilepic )}});background-size: cover; background-position: center"
                      class="workout_author"></div>
-
-                <span @if($workout_author->isAdmin === 1) style=" color: darkorange;" @endif>{{$workout_author->username}}</span>
+                <span> {{$workout_author->username}}</span>
             </div>
             <h2>{{ $workout->WorkoutTitle }}</h2>
+
+            <!-- Possibility to like/dislike Workout -->
             @if($user_likes_workout)
                 <form method="POST" action="{{ '/favorite_workout/remove/' . $workout_id . '/' . $user_id }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -36,34 +38,27 @@
             @endif
         </div>
 
-        <div class="workout_entry_box">
+        <!-- Workout Entry -->
 
+        <div class="workout_entry_box">
             <div>
                 @if($workout->WorkoutHeroImage)
                     <img src="{{('../images/workout/' . $workout->WorkoutHeroImage)}}" alt="workout image">
                 @endif
                 <div class="workout_entry_text">
-                    <p>
-
-                        {{ $workout->WorkoutContentOne }}
-
-                    </p>
+                    <p>{{ $workout->WorkoutContentOne }}</p>
                 </div>
-                    @if($workout->WorkoutImage)
-                <img src="{{('../images/workout/' . $workout->WorkoutImage)}}" alt="workout image">
-                    @endif
+                @if($workout->WorkoutImage)
+                    <img src="{{('../images/workout/' . $workout->WorkoutImage)}}" alt="workout image">
+                @endif
                 <div class="workout_entry_text">
-                    <p>
-                        @if($workout->WorkoutContentTwo)
-
-                        {{ $workout->WorkoutContentTwo }}
-
-                            @endif
-                    </p>
+                    <p>@if($workout->WorkoutContentTwo){{ $workout->WorkoutContentTwo }}@endif</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Workout Comments Options -->
 
     <div class="comments_section">
         <ul class="comments_section_interaction tabs">
@@ -73,10 +68,9 @@
         </ul>
         <div class="tab-content shown_tab" id="comment-tab-1">
 
+            <!-- Workout Comments -->
             @foreach($workout_comments as $workout_comment)
                 <div class="comments_details">
-
-
                     <div class="comments_details_user">
                         <a href="{{url('profile/' . $users->where('id', $workout_comment->UserId)->first()->username)}}">
                             <div class="comments_details_profilepicture">
@@ -92,6 +86,8 @@
                             </div>
                         </a>
                         <span>{{ $workout_comments->where('WorkoutCommentDate', $workout_comment->WorkoutCommentDate)->first()->WorkoutCommentDate}}</span>
+
+                        <!-- delete comment if Admin or Author -->
                         @if( ((auth()->check()) && (Auth::user()->isAdmin === 1)) || ((Auth::user()->id === $workout_comment->UserId)))
                             <div class="comments_details_edit">
                                 <form action="/delete_workout_comment/{{$workout->id}}/{{$workout_comment->id}}"
@@ -106,18 +102,19 @@
                             </div>
                         @endif
                     </div>
-
                     <p>{{ $workout_comment->WorkoutCommentContent}}</p>
                 </div>
-
             @endforeach
         </div>
+
+        <!-- Comments option -->
         <div class="tab-content" id="comment-tab-2">
             <form class="comment_form" method="post"
                   action="{{'/write_comment/detail/' . $workout_id . '/' . $user_id}}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <h2>Leave a Comment</h2>
+
                 <label>Write your comment</label>
                 <input type="text" name="comment" placeholder="I will be your comment...">
                 <button class="white_button">Add Comment</button>
@@ -125,5 +122,4 @@
         </div>
         <div class="tab-content" id="comment-tab-3"></div>
     </div>
-
 @endsection

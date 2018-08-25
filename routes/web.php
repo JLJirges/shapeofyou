@@ -143,6 +143,7 @@ Route::get('jobs', 'FooterController@jobs_view');
 Route::get('termsandconditions', 'FooterController@tac_view');
 Route::get('faq', 'FooterController@faq_view');
 Route::get('aboutus', 'FooterController@about_view');
+Route::get('imprint', 'FooterController@imprint_view');
 
 
 //Inetractions

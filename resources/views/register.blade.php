@@ -2,11 +2,11 @@
 
 @section('title')
     <title>SHAPE OF YOU | Register</title>
+    <meta name="description"
+          content="Are you ready to join Austria's biggest Fitness and Nutrition Community for free? Awwesome! We can't wait to welcome you and help you to get your new lifestyle and body!">
 @endsection
 
 @section('content')
-
-
     <div class="h1_bg">
         <h1>REGISTER</h1>
     </div>
@@ -38,19 +38,7 @@
         <label>Confirm Password</label>
         <input type="password" name="password_confirmation" placeholder="Repeat password"
                id="password_confirmation">
-       <!-- <div>
-            <input type="checkbox" name="agb">
-            <label>I have read and agree to the <a href=" {{ url('termsandconditions')}}">Terms and
-                    Conditions</a>
-            </label>
-        </div>-->
-        <button class="login_button" type="submit">Sign up</button>
-<span>*With your registration you agree to the <a class="tandc" href="{{'termsandconditions'}}">Terms and Conditions</a> made by SHAPE OF YOU!</span>
-
-
+        <button class="white_button" type="submit">Sign up</button>
+        <span>*With your registration you agree to the <a class="tandc" href="{{'termsandconditions'}}">terms and conditions</a> made by SHAPE OF YOU!</span>
     </form>
-
-
-
-
 @endsection

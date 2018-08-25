@@ -9,7 +9,7 @@
         <h1>STORY OVERVIEW</h1>
     </div>
 
-    <div class="square_box_section">
+    <div class="backend-box-section">
         @foreach($stories as $story)
             <div style="background-image:url({{asset('images/uploads_stories/' . $story->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
                 <a class="box_link"

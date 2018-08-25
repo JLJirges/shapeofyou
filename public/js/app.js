@@ -13692,6 +13692,8 @@ module.exports = __webpack_require__(36);
 
 __webpack_require__(12);
 
+// TABS
+
 $(document).ready(function () {
 
     $('ul.tabs li').click(function () {
@@ -13706,34 +13708,18 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $(".whole_old_entry_trigger").click(function () {
-        $(".whole_old_entry").toggle();
-    });
-});
-
-$(document).ready(function () {
     $("#burgericon").click(function () {
         $("#responsive_nav").slideToggle('400');
     });
 });
-/*
-$(document).ready(function(){
-    $("#event_gallery_button").click(function(){
-        $("#gallery_overlay_background").fadeIn("2000");
-    });
-});
-
-$(document).ready(function(){
-    $("#closeicon").click(function(){
-        $("#gallery_overlay_background").fadeOut("2000");
-    });
-});*/
 
 $(document).ready(function () {
     $("#profileicon").click(function () {
         $("#responsive-profile-nav").slideToggle('200');
     });
 });
+
+//EVENT GALLERY
 
 (function ($, undefined) {
     $(document).ready(function () {
@@ -13760,6 +13746,8 @@ $(document).ready(function () {
     });
 })(jQuery);
 
+// PROFILE WORKOUT SLIDER
+//Warmup
 (function ($, undefined) {
     $(document).ready(function () {
 
@@ -13785,6 +13773,7 @@ $(document).ready(function () {
     });
 })(jQuery);
 
+// Stretch
 (function ($, undefined) {
     $(document).ready(function () {
 
@@ -13810,6 +13799,7 @@ $(document).ready(function () {
     });
 })(jQuery);
 
+// Main Workout
 (function ($, undefined) {
     $(document).ready(function () {
 
@@ -13835,6 +13825,7 @@ $(document).ready(function () {
     });
 })(jQuery);
 
+// Cool Down
 (function ($, undefined) {
     $(document).ready(function () {
 
@@ -13854,57 +13845,6 @@ $(document).ready(function () {
             $('.page_cooldown').first().before($('.page_cooldown').last());
             $('.slide_list_cooldown').css('left', $('.page_cooldown').width() * -1);
             $('.slide_list_cooldown').animate({
-                left: 0
-            });
-        });
-    });
-})(jQuery);
-
-/*
-(function($, undefined){
-    $(document).ready(function(){
-            $('#increase_ticketnumber').click(function(){
-                $('.tickets_sold').html(function(){
-                    var $this = $(this),
-                        count = $this.data('count') + ('.buy_tickets');
-
-                    $this.data('count', count);
-                    return count;
-                });
-            });
-        });
-
-})(jQuery);
-*/
-
-(function ($, undefined) {
-    $(document).ready(function () {
-        $('.slide_screen').SlideScreen();
-    });
-})(jQuery);
-
-// PROFILE WORKOUTS
-
-// Main Workouts
-(function ($, undefined) {
-    $(document).ready(function () {
-
-        $('#slidebox_workout_main').width($('#workout_main_content').width());
-        $('#workout_main_list').width($('#workout_main_content').width() * $('#workout_main_content').length);
-
-        $('#workout_main_next').on('click', function () {
-            $('#workout_main_list').animate({
-                left: $('#workout_main_content').width() * -1
-            }, function () {
-                $('#workout_main_content').last().after($('#workout_main_content').first());
-                $('#workout_main_list').css('left', 0);
-            });
-        });
-
-        $('#workout_main_prev').on('click', function () {
-            $('#workout_main_content').first().before($('#workout_main_content').last());
-            $('#workout_main_list').css('left', $('#workout_main_content').width() * -1);
-            $('#workout_main_list').animate({
                 left: 0
             });
         });

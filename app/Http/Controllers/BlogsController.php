@@ -100,7 +100,7 @@ class BlogsController extends Controller
 
 
         $this->validate(request(), [
-            'BlogTitle' => 'required|string|max:50',
+            'BlogTitle' => 'required|string|max:20',
             'BlogCategory' => 'required',
             'BloggerId' => '',
             'BlogContentOne' => 'required|string|max:3000',
@@ -113,9 +113,9 @@ class BlogsController extends Controller
 
         if (($request->hasFile('BlogHeroImage')) && ($request->hasFile('BlogImage'))) {
 
-            $request->file('BlogHeroImage')->move(("images\\blogs\\"), $request->file('BlogHeroImage')->getClientOriginalName());
+            $request->file('BlogHeroImage')->move(("images" . DIRECTORY_SEPARATOR . "blogs" . DIRECTORY_SEPARATOR), $request->file('BlogHeroImage')->getClientOriginalName());
             $filename_bloghero = $request->file('BlogHeroImage')->getClientOriginalName();
-            $request->file('BlogImage')->move(("images\\blogs\\"), $request->file('BlogImage')->getClientOriginalName());
+            $request->file('BlogImage')->move(("images" . DIRECTORY_SEPARATOR . "blogs" . DIRECTORY_SEPARATOR), $request->file('BlogImage')->getClientOriginalName());
             $filename_blogimage = $request->file('BlogImage')->getClientOriginalName();
 
 
@@ -145,43 +145,47 @@ class BlogsController extends Controller
 
     public function edit(Request $request, $id)
     {
-
         $this->validate(request(), [
-            'BlogTitle' => '',
+            'BlogTitle' => 'max:20',
             'BlogCategory' => '',
-            'BlogAuthorName' => '',
+           'BlogAuthorName' => '',
             'BlogAuthorBio' => '',
-            'BlogAuthorBirthdate' => '',
+            'BlogAuthorBirthdate' => 'date',
             'BlogAuthorImage' => '',
             'BlogAuthorOrigin' => '',
             'BlogHeroImage' => '',
             'BlogImage' => '',
-            'BlogContentOne' => '',
-            'BlogContentTwo' => ''
+            'BlogContentOne' => 'max:3000',
+            'BlogContentTwo' => 'max:3000'
         ]);
+
         $toUpdate = array_filter($request->all());
 
         if ($request->hasFile('BlogHeroImage')) {
 
-            $request->file('BlogHeroImage')->move(("images\\blogs\\"), $request->file('BlogsHeroImage')->getClientOriginalName());
+            $request->file('BlogHeroImage')->move(("images" . DIRECTORY_SEPARATOR . "blogs" . DIRECTORY_SEPARATOR), $request->file('BlogHeroImage')->getClientOriginalName());
 
             $filename = $request->file('BlogHeroImage')->getClientOriginalName();
             $toUpdate['BlogHeroImage']=$filename;
         }
+
+
         if ($request->hasFile('BlogImage')) {
 
-            $request->file('BlogImage')->move(("images\\blogs\\"), $request->file('BlogImage')->getClientOriginalName());
+            $request->file('BlogImage')->move(("images" . DIRECTORY_SEPARATOR . "blogs" . DIRECTORY_SEPARATOR), $request->file('BlogImage')->getClientOriginalName());
 
-            $filename = $request->file('WorkoutImage')->getClientOriginalName();
+            $filename = $request->file('BlogImage')->getClientOriginalName();
             $toUpdate['BlogImage']=$filename;
         }
+
+
 
         $blog = Blogs::findOrFail($id);
 
         $blog->update($toUpdate);
 
         \Session::flash('blog_message', 'Update successful!');
-        return redirect()->to('/backend/blog_edit/' . $blog->id);
+        return redirect()->to('/backend/blogoverview');
     }
 
     public function deleteBlogComment($blog_id, $blog_comment_id)

@@ -2,6 +2,7 @@
 
 @section('title')
     <title>SHAPE OF YOU | Log In</title>
+    <meta name="description" content="Are you already a Member of SHAPE OF YOU? Login and continue your journey!">
 @endsection
 
 @section('content')
@@ -16,15 +17,12 @@
         </div>
     @endif
     <form class="login_form" method="post" action="/handlelogin">
-        <h2>Login</h2>
+        <h2>Welcome back</h2>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label>Username</label>
         <input type="text" name="username" placeholder="Username">
         <label>Password</label>
         <input type="password" name="password" placeholder="Your password">
-
-        <button class="login_button">Login</button>
+        <button class="white_button">Login</button>
     </form>
-
-
 @endsection

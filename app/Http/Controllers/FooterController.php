@@ -14,6 +14,11 @@ class FooterController extends Controller
         return view('footer/contact');
     }
 
+    public function imprint_view()
+    {
+        return view('footer/imprint');
+    }
+
     public function jobs_view()
     {
         $data = [

@@ -13,45 +13,48 @@
         <h2>Upcoming Events</h2>
     </div>
 
-    <div class="square_box_section">
+    <div class="backend-box-section">
         @foreach($upcoming_events as $upcoming_event)
-                        <div>
-                            <a class="box_link"
-                               href="{{url('detail/' . $upcoming_event->id)}}">
-                                {{$upcoming_event->EventTitle}}  </a>
-                            <div class="admin_blog_interaction">
-                                <div class="admin_delete_edit">
-                                <a href="{{url('backend/event_edit/' . $upcoming_event->id)}}">Edit</a>
-                                    <form action="/delete_event/{{$upcoming_event->id}}" method="post">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                        <button class="delete"></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                </div>
+            <div class="backend-users">
+
+                    <a href="{{url('detail/' . $upcoming_event->id)}}" class="backend_profile_picture_overview"><span class="username_backend_overview">{{$upcoming_event->EventTitle}}
+                    </span>
+                        <form action="/delete_event/{{$upcoming_event->id}}" method="post">
+                            <a class="edit" href="{{url('backend/event_edit/' . $upcoming_event->id)}}">Edit</a>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button class="delete"></button>
+                        </form>
+                    </a>
+
+            </div>
+        @endforeach
+    </div>
+
+
+
 
     <div class="title_bg">
         <h2>Former Events</h2>
     </div>
 
+
+
+
     <div class="square_box_section">
         @foreach($former_events as $former_event)
-            <div>
-                <a class="box_link"
-                   href="{{url('detail/' . $former_event->id)}}">
-                    {{$former_event->EventTitle}}  </a>
-                <div class="admin_blog_interaction">
-                    <div class="admin_delete_edit">
+            <div class="backend-users">
+
+                <a href="{{url('detail/' . $former_event->id)}}" class="backend_profile_picture_overview"><span class="username_backend_overview">{{$former_event->EventTitle}}
+                    </span>
+                    <form action="/delete_event/{{$former_event->id}}" method="post">
                         <a class="edit" href="{{url('backend/event_edit/' . $former_event->id)}}">Edit</a>
-                        <form action="/delete_event/{{$former_event->id}}" method="post">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <button class="delete"></button>
-                        </form>
-                    </div>
-                </div>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button class="delete"></button>
+                    </form>
+                </a>
+
             </div>
         @endforeach
     </div>
+
 @endsection
