@@ -51,9 +51,6 @@ class BlogsController extends Controller
             return redirect()->to('register');
         }
 
-
-
-
             // Get blog comments of blog with the BlogId=$id
             // blog_comments is an array of entries of the table 'blogcomment'
             $blog_comments = \DB::table('blogcomment')

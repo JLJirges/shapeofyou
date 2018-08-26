@@ -62,37 +62,24 @@ class BeforeAfterStoryController extends Controller
         if (!Auth()->check()) {
         return redirect()->to('register');
     } else {
-        // Get blog comments of blog with the BlogId=$id
-        // blog_comments is an array of entries of the table 'blogcomment'
+
         $bas_comments = \DB::table('bascomment')
             ->where('BASId', $bas_id);
 
-        // Get UserIds that are in the blog_comments
-        // user_ids is an array of UserIds (e.g., [1,2,3])
         $user_ids = $bas_comments->pluck('UserId')->toArray();
 
-        // Get BloggerId
         $blogger_id = \DB::table('beforeafterstories')->where('id', $bas_id)->first()->BeforeAfterStoryUserId;
 
-        // Get all the data needed to pass to the blade view
         $data = [
-            // blog_id is in the url
             'bas_id' => $bas_id,
-
-            // I need the blog entry from the 'blogs' table.
-            // Go to the Blogs and find the entry where 'id'=$id
             'bas' => \DB::table('beforeafterstories')->where('id', $bas_id)->first(),
 
             'bas_author' => \DB::table('users')->where('id', $blogger_id)->first(),
-
-            // get blog comments ordered by their date
             'bas_comments' => $bas_comments->orderBy('BASDate', 'desc')->get(),
 
-            // get users associated with blog comments
             'users' => \DB::table('users')
                 ->whereIn('id', $user_ids)->get(),
 
-            // get authenticated user
             'user_id' => Auth::user()->id,
 
         ];

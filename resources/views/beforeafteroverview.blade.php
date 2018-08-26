@@ -13,7 +13,7 @@
     @foreach($beforeafterstories as $bas_story)
 
 
-            <div style="background-image:url({{asset('images/uploads/' . $bas_story->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
+            <div style="background-image:url({{asset('images/uploads_stories/' . $bas_story->BeforeAfterStoryImageTwo)}});background-size:cover; background-position:center;">
 
                 <a class="box_link"
                    href="{{url('beforeafter/' . $bas_story->id)}}">
